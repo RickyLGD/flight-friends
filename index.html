@@ -274,30 +274,36 @@ function show_infobox() {
            border: 1px solid black;
         }
     
-        html, body { height: 100%; overflow: hidden; background: #84d0ba !important; }
+        html, body { height: 100%; overflow: hidden; background: #6f9f8d !important; }
+        /* A soft glow of the game's own world, so nothing competes with the game itself. */
         .page-sky {
-            position: fixed; inset: 0; z-index: 0; opacity: 0;
-            background-position: center bottom;
-            background-repeat: repeat-x;
-            background-size: auto 100%;
-            image-rendering: pixelated;
+            position: fixed; inset: -80px; z-index: 0; opacity: 0;
+            background-position: center;
+            background-size: cover;
+            filter: blur(40px) saturate(1.15);
             transition: opacity 1.5s;
         }
-        .page-shade { position: fixed; inset: 0; z-index: 1; background: rgba(24, 30, 26, 0.28); }
+        .page-shade {
+            position: fixed; inset: 0; z-index: 1;
+            background: radial-gradient(ellipse at center, rgba(16, 22, 20, 0.05), rgba(16, 22, 20, 0.42));
+        }
         body[data-theme="0"] #page-sky-0,
         body[data-theme="1"] #page-sky-1,
         body[data-theme="2"] #page-sky-2 { opacity: 1; }
-        /* A shadow instead of a border: a real border would shift the mouse position. */
+        /* A shadow instead of a border: a real border would shift the mouse position.
+           Smooth scaling keeps moving pixels even, because the game is rarely a whole-number size. */
         canvas#canvas {
             position: fixed !important; inset: 0 !important; margin: auto !important;
-            width: min(calc(100vw - 32px), calc((100vh - 32px) * 4 / 3)) !important;
-            height: min(calc(100vh - 32px), calc((100vw - 32px) * 3 / 4)) !important;
-            image-rendering: pixelated;
-            box-shadow: 0 0 0 5px #342014, 0 0 0 9px #fff1d0, 0 0 0 12px #342014, 0 16px 40px 12px rgba(0, 0, 0, 0.45);
+            width: min(calc(100vw - 56px), calc((100vh - 56px) * 4 / 3)) !important;
+            height: min(calc(100vh - 56px), calc((100vw - 56px) * 3 / 4)) !important;
+            image-rendering: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35), 0 22px 60px rgba(8, 14, 12, 0.5);
         }
         #infobox {
-            background: #fff1d0; color: #342014; border: 4px solid #342014;
-            box-shadow: 0 6px 0 rgba(52, 32, 20, 0.45);
+            background: rgba(255, 241, 208, 0.96); color: #342014;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(8, 14, 12, 0.35);
             font-size: 18px; letter-spacing: 2px; padding: 14px 28px;
         }
     </style>
