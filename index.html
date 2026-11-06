@@ -1,4 +1,4 @@
-<html lang="en-us"><script src="https://pygame-web.github.io/cdn/0.9.3/pythons.js" type=module id="site" data-python="python3.12" data-LINES=42 data-COLUMNS=132 data-os="vtx,snd,gui" async defer>#<!--
+<html lang="zh-CN"><script src="https://pygame-web.github.io/cdn/0.9.3/pythons.js" type=module id="site" data-python="python3.12" data-LINES=42 data-COLUMNS=132 data-os="vtx,snd,gui" async defer>#<!--
 
 print("""
 Loading 飞行搭档 from build_web.apk
@@ -23,7 +23,7 @@ from pathlib import Path
 # do not rename
 async def custom_site():
     import embed
-    platform.document.body.style.background = "#7f7f7f"
+    platform.document.body.style.background = "transparent"
 
     platform.window.transfer.hidden = true
     platform.window.canvas.style.visibility = "visible"
@@ -273,6 +273,33 @@ function show_infobox() {
            right: 10px;
            border: 1px solid black;
         }
+    
+        html, body { height: 100%; overflow: hidden; background: #84d0ba !important; }
+        .page-sky {
+            position: fixed; inset: 0; z-index: 0; opacity: 0;
+            background-position: center bottom;
+            background-repeat: repeat-x;
+            background-size: auto 100%;
+            image-rendering: pixelated;
+            transition: opacity 1.5s;
+        }
+        .page-shade { position: fixed; inset: 0; z-index: 1; background: rgba(24, 30, 26, 0.28); }
+        body[data-theme="0"] #page-sky-0,
+        body[data-theme="1"] #page-sky-1,
+        body[data-theme="2"] #page-sky-2 { opacity: 1; }
+        /* A shadow instead of a border: a real border would shift the mouse position. */
+        canvas#canvas {
+            position: fixed !important; inset: 0 !important; margin: auto !important;
+            width: min(calc(100vw - 32px), calc((100vh - 32px) * 4 / 3)) !important;
+            height: min(calc(100vh - 32px), calc((100vw - 32px) * 3 / 4)) !important;
+            image-rendering: pixelated;
+            box-shadow: 0 0 0 5px #342014, 0 0 0 9px #fff1d0, 0 0 0 12px #342014, 0 16px 40px 12px rgba(0, 0, 0, 0.45);
+        }
+        #infobox {
+            background: #fff1d0; color: #342014; border: 4px solid #342014;
+            box-shadow: 0 6px 0 rgba(52, 32, 20, 0.45);
+            font-size: 18px; letter-spacing: 2px; padding: 14px 28px;
+        }
     </style>
 
     <script>
@@ -288,7 +315,7 @@ function show_infobox() {
 
 </head>
 
-<body>
+<body data-theme="0"><div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png)"></div><div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png)"></div><div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png)"></div><div class="page-shade"></div>
 
     <div id="transfer" align=center>
 <!--        <div class="spinner" id='spinner'></div> -->
@@ -312,7 +339,7 @@ height="720px"
     oncontextmenu="event.preventDefault()" tabindex=1 hidden>
     </canvas>
 
-    <div id="infobox">Loading, please wait ...</div>
+    <div id="infobox">正在准备起飞…</div>
 
     <div id=html></div>
 
