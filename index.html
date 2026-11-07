@@ -44,7 +44,7 @@ async def custom_site():
                 zip_ref.extractall(appdir.as_posix())
     else:
         import tarfile
-        async with platform.fopen("build_web.tar.gz?v=6dc5db481b95", "rb") as archive:
+        async with platform.fopen("build_web.tar.gz?v=d5db215f06ea", "rb") as archive:
             tar = tarfile.open(fileobj=archive, mode="r:gz")
             tar.extractall(path=appdir.as_posix(), filter='tar')
             tar.close()
@@ -361,7 +361,7 @@ function show_infobox() {
     }
     // The files finish downloading in this order, so the last one found shows how far loading got.
     var LOAD_STAGES = [["main.js", "engine_script"], ["main.data", "engine_data"],
-                       ["main.wasm", "engine_code"], ["build_web.tar.gz?v=6dc5db481b95", "game_files"],
+                       ["main.wasm", "engine_code"], ["build_web.tar.gz?v=d5db215f06ea", "game_files"],
                        ["pygame_ce", "pygame"]];
     function loadStage() {
         var names = performance.getEntriesByType("resource").map(function (entry) {
