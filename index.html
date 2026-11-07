@@ -103,7 +103,7 @@
         } catch (e) {}
     }
     // The files finish downloading in this order, so the last one found shows how far loading got.
-    var LOAD_STAGES = [["game.js?v=bd98002205f0", "game_script"], ["font.png", "font"],
+    var LOAD_STAGES = [["game.js", "game_script"], ["font.png", "font"],
                        ["scenery/", "scenery"], ["pets/", "pets"]];
     function loadStage() {
         var names = "";
@@ -144,6 +144,6 @@
     <canvas id="canvas" width="800" height="600" tabindex="0"></canvas>
     <div id="infobox">正在准备起飞…</div>
     <script>window.GAME_VERSION = "bd98002205f0";</script>
-    <script src="game.js"></script>
+    <script src="game.js?v=bd98002205f0"></script>
 </body>
 </html>
