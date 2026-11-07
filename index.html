@@ -44,7 +44,7 @@ async def custom_site():
                 zip_ref.extractall(appdir.as_posix())
     else:
         import tarfile
-        async with platform.fopen("build_web.tar.gz?v=a1934a535e77", "rb") as archive:
+        async with platform.fopen("build_web.tar.gz?v=470ea49ad1f5", "rb") as archive:
             tar = tarfile.open(fileobj=archive, mode="r:gz")
             tar.extractall(path=appdir.as_posix(), filter='tar')
             tar.close()
@@ -321,7 +321,46 @@ function show_infobox() {
 
 </head>
 
-<body data-theme="0"><div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png)"></div><div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png)"></div><div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png)"></div><div class="page-shade"></div>
+<body data-theme="0"><div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png)"></div><div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png)"></div><div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png)"></div><div class="page-shade"></div><style>
+.privacy-note {
+    position: fixed; left: 0; right: 0; bottom: 6px; z-index: 2; text-align: center;
+    color: rgba(255, 255, 255, 0.6); font-size: 11px; pointer-events: none;
+}
+</style><script>
+(function () {
+    var KEY = "phc_nV6D9iCxsfsMbCe7FxLUqFneY9r5QrCSM6MUQZHs5gdU", HOST = "https://us.i.posthog.com";
+    window.flightFriendsTrack = function () {};
+    if (navigator.globalPrivacyControl) return;  // The visitor asked browsers not to share data.
+    var visitor = null, isNew = false;
+    try { visitor = localStorage.getItem("flight_friends_visitor"); } catch (e) {}
+    if (!visitor) {
+        visitor = crypto.randomUUID();
+        isNew = true;
+        try { localStorage.setItem("flight_friends_visitor", visitor); } catch (e) {}
+    }
+    var linkedPet = new URLSearchParams(location.search).get("pet");
+    var from = "direct";
+    try { if (document.referrer) from = new URL(document.referrer).hostname; } catch (e) {}
+    function send(event, details) {
+        var properties = Object.assign({
+            linked_pet: linkedPet ? linkedPet.slice(0, 32) : "none",
+            came_from: from,
+            screen_width: window.innerWidth,
+            seconds_since_open: Math.round(performance.now() / 1000),
+            $process_person_profile: false
+        }, details);
+        fetch(HOST + "/i/v0/e/", {
+            method: "POST",
+            keepalive: true,
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({api_key: KEY, event: event, distinct_id: visitor,
+                                  properties: properties, timestamp: new Date().toISOString()})
+        }).catch(function () {});
+    }
+    window.flightFriendsTrack = function (event, details) { send(event, JSON.parse(details)); };
+    send("page_open", {new_visitor: isNew});
+})();
+</script><div class="privacy-note">本游戏匿名统计游玩数据，不含姓名、照片和联系方式</div>
 
     <div id="transfer" align=center>
 <!--        <div class="spinner" id='spinner'></div> -->
