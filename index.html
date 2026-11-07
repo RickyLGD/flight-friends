@@ -44,7 +44,7 @@ async def custom_site():
                 zip_ref.extractall(appdir.as_posix())
     else:
         import tarfile
-        async with platform.fopen("build_web.tar.gz?v=452902044392", "rb") as archive:
+        async with platform.fopen("build_web.tar.gz?v=e387ffd154ce", "rb") as archive:
             tar = tarfile.open(fileobj=archive, mode="r:gz")
             tar.extractall(path=appdir.as_posix(), filter='tar')
             tar.close()
@@ -347,6 +347,8 @@ function show_infobox() {
             came_from: from,
             screen_width: window.innerWidth,
             seconds_since_open: Math.round(performance.now() / 1000),
+            is_wechat: /MicroMessenger/i.test(navigator.userAgent),
+            is_mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent),
             $process_person_profile: false
         }, details);
         fetch(HOST + "/i/v0/e/", {
@@ -357,8 +359,41 @@ function show_infobox() {
                                   properties: properties, timestamp: new Date().toISOString()})
         }).catch(function () {});
     }
-    window.flightFriendsTrack = function (event, details) { send(event, JSON.parse(details)); };
+    // The files finish downloading in this order, so the last one found shows how far loading got.
+    var LOAD_STAGES = [["main.js", "engine_script"], ["main.data", "engine_data"],
+                       ["main.wasm", "engine_code"], ["build_web.tar.gz?v=e387ffd154ce", "game_files"],
+                       ["pygame_ce", "pygame"]];
+    function loadStage() {
+        var names = performance.getEntriesByType("resource").map(function (entry) {
+            return entry.name;
+        }).join(" ");
+        var stage = "nothing";
+        LOAD_STAGES.forEach(function (item) {
+            if (names.indexOf(item[0]) >= 0) stage = item[1];
+        });
+        return stage;
+    }
+    var gameReady = false, leftEarly = false;
+    window.flightFriendsTrack = function (event, details) {
+        if (event === "game_ready") gameReady = true;
+        send(event, JSON.parse(details));
+    };
     send("page_open", {new_visitor: isNew});
+    [15, 45].forEach(function (seconds) {
+        setTimeout(function () {
+            if (!gameReady) send("load_waiting", {stage: loadStage(), waited: seconds});
+        }, seconds * 1000);
+    });
+    function reportLeaving() {
+        if (gameReady || leftEarly) return;
+        leftEarly = true;
+        send("load_left", {stage: loadStage()});
+    }
+    // WeChat may only hide the page when it closes, so both signals count as leaving.
+    window.addEventListener("pagehide", reportLeaving);
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") reportLeaving();
+    });
 })();
 </script><div class="privacy-note">本游戏匿名统计游玩数据，不含姓名、照片和联系方式</div>
 
