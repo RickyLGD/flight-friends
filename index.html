@@ -44,7 +44,7 @@ async def custom_site():
                 zip_ref.extractall(appdir.as_posix())
     else:
         import tarfile
-        async with platform.fopen("build_web.tar.gz?v=fce162b34dbb", "rb") as archive:
+        async with platform.fopen("build_web.tar.gz?v=a1934a535e77", "rb") as archive:
             tar = tarfile.open(fileobj=archive, mode="r:gz")
             tar.extractall(path=appdir.as_posix(), filter='tar')
             tar.close()
