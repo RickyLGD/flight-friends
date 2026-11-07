@@ -1,4 +1,4 @@
-var GAME_DATA = {"settings":{"WIDTH":800,"HEIGHT":600,"INK":[52,32,20],"CREAM":[255,241,208],"SAND":[247,214,158],"RED":[226,52,52],"DARK_RED":[158,28,44],"SUN":[255,200,62],"LEAF":[72,138,66],"FOREST":[38,96,58],"SHADOW":[52,32,20,120],"WEB_SCORE_KEY":"flight_friends_best_score","WEB_PROGRESS_KEY":"flight_friends_pets","bird_x":150,"bird_radius":20,"head_height":48,"pillars_for_first_dogs":[8,25],"pillars_for_whole_album":600,"fewest_pillars_between_dogs":20,"most_pillars_between_dogs":60,"recent_pet_chance":0.25,"album_page_size":8,"owner_bonus_size":1,"head_sway_speed":2,"head_sway_angle":8,"plane_tilt_per_speed":1.5,"gravity":0.25,"jump_strength":-5,"maximum_fall_speed":5,"death_duration":900,"shake_duration":0.55,"shake_strength":18,"pipe_width":80,"starting_pipe_gap":280,"minimum_pipe_gap":160,"gap_reduction_per_point":0.5,"starting_pipe_speed":5.5,"maximum_pipe_speed":8,"speed_increase_per_point":0.01,"starting_shift_margin":0.45,"maximum_shift_margin":0.7,"shift_margin_increase_per_point":0.001,"pipe_spacing":300,"points_per_theme":15,"WEATHERS":["rain","snow","fog","petals"],"weather_chance":0.25,"weather_fade_frames":60,"theme_fade_frames":90,"fewest_obstacles_between_animals":1,"most_obstacles_between_animals":3,"hanging_animal_chance":0.35,"creature_scale":3,"creature_hide_distance":70,"GROUND_CREATURES":["fox","rabbit","hedgehog","frog","squirrel","duckling","raccoon","badger","tortoise","capybara","red_panda","mole"],"HANGING_CREATURES":["bat","sloth","monkey","opossum","hanging_parrot"],"sky_body_center":[600,170],"step_milliseconds":16.666666666666668,"step_tolerance":2,"maximum_steps_per_frame":6,"steady_frame_tolerance":1.2,"SPRITE_COLORS":{"K":[52,32,20],"O":[240,138,52],"o":[204,98,38],"W":[255,244,222],"B":[28,18,18],"P":[244,150,160],"L":[232,226,214],"G":[172,166,158],"T":[214,170,118],"t":[150,100,62],"D":[96,62,42],"Y":[255,214,80],"y":[245,146,50],"E":[116,194,88],"e":[72,144,72],"V":[128,102,168],"v":[88,70,126],"R":[226,72,72],"S":[92,158,204],"s":[250,196,76],"M":[214,132,70],"m":[150,84,42],"A":[214,222,232],"a":[140,152,170]},"BOOM_LETTERS":[["#####.","##..##","##..##","#####.","##..##","##..##","#####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],["##...##","###.###","#######","##.#.##","##...##","##...##","##...##"],["##","##","##","##","##","..","##"]],"CROWN_PIXELS":["#..#..#","##.#.##","#######","#######"],"RAIN_LAYERS":[{"count":46,"blocks":2,"fall":9,"drift":2,"tail":[112,134,166],"head":[150,174,208]},{"count":22,"blocks":3,"fall":15,"drift":3,"tail":[104,136,184],"head":[206,226,252]}],"RAIN_BLOCK":[2,6],"SPLASH_COLOR":[214,232,252],"SPLASH_SHAPES":[[[-2,-2],[2,-2]],[[-4,-5],[-2,-2],[2,-2],[4,-5]],[[-6,-4],[6,-4]]],"splash_frames":12,"coin_chance":0.5,"coin_radius":18,"coin_pop_frames":30,"COIN_SPIN":[0,1,2,1],"MEDALS":[[20,"铜牌","bronze_medal"],[60,"银牌","silver_medal"],[100,"金牌","gold_medal"]],"medal_banner_frames":150,"FURNITURE":[{"id":"food_bowl","name":"食盆","price":5,"place":[640,560],"seats":[]},{"id":"plant","name":"盆栽","price":8,"place":[744,452],"seats":[]},{"id":"cushion","name":"软垫","price":10,"place":[192,564],"seats":[[9,3]]},{"id":"rug","name":"地毯","price":15,"place":[400,568],"seats":[],"flat":true},{"id":"lamp","name":"落地灯","price":20,"place":[252,452],"seats":[]},{"id":"sofa","name":"小沙发","price":25,"place":[588,452],"seats":[[9,8],[17,8]]},{"id":"cat_tree","name":"猫爬架","price":30,"place":[112,452],"seats":[[7,9],[19,21]]},{"id":"crib","name":"婴儿床","price":40,"place":[400,452],"seats":[[16,9]]}],"park_scale":4,"park_floor":[70,730,486,584],"park_walk_speed":1.2,"park_seat_chance":0.35,"park_hop_frames":30,"park_message_frames":150,"park_wall_bottom":448,"park_scratch_chance":0.2,"park_play_chance":0.3,"park_pat_chance":0.4,"park_play_gap":40,"park_pat_gap":52,"park_action_frames":{"sit":[150,300],"lie":[240,420],"scratch":[90,160],"play":[160,240],"pat":[150,210],"patted":[150,210],"stand":[80,160],"wave":[50,90],"ready":[600,600]},"park_cell_width":32,"park_cell_height":26,"park_ground":23,"PARK_PET_INFO":[{"kind":"human","breed":"人类","box":[9,0,19,25]},{"kind":"dog","breed":"贵宾","box":[4,1,25,25]},{"kind":"dog","breed":"雪纳瑞","box":[6,1,21,25]},{"kind":"dog","breed":"贵宾","box":[4,1,25,25]},{"kind":"dog","breed":"法斗","box":[6,1,21,24]},{"kind":"dog","breed":"贵宾","box":[4,1,25,25]},{"kind":"dog","breed":"腊肠","box":[1,1,29,24]},{"kind":"dog","breed":"比熊","box":[5,0,23,26]},{"kind":"cat","breed":"暹罗猫","box":[3,1,24,24]},{"kind":"dog","breed":"拉布拉多","box":[4,1,25,24]}],"ANIMAL_POSES":["walk0","walk1","sit0","sit1","lie0","lie1","scratch0","scratch1","play0","play1","happy0","happy1"],"HUMAN_POSES":["walk0","walk1","stand0","stand1","wave0","wave1","pat0","pat1"]},"sprites":{"fox":[["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOBBOOOOOOBBOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."],["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOKKOOOOOOKKOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."]],"rabbit":[["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLBBLLLLBBLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."],["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLKKLLLLKKLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."]],"hedgehog":[["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTBBTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"],["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTKKTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"]],"frog":[["...KKK....KKK...","..KWWWK..KWWWK..","..KWBBK..KBBWK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"],["...KKK....KKK...","..KWWWK..KWWWK..","..KKKKK..KKKKK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"]],"squirrel":[["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtBBttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."],["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtKKttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."]],"duckling":[["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYBBYYBBYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."],["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYKKYYKKYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."]],"bat":[["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWBWWBWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."],["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWKWWKWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."]],"sloth":[["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDBTTTTBDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"],["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDDTTTTDDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"]],"raccoon":[["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKBWKKGGKKWBKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."],["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKKKKKGGKKKKKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."]],"badger":[["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKWKWWWWKWKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."],["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKKKWWWWKKKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."]],"tortoise":[["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTBK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."],["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTKK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."]],"capybara":[["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTBBTK.","..KTTTTTTTTTTTTBBTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."],["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTTTTK.","..KTTTTTTTTTTTTKKTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."]],"red_panda":[["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWBBWooooooWBBWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."],["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWKKWooooooWKKWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."]],"mole":[["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDBDDDDBDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"],["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDKDDDDKDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"]],"monkey":[["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTBTTBTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."],["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTKTTKTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."]],"opossum":[["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLBLLBLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."],["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLKLLKLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."]],"hanging_parrot":[["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEBEEBEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."],["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEKEEKEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."]],"running_fox":[["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","..KOKK.KOK.KOK.KOK....","..KK....KK..KK..KK...."],["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","....KOK..KOKOK..KOK...","....KK....KKK....KK..."]],"deer":[["..................K..K..","..................KK.K..","...................KKK..","..................KttK.K","..................KtttKK","..................KtBttK","..................KttWWK",".KK...............KtttK.","KWWKKKKKKKKKKKKKKKtttK..","KWtttttttttttttttttttK..",".KtWtttWtttWtttttttttK..",".KtttWtttWtttttttttWWK..",".KttttttttttttttttWWK...",".KtttKKKKKKKKKKKtttK....","..KtK..........KtK......","..KtK..........KtK......","..KtK..........KtK......","..KKK..........KKK......"]],"bird":[["..KK.....KK..",".KRRK...KRRK.","..KRRK.KRRK..","...KRRKRRK.K.","....KRRRKKYK.",".....KKK..K.."],[".............",".............","...KKK...K...","..KRRRKKKYK..",".KRRRRRRK.K..","KRRK.KRRK...."]],"butterfly":[["KK.K.KK","KsK.KsK","KssKssK",".KsKsK.","KsKKKsK","KK...KK"],["...K...","..KsK..",".KssK..","..KsK..",".KsKK..",".KK...."]],"coin":[["....KKKK....","..KKYYYYKK..",".KWWYYYYYYK.",".KWYDYYDYYK.","KYDYDYYDYDyK","KYDYYYYYYDyK","KYYYYDDYYYyK","KYYYDDDDYYyK","KYYYDDDDYYyK",".KYYYDDYYyK.","..KKyyyyKK..","....KKKK...."],["....KKKK....","...KYYYYK...","...KWYYyK...","...KWDYyK...","...KYDDyK...","...KYYDyK...","...KYDDyK...","...KDDDyK...","...KYDDyK...","...KYYYyK...","...KyyyyK...","....KKKK...."],[".....KK.....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....",".....KK....."]],"bronze_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KMMMMMMK.","KMWMMMMmmK","KMWMMMMmmK","KMMMMMMmmK","KMMMMMmmmK",".KmmmmmmK.","..KKKKKK.."]],"silver_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KAAAAAAK.","KAWAAAAaaK","KAWAAAAaaK","KAAAAAAaaK","KAAAAAaaaK",".KaaaaaaK.","..KKKKKK.."]],"gold_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KYYYYYYK.","KYWYYYYyyK","KYWYYYYyyK","KYYYYYYyyK","KYYYYYyyyK",".KyyyyyyK.","..KKKKKK.."]],"cat_tree":[["..........................","..........................","..........................","..........................","..........................","..........................","..........................","..........................","KKKKKKKKKKKKKK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KKKKKKKKKKKKKK............",".....KTTK.................",".....KttK.................",".....KTTK.................",".....KTTK.................",".....KttK.................",".....KTTK.................",".....KTTK...KKKKKKKKKKKKKK",".....KttK...KVVVVVVVVVVVVK",".....KTTK...KVVVVVVVVVVVVK",".....KTTK...KVVVVVVVVVVVVK",".....KttK...KVVVVVVVVVVVVK",".....KTTK...KKKKKKKKKKKKKK",".....KTTK.........KTTK.K..",".....KttK.........KttK.K..",".....KTTK.........KTTK.K..",".....KTTK.........KTTK.K..",".....KttK.........KttKKKKK",".....KTTK.........KTTKRRRK",".....KTTK.........KTTKRRRK",".....KttK.........KttKRRRK",".....KTTK.........KTTKKKKK",".....KTTK.........KTTK....",".....KttK.........KttK....",".....KTTK.........KTTK....",".....KTTK.........KTTK....",".....KttK.........KttK....","KKKKKKKKKKKKKKKKKKKKKKKKKK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KKKKKKKKKKKKKKKKKKKKKKKKKK"]],"crib":[["KKK..........................KKK","KtK..........................KtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtKKKKttKKttKKttKKttKKttKKttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KKK..........................KKK"]],"sofa":[["..KKKKKKKKKKKKKKKKKKKKKK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","KKKKKOOOOOOOOoOOOOOOOKKKKK","KOOOKOOOOOOOOoOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KKKKKKKKKKKKKKKKKKKKKKKKKK","KKooooooooooooooooooooooKK",".KKKKKKKKKKKKKKKKKKKKKKKK.","..DD..................DD.."]],"lamp":[[".KKKKKKKK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KyyyyyyK.",".KKKKKKKK.","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","..KKKKKK..","..KttttK..","..KttttK..","..KKKKKK.."]],"cushion":[["KKKKKKKKKKKKKKKKKK","KSSSSSSSSSSSSSSSSK","KSSKKKKKKKKKKKKSSK","KSSKWWWWWWWWWWKSSK","KSSKKKKKKKKKKKKSSK","KSSSSSSSSSSSSSSSSK","KKKKKKKKKKKKKKKKKK"]],"plant":[[".....KK.....","....KEEK....",".KK.KEeK.KK.","KEEKKEeKKEEK","KEeEKEeKEeEK",".KEeEEeEEeK.","..KKEEeEKK..","....KeEK....","..KKKKKKKK..","..KOOOOOOK..","..KKKKKKKK..","...KOOOOK...","...KOooOK...","...KOooOK...","....KKKK...."]],"food_bowl":[["..tDtTDt..","KKKKKKKKKK","KRRRRRRRRK",".KRRWRRRK.","..KKKKKK.."]],"rug":[["............KKKKKKKKKKKKKKKKKKKK............","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","............KKKKKKKKKKKKKKKKKKKK............"]],"house":[[".......KK.......","......KRRK......",".....KRRRRK.....","....KRRRRRRK....","...KRRRRRRRRK...","..KRRRRRRRRRRK..",".KKKKKKKKKKKKKK.","..KWWWWWWWWWWK..","..KWKKKWWKKKWK..","..KWKSKWWKtKWK..","..KWKKKWWKtKWK..","..KWWWWWWKtKWK..","..KWWWWWWKyKWK..","..KKKKKKKKKKKK.."]],"heart":[[".KK.KK.","KRRKRRK","KRWRRRK",".KRRRK.","..KRK..","...K..."]],"arrow":[["KKKKKKK","KYYYYYK",".KYYYK.","..KYK..","...K..."]]},"sky_themes":[{"sky":[[132,208,186],[214,234,184],[255,240,190]],"body":[255,226,112],"stars":0,"cloud":[255,255,244],"far":[128,176,158],"snow":[238,246,228],"near":[92,164,84],"tree":[50,118,70],"tint":null,"ground":[72,142,70],"rain_cloud":[128,136,152]},{"sky":[[236,120,92],[255,176,104],[255,226,150]],"body":[255,240,170],"stars":0,"cloud":[255,214,176],"far":[176,106,104],"snow":[255,220,190],"near":[130,132,62],"tree":[78,88,48],"tint":[255,214,176],"ground":[104,108,52],"rain_cloud":[150,126,132]},{"sky":[[14,22,58],[28,46,88],[54,88,104]],"body":[245,240,210],"stars":90,"cloud":[66,84,122],"far":[36,56,92],"snow":[120,142,170],"near":[28,72,66],"tree":[14,46,50],"tint":[110,130,176],"ground":[20,54,54],"rain_cloud":[46,56,86]}],"pets":[{"id":"shuaige","name":"帅哥","intro":["爱动物的","人类"],"founder":true,"starter":true,"image":"pets/shuaige"},{"id":"erbao","name":"二宝","intro":["爱吃醋的","贵宾"],"founder":true,"starter":true,"image":"pets/erbao"},{"id":"sherry","name":"Sherry","intro":["淡淡的","雪纳瑞"],"founder":true,"starter":false,"image":"pets/sherry"},{"id":"jiuyue","name":"九月","intro":["调皮的","贵宾"],"founder":true,"starter":false,"image":"pets/jiuyue"},{"id":"jiaoquan","name":"焦圈","intro":["爱打呼噜","的法斗"],"founder":true,"starter":false,"image":"pets/jiaoquan"},{"id":"duoli","name":"多莉","intro":["毛茸茸的","贵宾"],"founder":true,"starter":false,"image":"pets/duoli"},{"id":"celina","name":"Celina","intro":["爱哼唧的","腊肠"],"founder":true,"starter":false,"image":"pets/celina"},{"id":"guaiguai","name":"乖乖","intro":["贪吃","的比熊"],"founder":false,"starter":false,"image":"pets/guaiguai"},{"id":"xunshan","name":"巡山","intro":["傲娇","的暹罗"],"founder":false,"starter":false,"image":"pets/xunshan"},{"id":"xiaobuding","name":"小布丁","intro":["爱扑人的","拉布拉多"],"founder":false,"starter":false,"image":"pets/xiaobuding"}],"form_url":"https://v.wjx.cn/vm/td6GJBG.aspx","font":{"height":16,"letters":{" ":[0,0,6],"!":[6,0,4],"\"":[10,0,6],"#":[16,0,7],"$":[23,0,6],"%":[29,0,8],"&":[37,0,7],"'":[44,0,4],"(":[48,0,6],")":[54,0,6],"*":[60,0,6],"+":[66,0,6],",":[72,0,4],"-":[76,0,6],".":[82,0,4],"/":[86,0,6],"0":[92,0,6],"1":[98,0,6],"2":[104,0,6],"3":[110,0,6],"4":[116,0,6],"5":[122,0,6],"6":[128,0,6],"7":[134,0,6],"8":[140,0,6],"9":[146,0,6],":":[152,0,4],";":[156,0,4],"<":[160,0,5],"=":[165,0,6],">":[171,0,5],"?":[176,0,6],"A":[182,0,8],"B":[190,0,7],"C":[197,0,7],"D":[204,0,7],"E":[211,0,7],"F":[218,0,7],"G":[225,0,7],"H":[232,0,7],"I":[239,0,4],"J":[243,0,6],"K":[249,0,7],"L":[256,0,6],"M":[262,0,8],"N":[270,0,7],"O":[277,0,8],"P":[285,0,7],"Q":[292,0,8],"R":[300,0,7],"S":[307,0,7],"T":[314,0,8],"U":[322,0,7],"V":[329,0,8],"W":[337,0,10],"X":[347,0,8],"Y":[355,0,8],"[":[363,0,6],"\\":[369,0,6],"]":[375,0,6],"^":[381,0,6],"_":[387,0,6],"a":[393,0,6],"b":[399,0,6],"c":[405,0,6],"d":[411,0,6],"e":[417,0,6],"f":[423,0,5],"g":[428,0,6],"h":[434,0,6],"i":[440,0,4],"j":[444,0,4],"k":[448,0,6],"l":[454,0,4],"m":[458,0,8],"n":[466,0,6],"o":[472,0,6],"p":[478,0,6],"q":[484,0,6],"r":[490,0,5],"s":[495,0,6],"t":[501,0,5],"u":[506,0,6],"v":[512,0,6],"w":[518,0,8],"x":[526,0,6],"y":[532,0,6],"z":[538,0,6],"{":[544,0,7],"|":[551,0,4],"}":[555,0,7],"·":[562,0,12],"×":[574,0,6],"“":[580,0,12],"”":[592,0,12],"、":[604,0,12],"。":[616,0,12],"《":[628,0,12],"》":[640,0,12],"一":[652,0,12],"丁":[664,0,12],"上":[676,0,12],"下":[688,0,12],"专":[700,0,12],"个":[712,0,12],"中":[724,0,12],"主":[736,0,12],"乐":[748,0,12],"乖":[760,0,12],"九":[772,0,12],"也":[784,0,12],"买":[796,0,12],"了":[808,0,12],"二":[820,0,12],"人":[832,0,12],"仅":[844,0,12],"介":[856,0,12],"以":[868,0,12],"们":[880,0,12],"件":[892,0,12],"休":[904,0,12],"伙":[916,0,12],"会":[928,0,12],"传":[940,0,12],"伴":[952,0,12],"位":[964,0,12],"住":[976,0,12],"你":[988,0,12],"保":[1000,0,12],"停":[1012,0,12],"傲":[0,16,12],"像":[12,16,12],"儿":[24,16,12],"入":[36,16,12],"全":[48,16,12],"共":[60,16,12],"关":[72,16,12],"具":[84,16,12],"再":[96,16,12],"冠":[108,16,12],"出":[120,16,12],"击":[132,16,12],"分":[144,16,12],"创":[156,16,12],"到":[168,16,12],"刷":[180,16,12],"前":[192,16,12],"加":[204,16,12],"动":[216,16,12],"励":[228,16,12],"升":[240,16,12],"午":[252,16,12],"卡":[264,16,12],"去":[276,16,12],"发":[288,16,12],"只":[300,16,12],"可":[312,16,12],"吃":[324,16,12],"吧":[336,16,12],"呆":[348,16,12],"呼":[360,16,12],"和":[372,16,12],"品":[384,16,12],"哥":[396,16,12],"哦":[408,16,12],"哼":[420,16,12],"唧":[432,16,12],"商":[444,16,12],"啦":[456,16,12],"噜":[468,16,12],"器":[480,16,12],"四":[492,16,12],"回":[504,16,12],"园":[516,16,12],"图":[528,16,12],"圈":[540,16,12],"土":[552,16,12],"在":[564,16,12],"地":[576,16,12],"坐":[588,16,12],"块":[600,16,12],"坠":[612,16,12],"垫":[624,16,12],"墙":[636,16,12],"处":[648,16,12],"外":[660,16,12],"多":[672,16,12],"太":[684,16,12],"失":[696,16,12],"头":[708,16,12],"奖":[720,16,12],"好":[732,16,12],"始":[744,16,12],"娇":[756,16,12],"婴":[768,16,12],"子":[780,16,12],"字":[792,16,12],"它":[804,16,12],"宝":[816,16,12],"宠":[828,16,12],"家":[840,16,12],"宾":[852,16,12],"小":[864,16,12],"就":[876,16,12],"局":[888,16,12],"屋":[900,16,12],"屏":[912,16,12],"属":[924,16,12],"山":[936,16,12],"巡":[948,16,12],"差":[960,16,12],"已":[972,16,12],"币":[984,16,12],"布":[996,16,12],"帅":[1008,16,12],"带":[0,32,12],"幕":[12,32,12],"床":[24,32,12],"店":[36,32,12],"开":[48,32,12],"张":[60,32,12],"录":[72,32,12],"得":[84,32,12],"息":[96,32,12],"想":[108,32,12],"戏":[120,32,12],"成":[132,32,12],"我":[144,32,12],"或":[156,32,12],"战":[168,32,12],"戴":[180,32,12],"扑":[192,32,12],"打":[204,32,12],"找":[216,32,12],"把":[228,32,12],"投":[240,32,12],"拉":[252,32,12],"拖":[264,32,12],"招":[276,32,12],"择":[288,32,12],"按":[300,32,12],"挑":[312,32,12],"挠":[324,32,12],"换":[336,32,12],"接":[348,32,12],"控":[360,32,12],"搭":[372,32,12],"摸":[384,32,12],"操":[396,32,12],"收":[408,32,12],"放":[420,32,12],"数":[432,32,12],"文":[444,32,12],"斗":[456,32,12],"新":[468,32,12],"方":[480,32,12],"旧":[492,32,12],"时":[504,32,12],"是":[516,32,12],"暂":[528,32,12],"暹":[540,32,12],"最":[552,32,12],"月":[564,32,12],"有":[576,32,12],"望":[588,32,12],"本":[600,32,12],"机":[612,32,12],"来":[624,32,12],"松":[636,32,12],"架":[648,32,12],"柱":[660,32,12],"格":[672,32,12],"栽":[684,32,12],"档":[696,32,12],"次":[708,32,12],"欢":[720,32,12],"正":[732,32,12],"比":[744,32,12],"毛":[756,32,12],"毯":[768,32,12],"沙":[780,32,12],"没":[792,32,12],"法":[804,32,12],"浏":[816,32,12],"淡":[828,32,12],"添":[840,32,12],"游":[852,32,12],"溜":[864,32,12],"灯":[876,32,12],"点":[888,32,12],"焦":[900,32,12],"熊":[912,32,12],"爬":[924,32,12],"爱":[936,32,12],"片":[948,32,12],"版":[960,32,12],"牌":[972,32,12],"物":[984,32,12],"猫":[996,32,12],"玩":[1008,32,12],"瑞":[0,48,12],"用":[12,48,12],"画":[24,48,12],"留":[36,48,12],"登":[48,48,12],"的":[60,48,12],"皇":[72,48,12],"皮":[84,48,12],"盆":[96,48,12],"盹":[108,48,12],"看":[120,48,12],"着":[132,48,12],"睡":[144,48,12],"种":[156,48,12],"稿":[168,48,12],"空":[180,48,12],"穿":[192,48,12],"第":[204,48,12],"等":[216,48,12],"类":[228,48,12],"素":[240,48,12],"纪":[252,48,12],"纳":[264,48,12],"绍":[276,48,12],"给":[288,48,12],"继":[300,48,12],"续":[312,48,12],"网":[324,48,12],"罗":[336,48,12],"肠":[348,48,12],"能":[360,48,12],"腊":[372,48,12],"自":[384,48,12],"色":[396,48,12],"茸":[408,48,12],"莉":[420,48,12],"获":[432,48,12],"落":[444,48,12],"行":[456,48,12],"被":[468,48,12],"览":[480,48,12],"觉":[492,48,12],"角":[504,48,12],"解":[516,48,12],"试":[528,48,12],"请":[540,48,12],"调":[552,48,12],"谢":[564,48,12],"负":[576,48,12],"责":[588,48,12],"败":[600,48,12],"贪":[612,48,12],"贵":[624,48,12],"起":[636,48,12],"跟":[648,48,12],"跳":[660,48,12],"软":[672,48,12],"载":[684,48,12],"达":[696,48,12],"过":[708,48,12],"迎":[720,48,12],"返":[732,48,12],"还":[744,48,12],"这":[756,48,12],"进":[768,48,12],"退":[780,48,12],"送":[792,48,12],"选":[804,48,12],"遇":[816,48,12],"部":[828,48,12],"都":[840,48,12],"醋":[852,48,12],"里":[864,48,12],"金":[876,48,12],"鉴":[888,48,12],"铜":[900,48,12],"银":[912,48,12],"锁":[924,48,12],"键":[936,48,12],"闭":[948,48,12],"闹":[960,48,12],"集":[972,48,12],"雪":[984,48,12],"面":[996,48,12],"页":[1008,48,12],"额":[0,64,12],"飞":[12,64,12],"食":[24,64,12],"首":[36,64,12],"马":[48,64,12],"高":[60,64,12],"齐":[72,64,12],"！":[84,64,12],"，":[96,64,12],"／":[108,64,12],"：":[120,64,12],"？":[132,64,12],"～":[144,64,12]}}};
+var GAME_DATA = {"settings":{"WIDTH":800,"HEIGHT":600,"INK":[52,32,20],"CREAM":[255,241,208],"SAND":[247,214,158],"RED":[226,52,52],"DARK_RED":[158,28,44],"SUN":[255,200,62],"LEAF":[72,138,66],"FOREST":[38,96,58],"SHADOW":[52,32,20,120],"WEB_SCORE_KEY":"flight_friends_best_score","WEB_PROGRESS_KEY":"flight_friends_pets","bird_x":150,"bird_radius":20,"head_height":48,"pillars_for_first_dogs":[8,25],"pillars_for_whole_album":600,"fewest_pillars_between_dogs":20,"most_pillars_between_dogs":60,"recent_pet_chance":0.25,"album_page_size":8,"owner_bonus_size":1,"head_sway_speed":2,"head_sway_angle":8,"plane_tilt_per_speed":1.5,"gravity":0.25,"jump_strength":-5,"maximum_fall_speed":5,"death_duration":900,"shake_duration":0.55,"shake_strength":18,"pipe_width":80,"starting_pipe_gap":280,"minimum_pipe_gap":160,"gap_reduction_per_point":0.5,"starting_pipe_speed":5.5,"maximum_pipe_speed":8,"speed_increase_per_point":0.01,"starting_shift_margin":0.45,"maximum_shift_margin":0.7,"shift_margin_increase_per_point":0.001,"pipe_spacing":300,"points_per_theme":15,"WEATHERS":["rain","snow","fog","petals"],"weather_chance":0.25,"weather_fade_frames":60,"theme_fade_frames":90,"fewest_obstacles_between_animals":1,"most_obstacles_between_animals":3,"hanging_animal_chance":0.35,"creature_scale":3,"creature_hide_distance":70,"GROUND_CREATURES":["fox","rabbit","hedgehog","frog","squirrel","duckling","raccoon","badger","tortoise","capybara","red_panda","mole"],"HANGING_CREATURES":["bat","sloth","monkey","opossum","hanging_parrot"],"sky_body_center":[600,170],"step_milliseconds":16.666666666666668,"step_tolerance":2,"maximum_steps_per_frame":6,"steady_frame_tolerance":1.2,"SPRITE_COLORS":{"K":[52,32,20],"O":[240,138,52],"o":[204,98,38],"W":[255,244,222],"B":[28,18,18],"P":[244,150,160],"L":[232,226,214],"G":[172,166,158],"T":[214,170,118],"t":[150,100,62],"D":[96,62,42],"Y":[255,214,80],"y":[245,146,50],"E":[116,194,88],"e":[72,144,72],"V":[128,102,168],"v":[88,70,126],"R":[226,72,72],"S":[92,158,204],"s":[250,196,76],"M":[214,132,70],"m":[150,84,42],"A":[214,222,232],"a":[140,152,170]},"BOOM_LETTERS":[["#####.","##..##","##..##","#####.","##..##","##..##","#####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],["##...##","###.###","#######","##.#.##","##...##","##...##","##...##"],["##","##","##","##","##","..","##"]],"CROWN_PIXELS":["#..#..#","##.#.##","#######","#######"],"RAIN_LAYERS":[{"count":46,"blocks":2,"fall":9,"drift":2,"tail":[112,134,166],"head":[150,174,208]},{"count":22,"blocks":3,"fall":15,"drift":3,"tail":[104,136,184],"head":[206,226,252]}],"RAIN_BLOCK":[2,6],"SPLASH_COLOR":[214,232,252],"SPLASH_SHAPES":[[[-2,-2],[2,-2]],[[-4,-5],[-2,-2],[2,-2],[4,-5]],[[-6,-4],[6,-4]]],"splash_frames":12,"coin_chance":0.5,"coin_radius":18,"coin_pop_frames":30,"COIN_SPIN":[0,1,2,1],"MEDALS":[[20,"铜牌","bronze_medal"],[60,"银牌","silver_medal"],[100,"金牌","gold_medal"]],"medal_banner_frames":150,"FURNITURE":[{"id":"food_bowl","name":"食盆","name_en":"Food bowl","price":5,"place":[640,560],"seats":[]},{"id":"plant","name":"盆栽","name_en":"Plant","price":8,"place":[744,452],"seats":[]},{"id":"cushion","name":"软垫","name_en":"Cushion","price":10,"place":[192,564],"seats":[[9,3]]},{"id":"rug","name":"地毯","name_en":"Rug","price":15,"place":[400,568],"seats":[],"flat":true},{"id":"lamp","name":"落地灯","name_en":"Lamp","price":20,"place":[252,452],"seats":[]},{"id":"sofa","name":"小沙发","name_en":"Sofa","price":25,"place":[588,452],"seats":[[9,8],[17,8]]},{"id":"cat_tree","name":"猫爬架","name_en":"Cat tree","price":30,"place":[112,452],"seats":[[7,9],[19,21]]},{"id":"crib","name":"婴儿床","name_en":"Crib","price":40,"place":[400,452],"seats":[[16,9]]}],"park_scale":4,"park_floor":[70,730,486,584],"park_walk_speed":0.6,"park_seat_chance":0.3,"park_hop_frames":30,"park_message_frames":150,"park_wall_bottom":448,"park_spin_chance":0.08,"park_play_chance":0.12,"park_pat_chance":0.15,"park_play_gap":44,"park_pat_gap":48,"park_action_frames":{"sit":[360,720],"lie":[600,1100],"spin":[90,140],"play":[180,260],"pat":[180,240],"patted":[180,240],"stand":[240,480],"wave":[60,100],"ready":[1500,1500]},"park_cell_width":64,"park_cell_height":52,"park_ground":47,"PARK_PET_INFO":[{"kind":"human","breed":"人类","breed_en":"Human","box":[13,8,42,41]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[10,9,44,42]},{"kind":"dog","breed":"雪纳瑞","breed_en":"Schnauzer","box":[17,12,40,40]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[10,9,44,42]},{"kind":"dog","breed":"法斗","breed_en":"French bulldog","box":[19,5,32,44]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[10,9,44,42]},{"kind":"dog","breed":"腊肠","breed_en":"Dachshund","box":[3,20,60,32]},{"kind":"dog","breed":"比熊","breed_en":"Bichon","box":[15,7,42,42]},{"kind":"cat","breed":"暹罗猫","breed_en":"Siamese cat","box":[13,11,41,38]},{"kind":"dog","breed":"拉布拉多","breed_en":"Labrador","box":[7,10,51,41]}],"ANIMAL_POSES":["walk0","walk1","sit0","sit1","lie0","lie1","play0","play1","happy0","happy1"],"HUMAN_POSES":["walk0","walk1","stand0","stand1","wave0","wave1","pat0","pat1"],"park_pet_scale":2,"park_most_pets":4,"park_choices_per_page":8,"AVATAR_BOX":[21,1,31,47],"HAIR_STYLES":[["short","短发","Short"],["buzz","寸头","Buzz cut"],["curtain","中分","Curtains"],["bob","波波头","Bob"],["ponytail","马尾","Ponytail"],["long","长发","Long"],["bun","丸子头","Bun"]],"HAIR_COLORS":[[44,36,38],[122,78,46],[232,190,100],[238,150,178]],"SKIN_COLORS":[[255,226,200],[246,204,168],[214,158,116],[146,98,68]],"OUTFITS":[{"id":"tee","name":"T恤","name_en":"T-shirt","price":0,"colors":{"C":[88,150,220],"J":[70,82,120],"O":[70,50,44]}},{"id":"hoodie","name":"卫衣","name_en":"Hoodie","price":15,"colors":{"C":[110,180,110],"J":[64,64,76],"O":[240,240,236]}},{"id":"overalls","name":"背带裤","name_en":"Overalls","price":20,"colors":{"C":[250,214,90],"J":[80,120,190],"O":[150,70,50]}},{"id":"dress","name":"连衣裙","name_en":"Dress","price":25,"colors":{"C":[240,140,170],"J":[240,140,170],"O":[200,60,80]}},{"id":"pajamas","name":"小熊睡衣","name_en":"Bear pajamas","price":30,"colors":{"C":[180,214,246],"J":[180,214,246],"O":[250,250,250]}},{"id":"pilot","name":"飞行员夹克","name_en":"Pilot jacket","price":40,"colors":{"C":[140,86,54],"J":[60,60,70],"O":[40,32,30]}}],"TEXTS":{"title":["飞行搭档","Flight Friends"],"switch_language":["English","中文"],"score":["得分","Score"],"best_short":["最高 {n}","Best {n}"],"all_medals":["集齐！","All done!"],"medal_left":["还差{n}","{n} left"],"medal_first":["首次获得{medal}！","First {medal}!"],"medal_got":["获得{medal}！","{medal}!"],"medal_points":["{n} 分达成","Reached {n} points"],"bronze_medal":["铜牌","Bronze"],"silver_medal":["银牌","Silver"],"gold_medal":["金牌","Gold"],"friend_left":["新伙伴还差{n}","New friend in {n}"],"friend_here":["就在前面！","Just ahead!"],"locked_1":["飞行中","Meet them"],"locked_2":["可遇到","in flight"],"album":["宠物图鉴","Pet Album"],"album_done":["全部集齐！","All found!"],"album_hint":["已收集 {n} / {total}，点击已解锁的宠物就能换它出战","Found {n} / {total} · click an unlocked pet to fly with it"],"previous":["上一页","Back"],"next":["下一页","Next"],"page":["第 {n} / {total} 页","Page {n} / {total}"],"album_back":["返回选角 · 按 Esc","Back · Esc"],"choose_title":["选择你的飞行搭档","Pick your flight friend"],"choose_hint":["点击角色或按 1～8 选择","Click or press 1-8"],"pet_line":["{name}：{intro}  ·  最高分：{best}  ·  宠物币：{coins}","{name}: {intro}  ·  Best: {best}  ·  Coins: {coins}"],"welcome":["欢迎登机，{name}！按空格键马上起飞","Welcome aboard, {name}! Press Space to fly"],"thanks_owner":["谢谢你把{name}带上飞机！","Thanks for bringing {name} aboard!"],"how_to":["操控飞机，穿过土块，接上柱子上的“？？？”新伙伴！","Fly through the gaps and pick up the ??? friends on the pillars!"],"start":["开始游戏 · 按空格键","Start · Space"],"upload":["上传我的宠物！","Add my pet!"],"keys":["空格键：上升  |  P：暂停／继续  |  R：返回选角","Space: fly up  |  P: pause  |  R: back to friends"],"quit":["关闭窗口退出","Close the window to quit"],"no_save":["最高分仅在本次运行中保留","Best score is kept for this run only"],"new_one":["新伙伴登机！","A new friend is aboard!"],"new_many":["本局解锁 {n} 位新伙伴！","{n} new friends this run!"],"swapped_one":["已换上{name}","Now flying with {name}"],"swapped_many":["已换上{name}，按 C 换下一只","Flying with {name} · C for the next one"],"press_c_one":["按 C 换它出战","Press C to fly with it"],"press_c_many":["按 C 挑一只出战","Press C to pick one"],"again":["按空格键再来一次","Press Space to fly again"],"r_back":["R：返回选角","R: back to friends"],"link_owner":["谢谢你，{name}的主人！","Thank you, {name}'s owner!"],"link_new":["获得新伙伴！","A new friend!"],"contributor":["你是第 {n} 位送宠物登机的主人","You are owner number {n} to bring a pet aboard"],"crown":["奖励：{name}的卡片戴上专属皇冠","Reward: {name}'s card wears a crown"],"bonus":["奖励：额外解锁 {names}","Reward: also unlocked {names}"],"joined":["{name}已加入你的图鉴，马上带它起飞吧","{name} joined your album. Take it flying!"],"want_aboard":["你家宠物也想登机？","Want your own pet aboard?"],"upload_hint":["在选角页点“上传我的宠物！”，还有主人奖励","Click Add my pet! on the first page for an owner reward"],"accept":["收下 · 按空格键","Got it · Space"],"paused":["暂停一下","Paused"],"score_line":["得分：{n}","Score: {n}"],"resume":["按 P 继续飞行","Press P to keep flying"],"back_quit":["R：返回选角  |  关闭窗口退出","R: back to friends  |  close the window to quit"],"crashed":["坠机啦！","Crashed!"],"record_note":["  新纪录！","  New best!"],"run_line":["本局 {score}{medal}  ·  最高 {best}  ·  宠物币 +{coins}{record}","This run {score}{medal}  ·  Best {best}  ·  Coins +{coins}{record}"],"run_score":["本局得分：{n}","This run: {n}"],"best_score":["最高分：{n}","Best: {n}"],"new_best":["刷新个人纪录！","New personal best!"],"run_coins":["本局宠物币 +{n}  ·  共 {total}","Coins this run +{n}  ·  Total {total}"],"names_joiner":["、",", "],"back_touch":["返回","Back"],"again_touch":["点击屏幕再来一次","Tap to fly again"],"keys_touch":["点击屏幕：上升  |  P：暂停／继续  |  R：返回选角","Tap: fly up  |  P: pause  |  R: back to friends"],"quit_web":["关闭网页退出","Close the page to quit"],"no_save_web":["最高分仅在本次打开时保留","Best score is kept for this visit only"],"load_failed":["加载失败，请刷新页面再试","Loading failed. Please refresh the page"],"old_browser":["这个浏览器太旧了，请换用新版 Chrome、Edge 或 Safari","This browser is too old. Please use a new Chrome, Edge or Safari"],"park_button":["乐园","Park"],"park":["宠物乐园","Pet Park"],"back_esc":["返回 · Esc","Back · Esc"],"shop":["家具商店","Shop"],"pets_button":["选宠物","Pets"],"my_look":["我的形象","My look"],"you":["你","you"],"coins_short":["还差 {count} 个宠物币，去飞一局吧！","{count} more coins needed. Go fly!"],"bought":["买到了{name}！","Bought: {name}!"],"placed":["{name}放好啦！","{name} is in place!"],"room_full":["小屋最多住 {count} 只，先点掉一只吧","The room fits {count}. Send one out first"],"doing_seat":["在{place}上休息","Resting on the {place}"],"doing_seat_nap":["在{place}上打盹","Napping on the {place}"],"doing_meet":["去找{friend}","Going to {friend}"],"doing_walk":["到处溜达","Strolling around"],"doing_sit":["坐着发呆","Sitting and dreaming"],"doing_lie":["睡午觉","Taking a nap"],"doing_spin":["转圈追尾巴","Chasing its tail"],"doing_play":["和{friend}打闹","Playing with {friend}"],"doing_patted":["被{friend}摸头","Getting pats from {friend}"],"doing_pat":["摸{friend}的头","Patting {friend}"],"doing_ready":["等{friend}","Waiting for {friend}"],"doing_stand":["四处张望","Looking around"],"doing_wave":["跟你打招呼","Waving at you"],"breed_line":["品种：{breed}","Breed: {breed}"],"founder":["创始伙伴","Founding friend"],"submitted":["投稿伙伴","Shared by an owner"],"doing_line":["正在：{doing}","Now: {doing}"],"tap_to_hop":["点它会跳一下哦","Click it to hop"],"move":["拖动","Move"],"choose_pets":["选宠物","Pick pets"],"in_room":["屋里 {count} / {most} 只，点卡片换","In the room: {count} / {most}"],"hair_color":["发色","Hair"],"skin":["肤色","Skin"],"wearing":["穿着","On"],"wear":["换上","Wear"],"drag_hint":["拖到想放的地方，松开就放下","Drag it where you like, then let go"],"park_hint_empty":["去家具商店，用宠物币给小屋添家具","Visit the shop and spend pet coins on furniture"],"park_hint":["点宠物看介绍 · 按住家具可以拖动","Click a pet · drag furniture"]},"LANGUAGES":["zh","en"]},"sprites":{"fox":[["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOBBOOOOOOBBOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."],["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOKKOOOOOOKKOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."]],"rabbit":[["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLBBLLLLBBLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."],["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLKKLLLLKKLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."]],"hedgehog":[["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTBBTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"],["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTKKTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"]],"frog":[["...KKK....KKK...","..KWWWK..KWWWK..","..KWBBK..KBBWK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"],["...KKK....KKK...","..KWWWK..KWWWK..","..KKKKK..KKKKK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"]],"squirrel":[["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtBBttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."],["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtKKttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."]],"duckling":[["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYBBYYBBYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."],["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYKKYYKKYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."]],"bat":[["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWBWWBWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."],["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWKWWKWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."]],"sloth":[["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDBTTTTBDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"],["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDDTTTTDDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"]],"raccoon":[["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKBWKKGGKKWBKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."],["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKKKKKGGKKKKKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."]],"badger":[["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKWKWWWWKWKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."],["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKKKWWWWKKKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."]],"tortoise":[["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTBK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."],["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTKK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."]],"capybara":[["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTBBTK.","..KTTTTTTTTTTTTBBTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."],["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTTTTK.","..KTTTTTTTTTTTTKKTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."]],"red_panda":[["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWBBWooooooWBBWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."],["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWKKWooooooWKKWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."]],"mole":[["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDBDDDDBDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"],["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDKDDDDKDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"]],"monkey":[["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTBTTBTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."],["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTKTTKTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."]],"opossum":[["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLBLLBLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."],["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLKLLKLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."]],"hanging_parrot":[["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEBEEBEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."],["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEKEEKEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."]],"running_fox":[["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","..KOKK.KOK.KOK.KOK....","..KK....KK..KK..KK...."],["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","....KOK..KOKOK..KOK...","....KK....KKK....KK..."]],"deer":[["..................K..K..","..................KK.K..","...................KKK..","..................KttK.K","..................KtttKK","..................KtBttK","..................KttWWK",".KK...............KtttK.","KWWKKKKKKKKKKKKKKKtttK..","KWtttttttttttttttttttK..",".KtWtttWtttWtttttttttK..",".KtttWtttWtttttttttWWK..",".KttttttttttttttttWWK...",".KtttKKKKKKKKKKKtttK....","..KtK..........KtK......","..KtK..........KtK......","..KtK..........KtK......","..KKK..........KKK......"]],"bird":[["..KK.....KK..",".KRRK...KRRK.","..KRRK.KRRK..","...KRRKRRK.K.","....KRRRKKYK.",".....KKK..K.."],[".............",".............","...KKK...K...","..KRRRKKKYK..",".KRRRRRRK.K..","KRRK.KRRK...."]],"butterfly":[["KK.K.KK","KsK.KsK","KssKssK",".KsKsK.","KsKKKsK","KK...KK"],["...K...","..KsK..",".KssK..","..KsK..",".KsKK..",".KK...."]],"coin":[["....KKKK....","..KKYYYYKK..",".KWWYYYYYYK.",".KWYDYYDYYK.","KYDYDYYDYDyK","KYDYYYYYYDyK","KYYYYDDYYYyK","KYYYDDDDYYyK","KYYYDDDDYYyK",".KYYYDDYYyK.","..KKyyyyKK..","....KKKK...."],["....KKKK....","...KYYYYK...","...KWYYyK...","...KWDYyK...","...KYDDyK...","...KYYDyK...","...KYDDyK...","...KDDDyK...","...KYDDyK...","...KYYYyK...","...KyyyyK...","....KKKK...."],[".....KK.....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....",".....KK....."]],"bronze_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KMMMMMMK.","KMWMMMMmmK","KMWMMMMmmK","KMMMMMMmmK","KMMMMMmmmK",".KmmmmmmK.","..KKKKKK.."]],"silver_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KAAAAAAK.","KAWAAAAaaK","KAWAAAAaaK","KAAAAAAaaK","KAAAAAaaaK",".KaaaaaaK.","..KKKKKK.."]],"gold_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KYYYYYYK.","KYWYYYYyyK","KYWYYYYyyK","KYYYYYYyyK","KYYYYYyyyK",".KyyyyyyK.","..KKKKKK.."]],"cat_tree":[["..........................","..........................","..........................","..........................","..........................","..........................","..........................","..........................","KKKKKKKKKKKKKK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KVVVVVVVVVVVVK............","KKKKKKKKKKKKKK............",".....KTTK.................",".....KttK.................",".....KTTK.................",".....KTTK.................",".....KttK.................",".....KTTK.................",".....KTTK...KKKKKKKKKKKKKK",".....KttK...KVVVVVVVVVVVVK",".....KTTK...KVVVVVVVVVVVVK",".....KTTK...KVVVVVVVVVVVVK",".....KttK...KVVVVVVVVVVVVK",".....KTTK...KKKKKKKKKKKKKK",".....KTTK.........KTTK.K..",".....KttK.........KttK.K..",".....KTTK.........KTTK.K..",".....KTTK.........KTTK.K..",".....KttK.........KttKKKKK",".....KTTK.........KTTKRRRK",".....KTTK.........KTTKRRRK",".....KttK.........KttKRRRK",".....KTTK.........KTTKKKKK",".....KTTK.........KTTK....",".....KttK.........KttK....",".....KTTK.........KTTK....",".....KTTK.........KTTK....",".....KttK.........KttK....","KKKKKKKKKKKKKKKKKKKKKKKKKK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KttttttttttttttttttttttttK","KKKKKKKKKKKKKKKKKKKKKKKKKK"]],"crib":[["KKK..........................KKK","KtK..........................KtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtKKKKttKKttKKttKKttKKttKKttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KKK..........................KKK"]],"sofa":[["..KKKKKKKKKKKKKKKKKKKKKK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","KKKKKOOOOOOOOoOOOOOOOKKKKK","KOOOKOOOOOOOOoOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KKKKKKKKKKKKKKKKKKKKKKKKKK","KKooooooooooooooooooooooKK",".KKKKKKKKKKKKKKKKKKKKKKKK.","..DD..................DD.."]],"lamp":[[".KKKKKKKK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KyyyyyyK.",".KKKKKKKK.","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","..KKKKKK..","..KttttK..","..KttttK..","..KKKKKK.."]],"cushion":[["KKKKKKKKKKKKKKKKKK","KSSSSSSSSSSSSSSSSK","KSSKKKKKKKKKKKKSSK","KSSKWWWWWWWWWWKSSK","KSSKKKKKKKKKKKKSSK","KSSSSSSSSSSSSSSSSK","KKKKKKKKKKKKKKKKKK"]],"plant":[[".....KK.....","....KEEK....",".KK.KEeK.KK.","KEEKKEeKKEEK","KEeEKEeKEeEK",".KEeEEeEEeK.","..KKEEeEKK..","....KeEK....","..KKKKKKKK..","..KOOOOOOK..","..KKKKKKKK..","...KOOOOK...","...KOooOK...","...KOooOK...","....KKKK...."]],"food_bowl":[["..tDtTDt..","KKKKKKKKKK","KRRRRRRRRK",".KRRWRRRK.","..KKKKKK.."]],"rug":[["............KKKKKKKKKKKKKKKKKKKK............","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","............KKKKKKKKKKKKKKKKKKKK............"]],"house":[[".......KK.......","......KRRK......",".....KRRRRK.....","....KRRRRRRK....","...KRRRRRRRRK...","..KRRRRRRRRRRK..",".KKKKKKKKKKKKKK.","..KWWWWWWWWWWK..","..KWKKKWWKKKWK..","..KWKSKWWKtKWK..","..KWKKKWWKtKWK..","..KWWWWWWKtKWK..","..KWWWWWWKyKWK..","..KKKKKKKKKKKK.."]],"heart":[[".KK.KK.","KRRKRRK","KRWRRRK",".KRRRK.","..KRK..","...K..."]],"arrow":[["KKKKKKK","KYYYYYK",".KYYYK.","..KYK..","...K..."]]},"sky_themes":[{"sky":[[132,208,186],[214,234,184],[255,240,190]],"body":[255,226,112],"stars":0,"cloud":[255,255,244],"far":[128,176,158],"snow":[238,246,228],"near":[92,164,84],"tree":[50,118,70],"tint":null,"ground":[72,142,70],"rain_cloud":[128,136,152]},{"sky":[[236,120,92],[255,176,104],[255,226,150]],"body":[255,240,170],"stars":0,"cloud":[255,214,176],"far":[176,106,104],"snow":[255,220,190],"near":[130,132,62],"tree":[78,88,48],"tint":[255,214,176],"ground":[104,108,52],"rain_cloud":[150,126,132]},{"sky":[[14,22,58],[28,46,88],[54,88,104]],"body":[245,240,210],"stars":90,"cloud":[66,84,122],"far":[36,56,92],"snow":[120,142,170],"near":[28,72,66],"tree":[14,46,50],"tint":[110,130,176],"ground":[20,54,54],"rain_cloud":[46,56,86]}],"pets":[{"id":"shuaige","name":"帅哥","intro":["爱动物的","人类"],"name_en":"Handsome","intro_en":["Animal","lover"],"founder":true,"starter":true,"image":"pets/shuaige"},{"id":"erbao","name":"二宝","intro":["爱吃醋的","贵宾"],"name_en":"Erbao","intro_en":["Jealous","poodle"],"founder":true,"starter":true,"image":"pets/erbao"},{"id":"sherry","name":"Sherry","intro":["淡淡的","雪纳瑞"],"name_en":"Sherry","intro_en":["Laid-back","schnauzer"],"founder":true,"starter":false,"image":"pets/sherry"},{"id":"jiuyue","name":"九月","intro":["调皮的","贵宾"],"name_en":"September","intro_en":["Cheeky","poodle"],"founder":true,"starter":false,"image":"pets/jiuyue"},{"id":"jiaoquan","name":"焦圈","intro":["爱打呼噜","的法斗"],"name_en":"Donut","intro_en":["Snoring","Frenchie"],"founder":true,"starter":false,"image":"pets/jiaoquan"},{"id":"duoli","name":"多莉","intro":["毛茸茸的","贵宾"],"name_en":"Dolly","intro_en":["Fluffy","poodle"],"founder":true,"starter":false,"image":"pets/duoli"},{"id":"celina","name":"Celina","intro":["爱哼唧的","腊肠"],"name_en":"Celina","intro_en":["Whiny","dachshund"],"founder":true,"starter":false,"image":"pets/celina"},{"id":"guaiguai","name":"乖乖","intro":["贪吃","的比熊"],"name_en":"Goodie","intro_en":["Greedy","bichon"],"founder":false,"starter":false,"image":"pets/guaiguai"},{"id":"xunshan","name":"巡山","intro":["傲娇","的暹罗"],"name_en":"Ranger","intro_en":["Sassy","Siamese"],"founder":false,"starter":false,"image":"pets/xunshan"},{"id":"xiaobuding","name":"小布丁","intro":["爱扑人的","拉布拉多"],"name_en":"Pudding","intro_en":["Jumpy","Labrador"],"founder":false,"starter":false,"image":"pets/xiaobuding"}],"form_url":"https://v.wjx.cn/vm/td6GJBG.aspx","font":{"height":16,"letters":{" ":[0,0,6],"!":[6,0,4],"\"":[10,0,6],"#":[16,0,7],"$":[23,0,6],"%":[29,0,8],"&":[37,0,7],"'":[44,0,4],"(":[48,0,6],")":[54,0,6],"*":[60,0,6],"+":[66,0,6],",":[72,0,4],"-":[76,0,6],".":[82,0,4],"/":[86,0,6],"0":[92,0,6],"1":[98,0,6],"2":[104,0,6],"3":[110,0,6],"4":[116,0,6],"5":[122,0,6],"6":[128,0,6],"7":[134,0,6],"8":[140,0,6],"9":[146,0,6],":":[152,0,4],";":[156,0,4],"<":[160,0,5],"=":[165,0,6],">":[171,0,5],"?":[176,0,6],"A":[182,0,8],"B":[190,0,7],"C":[197,0,7],"D":[204,0,7],"E":[211,0,7],"F":[218,0,7],"G":[225,0,7],"H":[232,0,7],"I":[239,0,4],"J":[243,0,6],"K":[249,0,7],"L":[256,0,6],"M":[262,0,8],"N":[270,0,7],"O":[277,0,8],"P":[285,0,7],"Q":[292,0,8],"R":[300,0,7],"S":[307,0,7],"T":[314,0,8],"U":[322,0,7],"V":[329,0,8],"W":[337,0,10],"X":[347,0,8],"Y":[355,0,8],"[":[363,0,6],"\\":[369,0,6],"]":[375,0,6],"^":[381,0,6],"_":[387,0,6],"a":[393,0,6],"b":[399,0,6],"c":[405,0,6],"d":[411,0,6],"e":[417,0,6],"f":[423,0,5],"g":[428,0,6],"h":[434,0,6],"i":[440,0,4],"j":[444,0,4],"k":[448,0,6],"l":[454,0,4],"m":[458,0,8],"n":[466,0,6],"o":[472,0,6],"p":[478,0,6],"q":[484,0,6],"r":[490,0,5],"s":[495,0,6],"t":[501,0,5],"u":[506,0,6],"v":[512,0,6],"w":[518,0,8],"x":[526,0,6],"y":[532,0,6],"z":[538,0,6],"{":[544,0,7],"|":[551,0,4],"}":[555,0,7],"·":[562,0,12],"×":[574,0,6],"“":[580,0,12],"”":[592,0,12],"、":[604,0,12],"。":[616,0,12],"《":[628,0,12],"》":[640,0,12],"一":[652,0,12],"丁":[664,0,12],"上":[676,0,12],"下":[688,0,12],"专":[700,0,12],"个":[712,0,12],"中":[724,0,12],"丸":[736,0,12],"主":[748,0,12],"乐":[760,0,12],"乖":[772,0,12],"九":[784,0,12],"也":[796,0,12],"买":[808,0,12],"了":[820,0,12],"二":[832,0,12],"人":[844,0,12],"仅":[856,0,12],"介":[868,0,12],"以":[880,0,12],"们":[892,0,12],"件":[904,0,12],"休":[916,0,12],"伙":[928,0,12],"会":[940,0,12],"传":[952,0,12],"伴":[964,0,12],"位":[976,0,12],"住":[988,0,12],"你":[1000,0,12],"保":[1012,0,12],"停":[0,16,12],"傲":[12,16,12],"像":[24,16,12],"儿":[36,16,12],"先":[48,16,12],"克":[60,16,12],"入":[72,16,12],"全":[84,16,12],"共":[96,16,12],"关":[108,16,12],"具":[120,16,12],"再":[132,16,12],"冠":[144,16,12],"出":[156,16,12],"击":[168,16,12],"分":[180,16,12],"创":[192,16,12],"到":[204,16,12],"刷":[216,16,12],"前":[228,16,12],"加":[240,16,12],"动":[252,16,12],"励":[264,16,12],"升":[276,16,12],"午":[288,16,12],"卡":[300,16,12],"卫":[312,16,12],"去":[324,16,12],"发":[336,16,12],"口":[348,16,12],"只":[360,16,12],"可":[372,16,12],"吃":[384,16,12],"吧":[396,16,12],"呆":[408,16,12],"员":[420,16,12],"呼":[432,16,12],"和":[444,16,12],"品":[456,16,12],"哥":[468,16,12],"哦":[480,16,12],"哼":[492,16,12],"唧":[504,16,12],"商":[516,16,12],"啦":[528,16,12],"噜":[540,16,12],"器":[552,16,12],"四":[564,16,12],"回":[576,16,12],"园":[588,16,12],"图":[600,16,12],"圈":[612,16,12],"土":[624,16,12],"在":[636,16,12],"地":[648,16,12],"坐":[660,16,12],"块":[672,16,12],"坠":[684,16,12],"垫":[696,16,12],"处":[708,16,12],"外":[720,16,12],"多":[732,16,12],"太":[744,16,12],"失":[756,16,12],"头":[768,16,12],"夹":[780,16,12],"奖":[792,16,12],"好":[804,16,12],"始":[816,16,12],"娇":[828,16,12],"婴":[840,16,12],"子":[852,16,12],"字":[864,16,12],"它":[876,16,12],"宝":[888,16,12],"宠":[900,16,12],"家":[912,16,12],"宾":[924,16,12],"寸":[936,16,12],"小":[948,16,12],"就":[960,16,12],"尾":[972,16,12],"局":[984,16,12],"屋":[996,16,12],"屏":[1008,16,12],"属":[0,32,12],"山":[12,32,12],"巡":[24,32,12],"差":[36,32,12],"已":[48,32,12],"巴":[60,32,12],"币":[72,32,12],"布":[84,32,12],"帅":[96,32,12],"带":[108,32,12],"幕":[120,32,12],"床":[132,32,12],"店":[144,32,12],"开":[156,32,12],"张":[168,32,12],"录":[180,32,12],"形":[192,32,12],"得":[204,32,12],"恤":[216,32,12],"息":[228,32,12],"想":[240,32,12],"戏":[252,32,12],"成":[264,32,12],"我":[276,32,12],"或":[288,32,12],"战":[300,32,12],"戴":[312,32,12],"扑":[324,32,12],"打":[336,32,12],"找":[348,32,12],"把":[360,32,12],"投":[372,32,12],"拉":[384,32,12],"拖":[396,32,12],"招":[408,32,12],"择":[420,32,12],"按":[432,32,12],"挑":[444,32,12],"换":[456,32,12],"掉":[468,32,12],"接":[480,32,12],"控":[492,32,12],"搭":[504,32,12],"摸":[516,32,12],"操":[528,32,12],"收":[540,32,12],"放":[552,32,12],"数":[564,32,12],"文":[576,32,12],"斗":[588,32,12],"新":[600,32,12],"方":[612,32,12],"旧":[624,32,12],"时":[636,32,12],"是":[648,32,12],"暂":[660,32,12],"暹":[672,32,12],"最":[684,32,12],"月":[696,32,12],"有":[708,32,12],"望":[720,32,12],"本":[732,32,12],"机":[744,32,12],"来":[756,32,12],"松":[768,32,12],"架":[780,32,12],"柱":[792,32,12],"格":[804,32,12],"栽":[816,32,12],"档":[828,32,12],"次":[840,32,12],"欢":[852,32,12],"正":[864,32,12],"比":[876,32,12],"毛":[888,32,12],"毯":[900,32,12],"沙":[912,32,12],"法":[924,32,12],"波":[936,32,12],"浏":[948,32,12],"淡":[960,32,12],"添":[972,32,12],"游":[984,32,12],"溜":[996,32,12],"灯":[1008,32,12],"点":[0,48,12],"焦":[12,48,12],"熊":[24,48,12],"爬":[36,48,12],"爱":[48,48,12],"片":[60,48,12],"版":[72,48,12],"牌":[84,48,12],"物":[96,48,12],"猫":[108,48,12],"玩":[120,48,12],"瑞":[132,48,12],"用":[144,48,12],"画":[156,48,12],"留":[168,48,12],"登":[180,48,12],"的":[192,48,12],"皇":[204,48,12],"皮":[216,48,12],"盆":[228,48,12],"盹":[240,48,12],"看":[252,48,12],"着":[264,48,12],"睡":[276,48,12],"短":[288,48,12],"种":[300,48,12],"稿":[312,48,12],"空":[324,48,12],"穿":[336,48,12],"窗":[348,48,12],"第":[360,48,12],"等":[372,48,12],"类":[384,48,12],"素":[396,48,12],"纪":[408,48,12],"纳":[420,48,12],"绍":[432,48,12],"给":[444,48,12],"继":[456,48,12],"续":[468,48,12],"网":[480,48,12],"罗":[492,48,12],"肠":[504,48,12],"肤":[516,48,12],"背":[528,48,12],"能":[540,48,12],"腊":[552,48,12],"自":[564,48,12],"色":[576,48,12],"茸":[588,48,12],"莉":[600,48,12],"获":[612,48,12],"落":[624,48,12],"行":[636,48,12],"衣":[648,48,12],"被":[660,48,12],"裙":[672,48,12],"裤":[684,48,12],"览":[696,48,12],"觉":[708,48,12],"角":[720,48,12],"解":[732,48,12],"试":[744,48,12],"请":[756,48,12],"调":[768,48,12],"谢":[780,48,12],"象":[792,48,12],"负":[804,48,12],"责":[816,48,12],"败":[828,48,12],"贪":[840,48,12],"贵":[852,48,12],"起":[864,48,12],"跟":[876,48,12],"跳":[888,48,12],"转":[900,48,12],"软":[912,48,12],"载":[924,48,12],"达":[936,48,12],"过":[948,48,12],"迎":[960,48,12],"运":[972,48,12],"返":[984,48,12],"还":[996,48,12],"这":[1008,48,12],"进":[0,64,12],"连":[12,64,12],"追":[24,64,12],"退":[36,64,12],"送":[48,64,12],"选":[60,64,12],"遇":[72,64,12],"部":[84,64,12],"都":[96,64,12],"醋":[108,64,12],"里":[120,64,12],"金":[132,64,12],"鉴":[144,64,12],"铜":[156,64,12],"银":[168,64,12],"锁":[180,64,12],"键":[192,64,12],"长":[204,64,12],"闭":[216,64,12],"闹":[228,64,12],"集":[240,64,12],"雪":[252,64,12],"面":[264,64,12],"页":[276,64,12],"额":[288,64,12],"飞":[300,64,12],"食":[312,64,12],"首":[324,64,12],"马":[336,64,12],"高":[348,64,12],"齐":[360,64,12],"！":[372,64,12],"，":[384,64,12],"／":[396,64,12],"：":[408,64,12],"？":[420,64,12],"～":[432,64,12]}}};
 // 《飞行搭档》网页版。玩法、数字和像素画都来自 flappybird/main.py：
 // tools/build_web.py 把它们放进上面的 GAME_DATA，这个文件只负责在浏览器里画出来。
 // Plain older JavaScript on purpose, so old computers and in-app browsers can run it.
@@ -213,6 +213,75 @@ function drawText(text, scale, center, color, outline) {
     screen.drawImage(label, center[0] - Math.floor(label.width / 2),
                      center[1] - Math.floor(label.height / 2));
 }
+
+// Every word the player reads, in Chinese and English, comes from the Python game's TEXTS.
+var TEXTS = S.TEXTS, LANGUAGES = S.LANGUAGES;
+var language = readSavedLanguage();
+
+function readSavedLanguage() {
+    // Read before anything else loads, so even the loading words use the language chosen last time.
+    try {
+        var saved = JSON.parse(window.localStorage.getItem(S.WEB_PROGRESS_KEY) || "{}");
+        return saved && LANGUAGES.indexOf(saved.language) >= 0 ? saved.language : "zh";
+    } catch (error) {
+        return "zh";
+    }
+}
+
+function tr(key, values) {
+    // {name}-style gaps are filled in from values, so one line works for every pet.
+    var text = TEXTS[key][LANGUAGES.indexOf(language)];
+    return text.replace(/\{(\w+)\}/g, function (gap, name) {
+        return values && values.hasOwnProperty(name) ? String(values[name]) : gap;
+    });
+}
+
+function drawFittedText(text, center, width, color, scale, outline) {
+    // English words are often longer than the Chinese, so text that would not fit gets smaller.
+    scale = scale || 2;
+    while (scale > 1 && renderGameText(String(text), scale, color || INK, outline || null).width > width) scale -= 1;
+    drawText(text, scale, center, color, outline);
+}
+
+function splitTextLines(text, scale, width) {
+    // English breaks between words, Chinese between any two characters.
+    var english = language !== "zh";
+    var pieces = english ? text.split(" ") : letterList(text), joiner = english ? " " : "";
+    var lines = [""];
+    pieces.forEach(function (piece) {
+        var last = lines[lines.length - 1];
+        var longer = last ? last + joiner + piece : piece;
+        if (!last || measureText(longer) * scale <= width) lines[lines.length - 1] = longer;
+        else lines.push(piece);
+    });
+    return lines;
+}
+
+function drawWrappedText(text, topCenter, width, color, scale, lineHeight) {
+    scale = scale || 2;
+    lineHeight = lineHeight || 28;
+    var lines = splitTextLines(text, scale, width);
+    lines.forEach(function (line, number) {
+        drawText(line, scale, [topCenter[0], topCenter[1] + number * lineHeight], color);
+    });
+    return lines.length;
+}
+
+function getPetName(pet) {
+    // A pet without an English name keeps its own name in English too.
+    return language === "zh" ? PETS[pet].name : PETS[pet].name_en || PETS[pet].name;
+}
+
+function getPetIntro(pet) {
+    return language === "zh" ? PETS[pet].intro : PETS[pet].intro_en || PETS[pet].intro;
+}
+
+function getIntroText(pet) {
+    // Chinese lines join straight on; English words need a space between them.
+    return getPetIntro(pet).join(language === "zh" ? "" : " ");
+}
+
+function getMedalName(number) { return tr(MEDALS[number][2]); }
 
 function fillStepped(pen, area, color) {
     // Two overlapping rectangles leave stepped corners, like a block of pixels.
@@ -839,7 +908,11 @@ function saveProgress() {
         owned: sortedIds(owned_pets),
         coins: coins,
         furniture: Object.keys(owned_furniture).sort(),
-        furniture_places: furniture_places
+        furniture_places: furniture_places,
+        language: language,
+        park_pets: park_shown_chosen ? park_shown.map(function (pet) { return PETS[pet].id; }) : null,
+        avatar: avatar_look,
+        outfits: Object.keys(owned_outfits).sort()
     });
     try {
         window.localStorage.setItem(WEB_PROGRESS_KEY, progress);
@@ -880,6 +953,29 @@ function loadProgress() {
             return typeof value === "number" && value % 1 === 0;
         });
         furniture_places[id] = good ? place : FURNITURE_BY_ID[id].place.slice();
+    });
+    if (LANGUAGES.indexOf(saved.language) >= 0) language = saved.language;
+    if (Array.isArray(saved.park_pets)) {
+        park_shown = saved.park_pets.filter(function (id) {
+            return Object.prototype.hasOwnProperty.call(PET_INDEX_BY_ID, id);
+        }).map(function (id) { return PET_INDEX_BY_ID[id]; }).slice(0, park_most_pets);
+        park_shown_chosen = true;
+    }
+    if (Array.isArray(saved.outfits)) {
+        saved.outfits.forEach(function (id) {
+            if (typeof id === "string" && Object.prototype.hasOwnProperty.call(OUTFITS_BY_ID, id)) owned_outfits[id] = true;
+        });
+    }
+    var look = saved.avatar && typeof saved.avatar === "object" ? saved.avatar : {};
+    // Only values the game knows are kept, so a broken save cannot draw a strange person.
+    function allowed(part, value) {
+        if (part === "hair") return HAIR_STYLE_IDS.indexOf(value) >= 0;
+        if (part === "outfit") return typeof value === "string" && owned_outfits.hasOwnProperty(value);
+        var colors = part === "skin" ? SKIN_COLORS : HAIR_COLORS;
+        return typeof value === "number" && value % 1 === 0 && value >= 0 && value < colors.length;
+    }
+    ["hair", "hair_color", "skin", "outfit"].forEach(function (part) {
+        if (allowed(part, look[part])) avatar_look[part] = look[part];
     });
     var selected = PET_INDEX_BY_ID[saved.selected];
     if (selected !== undefined && unlocked_pets[selected]) setPilot(selected);
@@ -1168,6 +1264,10 @@ function handleCharacterSelection(event) {
             openPark();
             return true;
         }
+        if (event.key === "l") {
+            switchLanguage();
+            return true;
+        }
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
             var direction = event.key === "ArrowLeft" ? -1 : 1;
             // Locked cards are skipped: the arrows only move between pets you own.
@@ -1190,6 +1290,10 @@ function handleCharacterSelection(event) {
         }
         if (park_button.contains(event.x, event.y)) {
             openPark();
+            return true;
+        }
+        if (language_button.contains(event.x, event.y)) {
+            switchLanguage();
             return true;
         }
         if (start_button.contains(event.x, event.y)) {
@@ -1656,9 +1760,9 @@ function drawFlapPuffs() {
 function drawHud() {
     var plate = new Rect(14, 14, 170, 76);
     drawPixelPanel(plate);
-    drawText("得分", 2, [54, 38]);
+    drawFittedText(tr("score"), [54, 38], 64);
     drawText(String(score), score_pop_frames ? 4 : 3, [128, 36], RED);
-    drawText("最高 " + best_score, 2, [plate.centerx(), 69], FOREST);
+    drawFittedText(tr("best_short", {n: best_score}), [plate.centerx(), 69], plate.w - 12, FOREST);
     drawCoinCounter();
     drawMedalProgress();
     // Always in the same place, so the player can watch the next friend come closer.
@@ -1674,10 +1778,10 @@ function drawMedalProgress() {
     var shown, label;
     if (upcoming === null) {
         shown = MEDALS.length - 1;
-        label = "集齐！";
+        label = tr("all_medals");
     } else {
         shown = upcoming;
-        label = "还差" + (MEDALS[upcoming][0] - score);
+        label = tr("medal_left", {n: MEDALS[upcoming][0] - score});
         // The bar fills up from the last medal (or zero) to the next one.
         var start = upcoming ? MEDALS[upcoming - 1][0] : 0;
         var filled = plate.inflate(-8, -8);
@@ -1685,7 +1789,7 @@ function drawMedalProgress() {
         fillRect(SUN, filled.x, filled.y, filled.w, filled.h);
     }
     blitCentered(getSprite(MEDALS[shown][2], 0, 2), plate.x + 24, plate.centery());
-    drawText(label, 2, [plate.x + 78, plate.centery()]);
+    drawFittedText(label, [plate.x + 78, plate.centery()], 84);
 }
 
 function drawMedalBanner() {
@@ -1696,9 +1800,9 @@ function drawMedalBanner() {
     var banner = new Rect(210, 150 - hidden * 14, 380, 76);
     drawPixelPanel(banner, SUN);
     blitCentered(getSprite(MEDALS[number][2], 0, 4), banner.x + 44, banner.centery());
-    var title = (firstTime ? "首次获得" : "获得") + MEDALS[number][1] + "！";
-    drawText(title, 3, [banner.centerx() + 34, banner.centery() - 12], DARK_RED);
-    drawText(MEDALS[number][0] + " 分达成", 2, [banner.centerx() + 34, banner.centery() + 20]);
+    var title = tr(firstTime ? "medal_first" : "medal_got", {medal: getMedalName(number)});
+    drawFittedText(title, [banner.centerx() + 34, banner.centery() - 12], 290, DARK_RED, 3);
+    drawText(tr("medal_points", {n: MEDALS[number][0]}), 2, [banner.centerx() + 34, banner.centery() + 20]);
 }
 
 function drawCoinCounter() {
@@ -1717,7 +1821,7 @@ function drawNextFriendProgress(bar) {
     var filled = bar.inflate(-8, -8);
     filled.w = Math.round(filled.w * (needed - left) / needed);
     fillRect(SUN, filled.x, filled.y, filled.w, filled.h);
-    drawText(left ? "新伙伴还差" + left : "就在前面！", 2, bar.center());
+    drawFittedText(left ? tr("friend_left", {n: left}) : tr("friend_here"), bar.center(), bar.w - 8);
 }
 
 function drawCrown(centerX, top, cell) {
@@ -1743,17 +1847,16 @@ function blitCentered(picture, centerX, centerY) {
 }
 
 function drawPetCard(card, pet, number, selected) {
-    var info = PETS[pet];
     drawPixelPanel(card, selected ? SUN : CREAM);
     blitCentered(characterPortraits[pet], card.x + 44, card.y + 74);
     if (owned_pets[pet]) drawCrown(card.right() - 24, card.y + 6);
     var badge = new Rect(card.x + 8, card.y + 8, 30, 30);
     drawPixelPanel(badge, selected ? LEAF : SAND, INK, 0);
     drawText(String(number), 2, badge.center(), selected ? CREAM : INK);
-    var textX = card.x + 135;
-    drawText(info.name, 2, [textX, card.y + 32]);
-    info.intro.forEach(function (line, lineNumber) {
-        drawText(line, 2, [textX, card.y + 68 + lineNumber * 26], selected ? INK : FOREST);
+    var textX = card.x + 133;
+    drawFittedText(getPetName(pet), [textX, card.y + 32], 112);
+    getPetIntro(pet).forEach(function (line, lineNumber) {
+        drawFittedText(line, [textX, card.y + 68 + lineNumber * 26], 108, selected ? INK : FOREST);
     });
 }
 
@@ -1764,8 +1867,8 @@ function drawLockedCard(card, pet, number) {
     drawPixelPanel(badge, CREAM, INK, 0);
     drawText(String(number), 2, badge.center());
     drawText("？？？", 2, [card.x + 135, card.y + 50]);
-    drawText("飞行中", 2, [card.x + 135, card.y + 80], DARK_RED);
-    drawText("可遇到", 2, [card.x + 135, card.y + 104], DARK_RED);
+    drawFittedText(tr("locked_1"), [card.x + 135, card.y + 80], 100, DARK_RED);
+    drawFittedText(tr("locked_2"), [card.x + 135, card.y + 104], 100, DARK_RED);
 }
 
 function drawAlbumCard(card) {
@@ -1773,10 +1876,10 @@ function drawAlbumCard(card) {
     var badge = new Rect(card.x + 8, card.y + 8, 30, 30);
     drawPixelPanel(badge, SAND, INK, 0);
     drawText("8", 2, badge.center());
-    drawText("宠物图鉴", 2, [card.centerx() + 16, card.y + 26], CREAM);
+    drawFittedText(tr("album"), [card.centerx() + 16, card.y + 26], 130, CREAM);
     drawText(countKeys(unlocked_pets) + " / " + PETS.length, 3, [card.centerx(), card.y + 62], SUN, INK);
     if (getPillarsLeft() === null) {
-        drawText("全部集齐！", 2, [card.centerx(), card.y + 104], SUN, INK);
+        drawText(tr("album_done"), 2, [card.centerx(), card.y + 104], SUN, INK);
     } else {
         drawNextFriendProgress(new Rect(card.x + 9, card.y + 86, card.w - 18, 34));
     }
@@ -1785,21 +1888,20 @@ function drawAlbumCard(card) {
 function drawAlbum() {
     var ribbon = new Rect(236, 16, 328, 62);
     drawPixelPanel(ribbon, LEAF);
-    drawText("宠物图鉴", 3, ribbon.center(), CREAM);
-    drawText("已收集 " + countKeys(unlocked_pets) + " / " + PETS.length + "，点击已解锁的宠物就能换它出战",
-             2, [400, 104], CREAM, INK);
+    drawText(tr("album"), 3, ribbon.center(), CREAM);
+    drawFittedText(tr("album_hint", {n: countKeys(unlocked_pets), total: PETS.length}), [400, 104], 760, CREAM, 2, INK);
     getAlbumPagePets().forEach(function (pet, position) {
         if (unlocked_pets[pet]) drawPetCard(character_cards[position], pet, position + 1, pet === selected_character);
         else drawLockedCard(character_cards[position], pet, position + 1);
     });
     var pages = Math.floor((PETS.length - 1) / album_page_size) + 1;
-    [[album_previous_button, "上一页"], [album_next_button, "下一页"]].forEach(function (item) {
+    [[album_previous_button, tr("previous")], [album_next_button, tr("next")]].forEach(function (item) {
         drawPixelPanel(item[0], CREAM, INK, 4);
         drawText(item[1], 2, item[0].center());
     });
-    drawText("第 " + (album_page + 1) + " / " + pages + " 页", 2, [400, 418], CREAM, INK);
+    drawText(tr("page", {n: album_page + 1, total: pages}), 2, [400, 418], CREAM, INK);
     drawPixelPanel(start_button, LEAF);
-    drawText("返回选角 · 按 Esc", 3, start_button.center(), CREAM);
+    drawFittedText(tr("album_back"), start_button.center(), start_button.w - 16, CREAM, 3);
 }
 
 var mouseX = -1, mouseY = -1;
@@ -1810,8 +1912,8 @@ function drawCharacterSelection() {
     var bob = Math.round(Math.sin(now / 300) * 4);
     var ribbon = new Rect(236, 16, 328, 62);
     drawPixelPanel(ribbon, LEAF);
-    drawText("选择你的飞行搭档", 3, ribbon.center(), CREAM);
-    drawText("点击角色或按 1～8 选择", 2, [400, 104], CREAM, INK);
+    drawFittedText(tr("choose_title"), ribbon.center(), ribbon.w - 16, CREAM, 3);
+    drawText(tr("choose_hint"), 2, [400, 104], CREAM, INK);
     framePlane = makePlaneSprite(true, framePlane);
     blitCentered(framePlane, 150, 78 + bob);
 
@@ -1829,7 +1931,7 @@ function drawCharacterSelection() {
     });
     drawAlbumCard(album_card.move(0, album_card.contains(mouseX, mouseY) ? -4 : 0));
 
-    var info = PETS[selected_character];
+    var name = getPetName(selected_character);
     // Little animals perch on the cards, which rest on their top edge.
     [["fox", 0, 32], ["hedgehog", 1, 24], ["frog", 2, 168], ["rabbit", 3, 126]].forEach(function (item) {
         var sprite = getSprite(item[0], getBlinkFrame(item[1]));
@@ -1838,35 +1940,36 @@ function drawCharacterSelection() {
         screen.drawImage(sprite, perch.x + item[2] - Math.floor(sprite.width / 2), perch.y + lift + 3 - sprite.height);
     });
     drawParkButton();
+    drawLanguageButton();
     // The squirrel sits on the park button's roof; the duckling waddles in the corner.
     var squirrel = getSprite("squirrel", getBlinkFrame(56));
     screen.drawImage(squirrel, park_button.right() - 14 - Math.floor(squirrel.width / 2), park_button.y + 3 - squirrel.height);
     var duckling = getSprite("duckling", getBlinkFrame(744));
     screen.drawImage(duckling, 744 - Math.floor(duckling.width / 2), HEIGHT - 8 - duckling.height);
 
-    drawText(info.name + "：" + info.intro.join("") + "  ·  最高分：" + best_score + "  ·  宠物币：" + coins, 2, [400, 402], SUN, INK);
+    var line = tr("pet_line", {name: name, intro: getIntroText(selected_character), best: best_score, coins: coins});
+    drawFittedText(line, [400, 402], 780, SUN, 2, INK);
     if (selected_character === welcome_pet) {
-        drawText("欢迎登机，" + info.name + "！按空格键马上起飞", 2, [400, 430], SUN, INK);
+        drawFittedText(tr("welcome", {name: name}), [400, 430], 780, SUN, 2, INK);
     } else if (owned_pets[selected_character]) {
-        drawText("谢谢你把" + info.name + "带上飞机！", 2, [400, 430], SUN, INK);
+        drawFittedText(tr("thanks_owner", {name: name}), [400, 430], 780, SUN, 2, INK);
     } else {
-        drawText("操控飞机，穿过土块，接上柱子上的“？？？”新伙伴！", 2, [400, 430], CREAM, INK);
+        drawFittedText(tr("how_to"), [400, 430], 780, CREAM, 2, INK);
     }
 
     var pressed = Math.floor(now / 500) % 2;  // Alternate every half second to invite a press.
     drawPixelPanel(start_button.move(0, 2 * pressed), LEAF, INK, 6 - 2 * pressed);
-    drawText("开始游戏 · 按空格键", 3, start_button.move(0, 2 * pressed).center(), CREAM);
+    drawFittedText(tr("start"), start_button.move(0, 2 * pressed).center(), start_button.w - 16, CREAM, 3);
     if (UPLOAD_FORM_URL) {
         var hovered = upload_button.contains(mouseX, mouseY);
         var upload = upload_button.move(0, hovered ? -2 : 0);
         drawPixelPanel(upload, hovered ? SUN : CREAM, INK, 4);
-        drawText("上传我的宠物！", 2, upload.center());
+        drawFittedText(tr("upload"), upload.center(), upload.w - 12);
     }
     // A solid plate keeps the instructions readable while animals wander behind it.
     drawPixelPanel(new Rect(108, 510, 584, 66), CREAM, INK, 4);
-    drawText(isTouchScreen ? "点击屏幕：上升  |  P：暂停／继续  |  R：返回选角"
-                           : "空格键：上升  |  P：暂停／继续  |  R：返回选角", 2, [400, 528]);
-    drawText(score_storage_available ? "关闭网页退出" : "最高分仅在本次打开时保留", 2, [400, 556], FOREST);
+    drawFittedText(tr(isTouchScreen ? "keys_touch" : "keys"), [400, 528], 570);
+    drawFittedText(tr(score_storage_available ? "quit_web" : "no_save_web"), [400, 556], 570, FOREST);
 }
 
 var new_dogs_card = new Rect(210, 210, 380, 150);
@@ -1893,16 +1996,14 @@ function drawSunRays(area) {
 }
 
 function drawOnlyNewDog(area, pet) {
-    var info = PETS[pet];
     var portrait = getFittedPortrait(pet, 92, 110);
     var hop = Math.abs(Math.round(Math.sin(ticks() / 180) * 6));
     blitCentered(portrait, area.x + 76, area.centery() - hop);
-    drawText(info.name, 3, [area.x + 242, area.y + 30]);
-    drawText(info.intro.join(""), 2, [area.x + 242, area.y + 76], FOREST);
+    drawFittedText(getPetName(pet), [area.x + 242, area.y + 30], 200, INK, 3);
+    drawFittedText(getIntroText(pet), [area.x + 242, area.y + 76], 200, FOREST);
 }
 
 function drawOneOfManyNewDogs(cell, pet, large) {
-    var info = PETS[pet];
     if (pet === selected_character) {
         var light = cell.inflate(-4, -2);
         fillRect(CREAM, light.x, light.y, light.w, light.h);
@@ -1911,17 +2012,17 @@ function drawOneOfManyNewDogs(cell, pet, large) {
     var portrait = getFittedPortrait(pet, large ? 56 : cell.h - 18, cell.w - 8);
     drawPicture(portrait, cell.centerx() - Math.floor(W(portrait) / 2), cell.y + 2);
     if (large) {
-        drawText(info.name, 2, [cell.centerx(), cell.y + 70]);
-        drawText(info.intro.join(""), 1, [cell.centerx(), cell.y + 92], FOREST);
+        drawFittedText(getPetName(pet), [cell.centerx(), cell.y + 70], cell.w - 4);
+        drawFittedText(getIntroText(pet), [cell.centerx(), cell.y + 92], cell.w - 4, FOREST, 1);
     } else {
-        drawText(info.name, 1, [cell.centerx(), cell.bottom() - 8]);
+        drawText(getPetName(pet), 1, [cell.centerx(), cell.bottom() - 8]);
     }
 }
 
 function drawNewDogs() {
     var found = newly_found_dogs, card = new_dogs_card;
     drawPixelPanel(card, SUN, INK, 4);
-    drawText(found.length === 1 ? "新伙伴登机！" : "本局解锁 " + found.length + " 位新伙伴！", 2,
+    drawText(found.length === 1 ? tr("new_one") : tr("new_many", {n: found.length}), 2,
              [card.centerx(), card.y + 22], DARK_RED);
     var area = new Rect(card.x + 8, card.y + 38, card.w - 16, card.h - 46);
     if (found.length === 1) {
@@ -1938,13 +2039,13 @@ function drawNewDogs() {
         });
     }
     if (found.indexOf(selected_character) >= 0) {
-        var name = PETS[selected_character].name;
-        drawText(found.length === 1 ? "已换上" + name : "已换上" + name + "，按 C 换下一只", 2, [400, 384], FOREST);
+        var name = getPetName(selected_character);
+        drawFittedText(tr(found.length === 1 ? "swapped_one" : "swapped_many", {name: name}), [400, 384], 440, FOREST);
     } else {
-        drawText(found.length === 1 ? "按 C 换它出战" : "按 C 挑一只出战", 2, [400, 384], DARK_RED);
+        drawText(tr(found.length === 1 ? "press_c_one" : "press_c_many"), 2, [400, 384], DARK_RED);
     }
-    drawText(isTouchScreen ? "点击屏幕再来一次" : "按空格键再来一次", 2, [400, 412]);
-    drawText("R：返回选角", 2, [400, 438], FOREST);
+    drawText(tr(isTouchScreen ? "again_touch" : "again"), 2, [400, 412]);
+    drawText(tr("r_back"), 2, [400, 438], FOREST);
 }
 
 function drawOverlay(alpha) {
@@ -1953,7 +2054,7 @@ function drawOverlay(alpha) {
 }
 
 function drawLinkPage() {
-    var pet = link_page_pet, info = PETS[pet], owner = link_page_is_owner;
+    var pet = link_page_pet, name = getPetName(pet), owner = link_page_is_owner;
     drawOverlay(150);
     var panel = new Rect(110, 62, 580, 500);
     var ribbon = new Rect(130, 24, 540, 72);
@@ -1971,60 +2072,101 @@ function drawLinkPage() {
     if (owner) drawCrown(left + Math.floor(W(portrait) / 2), top + 2, 5);
 
     drawPixelPanel(ribbon, owner ? SUN : LEAF);
-    drawText(owner ? "谢谢你，" + info.name + "的主人！" : "获得新伙伴！", 3, ribbon.center(), owner ? INK : CREAM);
-    drawText(info.name, 3, [400, 316]);
-    drawText(info.intro.join(""), 2, [400, 354], FOREST);
+    drawFittedText(owner ? tr("link_owner", {name: name}) : tr("link_new"), ribbon.center(), ribbon.w - 16,
+                   owner ? INK : CREAM, 3);
+    drawText(name, 3, [400, 316]);
+    drawFittedText(getIntroText(pet), [400, 354], 540, FOREST);
 
     if (owner) {
-        drawText("你是第 " + getContributorNumber(pet) + " 位送宠物登机的主人", 2, [400, 386], DARK_RED);
-        drawText("奖励：" + info.name + "的卡片戴上专属皇冠", 2, [400, 416]);
+        drawFittedText(tr("contributor", {n: getContributorNumber(pet)}), [400, 386], 540, DARK_RED);
+        drawFittedText(tr("crown", {name: name}), [400, 416], 540);
         if (link_page_bonus.length) {
-            var names = link_page_bonus.map(function (index) { return PETS[index].name; }).join("、");
-            drawText("奖励：额外解锁 " + names, 2, [400, 444]);
+            var names = link_page_bonus.map(getPetName).join(tr("names_joiner"));
+            drawFittedText(tr("bonus", {names: names}), [400, 444], 540);
         }
     } else {
-        drawText(info.name + "已加入你的图鉴，马上带它起飞吧", 2, [400, 392], DARK_RED);
+        drawFittedText(tr("joined", {name: name}), [400, 392], 540, DARK_RED);
         if (UPLOAD_FORM_URL) {
-            drawText("你家宠物也想登机？", 2, [400, 424]);
-            drawText("在选角页点“上传我的宠物！”，还有主人奖励", 2, [400, 452], FOREST);
+            drawText(tr("want_aboard"), 2, [400, 424]);
+            drawFittedText(tr("upload_hint"), [400, 452], 540, FOREST);
         }
     }
 
     var pressed = Math.floor(ticks() / 500) % 2;
     var button = link_page_button.move(0, 2 * pressed);
     drawPixelPanel(button, LEAF, INK, 6 - 2 * pressed);
-    drawText("收下 · 按空格键", 3, button.center(), CREAM);
+    drawFittedText(tr("accept"), button.center(), button.w - 16, CREAM, 3);
 }
 
 // -------------------------
-// Pet park: a cozy room where unlocked pets walk around, and pet coins buy furniture.
+// Pet park: a cozy room where your pets and your own little person hang out.
 // -------------------------
 var FURNITURE = S.FURNITURE, FURNITURE_BY_ID = {};
 FURNITURE.forEach(function (item) { FURNITURE_BY_ID[item.id] = item; });
-var park_scale = S.park_scale, park_floor = S.park_floor, park_wall_bottom = S.park_wall_bottom;
+var park_scale = S.park_scale, park_pet_scale = S.park_pet_scale, park_floor = S.park_floor;
+var park_wall_bottom = S.park_wall_bottom, park_most_pets = S.park_most_pets;
 var park_walk_speed = S.park_walk_speed, park_seat_chance = S.park_seat_chance;
-var park_scratch_chance = S.park_scratch_chance, park_play_chance = S.park_play_chance;
+var park_spin_chance = S.park_spin_chance, park_play_chance = S.park_play_chance;
 var park_pat_chance = S.park_pat_chance, park_play_gap = S.park_play_gap, park_pat_gap = S.park_pat_gap;
 var park_hop_frames = S.park_hop_frames, park_message_frames = S.park_message_frames;
-var park_action_frames = S.park_action_frames;
+var park_action_frames = S.park_action_frames, park_choices_per_page = S.park_choices_per_page;
 var park_cell_width = S.park_cell_width, park_cell_height = S.park_cell_height, park_ground = S.park_ground;
 var PARK_PET_INFO = S.PARK_PET_INFO, ANIMAL_POSES = S.ANIMAL_POSES, HUMAN_POSES = S.HUMAN_POSES;
+var AVATAR_BOX = S.AVATAR_BOX, HAIR_STYLES = S.HAIR_STYLES, HAIR_COLORS = S.HAIR_COLORS;
+var SKIN_COLORS = S.SKIN_COLORS, OUTFITS = S.OUTFITS, OUTFITS_BY_ID = {};
+OUTFITS.forEach(function (outfit) { OUTFITS_BY_ID[outfit.id] = outfit; });
+var HAIR_STYLE_IDS = HAIR_STYLES.map(function (style) { return style[0]; });
+var OUTFIT_IDS = OUTFITS.map(function (outfit) { return outfit.id; });
+var AVATAR = -1;  // The "pet" number used for the player's own little person.
 var owned_furniture = {};
 var furniture_places = {};  // Furniture id -> [x, y], the middle of its bottom edge on screen.
 var park_open = false, park_pets = [], park_message = null;  // park_message: [text, frames left]
+var park_panel = null;  // What the side panel shows: null, "pet", "shop", "pets" or "look".
 var park_selected = null;  // The pet whose card is open in the side panel.
-var park_shop_open = false;
 var park_carrying = null;  // Id of the furniture being moved.
 var park_grab = [0, 0];  // From the pointer to the furniture's bottom middle, so it does not jump.
 var park_holding = false;  // True while the pointer is pressed, so letting go puts the furniture down.
+var park_shown = [], park_shown_chosen = false;  // The pets the player chose for the room.
+var park_choice_page = 0;
+var avatar_look = {hair: "short", hair_color: 0, skin: 1, outfit: "tee"};
+var owned_outfits = {tee: true};
 var park_button = new Rect(10, 496, 94, 96);
 var park_back_button = new Rect(14, 14, 150, 48);
 var park_shop_button = new Rect(14, 70, 150, 48);
+var park_pets_button = new Rect(14, 126, 150, 48);
+var park_look_button = new Rect(14, 182, 150, 48);
 var park_side = new Rect(552, 116, 236, 470);
 var park_close_button = new Rect(park_side.right() - 48, park_side.y + 10, 36, 36);
+var park_choice_previous = new Rect(park_side.x + 14, park_side.bottom() - 52, 60, 40);
+var park_choice_next = new Rect(park_side.right() - 74, park_side.bottom() - 52, 60, 40);
 var parkRoom = null, lampGlow = null, parkSheets = [];  // A sheet holds every pose of one pet.
+var avatarLayers = {}, avatarSheets = {};
 
-function getParkKind(pet) { return PARK_PET_INFO[pet].kind; }
+function getParkKind(pet) { return pet === AVATAR ? "human" : PARK_PET_INFO[pet].kind; }
+function getParkName(pet) { return pet === AVATAR ? tr("you") : getPetName(pet); }
+function getBreedName(pet) { return language === "zh" ? PARK_PET_INFO[pet].breed : PARK_PET_INFO[pet].breed_en; }
+function getItemName(item) { return language === "zh" ? item.name : item.name_en; }
+
+function getAvatarSheet(hair, hairColor, skin, outfit) {
+    // The person is stacked from layers drawn by the Python game: hair behind, body, outfit, hair in front.
+    var key = [hair, hairColor, skin, outfit].join("|");
+    if (avatarSheets[key]) return avatarSheets[key];
+    var width = park_cell_width * HUMAN_POSES.length, height = park_cell_height;
+    var sheet = makeCanvas(width, height), pen = sheet.getContext("2d");
+    var hairRow = (HAIR_STYLE_IDS.indexOf(hair) * HAIR_COLORS.length + hairColor) * 2;
+    [[avatarLayers.hair, hairRow], [avatarLayers.bodies, skin], [avatarLayers.outfits, OUTFIT_IDS.indexOf(outfit)],
+     [avatarLayers.hair, hairRow + 1]].forEach(function (layer) {
+        pen.drawImage(layer[0], 0, layer[1] * height, width, height, 0, 0, width, height);
+    });
+    avatarSheets[key] = sheet;
+    return sheet;
+}
+
+function getMyAvatarSheet() {
+    return getAvatarSheet(avatar_look.hair, avatar_look.hair_color, avatar_look.skin, avatar_look.outfit);
+}
+
+function getWalkerBox(pet) { return pet === AVATAR ? AVATAR_BOX : PARK_PET_INFO[pet].box; }
 
 function getFurniturePlace(item) {
     return furniture_places[item.id] || item.place;
@@ -2074,22 +2216,35 @@ function walkTo(walker, target, plan, seat) {
     walker.seat = seat || null;
 }
 
+function getParkChoices() {
+    // Every unlocked animal can live in the room. The human pet card is left out,
+    // because the player's own little person lives there instead.
+    return getPetOrder().filter(function (pet) { return unlocked_pets[pet] && getParkKind(pet) !== "human"; });
+}
+
+function getShownPets() {
+    var choices = getParkChoices();
+    var shown = park_shown.filter(function (pet) { return choices.indexOf(pet) >= 0; }).slice(0, park_most_pets);
+    return shown.length || park_shown_chosen ? shown : choices.slice(0, park_most_pets);
+}
+
+function makeWalker(pet) {
+    var spot = pickFloorSpot();
+    var walker = {pet: pet, x: spot[0], y: spot[1], left: Math.random() < 0.5, target: spot,
+                  plan: null, seat: null, partner: null, hop: 0};
+    startAction(walker, getParkKind(pet) === "human" ? "stand" : "sit");
+    walker.timer = randint(30, 200);  // Everyone gets going soon after the door opens.
+    return walker;
+}
+
 function makeParkPets() {
-    park_pets = [];
-    getPetOrder().forEach(function (pet) {
-        if (!unlocked_pets[pet]) return;
-        var spot = pickFloorSpot();
-        var walker = {pet: pet, x: spot[0], y: spot[1], left: Math.random() < 0.5, target: spot,
-                      plan: null, seat: null, partner: null, hop: 0};
-        startAction(walker, getParkKind(pet) === "human" ? "stand" : "sit");
-        walker.timer = randint(20, 120);  // Everyone gets going soon after the door opens.
-        park_pets.push(walker);
-    });
+    park_pets = getShownPets().map(makeWalker);
+    park_pets.push(makeWalker(AVATAR));
 }
 
 function rest(walker) {
-    // Something to do on the spot: animals sit or nap, the human looks around or waves.
-    if (getParkKind(walker.pet) === "human") startAction(walker, Math.random() < 0.3 ? "wave" : "stand");
+    // Something to do on the spot: animals sit or nap, the person looks around or waves.
+    if (getParkKind(walker.pet) === "human") startAction(walker, Math.random() < 0.15 ? "wave" : "stand");
     else startAction(walker, Math.random() < 0.4 ? "lie" : "sit");
 }
 
@@ -2103,14 +2258,14 @@ function letGo(walker) {
         partner.plan = null;
     } else if (["ready", "play", "pat", "patted"].indexOf(partner.action) >= 0) {
         rest(partner);
-        partner.timer = 30;
+        partner.timer = 60;
     }
 }
 
 function isFreeDog(walker) {
     // A dog resting on the floor, not busy with a friend, can be asked to play.
     return getParkKind(walker.pet) === "dog" && !walker.partner && !walker.seat &&
-           ["sit", "lie", "scratch"].indexOf(walker.action) >= 0;
+           ["sit", "lie"].indexOf(walker.action) >= 0;
 }
 
 function startPlay(walker, other) {
@@ -2124,7 +2279,7 @@ function startPlay(walker, other) {
 }
 
 function startPat(human, dog) {
-    // The dog sits and waits while the human comes over and kneels beside it.
+    // The dog sits and waits while the person comes over and kneels beside it.
     startAction(dog, "ready");
     var side = dog.x - park_pat_gap >= park_floor[0] ? -1 : 1;
     walkTo(human, [dog.x + side * park_pat_gap, dog.y], "ready");
@@ -2151,7 +2306,11 @@ function startTogether(walker, partner) {
 
 function chooseNext(walker) {
     letGo(walker);
-    walker.seat = null;
+    if (walker.seat) {
+        walker.seat = null;
+        walkTo(walker, pickFloorSpot());  // Gets down from the furniture before anything else.
+        return;
+    }
     var kind = getParkKind(walker.pet);
     var dogs = park_pets.filter(function (other) { return other !== walker && isFreeDog(other); });
     var chance = Math.random();
@@ -2161,19 +2320,17 @@ function chooseNext(walker) {
 }
 
 function wander(walker) {
-    var kind = getParkKind(walker.pet);
+    var animal = getParkKind(walker.pet) !== "human";
     var taken = {};
     park_pets.forEach(function (other) { if (other !== walker && other.seat) taken[other.seat] = true; });
     var free = getParkSeats().filter(function (seat) { return !taken[seat.id]; });
-    var scratchChance = park_scratch_chance * (kind === "cat" ? 2 : 1);
     var chance = Math.random();
-    if (kind !== "human" && free.length && chance < park_seat_chance) {
+    if (animal && free.length && chance < park_seat_chance) {
         var seat = choice(free);
         walkTo(walker, [seat.x, seat.y], "seat", seat.id);
-    } else if (kind !== "human" && chance > 1 - scratchChance) {
-        // Scratching happens at the back wall, where the floor begins.
-        walkTo(walker, [randint(park_floor[0], park_floor[1]), park_floor[2]], "scratch");
-    } else if (chance < 0.8) {
+    } else if (animal && chance > 1 - park_spin_chance) {
+        startAction(walker, "spin");  // Chasing its own tail, round and round on the spot.
+    } else if (chance < 0.6) {
         walkTo(walker, pickFloorSpot());
     } else {
         rest(walker);
@@ -2183,7 +2340,7 @@ function wander(walker) {
 function arrive(walker) {
     var plan = walker.plan;
     walker.plan = null;
-    if (plan === "ready" || plan === "scratch") startAction(walker, plan);
+    if (plan === "ready") startAction(walker, "ready");
     else if (plan === "seat") startAction(walker, Math.random() < 0.3 ? "lie" : "sit");
     else rest(walker);
 }
@@ -2236,6 +2393,7 @@ function updatePark() {
             startTogether(walker, partner);
             return;
         }
+        if (walker.action === "spin" && walker.timer % 10 === 0) walker.left = !walker.left;  // Turning after its tail.
         walker.timer -= 1;
         if (walker.timer <= 0) chooseNext(walker);
     });
@@ -2244,11 +2402,10 @@ function updatePark() {
 function openPark() {
     park_open = true;
     park_message = null;
-    park_selected = null;
-    park_shop_open = false;
     park_carrying = null;
+    closeParkSide();
     makeParkPets();
-    track("park_open", {furniture: countKeys(owned_furniture), coins: coins});
+    track("park_open", {furniture: countKeys(owned_furniture), coins: coins, pets: park_pets.length - 1});
 }
 
 function closePark() {
@@ -2256,25 +2413,30 @@ function closePark() {
     park_open = false;
 }
 
+function sayInPark(key, values) {
+    park_message = [tr(key, values), park_message_frames];
+}
+
 function buyFurniture(item) {
     if (owned_furniture[item.id]) return false;
     if (coins < item.price) {
-        park_message = ["还差 " + (item.price - coins) + " 个宠物币，去飞一局吧！", park_message_frames];
+        sayInPark("coins_short", {count: item.price - coins});
         return false;
     }
     coins -= item.price;
     owned_furniture[item.id] = true;
     furniture_places[item.id] = item.place.slice();
     saveProgress();
-    park_message = ["买到了" + item.name + "！", park_message_frames];
+    sayInPark("bought", {name: getItemName(item)});
     park_pets.forEach(function (walker) { walker.hop = park_hop_frames; });  // Everyone jumps for joy.
     track("furniture_buy", {item: item.id, price: item.price, coins_left: coins});
     return true;
 }
 
-function snap(value) {
-    // Round to the 4-pixel grid, so pets and furniture move in whole blocks like the room.
-    return Math.round(value / park_scale) * park_scale;
+function snap(value, grid) {
+    // Round to the pixel grid, so things move in whole blocks like the room.
+    grid = grid || park_scale;
+    return Math.round(value / grid) * grid;
 }
 
 function getCarriedPlace(item, x, y) {
@@ -2296,8 +2458,7 @@ function pickUpFurniture(item, position) {
         park_holding = true;
     }
     park_carrying = item.id;
-    park_shop_open = false;
-    park_selected = null;
+    closeParkSide();
     park_pets.forEach(function (walker) {
         if (walker.seat && walker.seat.split(":")[0] === item.id) {
             walker.hop = park_hop_frames;  // Pets sitting on it hop off.
@@ -2318,37 +2479,136 @@ function dropFurniture() {
     park_carrying = null;
     park_holding = false;
     saveProgress();
-    park_message = [item.name + "放好啦！", park_message_frames];
+    sayInPark("placed", {name: getItemName(item)});
+}
+
+function toggleParkPet(pet) {
+    // Picking a pet brings it into the room; picking it again sends it out.
+    var shown = getShownPets();
+    var at = shown.indexOf(pet);
+    if (at >= 0) {
+        shown.splice(at, 1);
+        park_pets.filter(function (walker) { return walker.pet === pet; }).forEach(function (walker) {
+            letGo(walker);
+            park_pets.splice(park_pets.indexOf(walker), 1);
+        });
+    } else if (shown.length >= park_most_pets) {
+        sayInPark("room_full", {count: park_most_pets});
+        return;
+    } else {
+        shown.push(pet);
+        var walker = makeWalker(pet);
+        walker.hop = park_hop_frames;
+        park_pets.splice(park_pets.length - 1, 0, walker);
+    }
+    park_shown = shown;
+    park_shown_chosen = true;
+    saveProgress();
+}
+
+function setAvatar(part, value) {
+    avatar_look[part] = value;
+    saveProgress();
+}
+
+function chooseOutfit(outfit) {
+    if (!owned_outfits[outfit.id]) {
+        if (coins < outfit.price) {
+            sayInPark("coins_short", {count: outfit.price - coins});
+            return false;
+        }
+        coins -= outfit.price;
+        owned_outfits[outfit.id] = true;
+        track("outfit_buy", {item: outfit.id, price: outfit.price, coins_left: coins});
+    }
+    setAvatar("outfit", outfit.id);
+    return true;
 }
 
 function getParkPetRect(walker, lift) {
-    // The whole picture cell; the pet's feet touch the bottom edge at (x, y).
-    var width = park_cell_width * park_scale, height = park_cell_height * park_scale;
-    var top = snap(walker.y - (lift || 0)) - (park_ground + 2) * park_scale;
-    return new Rect(snap(walker.x - width / 2), top, width, height);
+    // The whole picture cell; the feet touch the bottom edge at (x, y).
+    var width = park_cell_width * park_pet_scale, height = park_cell_height * park_pet_scale;
+    var top = snap(walker.y - (lift || 0), park_pet_scale) - (park_ground + 2) * park_pet_scale;
+    return new Rect(snap(walker.x - width / 2, park_pet_scale), top, width, height);
 }
 
 function getParkPetHitRect(walker) {
     var cell = getParkPetRect(walker);
-    var box = PARK_PET_INFO[walker.pet].box;
+    var box = getWalkerBox(walker.pet);
     var x = walker.left ? park_cell_width - box[0] - box[2] : box[0];
-    return new Rect(cell.x + x * park_scale, cell.y + box[1] * park_scale, box[2] * park_scale, box[3] * park_scale);
+    return new Rect(cell.x + x * park_pet_scale, cell.y + box[1] * park_pet_scale,
+                    box[2] * park_pet_scale, box[3] * park_pet_scale);
 }
 
+// Where things go in the side panel.
 function getShopRow(index) {
     return new Rect(park_side.x + 10, park_side.y + 58 + index * 51, park_side.w - 20, 46);
 }
 
+function getChoiceCard(index) {
+    return new Rect(park_side.x + 12 + index % 2 * 108, park_side.y + 84 + Math.floor(index / 2) * 86, 104, 82);
+}
+
+function getHairButton(index) {
+    return new Rect(park_side.x + 12 + index % 4 * 54, park_side.y + 70 + Math.floor(index / 4) * 52, 50, 48);
+}
+
+function getSwatch(row, index) {
+    return new Rect(park_side.x + 76 + index * 38, park_side.y + 182 + row * 42, 32, 32);
+}
+
+function getOutfitCell(index) {
+    return new Rect(park_side.x + 12 + index % 3 * 72, park_side.y + 268 + Math.floor(index / 3) * 98, 68, 94);
+}
+
 function closeParkSide() {
+    park_panel = null;
     park_selected = null;
-    park_shop_open = false;
+}
+
+function openParkPanel(name) {
+    park_panel = park_panel === name ? null : name;  // The same button closes it again.
+    park_selected = null;
+}
+
+function handleParkSide(x, y) {
+    if (park_close_button.contains(x, y)) {
+        closeParkSide();
+    } else if (park_panel === "shop") {
+        FURNITURE.forEach(function (item, index) {
+            if (getShopRow(index).contains(x, y) && (owned_furniture[item.id] || buyFurniture(item))) {
+                pickUpFurniture(item);
+            }
+        });
+    } else if (park_panel === "pets") {
+        var choices = getParkChoices();
+        var pages = Math.max(1, Math.ceil(choices.length / park_choices_per_page));
+        if (pages > 1 && park_choice_previous.contains(x, y)) park_choice_page = pmod(park_choice_page - 1, pages);
+        else if (pages > 1 && park_choice_next.contains(x, y)) park_choice_page = pmod(park_choice_page + 1, pages);
+        var start = park_choice_page * park_choices_per_page;
+        choices.slice(start, start + park_choices_per_page).forEach(function (pet, index) {
+            if (getChoiceCard(index).contains(x, y)) toggleParkPet(pet);
+        });
+    } else if (park_panel === "look") {
+        HAIR_STYLE_IDS.forEach(function (style, index) {
+            if (getHairButton(index).contains(x, y)) setAvatar("hair", style);
+        });
+        [["hair_color", HAIR_COLORS], ["skin", SKIN_COLORS]].forEach(function (pair, row) {
+            pair[1].forEach(function (color, index) {
+                if (getSwatch(row, index).contains(x, y)) setAvatar(pair[0], index);
+            });
+        });
+        OUTFITS.forEach(function (outfit, index) {
+            if (getOutfitCell(index).contains(x, y)) chooseOutfit(outfit);
+        });
+    }
 }
 
 function getParkPetDepth(walker) {
     if (walker.seat && walker.action !== "walk") {
         return getFurnitureRect(FURNITURE_BY_ID[walker.seat.split(":")[0]]).bottom() + 1;
     }
-    // A patting hand reaches over the dog, so the human goes in front.
+    // A patting hand reaches over the dog, so the person goes in front.
     return walker.y + (walker.action === "pat" ? 0.5 : 0);
 }
 
@@ -2356,7 +2616,7 @@ function handlePark(event) {
     if (event.type === "key") {
         if (event.key === "Escape" || event.key === "h" || event.key === "H") {
             if (park_carrying !== null) dropFurniture();
-            else if (park_selected !== null || park_shop_open) closeParkSide();
+            else if (park_panel !== null) closeParkSide();
             else closePark();
         }
         return true;  // Keys belong to the park, so space cannot start a game behind it.
@@ -2382,30 +2642,28 @@ function handlePark(event) {
         closePark();
         return true;
     }
-    if (park_shop_button.contains(x, y)) {
-        var shopWasOpen = park_shop_open;
-        closeParkSide();
-        park_shop_open = !shopWasOpen;
-        return true;
-    }
-    if ((park_selected !== null || park_shop_open) && park_side.contains(x, y)) {
-        if (park_close_button.contains(x, y)) {
-            closeParkSide();
-        } else if (park_shop_open) {
-            FURNITURE.forEach(function (item, index) {
-                if (getShopRow(index).contains(x, y) && (owned_furniture[item.id] || buyFurniture(item))) {
-                    pickUpFurniture(item);
-                }
-            });
+    var buttons = [[park_shop_button, "shop"], [park_pets_button, "pets"], [park_look_button, "look"]];
+    for (var b = 0; b < buttons.length; b++) {
+        if (buttons[b][0].contains(x, y)) {
+            openParkPanel(buttons[b][1]);
+            return true;
         }
+    }
+    if (park_panel !== null && park_side.contains(x, y)) {
+        handleParkSide(x, y);
         return true;
     }
     var front = park_pets.slice().sort(function (a, b) { return getParkPetDepth(b) - getParkPetDepth(a); });
-    for (var i = 0; i < front.length; i++) {  // The front pet first.
+    for (var i = 0; i < front.length; i++) {  // The front one first.
         if (getParkPetHitRect(front[i]).contains(x, y)) {
             front[i].hop = park_hop_frames;
-            park_selected = front[i];
-            park_shop_open = false;
+            if (front[i].pet === AVATAR) {
+                park_panel = "look";
+                park_selected = null;
+            } else {
+                park_panel = "pet";
+                park_selected = front[i];
+            }
             return true;
         }
     }
@@ -2421,29 +2679,28 @@ function handlePark(event) {
 }
 
 function getParkPose(walker) {
-    var action = walker.action, name, speed;
+    var action = walker.action, pose;
     if (getParkKind(walker.pet) === "human") {
-        name = {walk: "walk", wave: "wave", pat: "pat"}[action] || "stand";
-        speed = {walk: 8, wave: 10, pat: 14}[action] || 30;
+        pose = {walk: ["walk", 12], wave: ["wave", 10], pat: ["pat", 16]}[action] || ["stand", 40];
     } else {
-        name = {walk: "walk", lie: "lie", scratch: "scratch", play: "play", patted: "happy"}[action] || "sit";
-        speed = {walk: 8, lie: 40, scratch: 6, play: 12, patted: 14}[action] || 14;
+        pose = {walk: ["walk", 12], spin: ["walk", 5], lie: ["lie", 50], play: ["play", 14],
+                patted: ["happy", 18]}[action] || ["sit", 24];
     }
     // Playing dogs take turns: one bows while the other jumps.
     var turn = action === "play" && walker.left ? 1 : 0;
-    return name + (Math.floor(ambient_frames / speed) + turn) % 2;
+    return pose[0] + (Math.floor(ambient_frames / pose[1]) + turn) % 2;
 }
 
 function describeParkAction(walker) {
     var action = walker.action, partner = walker.partner;
-    var friend = partner ? PETS[partner.pet].name : "";
+    var friend = partner ? getParkName(partner.pet) : "";
     if (walker.seat && action !== "walk") {
-        return "在" + FURNITURE_BY_ID[walker.seat.split(":")[0]].name + "上" + (action === "lie" ? "打盹" : "休息");
+        var place = getItemName(FURNITURE_BY_ID[walker.seat.split(":")[0]]);
+        if (language !== "zh") place = place.toLowerCase();  // "Resting on the sofa"
+        return tr(action === "lie" ? "doing_seat_nap" : "doing_seat", {place: place});
     }
-    if (action === "walk") return partner ? "去找" + friend : "到处溜达";
-    return {sit: "坐着发呆", lie: "睡午觉", scratch: "挠墙", play: "和" + friend + "打闹",
-            patted: "被" + friend + "摸头", pat: "摸" + friend + "的头", ready: "等" + friend,
-            stand: "四处张望", wave: "跟你打招呼"}[action];
+    if (action === "walk") return partner ? tr("doing_meet", {friend: friend}) : tr("doing_walk");
+    return tr("doing_" + action, {friend: friend});
 }
 
 function getFurnitureIcon(name) {
@@ -2452,22 +2709,8 @@ function getFurnitureIcon(name) {
     return getSprite(name, 0, scale);
 }
 
-function drawParkPet(walker) {
-    var poses = getParkKind(walker.pet) === "human" ? HUMAN_POSES : ANIMAL_POSES;
-    var column = poses.indexOf(getParkPose(walker));
-    var lift = walker.hop ? Math.sin(Math.PI * walker.hop / park_hop_frames) * 28 : 0;
-    var onSeat = walker.seat && walker.action !== "walk";
-    var box = getParkPetHitRect(walker);
-    if (!onSeat) {
-        // A blocky shadow on the floor, two grid rows tall.
-        var shadowWidth = box.w - 8, left = snap(box.centerx() - shadowWidth / 2), top = snap(walker.y) - 6;
-        screen.fillStyle = css(INK, 50);
-        screen.fillRect(left + 4, top, shadowWidth - 8, 4);
-        screen.fillRect(left, top + 4, shadowWidth, 4);
-    }
-    var place = getParkPetRect(walker, lift);
-    var sheet = parkSheets[walker.pet];
-    if (walker.left) {
+function drawSheetCell(sheet, column, place, mirrored) {
+    if (mirrored) {
         // Mirror the picture so the pet faces the way it walks.
         screen.save();
         screen.translate(place.x + place.w, place.y);
@@ -2478,21 +2721,35 @@ function drawParkPet(walker) {
         screen.drawImage(sheet, column * park_cell_width, 0, park_cell_width, park_cell_height,
                          place.x, place.y, place.w, place.h);
     }
-    var top = box.y - Math.round(lift), action = walker.action;
+}
+
+function drawParkPet(walker) {
+    var human = walker.pet === AVATAR;
+    var column = (human ? HUMAN_POSES : ANIMAL_POSES).indexOf(getParkPose(walker));
+    var action = walker.action;
+    var lift = walker.hop ? Math.sin(Math.PI * walker.hop / park_hop_frames) * 28 : 0;
+    if (action === "spin" && Math.floor(ambient_frames / 5) % 2) lift += 4;  // Little hops while turning round.
+    var onSeat = walker.seat && action !== "walk";
+    var box = getParkPetHitRect(walker);
+    if (!onSeat) {
+        // A blocky shadow on the floor.
+        var shadowWidth = box.w - 8, left = snap(box.centerx() - shadowWidth / 2), shadowTop = snap(walker.y) - 6;
+        screen.fillStyle = css(INK, 50);
+        screen.fillRect(left + 4, shadowTop, shadowWidth - 8, 4);
+        screen.fillRect(left, shadowTop + 4, shadowWidth, 4);
+    }
+    drawSheetCell(human ? getMyAvatarSheet() : parkSheets[walker.pet], column, getParkPetRect(walker, lift), walker.left);
+    var top = box.y - Math.round(lift);
     if (action === "lie") {
         // Little z's float up from a napping pet.
         for (var number = 0; number < 2; number++) {
-            var rise = (ambient_frames + number * 30) % 60;
-            drawText("z", 2 + number, [box.right() - 4 + Math.floor(rise / 6), top + 10 - Math.floor(rise / 2)], CREAM, INK);
+            var rise = (ambient_frames + number * 40) % 80;
+            drawText("z", 2 + number, [box.right() - 4 + Math.floor(rise / 8), top + 10 - Math.floor(rise / 2)], CREAM, INK);
         }
-    } else if (action === "scratch" && Math.floor(ambient_frames / 6) % 2) {
-        [box.x + 4, box.right() - 12].forEach(function (x) { fillRect(CREAM, snap(x), snap(top - 8), 8, 4); });
-    } else if (action === "patted" || action === "play" || walker.hop) {
-        if (action !== "play" || Math.floor(ambient_frames / 24) % 2) {
-            var heart = getSprite("heart", 0, action === "play" ? 3 : park_scale);
-            var bob = Math.floor(ambient_frames / 10) % 2 * 4;
-            screen.drawImage(heart, snap(box.centerx()) - Math.floor(heart.width / 2), top - 4 - bob - heart.height);
-        }
+    } else if (action === "patted" || walker.hop || (action === "play" && Math.floor(ambient_frames / 30) % 2)) {
+        var heart = getSprite("heart", 0, action === "play" ? 3 : park_scale);
+        var bob = Math.floor(ambient_frames / 12) % 2 * 4;
+        screen.drawImage(heart, snap(box.centerx()) - Math.floor(heart.width / 2), top - 4 - bob - heart.height);
     }
     if (walker === park_selected) {
         var arrow = getSprite("arrow", 0, park_scale);
@@ -2503,20 +2760,24 @@ function drawParkPet(walker) {
 
 function drawParkPetSide(walker) {
     var pet = walker.pet;
-    drawText(PETS[pet].name, 3, [park_side.centerx(), park_side.y + 32]);
+    drawText(getPetName(pet), 3, [park_side.centerx() - 16, park_side.y + 32]);
     var frame = new Rect(park_side.x + 38, park_side.y + 62, park_side.w - 76, 140);
     drawPixelPanel(frame, SAND, INK, 0);
     blitCentered(getFittedPortrait(pet, 120, frame.w - 16), frame.centerx(), frame.centery());
-    var lines = ["品种：" + PARK_PET_INFO[pet].breed, PETS[pet].intro.join(""),
-                 PETS[pet].founder ? "创始伙伴" : "投稿伙伴", "正在：" + describeParkAction(walker)];
-    lines.forEach(function (line, number) {
-        drawText(line, 2, [park_side.centerx(), park_side.y + 236 + number * 40], number === 3 ? DARK_RED : INK);
+    var lines = [[tr("breed_line", {breed: getBreedName(pet)}), INK], [getIntroText(pet), INK],
+                 [tr(PETS[pet].founder ? "founder" : "submitted"), INK],
+                 [tr("doing_line", {doing: describeParkAction(walker)}), DARK_RED]];
+    var y = park_side.y + 236;
+    lines.forEach(function (line) {
+        // Long lines wrap onto the next row, and everything below moves down to make room.
+        y += drawWrappedText(line[0], [park_side.centerx(), y], park_side.w - 20, line[1]) * 28 + 12;
     });
-    drawText("点它会跳一下哦", 2, [park_side.centerx(), park_side.bottom() - 30], FOREST);
+    var hint = tr("tap_to_hop"), rows = splitTextLines(hint, 2, park_side.w - 20).length;
+    drawWrappedText(hint, [park_side.centerx(), park_side.bottom() - 30 - (rows - 1) * 26], park_side.w - 20, FOREST, 2, 26);
 }
 
 function drawParkShop() {
-    drawText("家具商店", 3, [park_side.centerx() - 20, park_side.y + 30]);  // Clear of the close button.
+    drawText(tr("shop"), 3, [park_side.centerx() - 20, park_side.y + 30]);  // Clear of the close button.
     FURNITURE.forEach(function (item, index) {
         var row = getShopRow(index);
         var owned = owned_furniture[item.id];
@@ -2524,9 +2785,9 @@ function drawParkShop() {
         var fill = hovered ? SUN : (owned || coins >= item.price ? CREAM : [226, 210, 180]);
         drawPixelPanel(row, fill, INK, 0);
         blitCentered(getFurnitureIcon(item.id), row.x + 30, row.centery());
-        drawText(item.name, 2, [row.x + 104, row.centery()]);
+        drawFittedText(getItemName(item), [row.x + 104, row.centery()], 100);
         if (owned) {
-            drawText("拖动", 2, [row.right() - 36, row.centery()], FOREST);
+            drawFittedText(tr("move"), [row.right() - 34, row.centery()], 56, FOREST);
         } else {
             blitCentered(getSprite("coin", 0, 2), row.right() - 56, row.centery());
             drawText(String(item.price), 2, [row.right() - 26, row.centery()], DARK_RED);
@@ -2534,10 +2795,80 @@ function drawParkShop() {
     });
 }
 
+function drawParkChoices() {
+    drawFittedText(tr("choose_pets"), [park_side.centerx() - 20, park_side.y + 30], 170, INK, 3);
+    var shown = getShownPets();
+    drawFittedText(tr("in_room", {count: shown.length, most: park_most_pets}), [park_side.centerx(), park_side.y + 62],
+                   park_side.w - 20, FOREST);
+    var choices = getParkChoices();
+    var start = park_choice_page * park_choices_per_page;
+    choices.slice(start, start + park_choices_per_page).forEach(function (pet, index) {
+        var card = getChoiceCard(index);
+        var chosen = shown.indexOf(pet) >= 0;
+        drawPixelPanel(card, chosen ? SUN : (card.contains(mouseX, mouseY) ? SAND : CREAM), INK, 0);
+        blitCentered(getFittedPortrait(pet, 48, 60), card.centerx(), card.y + 30);
+        drawFittedText(getPetName(pet), [card.centerx(), card.bottom() - 16], card.w - 8);
+        if (chosen) {
+            var tick = new Rect(card.right() - 24, card.y + 4, 20, 20);
+            drawPixelPanel(tick, LEAF, INK, 0);
+            screen.strokeStyle = css(CREAM, 255);  // A tick mark.
+            screen.lineWidth = 3;
+            screen.beginPath();
+            screen.moveTo(tick.x + 5, tick.y + 10);
+            screen.lineTo(tick.x + 9, tick.y + 14);
+            screen.lineTo(tick.x + 15, tick.y + 6);
+            screen.stroke();
+        }
+    });
+    if (choices.length > park_choices_per_page) {
+        [[park_choice_previous, "<"], [park_choice_next, ">"]].forEach(function (pair) {
+            drawPixelPanel(pair[0], pair[0].contains(mouseX, mouseY) ? SUN : CREAM, INK, 3);
+            drawText(pair[1], 2, pair[0].center());
+        });
+    }
+}
+
+function drawParkLook() {
+    drawFittedText(tr("my_look"), [park_side.centerx() - 20, park_side.y + 30], 170, INK, 3);
+    HAIR_STYLE_IDS.forEach(function (style, index) {
+        var button = getHairButton(index);
+        var chosen = avatar_look.hair === style;
+        drawPixelPanel(button, chosen ? SUN : (button.contains(mouseX, mouseY) ? SAND : CREAM), INK, 0);
+        // A little head with this haircut, so the buttons need no words in either language.
+        var sheet = getAvatarSheet(style, avatar_look.hair_color, avatar_look.skin, avatar_look.outfit);
+        screen.drawImage(sheet, park_cell_width * 2 + 19, 2, 28, 30,
+                         button.centerx() - 21, button.centery() - 22, 42, 45);
+    });
+    [[tr("hair_color"), "hair_color", HAIR_COLORS], [tr("skin"), "skin", SKIN_COLORS]].forEach(function (row, rowNumber) {
+        drawFittedText(row[0], [park_side.x + 40, getSwatch(rowNumber, 0).centery()], 60);
+        row[2].forEach(function (color, index) {
+            var swatch = getSwatch(rowNumber, index);
+            drawPixelPanel(swatch.inflate(6, 6), avatar_look[row[1]] === index ? SUN : CREAM, INK, 0);
+            var inside = swatch.inflate(-6, -6);
+            fillRect(color, inside.x, inside.y, inside.w, inside.h);
+        });
+    });
+    OUTFITS.forEach(function (outfit, index) {
+        var cell = getOutfitCell(index);
+        var wearing = avatar_look.outfit === outfit.id;
+        drawPixelPanel(cell, wearing ? SUN : (cell.contains(mouseX, mouseY) ? SAND : CREAM), INK, 0);
+        var sheet = getAvatarSheet(avatar_look.hair, avatar_look.hair_color, avatar_look.skin, outfit.id);
+        screen.drawImage(sheet, park_cell_width * 2 + 12, 4, 40, 44, cell.x + 4, cell.y + 2, 60, 66);
+        if (owned_outfits[outfit.id]) {
+            drawFittedText(tr(wearing ? "wearing" : "wear"), [cell.centerx(), cell.bottom() - 14], 64, FOREST);
+        } else {
+            blitCentered(getSprite("coin", 0, 2), cell.x + 20, cell.bottom() - 14);
+            drawText(String(outfit.price), 2, [cell.x + 46, cell.bottom() - 14], DARK_RED);
+        }
+    });
+}
+
 function drawParkSide() {
-    if (park_selected === null && !park_shop_open) return;
+    if (park_panel === null) return;
     drawPixelPanel(park_side);
-    if (park_shop_open) drawParkShop();
+    if (park_panel === "shop") drawParkShop();
+    else if (park_panel === "pets") drawParkChoices();
+    else if (park_panel === "look") drawParkLook();
     else drawParkPetSide(park_selected);
     drawPixelPanel(park_close_button, park_close_button.contains(mouseX, mouseY) ? SUN : CREAM, INK, 3);
     drawText("×", 2, park_close_button.center());
@@ -2571,21 +2902,22 @@ function drawPark() {
     }
     var ribbon = new Rect(236, 16, 328, 62);
     drawPixelPanel(ribbon, LEAF);
-    drawText("宠物乐园", 3, ribbon.center(), CREAM);
-    [[park_back_button, isTouchScreen ? "返回" : "返回 · Esc"], [park_shop_button, "家具商店"]].forEach(function (pair) {
-        var button = pair[0];
-        var hovered = button.contains(mouseX, mouseY) || (button === park_shop_button && park_shop_open);
+    drawFittedText(tr("park"), ribbon.center(), ribbon.w - 20, CREAM, 3);
+    [[park_back_button, tr(isTouchScreen ? "back_touch" : "back_esc"), null], [park_shop_button, tr("shop"), "shop"],
+     [park_pets_button, tr("pets_button"), "pets"], [park_look_button, tr("my_look"), "look"]].forEach(function (row) {
+        var button = row[0];
+        var hovered = button.contains(mouseX, mouseY) || (row[2] !== null && park_panel === row[2]);
         var shown = button.move(0, hovered ? -2 : 0);
         drawPixelPanel(shown, hovered ? SUN : CREAM, INK, 4);
-        drawText(pair[1], 2, shown.center());
+        drawFittedText(row[1], shown.center(), button.w - 12);
     });
     drawCoinCounter();
     var line;
-    if (park_carrying !== null) line = "拖到想放的地方，松开就放下";
+    if (park_carrying !== null) line = tr("drag_hint");
     else if (park_message !== null) line = park_message[0];
-    else if (!countKeys(owned_furniture)) line = "去家具商店，用宠物币给小屋添家具";
-    else line = "点宠物看介绍 · 按住家具可以拖动";
-    drawText(line, 2, [400, 98], park_message || park_carrying !== null ? SUN : CREAM, INK);
+    else if (!countKeys(owned_furniture)) line = tr("park_hint_empty");
+    else line = tr("park_hint");
+    drawFittedText(line, [400, 98], 460, park_message || park_carrying !== null ? SUN : CREAM, 2, INK);
     drawParkSide();
 }
 
@@ -2595,7 +2927,30 @@ function drawParkButton() {
     drawPixelPanel(button, hovered ? SUN : CREAM, INK, 4);
     var house = getSprite("house", 0, 3);
     screen.drawImage(house, button.centerx() - Math.floor(house.width / 2), button.y + 10);
-    drawText("乐园", 2, [button.centerx(), button.bottom() - 20]);
+    drawFittedText(tr("park_button"), [button.centerx(), button.bottom() - 20], button.w - 8);
+}
+
+var language_button = new Rect(14, 18, 96, 44);
+
+function drawLanguageButton() {
+    // Shows the other language, so the player knows what a click will switch to.
+    var hovered = language_button.contains(mouseX, mouseY);
+    var button = language_button.move(0, hovered ? -2 : 0);
+    drawPixelPanel(button, hovered ? SUN : CREAM, INK, 4);
+    drawFittedText(tr("switch_language"), button.center(), button.w - 12);
+}
+
+function switchLanguage() {
+    language = language === "zh" ? "en" : "zh";
+    saveProgress();
+    track("language_switch", {language: language});
+    showPageLanguage();
+}
+
+function showPageLanguage() {
+    // The page around the game follows too: its tab title and the words of the language attribute.
+    document.title = tr("title");
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
 }
 
 function drawMessagePanel() {
@@ -2614,41 +2969,42 @@ function drawMessagePanel() {
     var ribbon = new Rect(210, 96, 380, 72);
     drawPixelPanel(panel);
     drawPixelPanel(ribbon, game_over ? RED : LEAF);
-    var again = isTouchScreen ? "点击屏幕再来一次" : "按空格键再来一次";
+    var again = tr(isTouchScreen ? "again_touch" : "again");
 
     if (paused) {
-        drawText("暂停一下", 4, ribbon.center(), CREAM);
-        drawText("得分：" + score, 3, [400, 240]);
-        drawText("按 P 继续飞行", 3, [400, 310], DARK_RED);
-        drawText("R：返回选角", 2, [400, 400], FOREST);
+        drawText(tr("paused"), 4, ribbon.center(), CREAM);
+        drawText(tr("score_line", {n: score}), 3, [400, 240]);
+        drawFittedText(tr("resume"), [400, 310], 440, DARK_RED, 3);
+        drawText(tr("r_back"), 2, [400, 400], FOREST);
     } else if (game_over && newly_found_dogs.length) {
-        drawText("坠机啦！", 4, ribbon.center(), CREAM);
+        drawText(tr("crashed"), 4, ribbon.center(), CREAM);
         var runMedal = getMedal(score);
-        drawText("本局 " + score + (runMedal === null ? "" : "  ·  " + MEDALS[runMedal][1]) + "  ·  最高 " + best_score + "  ·  宠物币 +" + coins_this_run + (new_best ? "  新纪录！" : ""),
-                 2, [400, 190]);
+        drawFittedText(tr("run_line", {score: score, medal: runMedal === null ? "" : "  ·  " + getMedalName(runMedal),
+                                       best: best_score, coins: coins_this_run, record: new_best ? tr("record_note") : ""}),
+                       [400, 190], 440);
         drawSunRays(new_dogs_card.inflate(24, 16));
         drawNewDogs();
     } else if (game_over) {
-        drawText("坠机啦！", 4, ribbon.center(), CREAM);
-        drawText("本局得分：" + score, 3, [400, 212]);
+        drawText(tr("crashed"), 4, ribbon.center(), CREAM);
+        drawText(tr("run_score", {n: score}), 3, [400, 212]);
         var medal = getMedal(score);
         if (medal !== null) blitCentered(getSprite(MEDALS[medal][2], 0, 3), 578, 212);
-        drawText("最高分：" + best_score, 3, [400, 262], DARK_RED);
+        drawText(tr("best_score", {n: best_score}), 3, [400, 262], DARK_RED);
         if (new_best) {
             var record = new Rect(280, 292, 240, 40);
             drawPixelPanel(record, SUN, INK, 0);
-            drawText("刷新个人纪录！", 2, record.center());
+            drawText(tr("new_best"), 2, record.center());
         }
-        drawText(again, 3, [400, 366]);
-        drawText("R：返回选角", 2, [400, 412], FOREST);
-        if (score_storage_available) drawText("本局宠物币 +" + coins_this_run + "  ·  共 " + coins, 2, [400, 442], DARK_RED);
+        drawFittedText(again, [400, 366], 440, INK, 3);
+        drawText(tr("r_back"), 2, [400, 412], FOREST);
+        if (score_storage_available) drawFittedText(tr("run_coins", {n: coins_this_run, total: coins}), [400, 442], 440, DARK_RED);
     }
 
     [["fox", 204], ["rabbit", 596]].forEach(function (item) {
         var sprite = getSprite(item[0], getBlinkFrame(item[1]), 2);
         screen.drawImage(sprite, item[1] - Math.floor(sprite.width / 2), panel.bottom() - 8 - sprite.height);
     });
-    if (!score_storage_available) drawText("最高分仅在本次打开时保留", 2, [400, 444], DARK_RED);
+    if (!score_storage_available) drawFittedText(tr("no_save_web"), [400, 444], 440, DARK_RED);
 }
 
 // -------------------------
@@ -2876,7 +3232,7 @@ function loadImage(name) {
             image.onerror = function () {
                 tries += 1;
                 if (tries < 3) setTimeout(attempt, 800 * tries);
-                else reject(new Error("没能下载 " + name));
+                else reject(new Error("Could not download " + name));
             };
             image.src = asset(name) + (tries ? "&try=" + tries : "");
         }
@@ -2925,7 +3281,7 @@ function start() {
     SKY_THEMES.forEach(function (theme, index) {
         layers.forEach(function (layer) { names.push("scenery/" + layer + "_" + index + ".png"); });
     });
-    names.push("park/room.png", "park/glow.png");
+    names.push("park/room.png", "park/glow.png", "avatar/bodies.png", "avatar/outfits.png", "avatar/hair.png");
     PETS.forEach(function (pet) {
         names.push(pet.image + ".jpg", pet.image + ".mask.png", pet.image + ".park.png");
     });
@@ -2944,6 +3300,7 @@ function start() {
         parkRoom = byName["park/room.png"];
         lampGlow = byName["park/glow.png"];
         parkSheets = PETS.map(function (pet) { return byName[pet.image + ".park.png"]; });
+        ["bodies", "outfits", "hair"].forEach(function (layer) { avatarLayers[layer] = byName["avatar/" + layer + ".png"]; });
         characterImages = PETS.map(function (pet) {
             return joinPhoto(byName[pet.image + ".jpg"], byName[pet.image + ".mask.png"]);
         });
@@ -2956,6 +3313,7 @@ function start() {
             score_storage_available = false;
         }
         loadProgress();
+        showPageLanguage();
         resetGame();
         applyPetLink(getLinkedPetId(), isOwnerLink());
         track("game_ready", {pet: getPilotId(), pets_unlocked: countKeys(unlocked_pets)});
@@ -2963,7 +3321,7 @@ function start() {
         lastTick = ticks();
         window.requestAnimationFrame(frame);
     })["catch"](function (error) {
-        showProblem("加载失败，请刷新页面再试");
+        showProblem(tr("load_failed"));
         if (window.console) console.error(error);
     });
 }
@@ -2976,14 +3334,18 @@ window.flightFriends = {
                 link_page: link_page_pet === null ? null : PETS[link_page_pet].id, owned: sortedIds(owned_pets),
                 bonus: link_page_bonus.map(function (pet) { return PETS[pet].id; }), weather: weather,
                 coins: coins, coins_this_run: coins_this_run, medal_banner: medal_banner,
+                language: language,
                 park: {open: park_open, message: park_message && park_message[0],
                        furniture: Object.keys(owned_furniture).sort(), places: furniture_places,
-                       carrying: park_carrying, shop: park_shop_open,
+                       carrying: park_carrying, panel: park_panel, look: avatar_look,
+                       outfits: Object.keys(owned_outfits).sort(),
+                       shown: getShownPets().map(function (pet) { return PETS[pet].id; }),
                        selected: park_selected ? PETS[park_selected.pet].id : null,
                        card: park_selected ? describeParkAction(park_selected) : null,
                        pets: park_pets.map(function (walker) {
-                           return {id: PETS[walker.pet].id, action: walker.action, seat: walker.seat,
-                                   partner: walker.partner ? PETS[walker.partner.pet].id : null,
+                           function id(pet) { return pet === AVATAR ? "you" : PETS[pet].id; }
+                           return {id: id(walker.pet), action: walker.action, seat: walker.seat,
+                                   partner: walker.partner ? id(walker.partner.pet) : null,
                                    x: Math.round(walker.x), y: Math.round(walker.y),
                                    hit: getParkPetHitRect(walker).center()};
                        })},
@@ -3003,6 +3365,14 @@ window.flightFriends = {
     setCoins: function (value) { coins = value; },
     furnitureCenter: function (id) { return getFurnitureRect(FURNITURE_BY_ID[id]).center(); },
     shopRow: function (index) { return getShopRow(index).center(); },
+    choiceCard: function (index) { return getChoiceCard(index).center(); },
+    hairButton: function (index) { return getHairButton(index).center(); },
+    swatch: function (row, index) { return getSwatch(row, index).center(); },
+    outfitCell: function (index) { return getOutfitCell(index).center(); },
+    buttons: function () {
+        return {language: language_button.center(), pets: park_pets_button.center(), look: park_look_button.center(),
+                shop: park_shop_button.center(), park: park_button.center()};
+    },
     up: function (x, y) { handleEvent({type: "up", x: x, y: y}); },
     move: function (x, y) {
         mouseX = x;
@@ -3010,8 +3380,10 @@ window.flightFriends = {
         handleEvent({type: "move", x: x, y: y});
     },
     seedPlay: function (a, b) {
-        function find(id) { return park_pets.filter(function (walker) { return PETS[walker.pet].id === id; })[0]; }
-        if (b === "shuaige") startPat(find(b), find(a)); else startPlay(find(a), find(b));
+        function find(id) {
+            return park_pets.filter(function (walker) { return (walker.pet === AVATAR ? "you" : PETS[walker.pet].id) === id; })[0];
+        }
+        if (b === "you") startPat(find(b), find(a)); else startPlay(find(a), find(b));
     },
     setPillars: function (value) { pillars_since_dog = value; },
     setWeather: function (value) { weather = value; next_weather = null; weather_amount = 1; },
@@ -3035,7 +3407,7 @@ window.flightFriends = {
 };
 
 if (!window.Promise || !window.requestAnimationFrame || !canvas.getContext) {
-    showProblem("这个浏览器太旧了，请换用新版 Chrome、Edge 或 Safari");
+    showProblem(tr("old_browser"));
 } else {
     start();
 }
