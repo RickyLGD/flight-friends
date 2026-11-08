@@ -4008,7 +4008,7 @@ function showPageLanguage() {
 // -------------------------
 var QUIZ_ENABLED = S.QUIZ_ENABLED;  // The footprint quiz is switched off for now; its code is kept for later.
 var CATCH_FOODS = S.CATCH_FOODS, CATCH_GOOD = S.CATCH_GOOD, CATCH_BAD = S.CATCH_BAD;
-var catchBackgrounds = {}, catch_background_index = -1;
+var catchBackgrounds = {};
 var CATCH_BACKGROUNDS = S.CATCH_BACKGROUNDS;
 var catch_hearts = S.catch_hearts, catch_frames = S.catch_frames, catch_countdown = S.catch_countdown;
 var catch_points_per_food = S.catch_points_per_food, catch_points_per_coin = S.catch_points_per_coin;
@@ -4045,11 +4045,12 @@ function openCatch() {
 function closeCatch() { catch_open = false; }
 
 function startCatch(pet) {
-    // Keep one scene for a whole round; advance only when starting another.
-    catch_background_index = (catch_background_index + 1) % CATCH_BACKGROUNDS.length;
+    // Each new round draws its scene at random, so no order can be learned; it then stays
+    // fixed for the whole round.
+    var background = CATCH_BACKGROUNDS[Math.floor(Math.random() * CATCH_BACKGROUNDS.length)];
     catch_round = {stage: "play", page: catch_round ? catch_round.page : 0, pet: pet, x: WIDTH / 2,
                    aim: WIDTH / 2, left: false, moving: false, food: [], pops: [], hearts: catch_hearts,
-                   caught: 0, frames: -catch_countdown, next_food: 0, happy: 0, hurt: 0, earned: 0, background: CATCH_BACKGROUNDS[catch_background_index], bad_caught: [], score: 0, bad_credit: randomBetween(.25, .75), lanes: [], last_lane: -1};
+                   caught: 0, frames: -catch_countdown, next_food: 0, happy: 0, hurt: 0, earned: 0, background: background, bad_caught: [], score: 0, bad_credit: randomBetween(.25, .75), lanes: [], last_lane: -1};
     catch_last_mouse = mouseX;
     track("catch_start", {pet: PETS[pet].id});
 }
