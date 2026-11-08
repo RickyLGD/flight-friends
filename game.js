@@ -579,7 +579,7 @@ function getBlinkFrame(animalId) {
 // -------------------------
 var sky_body_center = S.sky_body_center;
 var scenery = [];
-var fogLayer = null, blossomLayer = null, weatherSheet = null, winterLayer = null, autumnLayer = null;
+var fogLayer = null, blossomLayer = null, weatherSheet = null, autumnLayer = null;
 
 function makePlaneSprite(shake, target) {
     // Pop the head above the cockpit, keeping the chin tucked behind the sill.
@@ -1669,10 +1669,9 @@ function drawWeatherBehind() {
         if (weather === "storm") drawLightning(weather_amount);
     } else if (weather === "snow") {
         multiplyScreen(255 - Math.round(23 * weather_amount), 255 - Math.round(13 * weather_amount), 255);
-        blitWrapped(winterLayer, 0, 0.35, Math.round(255 * weather_amount));
     } else if (weather === "leaves") {
         multiplyScreen(255, 255 - Math.round(14 * weather_amount), 255 - Math.round(26 * weather_amount));
-        blitWrapped(autumnLayer, 0, 0.45, Math.round(255 * weather_amount));
+        blitWrapped(autumnLayer, 0, 0.25, Math.round(255 * weather_amount));
     } else if (weather === "petals") {
         // A faint pink wash, and blossom branches drifting past overhead.
         var fade = 22 * weather_amount;
@@ -4381,7 +4380,7 @@ function showProblem(message) {
 }
 
 function start() {
-    var names = ["font.png", "plane.png", "scenery/fog.png", "scenery/blossom.png", "scenery/winter.png", "scenery/autumn.png", "scenery/weather.png"];
+    var names = ["font.png", "plane.png", "scenery/fog.png", "scenery/blossom.png", "scenery/autumn.png", "scenery/weather.png"];
     var layers = ["sky", "body", "clouds", "far", "near", "foreground", "rain_clouds"];
     SKY_THEMES.forEach(function (theme, index) {
         layers.forEach(function (layer) { names.push("scenery/" + layer + "_" + index + ".png"); });
@@ -4398,7 +4397,6 @@ function start() {
         planeImage = byName["plane.png"];
         fogLayer = byName["scenery/fog.png"];
         blossomLayer = byName["scenery/blossom.png"];
-        winterLayer = byName["scenery/winter.png"];
         autumnLayer = byName["scenery/autumn.png"];
         weatherSheet = byName["scenery/weather.png"];
         scenery = SKY_THEMES.map(function (theme, index) {
