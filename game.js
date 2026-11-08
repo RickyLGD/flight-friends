@@ -1,4 +1,4 @@
-var GAME_DATA = {"settings":{"WIDTH":800,"HEIGHT":600,"INK":[52,32,20],"CREAM":[255,241,208],"SAND":[247,214,158],"RED":[226,52,52],"DARK_RED":[158,28,44],"SUN":[255,200,62],"LEAF":[72,138,66],"FOREST":[38,96,58],"SHADOW":[52,32,20,120],"WEB_SCORE_KEY":"flight_friends_best_score","WEB_PROGRESS_KEY":"flight_friends_pets","bird_x":150,"bird_radius":20,"head_height":48,"pillars_for_first_dogs":[8,25],"pillars_for_whole_album":600,"fewest_pillars_between_dogs":20,"most_pillars_between_dogs":60,"recent_pet_chance":0.25,"album_page_size":8,"owner_bonus_size":1,"head_sway_speed":2,"head_sway_angle":8,"plane_tilt_per_speed":1.5,"gravity":0.25,"jump_strength":-5,"maximum_fall_speed":5,"death_duration":900,"shake_duration":0.55,"shake_strength":18,"pipe_width":80,"starting_pipe_gap":280,"minimum_pipe_gap":160,"gap_reduction_per_point":0.5,"starting_pipe_speed":5.5,"maximum_pipe_speed":8,"speed_increase_per_point":0.01,"starting_shift_margin":0.45,"maximum_shift_margin":0.7,"shift_margin_increase_per_point":0.001,"pipe_spacing":300,"points_per_theme":30,"WEATHERS":["rain","snow","fog","petals"],"weather_gap":[20,30],"weather_lasts":15,"weather_fade_frames":60,"theme_fade_frames":90,"fewest_obstacles_between_animals":1,"most_obstacles_between_animals":3,"hanging_animal_chance":0.35,"creature_scale":3,"creature_hide_distance":70,"GROUND_CREATURES":["fox","rabbit","hedgehog","frog","squirrel","duckling","raccoon","badger","tortoise","capybara","red_panda","mole"],"HANGING_CREATURES":["bat","sloth","monkey","opossum","hanging_parrot"],"sky_body_center":[600,170],"step_milliseconds":16.666666666666668,"step_tolerance":2,"maximum_steps_per_frame":6,"steady_frame_tolerance":1.2,"SPRITE_COLORS":{"K":[52,32,20],"O":[240,138,52],"o":[204,98,38],"W":[255,244,222],"B":[28,18,18],"P":[244,150,160],"L":[232,226,214],"G":[172,166,158],"T":[214,170,118],"t":[150,100,62],"D":[96,62,42],"Y":[255,214,80],"y":[245,146,50],"E":[116,194,88],"e":[72,144,72],"V":[128,102,168],"v":[88,70,126],"R":[226,72,72],"S":[92,158,204],"s":[250,196,76],"M":[214,132,70],"m":[150,84,42],"A":[214,222,232],"a":[140,152,170],"U":[184,160,220]},"BOOM_LETTERS":[["#####.","##..##","##..##","#####.","##..##","##..##","#####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],["##...##","###.###","#######","##.#.##","##...##","##...##","##...##"],["##","##","##","##","##","..","##"]],"CROWN_PIXELS":["#..#..#","##.#.##","#######","#######"],"RAIN_LAYERS":[{"count":46,"blocks":2,"fall":9,"drift":2,"tail":[112,134,166],"head":[150,174,208]},{"count":22,"blocks":3,"fall":15,"drift":3,"tail":[104,136,184],"head":[206,226,252]}],"RAIN_BLOCK":[2,6],"SPLASH_COLOR":[214,232,252],"SPLASH_SHAPES":[[[-2,-2],[2,-2]],[[-4,-5],[-2,-2],[2,-2],[4,-5]],[[-6,-4],[6,-4]]],"splash_frames":12,"coin_chance":0.5,"coin_radius":18,"coin_pop_frames":30,"COIN_SPIN":[0,1,2,1],"MEDALS":[[20,"铜牌","bronze_medal"],[60,"银牌","silver_medal"],[100,"金牌","gold_medal"]],"medal_banner_frames":150,"FURNITURE":[{"id":"food_bowl","name":"食盆","name_en":"Food bowl","price":5,"place":[640,560],"seats":[]},{"id":"plant","name":"盆栽","name_en":"Plant","price":8,"place":[744,452],"seats":[]},{"id":"cushion","name":"软垫","name_en":"Cushion","price":10,"place":[192,564],"seats":[[9,3]]},{"id":"rug","name":"地毯","name_en":"Rug","price":15,"place":[400,568],"seats":[],"flat":true},{"id":"lamp","name":"落地灯","name_en":"Lamp","price":20,"place":[252,452],"seats":[]},{"id":"sofa","name":"小沙发","name_en":"Sofa","price":25,"place":[588,452],"seats":[[9,8],[17,8]]},{"id":"cat_tree","name":"猫爬架","name_en":"Cat tree","price":30,"place":[112,452],"seats":[[25,35],[8,21],[21,7]],"climb":[14,51],"cats_only":true},{"id":"crib","name":"婴儿床","name_en":"Crib","price":40,"place":[400,452],"seats":[[16,9]]}],"park_scale":4,"park_floor":[70,730,486,584],"park_walk_speed":0.6,"park_seat_chance":0.3,"park_hop_frames":30,"park_message_frames":150,"park_climb_frames":20,"park_climb_pause":28,"park_climb_arc":26,"park_wall_bottom":448,"park_spin_chance":0.08,"park_play_chance":0.12,"park_pat_chance":0.15,"park_play_gap":44,"park_pat_gap":48,"park_action_frames":{"sit":[360,720],"lie":[600,1100],"spin":[90,140],"play":[180,260],"pat":[180,240],"patted":[180,240],"stand":[240,480],"wave":[60,100],"ready":[1500,1500]},"park_cell_width":64,"park_cell_height":60,"park_ground":56,"PARK_PET_INFO":[{"kind":"human","breed":"人类","breed_en":"Human","box":[8,11,53,48]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,52,50]},{"kind":"dog","breed":"雪纳瑞","breed_en":"Schnauzer","box":[6,8,52,49]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,53,50]},{"kind":"dog","breed":"法斗","breed_en":"French bulldog","box":[7,9,51,48]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,53,50]},{"kind":"dog","breed":"腊肠","breed_en":"Dachshund","box":[4,10,56,47]},{"kind":"dog","breed":"比熊","breed_en":"Bichon","box":[6,8,53,49]},{"kind":"cat","breed":"暹罗猫","breed_en":"Siamese cat","box":[7,9,50,48]},{"kind":"dog","breed":"拉布拉多","breed_en":"Labrador","box":[6,8,53,49]},{"kind":"dog","breed":"小狗","breed_en":"Puppy","box":[6,8,52,49]},{"kind":"cat","breed":"猫咪","breed_en":"Kitty","box":[7,9,50,48]},{"kind":"cat","breed":"猫咪","breed_en":"Kitty","box":[7,15,50,42]},{"kind":"dog","breed":"小狗","breed_en":"Puppy","box":[4,10,56,47]}],"ANIMAL_POSES":["walk0","walk1","sit0","sit1","lie0","lie1","play0","play1","happy0","happy1"],"HUMAN_POSES":["walk0","walk1","stand0","stand1","wave0","wave1","pat0","pat1"],"park_pet_scale":2,"park_person_scale":3,"park_most_pets":4,"park_choices_per_page":8,"AVATAR_BOX":[18,0,34,57],"AVATAR_OUTLINE":[22,24,38],"HAIR_STYLES":[["beanie","毛线帽","Beanie"],["short","短发","Short"],["buzz","寸头","Buzz cut"],["curtain","中分","Middle part"],["bob","波波头","Bob"],["ponytail","马尾","Ponytail"],["long","长发","Long"],["bun","丸子头","Bun"]],"HAIR_COLORS":[[52,44,50],[238,200,100],[128,82,50],[236,234,228]],"SKIN_COLORS":[[255,226,200],[246,204,168],[214,158,116],[146,98,68]],"OUTFITS":[{"id":"tee","name":"T恤","name_en":"T-shirt","price":0,"colors":{"C":[88,150,220],"J":[164,160,118],"O":[36,38,50]}},{"id":"hoodie","name":"卫衣","name_en":"Hoodie","price":15,"colors":{"C":[110,180,110],"J":[64,64,76],"O":[240,240,236]}},{"id":"overalls","name":"背带裤","name_en":"Overalls","price":20,"colors":{"C":[250,214,90],"J":[80,120,190],"O":[150,70,50]}},{"id":"dress","name":"连衣裙","name_en":"Dress","price":25,"colors":{"C":[240,140,170],"J":[240,140,170],"O":[200,60,80]}},{"id":"pajamas","name":"小熊睡衣","name_en":"Bear pajamas","price":30,"colors":{"C":[180,214,246],"J":[180,214,246],"O":[250,250,250]}},{"id":"pilot","name":"飞行员夹克","name_en":"Pilot jacket","price":40,"colors":{"C":[140,86,54],"J":[60,60,70],"O":[40,32,30]}}],"TEXTS":{"title":["飞行搭档","Flight Friends"],"switch_language":["English","中文"],"score":["得分","Score"],"best_short":["最高 {n}","Best {n}"],"all_medals":["集齐！","All done!"],"medal_left":["还差{n}","{n} left"],"medal_first":["首次获得{medal}！","First {medal}!"],"medal_got":["获得{medal}！","{medal}!"],"medal_points":["{n} 分达成","Reached {n} points"],"bronze_medal":["铜牌","Bronze"],"silver_medal":["银牌","Silver"],"gold_medal":["金牌","Gold"],"friend_left":["新伙伴还差{n}","New friend in {n}"],"friend_here":["就在前面！","Just ahead!"],"locked_1":["飞行中","Meet them"],"locked_2":["可遇到","in flight"],"album":["宠物图鉴","Pet Album"],"album_done":["全部集齐！","All found!"],"album_hint":["已收集 {n} / {total}，点击已解锁的宠物就能换它出战","Found {n} / {total} · click an unlocked pet to fly with it"],"previous":["上一页","Back"],"next":["下一页","Next"],"page":["第 {n} / {total} 页","Page {n} / {total}"],"album_back":["返回选角 · 按 Esc","Back · Esc"],"choose_title":["选择你的飞行搭档","Pick your flight friend"],"choose_hint":["点击角色或按 1～8 选择","Click or press 1-8"],"pet_line":["{name}：{intro}  ·  最高分：{best}  ·  宠物币：{coins}","{name}: {intro}  ·  Best: {best}  ·  Coins: {coins}"],"welcome":["欢迎登机，{name}！按空格键马上起飞","Welcome aboard, {name}! Press Space to fly"],"thanks_owner":["谢谢你把{name}带上飞机！","Thanks for bringing {name} aboard!"],"how_to":["操控飞机，穿过土块，接上柱子上的“？？？”新伙伴！","Fly through the gaps and pick up the ??? friends on the pillars!"],"start":["开始游戏 · 按空格键","Start · Space"],"upload":["上传我的宠物！","Add my pet!"],"keys":["空格键：上升  |  P：暂停／继续  |  R：返回选角","Space: fly up  |  P: pause  |  R: back to friends"],"quit":["关闭窗口退出","Close the window to quit"],"no_save":["最高分仅在本次运行中保留","Best score is kept for this run only"],"new_one":["新伙伴登机！","A new friend is aboard!"],"new_many":["本局解锁 {n} 位新伙伴！","{n} new friends this run!"],"swapped_one":["已换上{name}","Now flying with {name}"],"swapped_many":["已换上{name}，按 C 换下一只","Flying with {name} · C for the next one"],"press_c_one":["按 C 换它出战","Press C to fly with it"],"press_c_many":["按 C 挑一只出战","Press C to pick one"],"again":["按空格键再来一次","Press Space to fly again"],"r_back":["R：返回选角","R: back to friends"],"link_owner":["谢谢你，{name}的主人！","Thank you, {name}'s owner!"],"link_new":["获得新伙伴！","A new friend!"],"contributor":["你是第 {n} 位送宠物登机的主人","You are owner number {n} to bring a pet aboard"],"crown":["奖励：{name}的卡片戴上专属皇冠","Reward: {name}'s card wears a crown"],"bonus":["奖励：额外解锁 {names}","Reward: also unlocked {names}"],"joined":["{name}已加入你的图鉴，马上带它起飞吧","{name} joined your album. Take it flying!"],"want_aboard":["你家宠物也想登机？","Want your own pet aboard?"],"upload_hint":["在选角页点“上传我的宠物！”，还有主人奖励","Click Add my pet! on the first page for an owner reward"],"accept":["收下 · 按空格键","Got it · Space"],"paused":["暂停一下","Paused"],"score_line":["得分：{n}","Score: {n}"],"resume":["按 P 继续飞行","Press P to keep flying"],"back_quit":["R：返回选角  |  关闭窗口退出","R: back to friends  |  close the window to quit"],"crashed":["坠机啦！","Crashed!"],"record_note":["  新纪录！","  New best!"],"run_line":["本局 {score}{medal}  ·  最高 {best}  ·  宠物币 +{coins}{record}","This run {score}{medal}  ·  Best {best}  ·  Coins +{coins}{record}"],"run_score":["本局得分：{n}","This run: {n}"],"best_score":["最高分：{n}","Best: {n}"],"board_title":["全服前三","Top 3"],"board_loading":["加载中...","Loading..."],"board_empty":["还没人上榜","No scores yet"],"board_offline":["排行榜连不上","Board offline"],"board_you":["（你）"," (you)"],"board_made":["你进前三了！","You made top 3!"],"board_name_hint":["输入昵称","Your name"],"board_ok":["上榜","Save"],"board_sent":["已上榜！","You're on it!"],"board_points":["{n} 分","{n} pts"],"board_open":["虚位以待","Open spot"],"board_hint":["打进前三就能留名","Beat #3 to join"],"new_best":["刷新个人纪录！","New personal best!"],"run_coins":["本局宠物币 +{n}  ·  共 {total}","Coins this run +{n}  ·  Total {total}"],"names_joiner":["、",", "],"back_touch":["返回","Back"],"again_touch":["点击屏幕再来一次","Tap to fly again"],"keys_touch":["点击屏幕：上升  |  P：暂停／继续  |  R：返回选角","Tap: fly up  |  P: pause  |  R: back to friends"],"quit_web":["关闭网页退出","Close the page to quit"],"no_save_web":["最高分仅在本次打开时保留","Best score is kept for this visit only"],"load_failed":["加载失败，请刷新页面再试","Loading failed. Please refresh the page"],"old_browser":["这个浏览器太旧了，请换用新版 Chrome、Edge 或 Safari","This browser is too old. Please use a new Chrome, Edge or Safari"],"park_button":["乐园","Park"],"park":["宠物乐园","Pet Park"],"back_esc":["返回 · Esc","Back · Esc"],"shop":["家具商店","Shop"],"pets_button":["选宠物","Pets"],"my_look":["我的形象","My look"],"you":["你","you"],"coins_short":["还差 {count} 个宠物币，去飞一局吧！","{count} more coins needed. Go fly!"],"bought":["买到了{name}！","Bought: {name}!"],"placed":["{name}放好啦！","{name} is in place!"],"room_full":["小屋最多住 {count} 只，先点掉一只吧","The room fits {count}. Send one out first"],"doing_seat":["在{place}上休息","Resting on the {place}"],"doing_seat_nap":["在{place}上打盹","Napping on the {place}"],"doing_climb":["在爬{place}","Climbing the {place}"],"doing_jump":["在跳上{place}","Jumping onto the {place}"],"doing_meet":["去找{friend}","Going to {friend}"],"doing_walk":["到处溜达","Strolling around"],"doing_sit":["坐着发呆","Sitting and dreaming"],"doing_lie":["睡午觉","Taking a nap"],"doing_spin":["转圈追尾巴","Chasing its tail"],"doing_play":["和{friend}打闹","Playing with {friend}"],"doing_patted":["被{friend}摸头","Getting pats from {friend}"],"doing_pat":["摸{friend}的头","Patting {friend}"],"doing_ready":["等{friend}","Waiting for {friend}"],"doing_stand":["四处张望","Looking around"],"doing_wave":["跟你打招呼","Waving at you"],"breed_line":["品种：{breed}","Breed: {breed}"],"founder":["创始伙伴","Founding friend"],"submitted":["投稿伙伴","Shared by an owner"],"doing_line":["正在：{doing}","Now: {doing}"],"tap_to_hop":["点它会跳一下哦","Click it to hop"],"move":["拖动","Move"],"choose_pets":["选宠物","Pick pets"],"in_room":["屋里 {count} / {most} 只，点卡片换","In the room: {count} / {most}"],"hair_color":["发色","Hair"],"skin":["肤色","Skin"],"wearing":["穿着","On"],"wear":["换上","Wear"],"drag_hint":["拖到想放的地方，松开就放下","Drag it where you like, then let go"],"park_hint_empty":["去家具商店，用宠物币给小屋添家具","Visit the shop and spend pet coins on furniture"],"park_hint":["点宠物看介绍 · 按住家具可以拖动","Click a pet · drag furniture"],"quiz_button":["足迹","Tracks"],"quiz_title":["足迹侦探","Track Detective"],"quiz_ask":["第 {n}/{total} 题：这是谁的脚印？","{n}/{total}: Whose footprint is this?"],"quiz_keys":["点一个答案，或按 1~3","Click an answer or press 1-3"],"quiz_keys_touch":["点一个答案","Tap an answer"],"quiz_next_touch":["下一题","Next"],"quiz_results_touch":["看成绩","Results"],"quiz_right":["答对了！","You got it!"],"quiz_wrong":["差一点！","So close!"],"quiz_it_was":["这是{name}的脚印","Answer: {name}"],"did_you_know":["你知道吗？","Did you know?"],"quiz_next":["下一题 · 空格","Next · Space"],"quiz_results":["看成绩 · 空格","Results · Space"],"quiz_score":["答对 {right} / {total} 题！","{right} / {total} right!"],"quiz_coins":["获得 {n} 个宠物币","You earned {n} pet coins"],"quiz_perfect":["全部答对！获得 {n} 个宠物币","All right! You earned {n} pet coins"],"quiz_again":["再玩一次","Play again"]},"LANGUAGES":["zh","en"],"TRACK_ANIMALS":[{"id":"dog","name":"狗","name_en":"Dog","fact":"狗的鼻纹和人的指纹一样，每只狗都不一样！","fact_en":"A dog's nose print is one of a kind, just like your fingerprint!"},{"id":"cat","name":"猫","name_en":"Cat","fact":"猫走路时会把爪子收起来，所以脚印里看不到爪痕。","fact_en":"Cats tuck their claws in when they walk, so their prints show no claw marks."},{"id":"bear","name":"熊","name_en":"Bear","fact":"熊走路时整个脚掌着地，后脚印看起来很像人的脚印！","fact_en":"Bears walk flat-footed like us. Their back footprint looks almost human!"},{"id":"raccoon","name":"浣熊","name_en":"Raccoon","fact":"浣熊的前爪像小手一样灵活，能拧开罐子、拨开门闩。","fact_en":"Raccoon paws work like little hands. They can open jars and latches!"},{"id":"rabbit","name":"兔子","name_en":"Rabbit","fact":"兔子跳的时候，大大的后脚会落在小前脚的前面。","fact_en":"When a rabbit hops, its big back feet land in front of its small front feet."},{"id":"deer","name":"鹿","name_en":"Deer","fact":"公鹿的角每年都会掉下来，然后再长出一对新的。","fact_en":"A male deer drops his antlers every year and grows a brand-new pair."},{"id":"horse","name":"马","name_en":"Horse","fact":"马每只脚只用一个脚趾走路，马蹄其实是一个超大的脚指甲！","fact_en":"Horses walk on one toe per foot. A hoof is a giant toenail!"},{"id":"elephant","name":"大象","name_en":"Elephant","fact":"大象能用脚感觉到远处同伴踩地的震动，像用脚在听。","fact_en":"Elephants feel the rumbles of far-away elephants through their feet."},{"id":"duck","name":"鸭子","name_en":"Duck","fact":"鸭子站在冰上也不怕冷，脚里的血管会帮它留住热量。","fact_en":"Ducks can stand on ice: special blood vessels keep the heat in their bodies."},{"id":"chicken","name":"鸡","name_en":"Chicken","fact":"鸡是恐龙的亲戚，霸王龙算是它的远房表亲！","fact_en":"Chickens are related to dinosaurs. T. rex is a distant cousin!"}],"TRACK_IDS":["dog","cat","bear","raccoon","rabbit","deer","horse","elephant","duck","chicken"],"TRACK_SIZE":42,"QUIZ_CELL":32,"quiz_questions":5,"quiz_choices":3,"quiz_coins_per_right":2,"quiz_perfect_bonus":3,"quiz_fact_delay":45,"quiz_reveal_frames":480,"quiz_wiggle_frames":18,"LEADERBOARD_URL":"https://jvpakstklehznnyvbuuh.supabase.co","LEADERBOARD_KEY":"sb_publishable_uHN-NBLcbrDdMoEek2z03A_Nsaf5fKZ","board_size":3,"board_name_length":8},"sprites":{"fox":[["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOBBOOOOOOBBOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."],["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOKKOOOOOOKKOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."]],"rabbit":[["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLBBLLLLBBLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."],["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLKKLLLLKKLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."]],"hedgehog":[["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTBBTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"],["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTKKTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"]],"frog":[["...KKK....KKK...","..KWWWK..KWWWK..","..KWBBK..KBBWK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"],["...KKK....KKK...","..KWWWK..KWWWK..","..KKKKK..KKKKK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"]],"squirrel":[["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtBBttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."],["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtKKttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."]],"duckling":[["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYBBYYBBYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."],["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYKKYYKKYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."]],"bat":[["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWBWWBWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."],["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWKWWKWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."]],"sloth":[["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDBTTTTBDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"],["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDDTTTTDDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"]],"raccoon":[["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKBWKKGGKKWBKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."],["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKKKKKGGKKKKKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."]],"badger":[["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKWKWWWWKWKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."],["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKKKWWWWKKKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."]],"tortoise":[["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTBK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."],["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTKK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."]],"capybara":[["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTBBTK.","..KTTTTTTTTTTTTBBTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."],["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTTTTK.","..KTTTTTTTTTTTTKKTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."]],"red_panda":[["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWBBWooooooWBBWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."],["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWKKWooooooWKKWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."]],"mole":[["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDBDDDDBDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"],["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDKDDDDKDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"]],"monkey":[["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTBTTBTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."],["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTKTTKTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."]],"opossum":[["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLBLLBLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."],["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLKLLKLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."]],"hanging_parrot":[["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEBEEBEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."],["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEKEEKEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."]],"running_fox":[["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","..KOKK.KOK.KOK.KOK....","..KK....KK..KK..KK...."],["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","....KOK..KOKOK..KOK...","....KK....KKK....KK..."]],"deer":[["..................K..K..","..................KK.K..","...................KKK..","..................KttK.K","..................KtttKK","..................KtBttK","..................KttWWK",".KK...............KtttK.","KWWKKKKKKKKKKKKKKKtttK..","KWtttttttttttttttttttK..",".KtWtttWtttWtttttttttK..",".KtttWtttWtttttttttWWK..",".KttttttttttttttttWWK...",".KtttKKKKKKKKKKKtttK....","..KtK..........KtK......","..KtK..........KtK......","..KtK..........KtK......","..KKK..........KKK......"]],"bird":[["..KK.....KK..",".KRRK...KRRK.","..KRRK.KRRK..","...KRRKRRK.K.","....KRRRKKYK.",".....KKK..K.."],[".............",".............","...KKK...K...","..KRRRKKKYK..",".KRRRRRRK.K..","KRRK.KRRK...."]],"butterfly":[["KK.K.KK","KsK.KsK","KssKssK",".KsKsK.","KsKKKsK","KK...KK"],["...K...","..KsK..",".KssK..","..KsK..",".KsKK..",".KK...."]],"coin":[["....KKKK....","..KKYYYYKK..",".KWWYYYYYYK.",".KWYDYYDYYK.","KYDYDYYDYDyK","KYDYYYYYYDyK","KYYYYDDYYYyK","KYYYDDDDYYyK","KYYYDDDDYYyK",".KYYYDDYYyK.","..KKyyyyKK..","....KKKK...."],["....KKKK....","...KYYYYK...","...KWYYyK...","...KWDYyK...","...KYDDyK...","...KYYDyK...","...KYDDyK...","...KDDDyK...","...KYDDyK...","...KYYYyK...","...KyyyyK...","....KKKK...."],[".....KK.....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....",".....KK....."]],"bronze_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KMMMMMMK.","KMWMMMMmmK","KMWMMMMmmK","KMMMMMMmmK","KMMMMMmmmK",".KmmmmmmK.","..KKKKKK.."]],"silver_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KAAAAAAK.","KAWAAAAaaK","KAWAAAAaaK","KAAAAAAaaK","KAAAAAaaaK",".KaaaaaaK.","..KKKKKK.."]],"gold_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KYYYYYYK.","KYWYYYYyyK","KYWYYYYyyK","KYYYYYYyyK","KYYYYYyyyK",".KyyyyyyK.","..KKKKKK.."]],"cat_tree":[["..................................",".........KKKK.................KKKK",".........KVVK.................KVVK",".........KVVK.................KVVK",".........KVVKKKKKKKKKKKKKKKKKKKVVK",".........KKKKPPPPPPPPPPPPPPPPPKKKK",".........KVVVPPPPPPPPPPPPPPPPPVVVK",".........KVVVVVVVVVVVVVVVVVVVVVVVK",".........KVVVVVVVVVVVVVVVVVVVVVVVK",".........KvvvvvvvvvvvvvvvvvvvvvvvK",".........KKKKKKKKKKKKKKKKKKKKKKKKK","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","KKKKKKKKKKKKKKKKK.KTTTK...........","KUUUUUUUUUUUUUUUK.KtttK...........","KVVVVVVVVVVVVVVVK.KTTTK...........","KvvvvvvvvvvvvvvvK.KtttK...........","KKKKKKKKKKKKKKKKK.KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK...K....KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK...K....KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK.KKKKK..KTTTK...........",".....KTTTK.KPPRK..KtttK...........",".....KtttK.KRRRK..KTTTK...........",".....KTTTK.KRRRK..KtttK...........",".....KtttK.KKKKK.KKKKKKKKKKKKKKKKK",".....KTTTK.......KUUUUUUUUUUUUUUUK",".....KtttK.......KVVVVVVVVVVVVVVVK",".....KTTTK.......KvvvvvvvvvvvvvvvK",".....KtttK.......KKKKKKKKKKKKKKKKK",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK","KUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUK","KVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVK","KVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVK","KvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvK","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"]],"crib":[["KKK..........................KKK","KtK..........................KtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtKKKKttKKttKKttKKttKKttKKttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KKK..........................KKK"]],"sofa":[["..KKKKKKKKKKKKKKKKKKKKKK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","KKKKKOOOOOOOOoOOOOOOOKKKKK","KOOOKOOOOOOOOoOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KKKKKKKKKKKKKKKKKKKKKKKKKK","KKooooooooooooooooooooooKK",".KKKKKKKKKKKKKKKKKKKKKKKK.","..DD..................DD.."]],"lamp":[[".KKKKKKKK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KyyyyyyK.",".KKKKKKKK.","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","..KKKKKK..","..KttttK..","..KttttK..","..KKKKKK.."]],"cushion":[["KKKKKKKKKKKKKKKKKK","KSSSSSSSSSSSSSSSSK","KSSKKKKKKKKKKKKSSK","KSSKWWWWWWWWWWKSSK","KSSKKKKKKKKKKKKSSK","KSSSSSSSSSSSSSSSSK","KKKKKKKKKKKKKKKKKK"]],"plant":[[".....KK.....","....KEEK....",".KK.KEeK.KK.","KEEKKEeKKEEK","KEeEKEeKEeEK",".KEeEEeEEeK.","..KKEEeEKK..","....KeEK....","..KKKKKKKK..","..KOOOOOOK..","..KKKKKKKK..","...KOOOOK...","...KOooOK...","...KOooOK...","....KKKK...."]],"food_bowl":[["..tDtTDt..","KKKKKKKKKK","KRRRRRRRRK",".KRRWRRRK.","..KKKKKK.."]],"rug":[["............KKKKKKKKKKKKKKKKKKKK............","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","............KKKKKKKKKKKKKKKKKKKK............"]],"house":[[".......KK.......","......KRRK......",".....KRRRRK.....","....KRRRRRRK....","...KRRRRRRRRK...","..KRRRRRRRRRRK..",".KKKKKKKKKKKKKK.","..KWWWWWWWWWWK..","..KWKKKWWKKKWK..","..KWKSKWWKtKWK..","..KWKKKWWKtKWK..","..KWWWWWWKtKWK..","..KWWWWWWKyKWK..","..KKKKKKKKKKKK.."]],"heart":[[".KK.KK.","KRRKRRK","KRWRRRK",".KRRRK.","..KRK..","...K..."]],"arrow":[["KKKKKKK","KYYYYYK",".KYYYK.","..KYK..","...K..."]]},"sky_themes":[{"sky":[[132,208,186],[214,234,184],[255,240,190]],"body":[255,226,112],"stars":0,"cloud":[255,255,244],"far":[128,176,158],"snow":[238,246,228],"near":[92,164,84],"tree":[50,118,70],"tint":null,"ground":[72,142,70],"rain_cloud":[128,136,152]},{"sky":[[236,120,92],[255,176,104],[255,226,150]],"body":[255,240,170],"stars":0,"cloud":[255,214,176],"far":[176,106,104],"snow":[255,220,190],"near":[130,132,62],"tree":[78,88,48],"tint":[255,214,176],"ground":[104,108,52],"rain_cloud":[150,126,132]},{"sky":[[14,22,58],[28,46,88],[54,88,104]],"body":[245,240,210],"stars":90,"cloud":[66,84,122],"far":[36,56,92],"snow":[120,142,170],"near":[28,72,66],"tree":[14,46,50],"tint":[110,130,176],"ground":[20,54,54],"rain_cloud":[46,56,86]}],"pets":[{"id":"shuaige","name":"帅哥","intro":["爱动物的","人类"],"name_en":"Handsome","intro_en":["Animal","lover"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":true,"image":"pets/shuaige"},{"id":"erbao","name":"二宝","intro":["爱吃醋的","贵宾"],"name_en":"Erbao","intro_en":["Jealous","poodle"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":true,"image":"pets/erbao"},{"id":"sherry","name":"Sherry","intro":["淡淡的","雪纳瑞"],"name_en":"Sherry","intro_en":["Laid-back","schnauzer"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/sherry"},{"id":"jiuyue","name":"九月","intro":["调皮的","贵宾"],"name_en":"September","intro_en":["Cheeky","poodle"],"flight_head_angle":0,"flight_head_y":4,"founder":true,"starter":false,"image":"pets/jiuyue"},{"id":"jiaoquan","name":"焦圈","intro":["爱打呼噜","的法斗"],"name_en":"Donut","intro_en":["Snoring","Frenchie"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/jiaoquan"},{"id":"duoli","name":"多莉","intro":["毛茸茸的","贵宾"],"name_en":"Dolly","intro_en":["Fluffy","poodle"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/duoli"},{"id":"celina","name":"Celina","intro":["爱哼唧的","腊肠"],"name_en":"Celina","intro_en":["Whiny","dachshund"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/celina"},{"id":"guaiguai","name":"乖乖","intro":["贪吃","的比熊"],"name_en":"Goodie","intro_en":["Greedy","bichon"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/guaiguai"},{"id":"xunshan","name":"巡山","intro":["傲娇","的暹罗"],"name_en":"Ranger","intro_en":["Sassy","Siamese"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/xunshan"},{"id":"xiaobuding","name":"小布丁","intro":["爱扑人的","拉布拉多"],"name_en":"Pudding","intro_en":["Jumpy","Labrador"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/xiaobuding"},{"id":"wooly","name":"wooly","intro":["活泼的","棉花面纱"],"name_en":"wooly","intro_en":["Playful","Fluffball"],"flight_head_angle":-12,"flight_head_y":4,"founder":false,"starter":false,"image":"pets/wooly"},{"id":"buding","name":"布丁","intro":["粘人","的布偶猫"],"name_en":"Buding","intro_en":["Clingy","Ragdoll"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/buding"},{"id":"haishen","name":"海参","intro":["爱睡觉","的折耳猫"],"name_en":"Haishen","intro_en":["Sleepy","Fold cat"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/haishen"},{"id":"zaizai","name":"仔仔","intro":["暴食","的比格"],"name_en":"Zaizai","intro_en":["Foodie","Beagle"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/zaizai"}],"form_url":"https://v.wjx.cn/vm/td6GJBG.aspx","font":{"height":16,"letters":{" ":[0,0,6],"!":[6,0,4],"\"":[10,0,6],"#":[16,0,7],"$":[23,0,6],"%":[29,0,8],"&":[37,0,7],"'":[44,0,4],"(":[48,0,6],")":[54,0,6],"*":[60,0,6],"+":[66,0,6],",":[72,0,4],"-":[76,0,6],".":[82,0,4],"/":[86,0,6],"0":[92,0,6],"1":[98,0,6],"2":[104,0,6],"3":[110,0,6],"4":[116,0,6],"5":[122,0,6],"6":[128,0,6],"7":[134,0,6],"8":[140,0,6],"9":[146,0,6],":":[152,0,4],";":[156,0,4],"<":[160,0,5],"=":[165,0,6],">":[171,0,5],"?":[176,0,6],"A":[182,0,8],"B":[190,0,7],"C":[197,0,7],"D":[204,0,7],"E":[211,0,7],"F":[218,0,7],"G":[225,0,7],"H":[232,0,7],"I":[239,0,4],"J":[243,0,6],"K":[249,0,7],"L":[256,0,6],"M":[262,0,8],"N":[270,0,7],"O":[277,0,8],"P":[285,0,7],"Q":[292,0,8],"R":[300,0,7],"S":[307,0,7],"T":[314,0,8],"U":[322,0,7],"V":[329,0,8],"W":[337,0,10],"X":[347,0,8],"Y":[355,0,8],"Z":[363,0,7],"[":[370,0,6],"\\":[376,0,6],"]":[382,0,6],"^":[388,0,6],"_":[394,0,6],"`":[400,0,5],"a":[405,0,6],"b":[411,0,6],"c":[417,0,6],"d":[423,0,6],"e":[429,0,6],"f":[435,0,5],"g":[440,0,6],"h":[446,0,6],"i":[452,0,4],"j":[456,0,4],"k":[460,0,6],"l":[466,0,4],"m":[470,0,8],"n":[478,0,6],"o":[484,0,6],"p":[490,0,6],"q":[496,0,6],"r":[502,0,5],"s":[507,0,6],"t":[513,0,5],"u":[518,0,6],"v":[524,0,6],"w":[530,0,8],"x":[538,0,6],"y":[544,0,6],"z":[550,0,6],"{":[556,0,7],"|":[563,0,4],"}":[567,0,7],"~":[574,0,6],"·":[580,0,12],"×":[592,0,6],"“":[598,0,12],"”":[610,0,12],"、":[622,0,12],"。":[634,0,12],"《":[646,0,12],"》":[658,0,12],"一":[670,0,12],"丁":[682,0,12],"三":[694,0,12],"上":[706,0,12],"下":[718,0,12],"不":[730,0,12],"专":[742,0,12],"个":[754,0,12],"中":[766,0,12],"丸":[778,0,12],"主":[790,0,12],"乐":[802,0,12],"乖":[814,0,12],"九":[826,0,12],"也":[838,0,12],"买":[850,0,12],"了":[862,0,12],"二":[874,0,12],"亲":[886,0,12],"人":[898,0,12],"仅":[910,0,12],"介":[922,0,12],"仔":[934,0,12],"以":[946,0,12],"们":[958,0,12],"件":[970,0,12],"休":[982,0,12],"伙":[994,0,12],"会":[1006,0,12],"传":[0,16,12],"伴":[12,16,12],"位":[24,16,12],"住":[36,16,12],"你":[48,16,12],"侦":[60,16,12],"保":[72,16,12],"候":[84,16,12],"停":[96,16,12],"偶":[108,16,12],"傲":[120,16,12],"像":[132,16,12],"儿":[144,16,12],"先":[156,16,12],"克":[168,16,12],"兔":[180,16,12],"入":[192,16,12],"全":[204,16,12],"公":[216,16,12],"共":[228,16,12],"关":[240,16,12],"其":[252,16,12],"具":[264,16,12],"再":[276,16,12],"冠":[288,16,12],"冰":[300,16,12],"冷":[312,16,12],"出":[324,16,12],"击":[336,16,12],"分":[348,16,12],"创":[360,16,12],"到":[372,16,12],"刷":[384,16,12],"前":[396,16,12],"加":[408,16,12],"动":[420,16,12],"励":[432,16,12],"升":[444,16,12],"午":[456,16,12],"卡":[468,16,12],"卫":[480,16,12],"印":[492,16,12],"去":[504,16,12],"参":[516,16,12],"发":[528,16,12],"口":[540,16,12],"只":[552,16,12],"可":[564,16,12],"吃":[576,16,12],"同":[588,16,12],"名":[600,16,12],"后":[612,16,12],"吗":[624,16,12],"吧":[636,16,12],"听":[648,16,12],"呆":[660,16,12],"员":[672,16,12],"呼":[684,16,12],"和":[696,16,12],"咪":[708,16,12],"品":[720,16,12],"哥":[732,16,12],"哦":[744,16,12],"哼":[756,16,12],"唧":[768,16,12],"商":[780,16,12],"啦":[792,16,12],"噜":[804,16,12],"器":[816,16,12],"四":[828,16,12],"回":[840,16,12],"园":[852,16,12],"图":[864,16,12],"圈":[876,16,12],"土":[888,16,12],"在":[900,16,12],"地":[912,16,12],"坐":[924,16,12],"块":[936,16,12],"坠":[948,16,12],"垫":[960,16,12],"处":[972,16,12],"外":[984,16,12],"多":[996,16,12],"大":[1008,16,12],"太":[0,32,12],"失":[12,32,12],"头":[24,32,12],"夹":[36,32,12],"奖":[48,32,12],"好":[60,32,12],"始":[72,32,12],"娇":[84,32,12],"婴":[96,32,12],"子":[108,32,12],"字":[120,32,12],"它":[132,32,12],"宝":[144,32,12],"实":[156,32,12],"宠":[168,32,12],"家":[180,32,12],"宾":[192,32,12],"寸":[204,32,12],"对":[216,32,12],"小":[228,32,12],"就":[240,32,12],"尾":[252,32,12],"局":[264,32,12],"屋":[276,32,12],"屏":[288,32,12],"属":[300,32,12],"山":[312,32,12],"巡":[324,32,12],"差":[336,32,12],"已":[348,32,12],"巴":[360,32,12],"币":[372,32,12],"布":[384,32,12],"帅":[396,32,12],"带":[408,32,12],"帮":[420,32,12],"帽":[432,32,12],"幕":[444,32,12],"年":[456,32,12],"床":[468,32,12],"店":[480,32,12],"开":[492,32,12],"张":[504,32,12],"录":[516,32,12],"形":[528,32,12],"待":[540,32,12],"很":[552,32,12],"得":[564,32,12],"怕":[576,32,12],"恐":[588,32,12],"恤":[600,32,12],"息":[612,32,12],"想":[624,32,12],"感":[636,32,12],"戏":[648,32,12],"成":[660,32,12],"我":[672,32,12],"或":[684,32,12],"战":[696,32,12],"戚":[708,32,12],"戴":[720,32,12],"房":[732,32,12],"所":[744,32,12],"手":[756,32,12],"扑":[768,32,12],"打":[780,32,12],"找":[792,32,12],"把":[804,32,12],"投":[816,32,12],"折":[828,32,12],"拉":[840,32,12],"拖":[852,32,12],"招":[864,32,12],"拧":[876,32,12],"拨":[888,32,12],"择":[900,32,12],"指":[912,32,12],"按":[924,32,12],"挑":[936,32,12],"换":[948,32,12],"掉":[960,32,12],"掌":[972,32,12],"排":[984,32,12],"探":[996,32,12],"接":[1008,32,12],"控":[0,48,12],"搭":[12,48,12],"摸":[24,48,12],"操":[36,48,12],"收":[48,48,12],"放":[60,48,12],"数":[72,48,12],"整":[84,48,12],"文":[96,48,12],"斗":[108,48,12],"新":[120,48,12],"方":[132,48,12],"旧":[144,48,12],"时":[156,48,12],"是":[168,48,12],"昵":[180,48,12],"暂":[192,48,12],"暴":[204,48,12],"暹":[216,48,12],"最":[228,48,12],"月":[240,48,12],"有":[252,48,12],"服":[264,48,12],"望":[276,48,12],"本":[288,48,12],"机":[300,48,12],"来":[312,48,12],"松":[324,48,12],"架":[336,48,12],"柱":[348,48,12],"样":[360,48,12],"格":[372,48,12],"栽":[384,48,12],"案":[396,48,12],"档":[408,48,12],"棉":[420,48,12],"榜":[432,48,12],"次":[444,48,12],"欢":[456,48,12],"正":[468,48,12],"每":[480,48,12],"比":[492,48,12],"毛":[504,48,12],"毯":[516,48,12],"沙":[528,48,12],"没":[540,48,12],"法":[552,48,12],"波":[564,48,12],"泼":[576,48,12],"活":[588,48,12],"浏":[600,48,12],"浣":[612,48,12],"海":[624,48,12],"淡":[636,48,12],"添":[648,48,12],"游":[660,48,12],"溜":[672,48,12],"灯":[684,48,12],"灵":[696,48,12],"点":[708,48,12],"热":[720,48,12],"焦":[732,48,12],"然":[744,48,12],"熊":[756,48,12],"爪":[768,48,12],"爬":[780,48,12],"爱":[792,48,12],"片":[804,48,12],"版":[816,48,12],"牌":[828,48,12],"物":[840,48,12],"狗":[852,48,12],"猫":[864,48,12],"王":[876,48,12],"玩":[888,48,12],"瑞":[900,48,12],"用":[912,48,12],"甲":[924,48,12],"画":[936,48,12],"留":[948,48,12],"痕":[960,48,12],"登":[972,48,12],"的":[984,48,12],"皇":[996,48,12],"皮":[1008,48,12],"盆":[0,64,12],"盹":[12,64,12],"看":[24,64,12],"着":[36,64,12],"睡":[48,64,12],"知":[60,64,12],"短":[72,64,12],"种":[84,64,12],"称":[96,64,12],"稿":[108,64,12],"空":[120,64,12],"穿":[132,64,12],"窗":[144,64,12],"站":[156,64,12],"第":[168,64,12],"等":[180,64,12],"答":[192,64,12],"算":[204,64,12],"管":[216,64,12],"类":[228,64,12],"粘":[240,64,12],"素":[252,64,12],"纪":[264,64,12],"纱":[276,64,12],"纳":[288,64,12],"纹":[300,64,12],"线":[312,64,12],"绍":[324,64,12],"给":[336,64,12],"继":[348,64,12],"绩":[360,64,12],"续":[372,64,12],"罐":[384,64,12],"网":[396,64,12],"罗":[408,64,12],"耳":[420,64,12],"肠":[432,64,12],"肤":[444,64,12],"背":[456,64,12],"能":[468,64,12],"脚":[480,64,12],"腊":[492,64,12],"自":[504,64,12],"色":[516,64,12],"花":[528,64,12],"茸":[540,64,12],"莉":[552,64,12],"获":[564,64,12],"落":[576,64,12],"虚":[588,64,12],"血":[600,64,12],"行":[612,64,12],"衣":[624,64,12],"表":[636,64,12],"被":[648,64,12],"裙":[660,64,12],"裤":[672,64,12],"览":[684,64,12],"觉":[696,64,12],"角":[708,64,12],"解":[720,64,12],"试":[732,64,12],"请":[744,64,12],"谁":[756,64,12],"调":[768,64,12],"谢":[780,64,12],"象":[792,64,12],"负":[804,64,12],"责":[816,64,12],"败":[828,64,12],"贪":[840,64,12],"贵":[852,64,12],"走":[864,64,12],"起":[876,64,12],"超":[888,64,12],"足":[900,64,12],"趾":[912,64,12],"跟":[924,64,12],"路":[936,64,12],"跳":[948,64,12],"踩":[960,64,12],"蹄":[972,64,12],"转":[984,64,12],"软":[996,64,12],"载":[1008,64,12],"输":[0,80,12],"达":[12,80,12],"过":[24,80,12],"迎":[36,80,12],"运":[48,80,12],"返":[60,80,12],"还":[72,80,12],"这":[84,80,12],"进":[96,80,12],"远":[108,80,12],"连":[120,80,12],"迹":[132,80,12],"追":[144,80,12],"退":[156,80,12],"送":[168,80,12],"选":[180,80,12],"遇":[192,80,12],"道":[204,80,12],"部":[216,80,12],"都":[228,80,12],"醋":[240,80,12],"里":[252,80,12],"量":[264,80,12],"金":[276,80,12],"鉴":[288,80,12],"铜":[300,80,12],"银":[312,80,12],"锁":[324,80,12],"键":[336,80,12],"长":[348,80,12],"门":[360,80,12],"闩":[372,80,12],"闭":[384,80,12],"闹":[396,80,12],"集":[408,80,12],"雪":[420,80,12],"震":[432,80,12],"霸":[444,80,12],"面":[456,80,12],"页":[468,80,12],"题":[480,80,12],"额":[492,80,12],"飞":[504,80,12],"食":[516,80,12],"首":[528,80,12],"马":[540,80,12],"高":[552,80,12],"鸡":[564,80,12],"鸭":[576,80,12],"鹿":[588,80,12],"鼻":[600,80,12],"齐":[612,80,12],"龙":[624,80,12],"！":[636,80,12],"（":[648,80,12],"）":[660,80,12],"，":[672,80,12],"／":[684,80,12],"：":[696,80,12],"；":[708,80,12],"？":[720,80,12],"～":[732,80,12]}}};
+var GAME_DATA = {"settings":{"WIDTH":800,"HEIGHT":600,"INK":[52,32,20],"CREAM":[255,241,208],"SAND":[247,214,158],"RED":[226,52,52],"DARK_RED":[158,28,44],"SUN":[255,200,62],"LEAF":[72,138,66],"FOREST":[38,96,58],"SHADOW":[52,32,20,120],"WEB_SCORE_KEY":"flight_friends_best_score","WEB_PROGRESS_KEY":"flight_friends_pets","bird_x":150,"bird_radius":20,"head_height":48,"pillars_for_first_dogs":[8,25],"pillars_for_whole_album":600,"fewest_pillars_between_dogs":20,"most_pillars_between_dogs":60,"recent_pet_chance":0.25,"album_page_size":8,"owner_bonus_size":1,"head_sway_speed":2,"head_sway_angle":8,"plane_tilt_per_speed":1.5,"gravity":0.25,"jump_strength":-5,"maximum_fall_speed":5,"death_duration":900,"shake_duration":0.55,"shake_strength":18,"pipe_width":80,"starting_pipe_gap":280,"minimum_pipe_gap":160,"gap_reduction_per_point":0.5,"starting_pipe_speed":5.5,"maximum_pipe_speed":8,"speed_increase_per_point":0.01,"starting_shift_margin":0.45,"maximum_shift_margin":0.7,"shift_margin_increase_per_point":0.001,"pipe_spacing":300,"points_per_theme":30,"WEATHERS":["rain","snow","fog","petals"],"weather_gap":[20,30],"weather_lasts":15,"weather_fade_frames":60,"theme_fade_frames":90,"fewest_obstacles_between_animals":1,"most_obstacles_between_animals":3,"hanging_animal_chance":0.35,"creature_scale":3,"creature_hide_distance":70,"GROUND_CREATURES":["fox","rabbit","hedgehog","frog","squirrel","duckling","raccoon","badger","tortoise","capybara","red_panda","mole"],"HANGING_CREATURES":["bat","sloth","monkey","opossum","hanging_parrot"],"sky_body_center":[600,170],"step_milliseconds":16.666666666666668,"step_tolerance":2,"maximum_steps_per_frame":6,"steady_frame_tolerance":1.2,"SPRITE_COLORS":{"K":[52,32,20],"O":[240,138,52],"o":[204,98,38],"W":[255,244,222],"B":[28,18,18],"P":[244,150,160],"L":[232,226,214],"G":[172,166,158],"T":[214,170,118],"t":[150,100,62],"D":[96,62,42],"Y":[255,214,80],"y":[245,146,50],"E":[116,194,88],"e":[72,144,72],"V":[128,102,168],"v":[88,70,126],"R":[226,72,72],"S":[92,158,204],"s":[250,196,76],"M":[214,132,70],"m":[150,84,42],"A":[214,222,232],"a":[140,152,170],"U":[184,160,220]},"BOOM_LETTERS":[["#####.","##..##","##..##","#####.","##..##","##..##","#####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],[".####.","##..##","##..##","##..##","##..##","##..##",".####."],["##...##","###.###","#######","##.#.##","##...##","##...##","##...##"],["##","##","##","##","##","..","##"]],"CROWN_PIXELS":["#..#..#","##.#.##","#######","#######"],"RAIN_LAYERS":[{"count":46,"blocks":2,"fall":9,"drift":2,"tail":[112,134,166],"head":[150,174,208]},{"count":22,"blocks":3,"fall":15,"drift":3,"tail":[104,136,184],"head":[206,226,252]}],"RAIN_BLOCK":[2,6],"SPLASH_COLOR":[214,232,252],"SPLASH_SHAPES":[[[-2,-2],[2,-2]],[[-4,-5],[-2,-2],[2,-2],[4,-5]],[[-6,-4],[6,-4]]],"splash_frames":12,"coin_chance":0.5,"coin_radius":18,"coin_pop_frames":30,"COIN_SPIN":[0,1,2,1],"MEDALS":[[20,"铜牌","bronze_medal"],[60,"银牌","silver_medal"],[100,"金牌","gold_medal"]],"medal_banner_frames":150,"FURNITURE":[{"id":"food_bowl","name":"狗食盆","name_en":"Dog bowl","price":5,"place":[640,560],"seats":[],"bowl":true,"dogs_only":true},{"id":"cat_bowl","name":"猫食盆","name_en":"Cat bowl","price":5,"place":[704,572],"seats":[],"bowl":true,"cats_only":true},{"id":"water_bowl","name":"水碗","name_en":"Water bowl","price":6,"place":[520,584],"seats":[],"bowl":true,"drink":true},{"id":"ball","name":"小皮球","name_en":"Ball","price":6,"place":[300,540],"seats":[],"toy":true,"dogs_only":true},{"id":"plant","name":"盆栽","name_en":"Plant","price":8,"place":[744,452],"seats":[]},{"id":"cushion","name":"软垫","name_en":"Cushion","price":10,"place":[192,564],"seats":[[9,3]]},{"id":"box","name":"纸箱","name_en":"Box","price":12,"place":[472,532],"seats":[[13,17]],"front":7,"seat_actions":["sit","sit","lie"],"stay":{"sit":[600,1000],"lie":[900,1500]},"stay_chance":0.35},{"id":"teaser","name":"逗猫棒","name_en":"Cat teaser","price":14,"place":[756,588],"seats":[],"toy":true,"spot":[3,20],"cats_only":true},{"id":"rug","name":"地毯","name_en":"Rug","price":15,"place":[400,568],"seats":[],"flat":true},{"id":"dog_bed","name":"狗窝","name_en":"Dog bed","price":18,"place":[272,524],"seats":[[14,9]],"front":7,"dogs_only":true,"seat_actions":["lie","lie","sit"],"stay":{"lie":[1200,2000]},"stay_chance":0.4},{"id":"lamp","name":"落地灯","name_en":"Lamp","price":20,"place":[252,452],"seats":[]},{"id":"sofa","name":"小沙发","name_en":"Sofa","price":25,"place":[588,452],"seats":[[9,8],[17,8]]},{"id":"cat_tree","name":"猫爬架","name_en":"Cat tree","price":30,"place":[112,452],"seats":[[25,35],[8,21],[21,7]],"climb":[14,51],"cats_only":true,"seat_actions":["sit","lie","lie","play"],"stay":{"sit":[900,1500],"lie":[1500,2600],"play":[300,500]},"stay_chance":0.75},{"id":"crib","name":"婴儿床","name_en":"Crib","price":40,"place":[400,452],"seats":[[16,9]],"seat_actions":["sit","lie","bounce"],"stay_chance":0.3}],"park_scale":4,"park_floor":[70,730,486,584],"park_walk_speed":0.6,"park_seat_chance":0.3,"park_hop_frames":30,"park_message_frames":150,"park_climb_frames":20,"park_climb_pause":28,"park_climb_arc":26,"park_tree_pause":[70,150],"park_tree_jump_frames":28,"park_toy_chance":0.25,"park_run_speed":1.8,"park_ball_roll_frames":50,"park_drag_start":6,"park_fall_speed":10,"park_drop_reach":40,"park_held_stretch":1.35,"park_shop_per_page":7,"park_wall_bottom":448,"park_spin_chance":0.08,"park_play_chance":0.12,"park_pat_chance":0.15,"park_play_gap":44,"park_pat_gap":48,"park_action_frames":{"sit":[360,720],"lie":[600,1100],"spin":[90,140],"play":[180,260],"pat":[180,240],"patted":[180,240],"stand":[240,480],"wave":[60,100],"ready":[1500,1500],"eat":[300,480],"bat":[300,480],"bounce":[200,320],"proud":[90,150],"landed":[45,45],"held":[60,60]},"park_cell_width":64,"park_cell_height":60,"park_ground":56,"PARK_PET_INFO":[{"kind":"human","breed":"人类","breed_en":"Human","box":[8,11,53,48]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,52,50]},{"kind":"dog","breed":"雪纳瑞","breed_en":"Schnauzer","box":[6,8,52,49]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,53,50]},{"kind":"dog","breed":"法斗","breed_en":"French bulldog","box":[7,9,51,48]},{"kind":"dog","breed":"贵宾","breed_en":"Poodle","box":[6,7,53,50]},{"kind":"dog","breed":"腊肠","breed_en":"Dachshund","box":[4,10,56,47]},{"kind":"dog","breed":"比熊","breed_en":"Bichon","box":[6,8,53,49]},{"kind":"cat","breed":"暹罗猫","breed_en":"Siamese cat","box":[7,9,50,48]},{"kind":"dog","breed":"拉布拉多","breed_en":"Labrador","box":[6,8,53,49]},{"kind":"dog","breed":"小狗","breed_en":"Puppy","box":[6,8,52,49]},{"kind":"cat","breed":"猫咪","breed_en":"Kitty","box":[7,9,50,48]},{"kind":"cat","breed":"猫咪","breed_en":"Kitty","box":[7,15,50,42]},{"kind":"dog","breed":"小狗","breed_en":"Puppy","box":[4,10,56,47]}],"ANIMAL_POSES":["walk0","walk1","sit0","sit1","lie0","lie1","play0","play1","happy0","happy1"],"HUMAN_POSES":["walk0","walk1","stand0","stand1","wave0","wave1","pat0","pat1"],"park_pet_scale":2,"park_person_scale":3,"park_most_pets":4,"park_choices_per_page":8,"AVATAR_BOX":[18,0,34,57],"AVATAR_OUTLINE":[22,24,38],"HAIR_STYLES":[["beanie","毛线帽","Beanie"],["short","短发","Short"],["buzz","寸头","Buzz cut"],["curtain","中分","Middle part"],["bob","波波头","Bob"],["ponytail","马尾","Ponytail"],["long","长发","Long"],["bun","丸子头","Bun"]],"HAIR_COLORS":[[52,44,50],[238,200,100],[128,82,50],[236,234,228]],"SKIN_COLORS":[[255,226,200],[246,204,168],[214,158,116],[146,98,68]],"OUTFITS":[{"id":"tee","name":"T恤","name_en":"T-shirt","price":0,"colors":{"C":[88,150,220],"J":[164,160,118],"O":[36,38,50]}},{"id":"hoodie","name":"卫衣","name_en":"Hoodie","price":15,"colors":{"C":[110,180,110],"J":[64,64,76],"O":[240,240,236]}},{"id":"overalls","name":"背带裤","name_en":"Overalls","price":20,"colors":{"C":[250,214,90],"J":[80,120,190],"O":[150,70,50]}},{"id":"dress","name":"连衣裙","name_en":"Dress","price":25,"colors":{"C":[240,140,170],"J":[240,140,170],"O":[200,60,80]}},{"id":"pajamas","name":"小熊睡衣","name_en":"Bear pajamas","price":30,"colors":{"C":[180,214,246],"J":[180,214,246],"O":[250,250,250]}},{"id":"pilot","name":"飞行员夹克","name_en":"Pilot jacket","price":40,"colors":{"C":[140,86,54],"J":[60,60,70],"O":[40,32,30]}}],"TEXTS":{"title":["飞行搭档","Flight Friends"],"switch_language":["English","中文"],"score":["得分","Score"],"best_short":["最高 {n}","Best {n}"],"all_medals":["集齐！","All done!"],"medal_left":["还差{n}","{n} left"],"medal_first":["首次获得{medal}！","First {medal}!"],"medal_got":["获得{medal}！","{medal}!"],"medal_points":["{n} 分达成","Reached {n} points"],"bronze_medal":["铜牌","Bronze"],"silver_medal":["银牌","Silver"],"gold_medal":["金牌","Gold"],"friend_left":["新伙伴还差{n}","New friend in {n}"],"friend_here":["就在前面！","Just ahead!"],"locked_1":["飞行中","Meet them"],"locked_2":["可遇到","in flight"],"album":["宠物图鉴","Pet Album"],"album_done":["全部集齐！","All found!"],"album_hint":["已收集 {n} / {total}，点击已解锁的宠物就能换它出战","Found {n} / {total} · click an unlocked pet to fly with it"],"previous":["上一页","Back"],"next":["下一页","Next"],"page":["第 {n} / {total} 页","Page {n} / {total}"],"album_back":["返回选角 · 按 Esc","Back · Esc"],"choose_title":["选择你的飞行搭档","Pick your flight friend"],"choose_hint":["点击角色或按 1～8 选择","Click or press 1-8"],"pet_line":["{name}：{intro}  ·  最高分：{best}  ·  宠物币：{coins}","{name}: {intro}  ·  Best: {best}  ·  Coins: {coins}"],"welcome":["欢迎登机，{name}！按空格键马上起飞","Welcome aboard, {name}! Press Space to fly"],"thanks_owner":["谢谢你把{name}带上飞机！","Thanks for bringing {name} aboard!"],"how_to":["操控飞机，穿过土块，接上柱子上的“？？？”新伙伴！","Fly through the gaps and pick up the ??? friends on the pillars!"],"start":["开始游戏 · 按空格键","Start · Space"],"upload":["上传我的宠物！","Add my pet!"],"keys":["空格键：上升  |  P：暂停／继续  |  R：返回选角","Space: fly up  |  P: pause  |  R: back to friends"],"quit":["关闭窗口退出","Close the window to quit"],"no_save":["最高分仅在本次运行中保留","Best score is kept for this run only"],"new_one":["新伙伴登机！","A new friend is aboard!"],"new_many":["本局解锁 {n} 位新伙伴！","{n} new friends this run!"],"swapped_one":["已换上{name}","Now flying with {name}"],"swapped_many":["已换上{name}，按 C 换下一只","Flying with {name} · C for the next one"],"press_c_one":["按 C 换它出战","Press C to fly with it"],"press_c_many":["按 C 挑一只出战","Press C to pick one"],"again":["按空格键再来一次","Press Space to fly again"],"r_back":["R：返回选角","R: back to friends"],"link_owner":["谢谢你，{name}的主人！","Thank you, {name}'s owner!"],"link_new":["获得新伙伴！","A new friend!"],"contributor":["你是第 {n} 位送宠物登机的主人","You are owner number {n} to bring a pet aboard"],"crown":["奖励：{name}的卡片戴上专属皇冠","Reward: {name}'s card wears a crown"],"bonus":["奖励：额外解锁 {names}","Reward: also unlocked {names}"],"joined":["{name}已加入你的图鉴，马上带它起飞吧","{name} joined your album. Take it flying!"],"want_aboard":["你家宠物也想登机？","Want your own pet aboard?"],"upload_hint":["在选角页点“上传我的宠物！”，还有主人奖励","Click Add my pet! on the first page for an owner reward"],"accept":["收下 · 按空格键","Got it · Space"],"paused":["暂停一下","Paused"],"score_line":["得分：{n}","Score: {n}"],"resume":["按 P 继续飞行","Press P to keep flying"],"back_quit":["R：返回选角  |  关闭窗口退出","R: back to friends  |  close the window to quit"],"crashed":["坠机啦！","Crashed!"],"record_note":["  新纪录！","  New best!"],"run_line":["本局 {score}{medal}  ·  最高 {best}  ·  宠物币 +{coins}{record}","This run {score}{medal}  ·  Best {best}  ·  Coins +{coins}{record}"],"run_score":["本局得分：{n}","This run: {n}"],"best_score":["最高分：{n}","Best: {n}"],"board_title":["全服前三","Top 3"],"board_loading":["加载中...","Loading..."],"board_empty":["还没人上榜","No scores yet"],"board_offline":["排行榜连不上","Board offline"],"board_you":["（你）"," (you)"],"board_made":["你进前三了！","You made top 3!"],"board_name_hint":["输入昵称","Your name"],"board_ok":["上榜","Save"],"board_sent":["已上榜！","You're on it!"],"board_points":["{n} 分","{n} pts"],"board_open":["虚位以待","Open spot"],"board_hint":["打进前三就能留名","Beat #3 to join"],"new_best":["刷新个人纪录！","New personal best!"],"run_coins":["本局宠物币 +{n}  ·  共 {total}","Coins this run +{n}  ·  Total {total}"],"names_joiner":["、",", "],"back_touch":["返回","Back"],"again_touch":["点击屏幕再来一次","Tap to fly again"],"keys_touch":["点击屏幕：上升  |  P：暂停／继续  |  R：返回选角","Tap: fly up  |  P: pause  |  R: back to friends"],"quit_web":["关闭网页退出","Close the page to quit"],"no_save_web":["最高分仅在本次打开时保留","Best score is kept for this visit only"],"load_failed":["加载失败，请刷新页面再试","Loading failed. Please refresh the page"],"old_browser":["这个浏览器太旧了，请换用新版 Chrome、Edge 或 Safari","This browser is too old. Please use a new Chrome, Edge or Safari"],"park_button":["乐园","Park"],"park":["宠物乐园","Pet Park"],"back_esc":["返回 · Esc","Back · Esc"],"shop":["家具商店","Shop"],"pets_button":["选宠物","Pets"],"my_look":["我的形象","My look"],"you":["你","you"],"coins_short":["还差 {count} 个宠物币，去飞一局吧！","{count} more coins needed. Go fly!"],"bought":["买到了{name}！","Bought: {name}!"],"placed":["{name}放好啦！","{name} is in place!"],"room_full":["小屋最多住 {count} 只，先点掉一只吧","The room fits {count}. Send one out first"],"doing_seat":["在{place}上休息","Resting on the {place}"],"doing_seat_nap":["在{place}上打盹","Napping on the {place}"],"doing_climb":["在爬{place}","Climbing the {place}"],"doing_jump":["在跳上{place}","Jumping onto the {place}"],"doing_inside":["窝在{place}里","Snug in the {place}"],"doing_seat_play":["在{place}上玩","Playing on the {place}"],"doing_seat_bounce":["在{place}上蹦蹦跳","Bouncing on the {place}"],"doing_eat":["在吃饭","Eating"],"doing_go_eat":["去吃东西","Off for a snack"],"doing_drink":["在喝水","Having a drink"],"doing_bat":["在玩逗猫棒","Batting the teaser"],"doing_ball":["在追球","Chasing the ball"],"doing_proud":["玩球玩得好开心","Happy after a ball game"],"doing_held":["被拎起来啦","Being carried"],"doing_landed":["抖抖毛","Shaking it off"],"pet_drag_hint":["松开鼠标，把它放到别处","Let go to put it down"],"doing_meet":["去找{friend}","Going to {friend}"],"doing_walk":["到处溜达","Strolling around"],"doing_sit":["坐着发呆","Sitting and dreaming"],"doing_lie":["睡午觉","Taking a nap"],"doing_spin":["转圈追尾巴","Chasing its tail"],"doing_play":["和{friend}打闹","Playing with {friend}"],"doing_patted":["被{friend}摸头","Getting pats from {friend}"],"doing_pat":["摸{friend}的头","Patting {friend}"],"doing_ready":["等{friend}","Waiting for {friend}"],"doing_stand":["四处张望","Looking around"],"doing_wave":["跟你打招呼","Waving at you"],"breed_line":["品种：{breed}","Breed: {breed}"],"founder":["创始伙伴","Founding friend"],"submitted":["投稿伙伴","Shared by an owner"],"doing_line":["正在：{doing}","Now: {doing}"],"tap_to_hop":["点它会跳一下哦","Click it to hop"],"move":["拖动","Move"],"choose_pets":["选宠物","Pick pets"],"in_room":["屋里 {count} / {most} 只，点卡片换","In the room: {count} / {most}"],"hair_color":["发色","Hair"],"skin":["肤色","Skin"],"wearing":["穿着","On"],"wear":["换上","Wear"],"drag_hint":["拖到想放的地方，松开就放下","Drag it where you like, then let go"],"park_hint_empty":["去家具商店，用宠物币给小屋添家具","Visit the shop and spend pet coins on furniture"],"park_hint":["点宠物看介绍 · 宠物和家具都能拖","Click a pet · drag pets or furniture"],"quiz_button":["足迹","Tracks"],"quiz_title":["足迹侦探","Track Detective"],"quiz_ask":["第 {n}/{total} 题：这是谁的脚印？","{n}/{total}: Whose footprint is this?"],"quiz_keys":["点一个答案，或按 1~3","Click an answer or press 1-3"],"quiz_keys_touch":["点一个答案","Tap an answer"],"quiz_next_touch":["下一题","Next"],"quiz_results_touch":["看成绩","Results"],"quiz_right":["答对了！","You got it!"],"quiz_wrong":["差一点！","So close!"],"quiz_it_was":["这是{name}的脚印","Answer: {name}"],"did_you_know":["你知道吗？","Did you know?"],"quiz_next":["下一题 · 空格","Next · Space"],"quiz_results":["看成绩 · 空格","Results · Space"],"quiz_score":["答对 {right} / {total} 题！","{right} / {total} right!"],"quiz_coins":["获得 {n} 个宠物币","You earned {n} pet coins"],"quiz_perfect":["全部答对！获得 {n} 个宠物币","All right! You earned {n} pet coins"],"quiz_again":["再玩一次","Play again"]},"LANGUAGES":["zh","en"],"TRACK_ANIMALS":[{"id":"dog","name":"狗","name_en":"Dog","fact":"狗的鼻纹和人的指纹一样，每只狗都不一样！","fact_en":"A dog's nose print is one of a kind, just like your fingerprint!"},{"id":"cat","name":"猫","name_en":"Cat","fact":"猫走路时会把爪子收起来，所以脚印里看不到爪痕。","fact_en":"Cats tuck their claws in when they walk, so their prints show no claw marks."},{"id":"bear","name":"熊","name_en":"Bear","fact":"熊走路时整个脚掌着地，后脚印看起来很像人的脚印！","fact_en":"Bears walk flat-footed like us. Their back footprint looks almost human!"},{"id":"raccoon","name":"浣熊","name_en":"Raccoon","fact":"浣熊的前爪像小手一样灵活，能拧开罐子、拨开门闩。","fact_en":"Raccoon paws work like little hands. They can open jars and latches!"},{"id":"rabbit","name":"兔子","name_en":"Rabbit","fact":"兔子跳的时候，大大的后脚会落在小前脚的前面。","fact_en":"When a rabbit hops, its big back feet land in front of its small front feet."},{"id":"deer","name":"鹿","name_en":"Deer","fact":"公鹿的角每年都会掉下来，然后再长出一对新的。","fact_en":"A male deer drops his antlers every year and grows a brand-new pair."},{"id":"horse","name":"马","name_en":"Horse","fact":"马每只脚只用一个脚趾走路，马蹄其实是一个超大的脚指甲！","fact_en":"Horses walk on one toe per foot. A hoof is a giant toenail!"},{"id":"elephant","name":"大象","name_en":"Elephant","fact":"大象能用脚感觉到远处同伴踩地的震动，像用脚在听。","fact_en":"Elephants feel the rumbles of far-away elephants through their feet."},{"id":"duck","name":"鸭子","name_en":"Duck","fact":"鸭子站在冰上也不怕冷，脚里的血管会帮它留住热量。","fact_en":"Ducks can stand on ice: special blood vessels keep the heat in their bodies."},{"id":"chicken","name":"鸡","name_en":"Chicken","fact":"鸡是恐龙的亲戚，霸王龙算是它的远房表亲！","fact_en":"Chickens are related to dinosaurs. T. rex is a distant cousin!"}],"TRACK_IDS":["dog","cat","bear","raccoon","rabbit","deer","horse","elephant","duck","chicken"],"TRACK_SIZE":42,"QUIZ_CELL":32,"quiz_questions":5,"quiz_choices":3,"quiz_coins_per_right":2,"quiz_perfect_bonus":3,"quiz_fact_delay":45,"quiz_reveal_frames":480,"quiz_wiggle_frames":18,"LEADERBOARD_URL":"https://jvpakstklehznnyvbuuh.supabase.co","LEADERBOARD_KEY":"sb_publishable_uHN-NBLcbrDdMoEek2z03A_Nsaf5fKZ","board_size":3,"board_name_length":8},"sprites":{"fox":[["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOBBOOOOOOBBOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."],["..K..........K..",".KOK........KOK.",".KOOK......KOOK.",".KOBOKKKKKKOBOK.",".KOOOOOOOOOOOOK.","KOOOOOOOOOOOOOOK","KOOKKOOOOOOKKOOK","KWWOOOOOOOOOOWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","...KOOWWWWOOK...","...KOOWWWWOOKKK.","...KOOOOOOOOKOOK","...KOKKOOKKOKOWK","...KKK.KK.KKKKK."]],"rabbit":[["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLBBLLLLBBLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."],["..KK......KK..",".KLLK....KLLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLPK....KPLK.",".KLLKKKKKKLLK.","KLLLLLLLLLLLLK","KLLKKLLLLKKLLK","KPPLLLPPLLLPPK",".KLLLLKKLLLLK.","..KKLLLLLLKK..","..KLLWWWWLLK..","..KLLWWWWLLKKK","..KLKLLLLKLKWK","..KKK.KK.KKKK."]],"hedgehog":[["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTBBTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"],["...K..K..K..K.....","..KDKKDKKDKKDK....",".KDDtDDtDDtDDDK...","KDtDDtDDtDDtDDDK..","KDDtDDtDDtDDKKKK..","KDtDDtDDtDKTTTTTK.","KDDtDDtDDKTTKKTTTK","KDtDDtDDKTTTTTTTBK",".KDDDDDKTTPTTTTTK.","..KTTKKKKTTKKKKK..","..KKK....KKK......"]],"frog":[["...KKK....KKK...","..KWWWK..KWWWK..","..KWBBK..KBBWK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"],["...KKK....KKK...","..KWWWK..KWWWK..","..KKKKK..KKKKK..",".KEEEEKKKKEEEEK.","KEEEEEEEEEEEEEEK","KPPEEEEEEEEEEPPK","KEEKEEEEEEEEKEEK","KEEEKKKKKKKKEEEK",".KEEEeeeeeeEEEK.","KeeKEEEKKEEEKeeK","KKKKKKK..KKKKKKK"]],"squirrel":[["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtBBttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."],["...........KKKK.","..K..K....KtttTK",".KtKKtK..KtttttK",".KttttK..KttKKtK","KtKKttK..KtK.KtK","KtttttK..KKK.KtK","KPTTtK......KttK",".KKTttKKKKKKttK.","..KTTttttttttK..","..KTTTttttttK...","..KTKTTtttttK...","..KKKTTtKKttK...","....KKKK.KKKK..."]],"duckling":[["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYBBYYBBYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."],["....KKKKKK....","...KYYYYYYK...","..KYYYYYYYYK..","..KYKKYYKKYK..","..KYYKyyKYYK..","..KPYYyyYYPK..",".KYYYYYYYYYYK.","KYYKYYYYYYKYYK","KYK.KYYYYK.KYK",".K..KYYYYK..K.","....KKKKKK....","....yyK.yyK...","...yyyK.yyyK.."]],"bat":[["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWBWWBWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."],["....K....K....","....K....K....","...KVVVVVVK...","..KVvVVVVvVK..",".KVvVVVVVVvVK.","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK","KVvVVVVVVVVvVK",".KVvVVVVVVvVK.","..KKVVVVVVKK..","...KWKWWKWK...","...KWWPPWWK...","..KVKVVVVKVK..","..KK.KKKK.KK.."]],"sloth":[["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDBTTTTBDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"],["..KK........KK..","..KtK......KtK..","..KtK......KtK..","..KtKKKKKKKKtK..","..KttttttttttK..",".KttTTTTTTTTttK.",".KtTDDTTTTDDTtK.",".KtTDDTTTTDDTtK.",".KtTTTTKKTTTTtK.",".KttTPTTTTPTttK.","..KtttTTTTtttK..","..KttttttttttK..","...KttttttttK...","....KKttttKK....","......KKKK......"]],"raccoon":[["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKBWKKGGKKWBKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."],["..KK........KK..",".KGGK......KGGK.",".KGGKKKKKKKKGGK.","KGGGGGGGGGGGGGGK","KGKKKKGGGGKKKKGK","KKKKKKKGGKKKKKKK","KGKKKKWWWWKKKKGK",".KGGWWWBBWWWGGK.","..KKKWWWWWWKKK..","...KGGGGGGGGK...","...KGGLLLLGGKKK.","...KGKGGGGKGKDGK","...KKK.KK.KKKKK."]],"badger":[["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKWKWWWWKWKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."],["...KK......KK...","..KWWKKKKKKWWK..",".KWWKKWWWWKKWWK.",".KWKKKWWWWKKKWK.","KWWKKKWWWWKKKWWK","KWWKKKWWWWKKKWWK",".KWWWWWBBWWWWWK.","..KKWWWWWWWWKK..","..KGGGGGGGGGGK..","..KGGGGGGGGGGK..","..KGKKGGGGKKGK..","..KKK.KKKK.KKK.."]],"tortoise":[["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTBK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."],["......KKKKKK........","....KKEeEEeEKK......","...KeEEKEEKEEeK.....","..KEEeEEKKEEeEEK.KK.",".KeEEKEEeEEKEEeEKTTK",".KEeEEKKEEKKEEeEKTKK","KEEEEEEEEEEEEEEEETTK","KKKKKKKKKKKKKKKKKTK.",".KTTK.......KTTK.K..",".KKKK.......KKKK...."]],"capybara":[["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTBBTK.","..KTTTTTTTTTTTTBBTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."],["..............KK....","....KKKKKKKKKKttK...","...KTTTTTTTTTTTTTK..","..KTTTTTTTTTTTTTTTK.","..KTTTTTTTTTTTTKKTTK","..KtTTTTTTTTTTTTTTDK","..KttTTTTTTTTTTTTTDK","...KtttttttTTTTTTKK.","...KttKKKKKKKKttK...","...KtK........KtK...","...KKK........KKK..."]],"red_panda":[["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWBBWooooooWBBWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."],["..KK........KK..",".KWWK......KWWK.",".KOoKKKKKKKKoOK.","KooooooooooooooK","KoWWooooooooWWoK","KWKKWooooooWKKWK","KWWWWWWBBWWWWWWK",".KWWWWWWWWWWWWK.","..KKooooooooKK..","...KDDooooDDKKK.","...KDDooooDDoWK.","...KDKDDDDKDKoWK","...KKK.KK.KKKKK."]],"mole":[["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDBDDDDBDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"],["....KKKKKK....","...KDDDDDDK...","..KDDDDDDDDK..","..KDKDDDDKDK..",".KDDDDPPDDDDK.",".KDDDKPPKDDDK.","KDDDDDDDDDDDDK","KWWKDDDDDDKWWK","KWWKDDDDDDKWWK","KKKKKKKKKKKKKK"]],"monkey":[["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTBTTBTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."],["...KtK....KtK...","...KtK....KtK...","...KtK....KtK...","...KttKKKKttK...","...KttttttttK...","..KKttttttttKK..",".KTtKtTTTTtKtTK.",".KTtKTKTTKTKtTK.","..KKTTTTTTTTKK..","...KTTKKKKTTK...","...KTTTPPTTTK...","....KtttttK.....","...KttttttK.KK..","...KttKKttKKtK..","...KKK..KKK.KK.."]],"opossum":[["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLBLLBLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."],["......KK......","......KPK.....","......KPK.....",".....KGGK.....","....KGGGGK....","...KGGGGGGK...","..KGGGGGGGGK..","..KGGLGGLGGK..","..KGGGGGGGGK..","...KGGGGGGK...","..KPKLLLLKPK..","..KPLLLLLLPK..","...KLKLLKLK...","...KLLLLLLK...","....KLPPLK....",".....KKKK....."]],"hanging_parrot":[["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEBEEBEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."],["...K....K...","...K....K...","..KRRRRRRK..","..KRRRRRRK..",".KEEEEEEEEK.",".KEeEEEEeEK.",".KEeEEEEeEK.",".KEEEEEEEEK.",".KeEEEEEEeK.","..KEEEEEEK..","..KEKEEKEK..","..KEEEEEEK..","...KEyyEK...","....KyyK....",".....KK....."]],"running_fox":[["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","..KOKK.KOK.KOK.KOK....","..KK....KK..KK..KK...."],["................K..K..","...............KOKKOK.","KKK............KOOOOOK","KWOKKKKKKKKKKKKOOBOOOB","KWOOOOOOOOOOOOOOOOOWWK",".KKOOOOOOOOOOOOOOWWKK.","...KOOOOOOOOOOOOWKK...","...KOOKOOOOOOKOOK.....","....KOK..KOKOK..KOK...","....KK....KKK....KK..."]],"deer":[["..................K..K..","..................KK.K..","...................KKK..","..................KttK.K","..................KtttKK","..................KtBttK","..................KttWWK",".KK...............KtttK.","KWWKKKKKKKKKKKKKKKtttK..","KWtttttttttttttttttttK..",".KtWtttWtttWtttttttttK..",".KtttWtttWtttttttttWWK..",".KttttttttttttttttWWK...",".KtttKKKKKKKKKKKtttK....","..KtK..........KtK......","..KtK..........KtK......","..KtK..........KtK......","..KKK..........KKK......"]],"bird":[["..KK.....KK..",".KRRK...KRRK.","..KRRK.KRRK..","...KRRKRRK.K.","....KRRRKKYK.",".....KKK..K.."],[".............",".............","...KKK...K...","..KRRRKKKYK..",".KRRRRRRK.K..","KRRK.KRRK...."]],"butterfly":[["KK.K.KK","KsK.KsK","KssKssK",".KsKsK.","KsKKKsK","KK...KK"],["...K...","..KsK..",".KssK..","..KsK..",".KsKK..",".KK...."]],"coin":[["....KKKK....","..KKYYYYKK..",".KWWYYYYYYK.",".KWYDYYDYYK.","KYDYDYYDYDyK","KYDYYYYYYDyK","KYYYYDDYYYyK","KYYYDDDDYYyK","KYYYDDDDYYyK",".KYYYDDYYyK.","..KKyyyyKK..","....KKKK...."],["....KKKK....","...KYYYYK...","...KWYYyK...","...KWDYyK...","...KYDDyK...","...KYYDyK...","...KYDDyK...","...KDDDyK...","...KYDDyK...","...KYYYyK...","...KyyyyK...","....KKKK...."],[".....KK.....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....","....KYyK....",".....KK....."]],"bronze_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KMMMMMMK.","KMWMMMMmmK","KMWMMMMmmK","KMMMMMMmmK","KMMMMMmmmK",".KmmmmmmK.","..KKKKKK.."]],"silver_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KAAAAAAK.","KAWAAAAaaK","KAWAAAAaaK","KAAAAAAaaK","KAAAAAaaaK",".KaaaaaaK.","..KKKKKK.."]],"gold_medal":[[".KKK..KKK.",".KRK..KSK.","..KRKKSK..","..KRKKSK..","...KKKK...","..KKKKKK..",".KYYYYYYK.","KYWYYYYyyK","KYWYYYYyyK","KYYYYYYyyK","KYYYYYyyyK",".KyyyyyyK.","..KKKKKK.."]],"cat_tree":[["..................................",".........KKKK.................KKKK",".........KVVK.................KVVK",".........KVVK.................KVVK",".........KVVKKKKKKKKKKKKKKKKKKKVVK",".........KKKKPPPPPPPPPPPPPPPPPKKKK",".........KVVVPPPPPPPPPPPPPPPPPVVVK",".........KVVVVVVVVVVVVVVVVVVVVVVVK",".........KVVVVVVVVVVVVVVVVVVVVVVVK",".........KvvvvvvvvvvvvvvvvvvvvvvvK",".........KKKKKKKKKKKKKKKKKKKKKKKKK","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","..................KTTTK...........","..................KtttK...........","KKKKKKKKKKKKKKKKK.KTTTK...........","KUUUUUUUUUUUUUUUK.KtttK...........","KVVVVVVVVVVVVVVVK.KTTTK...........","KvvvvvvvvvvvvvvvK.KtttK...........","KKKKKKKKKKKKKKKKK.KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK...K....KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK...K....KTTTK...........",".....KTTTK...K....KtttK...........",".....KtttK.KKKKK..KTTTK...........",".....KTTTK.KPPRK..KtttK...........",".....KtttK.KRRRK..KTTTK...........",".....KTTTK.KRRRK..KtttK...........",".....KtttK.KKKKK.KKKKKKKKKKKKKKKKK",".....KTTTK.......KUUUUUUUUUUUUUUUK",".....KtttK.......KVVVVVVVVVVVVVVVK",".....KTTTK.......KvvvvvvvvvvvvvvvK",".....KtttK.......KKKKKKKKKKKKKKKKK",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....",".....KtttK..............KtttK.....",".....KTTTK..............KTTTK.....","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK","KUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUK","KVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVK","KVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVK","KvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvK","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"]],"crib":[["KKK..........................KKK","KtK..........................KtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtK...tt..tt..tt..tt..tt..tt.KtK","KtKKKKttKKttKKttKKttKKttKKttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKPPttPPttPPttPPttPPttPPttKKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKTTTTTTTTTTTTTTTTTTTTTTTTTTKtK","KtKKKKKKKKKKKKKKKKKKKKKKKKKKKKtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KtK..........................KtK","KKK..........................KKK"]],"sofa":[["..KKKKKKKKKKKKKKKKKKKKKK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","..KOOOOOOOOOOoOOOOOOOOOK..","KKKKKOOOOOOOOoOOOOOOOKKKKK","KOOOKOOOOOOOOoOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKOOOOOOOOOOOOOOOOKOOOK","KOOOKKKKKKKKKKKKKKKKKKOOOK","KKKKKKKKKKKKKKKKKKKKKKKKKK","KKooooooooooooooooooooooKK",".KKKKKKKKKKKKKKKKKKKKKKKK.","..DD..................DD.."]],"lamp":[[".KKKKKKKK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KYYYYYYK.",".KyyyyyyK.",".KKKKKKKK.","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","....DD....","..KKKKKK..","..KttttK..","..KttttK..","..KKKKKK.."]],"cushion":[["KKKKKKKKKKKKKKKKKK","KSSSSSSSSSSSSSSSSK","KSSKKKKKKKKKKKKSSK","KSSKWWWWWWWWWWKSSK","KSSKKKKKKKKKKKKSSK","KSSSSSSSSSSSSSSSSK","KKKKKKKKKKKKKKKKKK"]],"plant":[[".....KK.....","....KEEK....",".KK.KEeK.KK.","KEEKKEeKKEEK","KEeEKEeKEeEK",".KEeEEeEEeK.","..KKEEeEKK..","....KeEK....","..KKKKKKKK..","..KOOOOOOK..","..KKKKKKKK..","...KOOOOK...","...KOooOK...","...KOooOK...","....KKKK...."]],"food_bowl":[["..tDtTDt..","KKKKKKKKKK","KRRRRRRRRK",".KRRWRRRK.","..KKKKKK.."]],"rug":[["............KKKKKKKKKKKKKKKKKKKK............","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK","KKWWWPPPPPRRRRRRRRRRRRRRRRRRRRRRRRPPPPPWWWKK",".KKWWWPPPPPPRRRRRRRRRRRRRRRRRRRRPPPPPPWWWKK.","...KKKWWWPPPPPPPPRRRRRRRRRRPPPPPPPPWWWKKK...","......KKKKWWWWPPPPPPPPPPPPPPPPWWWWKKKK......","............KKKKKKKKKKKKKKKKKKKK............"]],"house":[[".......KK.......","......KRRK......",".....KRRRRK.....","....KRRRRRRK....","...KRRRRRRRRK...","..KRRRRRRRRRRK..",".KKKKKKKKKKKKKK.","..KWWWWWWWWWWK..","..KWKKKWWKKKWK..","..KWKSKWWKtKWK..","..KWKKKWWKtKWK..","..KWWWWWWKtKWK..","..KWWWWWWKyKWK..","..KKKKKKKKKKKK.."]],"heart":[[".KK.KK.","KRRKRRK","KRWRRRK",".KRRRK.","..KRK..","...K..."]],"arrow":[["KKKKKKK","KYYYYYK",".KYYYK.","..KYK..","...K..."]],"cat_bowl":[["...LGLGL..","KKKKKKKKKK","KPPPPPPPPK",".KPPSWPPK.","..KKKKKK.."]],"water_bowl":[["KKKKKKKKKK","KAWAAAWAAK",".KSSSSSSK.","..KKKKKK.."]],"box":[["KKKKKK..............KKKKKK","KTTTTK..............KTTTTK","KTTTTK..............KTTTTK","KTTKKKKKKKKKKKKKKKKKKKKTTK","KTTKttttttttttttttttttKTTK","KKKKttttttttttttttttttKKKK","...KttttttttttttttttttK...",".KKKKKKKKKWWWWWWKKKKKKKKK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KttttttttttttttttttttttK.",".KKKKKKKKKKKKKKKKKKKKKKKK."]],"box_front":[["..........................","..........................","..........................","..........................","..........................","..........................","..........................",".KKKKKKKKKWWWWWWKKKKKKKKK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTWWWWWWTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KTTTTTTTTTTTTTTTTTTTTTTK.",".KttttttttttttttttttttttK.",".KKKKKKKKKKKKKKKKKKKKKKKK."]],"dog_bed":[["KKKKKKKKKKKKKKKKKKKKKKKKKKKK","KmmmmmmmmmmmmmmmmmmmmmmmmmmK","KmmKKKKKKKKKKKKKKKKKKKKKKmmK","KmmKLLLLLLLLLLLLLLLLLLLLKmmK","KmmKLLLLLLLLLLLLLLLLLLLLKmmK","KmmKLLLLLLLLLLLLLLLLLLLLKmmK","KmmKLLLLLLLLLLLLLLLLLLLLKmmK","KKKKKKKKKKKKKKKKKKKKKKKKKKKK","KMssssssssssssssssssssssssMK","KMMMMMMMMMMMMMMMMMMMMMMMMMMK","KMMMMMMMMMMMMMMMMMMMMMMMMMMK","KKKKKKKKKKKKKKKKKKKKKKKKKKKK"]],"dog_bed_front":[["............................","............................","............................","............................","............................","............................","............................","KKKKKKKKKKKKKKKKKKKKKKKKKKKK","KMssssssssssssssssssssssssMK","KMMMMMMMMMMMMMMMMMMMMMMMMMMK","KMMMMMMMMMMMMMMMMMMMMMMMMMMK","KKKKKKKKKKKKKKKKKKKKKKKKKKKK"]],"ball":[[".KKKK.","KRRRWK","KYYYYK","KRRRRK","KRRRRK",".KKKK."],[".KKKK.","KRYRWK","KRYRRK","KRYRRK","KRYRRK",".KKKK."]],"teaser":[["................","..DDDDDDDDDDD...","..DDDDDDDDDDD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...","...K.......DD...",".KKKKK.....DD...",".KRRRK.....DD...",".KRRRK.....DD...",".KPPPK.....DD...",".KPPPK.....DD...",".KKKKK.....DD...","..KKK......DD...","..KKK......DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","........KKKDDKKK","........KttttttK","........KKKKKKKK"],["................","..DDDDDDDDDDD...","..DDDDDDDDDDD...","...K.......DD...","...K.......DD...","...K.......DD...","....K......DD...","....K......DD...","....K......DD...","....K......DD...",".....K.....DD...",".....K.....DD...",".....K.....DD...","...KKKKK...DD...","...KRRRK...DD...","...KRRRK...DD...","...KPPPK...DD...","...KPPPK...DD...","...KKKKK...DD...","....KKK....DD...","....KKK....DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","...........DD...","........KKKDDKKK","........KttttttK","........KKKKKKKK"]]},"sky_themes":[{"sky":[[132,208,186],[214,234,184],[255,240,190]],"body":[255,226,112],"stars":0,"cloud":[255,255,244],"far":[128,176,158],"snow":[238,246,228],"near":[92,164,84],"tree":[50,118,70],"tint":null,"ground":[72,142,70],"rain_cloud":[128,136,152]},{"sky":[[236,120,92],[255,176,104],[255,226,150]],"body":[255,240,170],"stars":0,"cloud":[255,214,176],"far":[176,106,104],"snow":[255,220,190],"near":[130,132,62],"tree":[78,88,48],"tint":[255,214,176],"ground":[104,108,52],"rain_cloud":[150,126,132]},{"sky":[[14,22,58],[28,46,88],[54,88,104]],"body":[245,240,210],"stars":90,"cloud":[66,84,122],"far":[36,56,92],"snow":[120,142,170],"near":[28,72,66],"tree":[14,46,50],"tint":[110,130,176],"ground":[20,54,54],"rain_cloud":[46,56,86]}],"pets":[{"id":"shuaige","name":"帅哥","intro":["爱动物的","人类"],"name_en":"Handsome","intro_en":["Animal","lover"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":true,"image":"pets/shuaige"},{"id":"erbao","name":"二宝","intro":["爱吃醋的","贵宾"],"name_en":"Erbao","intro_en":["Jealous","poodle"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":true,"image":"pets/erbao"},{"id":"sherry","name":"Sherry","intro":["淡淡的","雪纳瑞"],"name_en":"Sherry","intro_en":["Laid-back","schnauzer"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/sherry"},{"id":"jiuyue","name":"九月","intro":["调皮的","贵宾"],"name_en":"September","intro_en":["Cheeky","poodle"],"flight_head_angle":0,"flight_head_y":4,"founder":true,"starter":false,"image":"pets/jiuyue"},{"id":"jiaoquan","name":"焦圈","intro":["爱打呼噜","的法斗"],"name_en":"Donut","intro_en":["Snoring","Frenchie"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/jiaoquan"},{"id":"duoli","name":"多莉","intro":["毛茸茸的","贵宾"],"name_en":"Dolly","intro_en":["Fluffy","poodle"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/duoli"},{"id":"celina","name":"Celina","intro":["爱哼唧的","腊肠"],"name_en":"Celina","intro_en":["Whiny","dachshund"],"flight_head_angle":0,"flight_head_y":0,"founder":true,"starter":false,"image":"pets/celina"},{"id":"guaiguai","name":"乖乖","intro":["贪吃","的比熊"],"name_en":"Goodie","intro_en":["Greedy","bichon"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/guaiguai"},{"id":"xunshan","name":"巡山","intro":["傲娇","的暹罗"],"name_en":"Ranger","intro_en":["Sassy","Siamese"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/xunshan"},{"id":"xiaobuding","name":"小布丁","intro":["爱扑人的","拉布拉多"],"name_en":"Pudding","intro_en":["Jumpy","Labrador"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/xiaobuding"},{"id":"wooly","name":"wooly","intro":["活泼的","棉花面纱"],"name_en":"wooly","intro_en":["Playful","Fluffball"],"flight_head_angle":-12,"flight_head_y":4,"founder":false,"starter":false,"image":"pets/wooly"},{"id":"buding","name":"布丁","intro":["粘人","的布偶猫"],"name_en":"Buding","intro_en":["Clingy","Ragdoll"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/buding"},{"id":"haishen","name":"海参","intro":["爱睡觉","的折耳猫"],"name_en":"Haishen","intro_en":["Sleepy","Fold cat"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/haishen"},{"id":"zaizai","name":"仔仔","intro":["暴食","的比格"],"name_en":"Zaizai","intro_en":["Foodie","Beagle"],"flight_head_angle":0,"flight_head_y":0,"founder":false,"starter":false,"image":"pets/zaizai"}],"form_url":"https://v.wjx.cn/vm/td6GJBG.aspx","font":{"height":16,"letters":{" ":[0,0,6],"!":[6,0,4],"\"":[10,0,6],"#":[16,0,7],"$":[23,0,6],"%":[29,0,8],"&":[37,0,7],"'":[44,0,4],"(":[48,0,6],")":[54,0,6],"*":[60,0,6],"+":[66,0,6],",":[72,0,4],"-":[76,0,6],".":[82,0,4],"/":[86,0,6],"0":[92,0,6],"1":[98,0,6],"2":[104,0,6],"3":[110,0,6],"4":[116,0,6],"5":[122,0,6],"6":[128,0,6],"7":[134,0,6],"8":[140,0,6],"9":[146,0,6],":":[152,0,4],";":[156,0,4],"<":[160,0,5],"=":[165,0,6],">":[171,0,5],"?":[176,0,6],"A":[182,0,8],"B":[190,0,7],"C":[197,0,7],"D":[204,0,7],"E":[211,0,7],"F":[218,0,7],"G":[225,0,7],"H":[232,0,7],"I":[239,0,4],"J":[243,0,6],"K":[249,0,7],"L":[256,0,6],"M":[262,0,8],"N":[270,0,7],"O":[277,0,8],"P":[285,0,7],"Q":[292,0,8],"R":[300,0,7],"S":[307,0,7],"T":[314,0,8],"U":[322,0,7],"V":[329,0,8],"W":[337,0,10],"X":[347,0,8],"Y":[355,0,8],"Z":[363,0,7],"[":[370,0,6],"\\":[376,0,6],"]":[382,0,6],"^":[388,0,6],"_":[394,0,6],"`":[400,0,5],"a":[405,0,6],"b":[411,0,6],"c":[417,0,6],"d":[423,0,6],"e":[429,0,6],"f":[435,0,5],"g":[440,0,6],"h":[446,0,6],"i":[452,0,4],"j":[456,0,4],"k":[460,0,6],"l":[466,0,4],"m":[470,0,8],"n":[478,0,6],"o":[484,0,6],"p":[490,0,6],"q":[496,0,6],"r":[502,0,5],"s":[507,0,6],"t":[513,0,5],"u":[518,0,6],"v":[524,0,6],"w":[530,0,8],"x":[538,0,6],"y":[544,0,6],"z":[550,0,6],"{":[556,0,7],"|":[563,0,4],"}":[567,0,7],"~":[574,0,6],"·":[580,0,12],"×":[592,0,6],"“":[598,0,12],"”":[610,0,12],"、":[622,0,12],"。":[634,0,12],"《":[646,0,12],"》":[658,0,12],"一":[670,0,12],"丁":[682,0,12],"三":[694,0,12],"上":[706,0,12],"下":[718,0,12],"不":[730,0,12],"专":[742,0,12],"东":[754,0,12],"个":[766,0,12],"中":[778,0,12],"丸":[790,0,12],"主":[802,0,12],"乐":[814,0,12],"乖":[826,0,12],"九":[838,0,12],"也":[850,0,12],"买":[862,0,12],"了":[874,0,12],"二":[886,0,12],"亲":[898,0,12],"人":[910,0,12],"仅":[922,0,12],"介":[934,0,12],"仔":[946,0,12],"以":[958,0,12],"们":[970,0,12],"件":[982,0,12],"休":[994,0,12],"伙":[1006,0,12],"会":[0,16,12],"传":[12,16,12],"伴":[24,16,12],"位":[36,16,12],"住":[48,16,12],"你":[60,16,12],"侦":[72,16,12],"保":[84,16,12],"候":[96,16,12],"停":[108,16,12],"偶":[120,16,12],"傲":[132,16,12],"像":[144,16,12],"儿":[156,16,12],"先":[168,16,12],"克":[180,16,12],"兔":[192,16,12],"入":[204,16,12],"全":[216,16,12],"公":[228,16,12],"共":[240,16,12],"关":[252,16,12],"其":[264,16,12],"具":[276,16,12],"再":[288,16,12],"冠":[300,16,12],"冰":[312,16,12],"冷":[324,16,12],"出":[336,16,12],"击":[348,16,12],"分":[360,16,12],"创":[372,16,12],"别":[384,16,12],"到":[396,16,12],"刷":[408,16,12],"前":[420,16,12],"加":[432,16,12],"动":[444,16,12],"励":[456,16,12],"升":[468,16,12],"午":[480,16,12],"卡":[492,16,12],"卫":[504,16,12],"印":[516,16,12],"去":[528,16,12],"参":[540,16,12],"发":[552,16,12],"口":[564,16,12],"只":[576,16,12],"可":[588,16,12],"吃":[600,16,12],"同":[612,16,12],"名":[624,16,12],"后":[636,16,12],"吗":[648,16,12],"吧":[660,16,12],"听":[672,16,12],"呆":[684,16,12],"员":[696,16,12],"呼":[708,16,12],"和":[720,16,12],"咪":[732,16,12],"品":[744,16,12],"哥":[756,16,12],"哦":[768,16,12],"哼":[780,16,12],"唧":[792,16,12],"商":[804,16,12],"啦":[816,16,12],"喝":[828,16,12],"噜":[840,16,12],"器":[852,16,12],"四":[864,16,12],"回":[876,16,12],"园":[888,16,12],"图":[900,16,12],"圈":[912,16,12],"土":[924,16,12],"在":[936,16,12],"地":[948,16,12],"坐":[960,16,12],"块":[972,16,12],"坠":[984,16,12],"垫":[996,16,12],"处":[1008,16,12],"外":[0,32,12],"多":[12,32,12],"大":[24,32,12],"太":[36,32,12],"失":[48,32,12],"头":[60,32,12],"夹":[72,32,12],"奖":[84,32,12],"好":[96,32,12],"始":[108,32,12],"娇":[120,32,12],"婴":[132,32,12],"子":[144,32,12],"字":[156,32,12],"它":[168,32,12],"宝":[180,32,12],"实":[192,32,12],"宠":[204,32,12],"家":[216,32,12],"宾":[228,32,12],"寸":[240,32,12],"对":[252,32,12],"小":[264,32,12],"就":[276,32,12],"尾":[288,32,12],"局":[300,32,12],"屋":[312,32,12],"屏":[324,32,12],"属":[336,32,12],"山":[348,32,12],"巡":[360,32,12],"差":[372,32,12],"已":[384,32,12],"巴":[396,32,12],"币":[408,32,12],"布":[420,32,12],"帅":[432,32,12],"带":[444,32,12],"帮":[456,32,12],"帽":[468,32,12],"幕":[480,32,12],"年":[492,32,12],"床":[504,32,12],"店":[516,32,12],"开":[528,32,12],"张":[540,32,12],"录":[552,32,12],"形":[564,32,12],"待":[576,32,12],"很":[588,32,12],"得":[600,32,12],"心":[612,32,12],"怕":[624,32,12],"恐":[636,32,12],"恤":[648,32,12],"息":[660,32,12],"想":[672,32,12],"感":[684,32,12],"戏":[696,32,12],"成":[708,32,12],"我":[720,32,12],"或":[732,32,12],"战":[744,32,12],"戚":[756,32,12],"戴":[768,32,12],"房":[780,32,12],"所":[792,32,12],"手":[804,32,12],"扑":[816,32,12],"打":[828,32,12],"找":[840,32,12],"把":[852,32,12],"投":[864,32,12],"抖":[876,32,12],"折":[888,32,12],"拉":[900,32,12],"拎":[912,32,12],"拖":[924,32,12],"招":[936,32,12],"拧":[948,32,12],"拨":[960,32,12],"择":[972,32,12],"指":[984,32,12],"按":[996,32,12],"挑":[1008,32,12],"换":[0,48,12],"掉":[12,48,12],"掌":[24,48,12],"排":[36,48,12],"探":[48,48,12],"接":[60,48,12],"控":[72,48,12],"搭":[84,48,12],"摸":[96,48,12],"操":[108,48,12],"收":[120,48,12],"放":[132,48,12],"数":[144,48,12],"整":[156,48,12],"文":[168,48,12],"斗":[180,48,12],"新":[192,48,12],"方":[204,48,12],"旧":[216,48,12],"时":[228,48,12],"是":[240,48,12],"昵":[252,48,12],"暂":[264,48,12],"暴":[276,48,12],"暹":[288,48,12],"最":[300,48,12],"月":[312,48,12],"有":[324,48,12],"服":[336,48,12],"望":[348,48,12],"本":[360,48,12],"机":[372,48,12],"来":[384,48,12],"松":[396,48,12],"架":[408,48,12],"柱":[420,48,12],"标":[432,48,12],"样":[444,48,12],"格":[456,48,12],"栽":[468,48,12],"案":[480,48,12],"档":[492,48,12],"棉":[504,48,12],"棒":[516,48,12],"榜":[528,48,12],"次":[540,48,12],"欢":[552,48,12],"正":[564,48,12],"每":[576,48,12],"比":[588,48,12],"毛":[600,48,12],"毯":[612,48,12],"水":[624,48,12],"沙":[636,48,12],"没":[648,48,12],"法":[660,48,12],"波":[672,48,12],"泼":[684,48,12],"活":[696,48,12],"浏":[708,48,12],"浣":[720,48,12],"海":[732,48,12],"淡":[744,48,12],"添":[756,48,12],"游":[768,48,12],"溜":[780,48,12],"灯":[792,48,12],"灵":[804,48,12],"点":[816,48,12],"热":[828,48,12],"焦":[840,48,12],"然":[852,48,12],"熊":[864,48,12],"爪":[876,48,12],"爬":[888,48,12],"爱":[900,48,12],"片":[912,48,12],"版":[924,48,12],"牌":[936,48,12],"物":[948,48,12],"狗":[960,48,12],"猫":[972,48,12],"王":[984,48,12],"玩":[996,48,12],"球":[1008,48,12],"瑞":[0,64,12],"用":[12,64,12],"甲":[24,64,12],"画":[36,64,12],"留":[48,64,12],"痕":[60,64,12],"登":[72,64,12],"的":[84,64,12],"皇":[96,64,12],"皮":[108,64,12],"盆":[120,64,12],"盹":[132,64,12],"看":[144,64,12],"着":[156,64,12],"睡":[168,64,12],"知":[180,64,12],"短":[192,64,12],"碗":[204,64,12],"种":[216,64,12],"称":[228,64,12],"稿":[240,64,12],"空":[252,64,12],"穿":[264,64,12],"窗":[276,64,12],"窝":[288,64,12],"站":[300,64,12],"第":[312,64,12],"等":[324,64,12],"答":[336,64,12],"算":[348,64,12],"管":[360,64,12],"箱":[372,64,12],"类":[384,64,12],"粘":[396,64,12],"素":[408,64,12],"纪":[420,64,12],"纱":[432,64,12],"纳":[444,64,12],"纸":[456,64,12],"纹":[468,64,12],"线":[480,64,12],"绍":[492,64,12],"给":[504,64,12],"继":[516,64,12],"绩":[528,64,12],"续":[540,64,12],"罐":[552,64,12],"网":[564,64,12],"罗":[576,64,12],"耳":[588,64,12],"肠":[600,64,12],"肤":[612,64,12],"背":[624,64,12],"能":[636,64,12],"脚":[648,64,12],"腊":[660,64,12],"自":[672,64,12],"色":[684,64,12],"花":[696,64,12],"茸":[708,64,12],"莉":[720,64,12],"获":[732,64,12],"落":[744,64,12],"虚":[756,64,12],"血":[768,64,12],"行":[780,64,12],"衣":[792,64,12],"表":[804,64,12],"被":[816,64,12],"裙":[828,64,12],"裤":[840,64,12],"西":[852,64,12],"览":[864,64,12],"觉":[876,64,12],"角":[888,64,12],"解":[900,64,12],"试":[912,64,12],"请":[924,64,12],"谁":[936,64,12],"调":[948,64,12],"谢":[960,64,12],"象":[972,64,12],"负":[984,64,12],"责":[996,64,12],"败":[1008,64,12],"贪":[0,80,12],"贵":[12,80,12],"走":[24,80,12],"起":[36,80,12],"超":[48,80,12],"足":[60,80,12],"趾":[72,80,12],"跟":[84,80,12],"路":[96,80,12],"跳":[108,80,12],"踩":[120,80,12],"蹄":[132,80,12],"蹦":[144,80,12],"转":[156,80,12],"软":[168,80,12],"载":[180,80,12],"输":[192,80,12],"达":[204,80,12],"过":[216,80,12],"迎":[228,80,12],"运":[240,80,12],"返":[252,80,12],"还":[264,80,12],"这":[276,80,12],"进":[288,80,12],"远":[300,80,12],"连":[312,80,12],"迹":[324,80,12],"追":[336,80,12],"退":[348,80,12],"送":[360,80,12],"选":[372,80,12],"逗":[384,80,12],"遇":[396,80,12],"道":[408,80,12],"部":[420,80,12],"都":[432,80,12],"醋":[444,80,12],"里":[456,80,12],"量":[468,80,12],"金":[480,80,12],"鉴":[492,80,12],"铜":[504,80,12],"银":[516,80,12],"锁":[528,80,12],"键":[540,80,12],"长":[552,80,12],"门":[564,80,12],"闩":[576,80,12],"闭":[588,80,12],"闹":[600,80,12],"集":[612,80,12],"雪":[624,80,12],"震":[636,80,12],"霸":[648,80,12],"面":[660,80,12],"页":[672,80,12],"题":[684,80,12],"额":[696,80,12],"飞":[708,80,12],"食":[720,80,12],"饭":[732,80,12],"首":[744,80,12],"马":[756,80,12],"高":[768,80,12],"鸡":[780,80,12],"鸭":[792,80,12],"鹿":[804,80,12],"鼠":[816,80,12],"鼻":[828,80,12],"齐":[840,80,12],"龙":[852,80,12],"！":[864,80,12],"（":[876,80,12],"）":[888,80,12],"，":[900,80,12],"／":[912,80,12],"：":[924,80,12],"；":[936,80,12],"？":[948,80,12],"～":[960,80,12]}}};
 // 《飞行搭档》网页版。玩法、数字和像素画都来自 flappybird/main.py：
 // tools/build_web.py 把它们放进上面的 GAME_DATA，这个文件只负责在浏览器里画出来。
 // Plain older JavaScript on purpose, so old computers and in-app browsers can run it.
@@ -2238,6 +2238,10 @@ var park_pat_chance = S.park_pat_chance, park_play_gap = S.park_play_gap, park_p
 var park_hop_frames = S.park_hop_frames, park_message_frames = S.park_message_frames;
 var park_climb_frames = S.park_climb_frames, park_climb_pause = S.park_climb_pause, park_climb_arc = S.park_climb_arc;
 var park_action_frames = S.park_action_frames, park_choices_per_page = S.park_choices_per_page;
+var park_tree_pause = S.park_tree_pause, park_tree_jump_frames = S.park_tree_jump_frames;
+var park_toy_chance = S.park_toy_chance, park_run_speed = S.park_run_speed, park_ball_roll_frames = S.park_ball_roll_frames;
+var park_drag_start = S.park_drag_start, park_fall_speed = S.park_fall_speed, park_drop_reach = S.park_drop_reach;
+var park_held_stretch = S.park_held_stretch, park_shop_per_page = S.park_shop_per_page;
 var park_cell_width = S.park_cell_width, park_cell_height = S.park_cell_height, park_ground = S.park_ground;
 var PARK_PET_INFO = S.PARK_PET_INFO, ANIMAL_POSES = S.ANIMAL_POSES, HUMAN_POSES = S.HUMAN_POSES;
 var AVATAR_BOX = S.AVATAR_BOX, HAIR_STYLES = S.HAIR_STYLES, HAIR_COLORS = S.HAIR_COLORS;
@@ -2254,6 +2258,10 @@ var park_selected = null;  // The pet whose card is open in the side panel.
 var park_carrying = null;  // Id of the furniture being moved.
 var park_grab = [0, 0];  // From the pointer to the furniture's bottom middle, so it does not jump.
 var park_holding = false;  // True while the pointer is pressed, so letting go puts the furniture down.
+var park_press = null;  // {walker, x, y} right after pressing on a pet, until it is dragged or let go.
+var park_held = null;  // The pet hanging from the pointer by the scruff of its neck.
+var park_ball_roll = null;  // {from, to, frame} while the ball rolls after a kick.
+var park_shop_page = 0;
 var park_shown = [], park_shown_chosen = false;  // The pets the player chose for the room.
 var park_choice_page = 0;
 var avatar_look = {hair: "short", hair_color: 0, skin: 1, outfit: "tee"};
@@ -2327,6 +2335,11 @@ function getPlacedFurniture() {
     return placed.sort(function (a, b) { return depth(a) - depth(b); });
 }
 
+function canUse(item, kind) {
+    // Some furniture is only for cats (the cat tree) or only for dogs (the dog bed).
+    return !(item.cats_only && kind !== "cat") && !(item.dogs_only && kind !== "dog");
+}
+
 function getParkSeats() {
     // Every spot on placed furniture where a pet could sit, as screen positions.
     var seats = [];
@@ -2345,9 +2358,18 @@ function pickFloorSpot() {
     return [randint(park_floor[0], park_floor[1]), randint(park_floor[2], park_floor[3])];
 }
 
-function startAction(walker, action) {
+function startAction(walker, action, frames) {
+    frames = frames || park_action_frames[action];
     walker.action = action;
-    walker.timer = randint(park_action_frames[action][0], park_action_frames[action][1]);
+    walker.timer = randint(frames[0], frames[1]);
+}
+
+function startSeatAction(walker) {
+    // Each piece of furniture has its own things to do: nap in the dog bed, bounce in the crib,
+    // play on the cat tree. Some of them last longer there than on the floor.
+    var item = getSeatItem(walker);
+    var action = choice(item.seat_actions || ["sit", "sit", "lie"]);
+    startAction(walker, action, (item.stay || {})[action]);
 }
 
 function walkTo(walker, target, plan, seat) {
@@ -2356,6 +2378,8 @@ function walkTo(walker, target, plan, seat) {
     walker.plan = plan || null;
     walker.seat = seat || null;
     walker.route = [];
+    walker.toy = null;
+    walker.run = false;
 }
 
 function getFurnitureSpot(item, point) {
@@ -2385,11 +2409,27 @@ function getTreeFoot(item, seat) {
 
 function getSeatFoot(walker) { return getTreeFoot(getSeatItem(walker), getSeatNumber(walker)); }
 
+function getJumpFrames(walker) {
+    // Jumps on the cat tree are slower, so the cat looks calm instead of in a hurry.
+    return getSeatItem(walker).climb ? park_tree_jump_frames : park_climb_frames;
+}
+
 function startClimbJump(walker, here) {
-    // Crouch on this step, then jump to the next step on the route.
+    // Crouch on this step, then jump to the next step on the route. On the cat tree the cat
+    // first sits a while on each level and looks around.
+    var onTree = getSeatItem(walker).climb && here !== "floor";
     walker.action = "climb";
     walker.here = here;
-    walker.timer = park_climb_pause + park_climb_frames;
+    walker.timer = (onTree ? randint(park_tree_pause[0], park_tree_pause[1]) : park_climb_pause) + getJumpFrames(walker);
+}
+
+function moveLevel(walker, level) {
+    // From one level of the cat tree to another, through every level in between.
+    var here = getSeatNumber(walker) + 1, there = level + 1, step = there > here ? 1 : -1;
+    walker.route = [];
+    for (var at = here + step; at !== there + step; at += step) walker.route.push(at);
+    walker.seat = getSeatItem(walker).id + ":" + level;
+    startClimbJump(walker, here);
 }
 
 function climbDown(walker) {
@@ -2407,14 +2447,15 @@ function updateClimb(walker) {
     var start = getClimbSpot(walker, walker.here), end = getClimbSpot(walker, walker.route[0]);
     walker.left = end[0] < start[0];
     walker.timer -= 1;
-    var inAir = park_climb_frames - walker.timer;  // Below zero while still crouching.
+    var frames = getJumpFrames(walker);
+    var inAir = frames - walker.timer;  // Below zero while still crouching.
     if (inAir <= 0) {
         walker.x = start[0];
         walker.y = start[1];
         return;
     }
     // Along a straight line from step to step, plus an arc, so it is a real jump.
-    var part = inAir / park_climb_frames;
+    var part = inAir / frames;
     walker.x = start[0] + (end[0] - start[0]) * part;
     walker.y = start[1] + (end[1] - start[1]) * part - Math.sin(Math.PI * part) * park_climb_arc;
     if (walker.timer > 0) return;
@@ -2428,7 +2469,7 @@ function updateClimb(walker) {
         rest(walker);
     } else {
         walker.target = end;
-        startAction(walker, Math.random() < 0.3 ? "lie" : "sit");
+        startSeatAction(walker);
     }
 }
 
@@ -2447,7 +2488,8 @@ function getShownPets() {
 function makeWalker(pet) {
     var spot = pickFloorSpot();
     var walker = {pet: pet, x: spot[0], y: spot[1], left: Math.random() < 0.5, target: spot,
-                  plan: null, seat: null, partner: null, hop: 0, route: [], here: null, floor: null};
+                  plan: null, seat: null, partner: null, hop: 0, route: [], here: null, floor: null,
+                  toy: null, run: false, kicks: 0, fall: 0, sway: 0, sway_speed: 0, hold_at: spot.slice()};
     startAction(walker, getParkKind(pet) === "human" ? "stand" : "sit");
     walker.timer = randint(30, 200);  // Everyone gets going soon after the door opens.
     return walker;
@@ -2522,9 +2564,23 @@ function startTogether(walker, partner) {
 
 function chooseNext(walker) {
     letGo(walker);
+    walker.toy = null;
     if (walker.seat) {
-        // Gets down from the furniture before anything else.
-        climbDown(walker);
+        var item = getSeatItem(walker);
+        if (Math.random() < (item.stay_chance || 0)) {
+            // Happy where it is: another nap or game here, or up or down to another free level.
+            var taken = {}, levels = [];
+            park_pets.forEach(function (other) { if (other !== walker && other.seat) taken[other.seat] = true; });
+            if (item.climb) {
+                item.seats.forEach(function (seat, level) {
+                    if (level !== getSeatNumber(walker) && !taken[item.id + ":" + level]) levels.push(level);
+                });
+            }
+            if (levels.length && Math.random() < 0.35) moveLevel(walker, choice(levels));
+            else startSeatAction(walker);
+        } else {
+            climbDown(walker);  // Gets down from the furniture before anything else.
+        }
         return;
     }
     var kind = getParkKind(walker.pet);
@@ -2535,18 +2591,78 @@ function chooseNext(walker) {
     else wander(walker);
 }
 
+function getFreeToys(walker) {
+    // Bowls and toys this pet may use that nobody else is using right now.
+    var kind = getParkKind(walker.pet), busy = {};
+    park_pets.forEach(function (other) { if (other !== walker && other.toy) busy[other.toy] = true; });
+    return FURNITURE.filter(function (item) {
+        return (item.bowl || item.toy) && owned_furniture[item.id] && item.id !== park_carrying &&
+               !busy[item.id] && canUse(item, kind);
+    });
+}
+
+function getToySpot(walker, item, place) {
+    // Where a pet stands to use a bowl or toy: beside it, with its mouth or paws over it.
+    place = place || getFurniturePlace(item);
+    var x = item.spot ? getFurnitureSpot(item, item.spot)[0] : place[0];
+    var side = walker.x < x ? -1 : 1;
+    var half = Math.floor(getWalkerBox(walker.pet)[2] * park_pet_scale / 2);
+    var reach = item.spot ? 24 : half - 16;
+    // A pet at a bowl stands just behind it, so the bowl is drawn over its muzzle.
+    var y = place[1] + (item.spot ? 2 : -2);
+    return [Math.min(Math.max(x + side * reach, park_floor[0]), park_floor[1]),
+            Math.min(Math.max(y, park_floor[2]), park_floor[3])];
+}
+
+function goToToy(walker, item) {
+    var plan = item.bowl ? "eat" : item.id === "ball" ? "ball" : "bat";
+    walkTo(walker, getToySpot(walker, item), plan);
+    walker.toy = item.id;
+    if (plan === "ball") walker.kicks = randint(2, 4);
+}
+
+function faceToy(walker) {
+    var item = FURNITURE_BY_ID[walker.toy];
+    var x = item.spot ? getFurnitureSpot(item, item.spot)[0] : getFurniturePlace(item)[0];
+    walker.left = x < walker.x;
+}
+
+function kickBall(walker) {
+    // The dog noses the ball away and runs after it, a few times, then is very pleased with itself.
+    var item = FURNITURE_BY_ID.ball, place = getFurniturePlace(item);
+    var away = place[0] >= walker.x ? 1 : -1;
+    var x = place[0] + away * randint(90, 200);
+    if (x < park_floor[0] || x > park_floor[1]) x = place[0] - away * randint(90, 200);  // Bounces back off the wall.
+    var end = [snap(Math.min(Math.max(x, park_floor[0]), park_floor[1])), snap(randint(park_floor[2], park_floor[3]))];
+    park_ball_roll = {from: place.slice(), to: end, frame: 0};
+    walker.kicks -= 1;
+    if (walker.kicks > 0) {
+        walkTo(walker, getToySpot(walker, item, end), "ball");
+        walker.toy = "ball";
+        walker.run = true;
+    } else {
+        startAction(walker, "proud");
+        walker.hop = park_hop_frames;
+    }
+}
+
 function wander(walker) {
     var kind = getParkKind(walker.pet), animal = kind !== "human";
+    var toys = animal ? getFreeToys(walker) : [];
+    if (toys.length && Math.random() < park_toy_chance) {
+        goToToy(walker, choice(toys));  // A snack, a drink or a game.
+        return;
+    }
     var taken = {};
     park_pets.forEach(function (other) { if (other !== walker && other.seat) taken[other.seat] = true; });
     var free = getParkSeats().filter(function (seat) {
-        return !taken[seat.id] && (kind === "cat" || !FURNITURE_BY_ID[seat.item].cats_only);
+        return !taken[seat.id] && canUse(FURNITURE_BY_ID[seat.item], kind);
     });
     var chance = Math.random();
     if (animal && free.length && chance < park_seat_chance) {
         var seat = choice(free), item = FURNITURE_BY_ID[seat.item];
         // Walks to the furniture first, then jumps up: level by level on a cat tree,
-        // in one go onto a crib or sofa.
+        // in one go onto a crib or sofa or into a box.
         walkTo(walker, getTreeFoot(item, Number(seat.id.split(":")[1])), "climb", seat.id);
     } else if (animal && chance > 1 - park_spin_chance) {
         startAction(walker, "spin");  // Chasing its own tail, round and round on the spot.
@@ -2561,7 +2677,7 @@ function arrive(walker) {
     var plan = walker.plan;
     walker.plan = null;
     if (plan === "ready") startAction(walker, "ready");
-    else if (plan === "seat") startAction(walker, Math.random() < 0.3 ? "lie" : "sit");
+    else if (plan === "seat") startSeatAction(walker);
     else if (plan === "climb") {
         walker.floor = [walker.x, walker.y];
         walker.route = [];
@@ -2572,6 +2688,11 @@ function arrive(walker) {
             walker.route.push(getSeatNumber(walker) + 1);
         }
         startClimbJump(walker, "floor");
+    } else if ((plan === "eat" || plan === "bat") && walker.toy) {
+        faceToy(walker);
+        startAction(walker, plan);
+    } else if (plan === "ball" && walker.toy) {
+        kickBall(walker);
     }
     else rest(walker);
 }
@@ -2584,13 +2705,41 @@ function getSeatSpot(seatId) {
     return null;
 }
 
+function rollBall() {
+    // The kicked ball rolls fast, then slows down before it stops.
+    if (park_ball_roll === null) return;
+    if (!owned_furniture.ball || park_carrying === "ball") {
+        park_ball_roll = null;
+        return;
+    }
+    park_ball_roll.frame += 1;
+    var part = park_ball_roll.frame / park_ball_roll_frames, eased = 1 - (1 - part) * (1 - part);
+    var from = park_ball_roll.from, to = park_ball_roll.to;
+    furniture_places.ball = [snap(from[0] + (to[0] - from[0]) * eased), snap(from[1] + (to[1] - from[1]) * eased)];
+    if (park_ball_roll.frame >= park_ball_roll_frames) {
+        furniture_places.ball = to.slice();
+        park_ball_roll = null;
+    }
+}
+
+function updateHeld(walker) {
+    // The held pet swings like a pendulum under the pointer and slowly comes to rest.
+    walker.sway_speed = (walker.sway_speed - walker.sway * 0.08) * 0.92;
+    walker.sway = Math.min(Math.max(walker.sway + walker.sway_speed, -30), 30);
+}
+
 function updatePark() {
     if (park_message !== null) {
         park_message[1] -= 1;
         if (park_message[1] <= 0) park_message = null;
     }
+    rollBall();
     park_pets.forEach(function (walker) {
         walker.hop = Math.max(0, walker.hop - 1);
+        if (walker === park_held) {
+            updateHeld(walker);
+            return;
+        }
         if (walker.seat) {
             // Furniture can be moved, so a seat is looked up again every frame.
             var spot = getSeatSpot(walker.seat);
@@ -2598,17 +2747,22 @@ function updatePark() {
             else if (walker.plan === "climb") walker.target = getSeatFoot(walker);
             else if (walker.action !== "climb") walker.target = spot;
         }
+        if (walker.fall > 0) {
+            walker.fall = Math.max(0, walker.fall - park_fall_speed);  // Dropping back down after being let go.
+            return;
+        }
         if (walker.action === "walk") {
+            var speed = walker.run ? park_run_speed : park_walk_speed;
             var dx = walker.target[0] - walker.x, dy = walker.target[1] - walker.y;
             var distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance <= park_walk_speed) {
+            if (distance <= speed) {
                 walker.x = walker.target[0];
                 walker.y = walker.target[1];
                 arrive(walker);
             } else {
                 if (Math.abs(dx) > 1) walker.left = dx < 0;
-                walker.x += dx / distance * park_walk_speed;
-                walker.y += dy / distance * park_walk_speed;
+                walker.x += dx / distance * speed;
+                walker.y += dy / distance * speed;
             }
             return;
         }
@@ -2634,7 +2788,7 @@ function updatePark() {
 function openPark() {
     park_open = true;
     park_message = null;
-    park_carrying = null;
+    park_carrying = park_held = park_press = park_ball_roll = null;
     closeParkSide();
     makeParkPets();
     track("park_open", {furniture: countKeys(owned_furniture), coins: coins, pets: park_pets.length - 1});
@@ -2642,6 +2796,7 @@ function openPark() {
 
 function closePark() {
     if (park_carrying !== null) dropFurniture();
+    if (park_held !== null) dropPet(park_held.hold_at[0], park_held.hold_at[1]);
     park_open = false;
 }
 
@@ -2696,6 +2851,11 @@ function pickUpFurniture(item, position) {
             walker.hop = park_hop_frames;  // Pets sitting on it hop off.
             letGo(walker);
             walkTo(walker, pickFloorSpot());
+        } else if (walker.toy === item.id && walker !== park_held) {
+            rest(walker);  // The bowl or toy is gone, so it stops eating or playing.
+            walker.toy = null;
+            walker.run = false;
+            walker.plan = null;
         }
     });
     if (!position) moveCarried(mouseX, mouseY);
@@ -2712,6 +2872,62 @@ function dropFurniture() {
     park_holding = false;
     saveProgress();
     sayInPark("placed", {name: getItemName(item)});
+}
+
+function getHang(pet) {
+    // From the pointer, which holds the scruff just behind the head, down to the feet.
+    return (park_ground + 2 - getWalkerBox(pet)[1]) * park_pet_scale - 8;
+}
+
+function pickUpPet(walker, x, y) {
+    // Picked up by the scruff of the neck: whatever it was doing stops, and it hangs from the pointer.
+    letGo(walker);
+    walker.action = "held";
+    walker.seat = walker.plan = walker.toy = null;
+    walker.route = [];
+    walker.run = false;
+    walker.hop = walker.fall = walker.sway = walker.sway_speed = 0;
+    walker.hold_at = [x, y];
+    park_held = walker;
+    park_press = null;
+    moveHeld(x, y);
+}
+
+function moveHeld(x, y) {
+    var walker = park_held;
+    walker.sway_speed -= (x - walker.hold_at[0]) * 0.5;  // Swings the other way when moved.
+    walker.hold_at = [x, y];
+    walker.x = x;
+    walker.y = y + getHang(walker.pet);
+}
+
+function dropPet(x, y) {
+    // Let go: it lands on a free seat close by, or drops to the floor and shakes itself off.
+    var walker = park_held;
+    park_held = null;
+    var feetX = x, feetY = y + getHang(walker.pet), kind = getParkKind(walker.pet), taken = {}, near = null;
+    park_pets.forEach(function (other) { if (other !== walker && other.seat) taken[other.seat] = true; });
+    getParkSeats().forEach(function (seat) {
+        if (taken[seat.id] || !canUse(FURNITURE_BY_ID[seat.item], kind)) return;
+        var distance = Math.sqrt((seat.x - feetX) * (seat.x - feetX) + (seat.y - feetY) * (seat.y - feetY));
+        if (distance <= park_drop_reach && (near === null || distance < near.distance)) {
+            near = {distance: distance, seat: seat};
+        }
+    });
+    if (near !== null) {
+        walker.seat = near.seat.id;
+        walker.x = near.seat.x;
+        walker.y = near.seat.y;
+        walker.target = [walker.x, walker.y];
+        startSeatAction(walker);
+    } else {
+        walker.x = Math.min(Math.max(feetX, park_floor[0]), park_floor[1]);
+        walker.y = Math.min(Math.max(feetY, park_floor[2]), park_floor[3]);
+        walker.target = [walker.x, walker.y];
+        startAction(walker, "landed");
+    }
+    walker.fall = Math.max(0, walker.y - feetY);
+    walker.sway = walker.sway_speed = 0;
 }
 
 function toggleParkPet(pet) {
@@ -2813,7 +3029,10 @@ function handleParkSide(x, y) {
     if (park_close_button.contains(x, y)) {
         closeParkSide();
     } else if (park_panel === "shop") {
-        FURNITURE.forEach(function (item, index) {
+        var shopPages = Math.ceil(FURNITURE.length / park_shop_per_page);
+        if (park_choice_previous.contains(x, y)) park_shop_page = pmod(park_shop_page - 1, shopPages);
+        else if (park_choice_next.contains(x, y)) park_shop_page = pmod(park_shop_page + 1, shopPages);
+        getShopPage().forEach(function (item, index) {
             if (getShopRow(index).contains(x, y) && (owned_furniture[item.id] || buyFurniture(item))) {
                 pickUpFurniture(item);
             }
@@ -2842,9 +3061,18 @@ function handleParkSide(x, y) {
     }
 }
 
+function isOutsideFurniture(walker) {
+    // While jumping between the floor and a seat, the first half (going in) or the last half
+    // (getting out) is in front of the furniture, so a box's front wall does not cover it then.
+    if (walker.action !== "climb") return false;
+    var part = (getJumpFrames(walker) - walker.timer) / getJumpFrames(walker);
+    if (walker.here === "floor") return part < 0.5;
+    return walker.route.length > 0 && walker.route[0] === "floor" && part >= 0.5;
+}
+
 function getParkPetDepth(walker) {
     if (walker.seat && walker.action !== "walk") {
-        return getFurnitureRect(FURNITURE_BY_ID[walker.seat.split(":")[0]]).bottom() + 1;
+        return getFurnitureRect(getSeatItem(walker)).bottom() + (isOutsideFurniture(walker) ? 3 : 1);
     }
     // A patting hand reaches over the dog, so the person goes in front.
     return walker.y + (walker.action === "pat" ? 0.5 : 0);
@@ -2853,20 +3081,31 @@ function getParkPetDepth(walker) {
 function handlePark(event) {
     if (event.type === "key") {
         if (event.key === "Escape" || event.key === "h" || event.key === "H") {
-            if (park_carrying !== null) dropFurniture();
+            if (park_held !== null) dropPet(park_held.hold_at[0], park_held.hold_at[1]);
+            else if (park_carrying !== null) dropFurniture();
             else if (park_panel !== null) closeParkSide();
             else closePark();
         }
         return true;  // Keys belong to the park, so space cannot start a game behind it.
     }
     if (event.type === "move") {
-        if (park_carrying !== null) moveCarried(event.x, event.y);
+        if (park_carrying !== null) {
+            moveCarried(event.x, event.y);
+        } else if (park_held !== null) {
+            moveHeld(event.x, event.y);
+        } else if (park_press !== null) {
+            // Pressing on a pet and moving the pointer picks it up; a still press is just a click.
+            var moved = Math.sqrt(Math.pow(event.x - park_press.x, 2) + Math.pow(event.y - park_press.y, 2));
+            if (moved > park_drag_start) pickUpPet(park_press.walker, event.x, event.y);
+        }
         return true;
     }
     if (event.type === "up") {
-        // Letting go after pressing on furniture puts it down: that is a drag.
-        if (park_carrying !== null && park_holding) dropFurniture();
+        // Letting go after pressing on furniture or a pet puts it down: that is a drag.
+        if (park_held !== null) dropPet(event.x, event.y);
+        else if (park_carrying !== null && park_holding) dropFurniture();
         park_holding = false;
+        park_press = null;
         return true;
     }
     if (event.type !== "click") return false;
@@ -2901,6 +3140,7 @@ function handlePark(event) {
             } else {
                 park_panel = "pet";
                 park_selected = front[i];
+                park_press = {walker: front[i], x: x, y: y};  // Moving now picks it up.
             }
             return true;
         }
@@ -2921,11 +3161,17 @@ function getParkPose(walker) {
     if (getParkKind(walker.pet) === "human") {
         pose = {walk: ["walk", 12], wave: ["wave", 10], pat: ["pat", 16]}[action] || ["stand", 40];
     } else if (action === "climb") {
-        // Crouched while getting ready, stretched out in the air.
-        return walker.timer <= park_climb_frames ? "play1" : "sit0";
+        // Crouched while getting ready, stretched out in the air. A long wait on the cat tree
+        // is spent sitting and looking around first.
+        var frames = getJumpFrames(walker);
+        if (walker.timer > frames + 16) return "sit" + Math.floor(ambient_frames / 24) % 2;
+        return walker.timer <= frames ? "play1" : "sit0";
+    } else if (action === "eat") {
+        return "play0";  // Head down in the bowl.
     } else {
-        pose = {walk: ["walk", 12], spin: ["walk", 5], lie: ["lie", 50], play: ["play", 14],
-                patted: ["happy", 18]}[action] || ["sit", 24];
+        pose = {walk: ["walk", walker.run ? 6 : 12], spin: ["walk", 5], lie: ["lie", 50], play: ["play", 14],
+                bat: ["play", 12], patted: ["happy", 18], bounce: ["happy", 22], proud: ["happy", 12],
+                landed: ["sit", 6], held: ["sit", 10]}[action] || ["sit", 24];
     }
     // Playing dogs take turns: one bows while the other jumps.
     var turn = action === "play" && walker.left ? 1 : 0;
@@ -2938,10 +3184,16 @@ function describeParkAction(walker) {
     if (walker.seat && (action !== "walk" || walker.plan === "climb")) {
         var place = getItemName(FURNITURE_BY_ID[walker.seat.split(":")[0]]);
         if (language !== "zh") place = place.toLowerCase();  // "Resting on the sofa"
-        if (action === "climb" || action === "walk") {
-            return tr(getSeatItem(walker).climb ? "doing_climb" : "doing_jump", {place: place});
-        }
-        return tr(action === "lie" ? "doing_seat_nap" : "doing_seat", {place: place});
+        var item = getSeatItem(walker);
+        if (action === "climb" || action === "walk") return tr(item.climb ? "doing_climb" : "doing_jump", {place: place});
+        if (item.front) return tr("doing_inside", {place: place});
+        var key = {lie: "doing_seat_nap", play: "doing_seat_play", bounce: "doing_seat_bounce"}[action];
+        return tr(key || "doing_seat", {place: place});
+    }
+    var toy = walker.toy ? FURNITURE_BY_ID[walker.toy] : null;
+    if (toy && (action === "walk" || action === "eat")) {
+        if (toy.bowl) return tr(toy.drink ? "doing_drink" : action === "eat" ? "doing_eat" : "doing_go_eat");
+        return tr(toy.id === "ball" ? "doing_ball" : "doing_bat");
     }
     if (action === "walk") return partner ? tr("doing_meet", {friend: friend}) : tr("doing_walk");
     return tr("doing_" + action, {friend: friend});
@@ -2971,8 +3223,11 @@ function drawParkPet(walker) {
     var human = walker.pet === AVATAR;
     var column = (human ? HUMAN_POSES : ANIMAL_POSES).indexOf(getParkPose(walker));
     var action = walker.action;
-    var lift = walker.hop ? Math.sin(Math.PI * walker.hop / park_hop_frames) * 28 : 0;
+    var lift = (walker.hop ? Math.sin(Math.PI * walker.hop / park_hop_frames) * 28 : 0) + walker.fall;
     if (action === "spin" && Math.floor(ambient_frames / 5) % 2) lift += 4;  // Little hops while turning round.
+    else if (action === "eat" && Math.floor(ambient_frames / 10) % 2) lift -= 2;  // Munching: the head bobs in the bowl.
+    else if (action === "bat" && Math.floor(ambient_frames / 12) % 2) lift += 8;  // Reaching up for the feather.
+    else if (action === "bounce") lift += Math.abs(Math.sin(ambient_frames * Math.PI / 22)) * 16;  // On the mattress.
     var onSeat = walker.seat && action !== "walk";
     var box = getParkPetHitRect(walker);
     if (!onSeat) {
@@ -2982,7 +3237,10 @@ function drawParkPet(walker) {
         screen.fillRect(left + 4, shadowTop, shadowWidth - 8, 4);
         screen.fillRect(left, shadowTop + 4, shadowWidth, 4);
     }
-    drawSheetCell(human ? getMyAvatarSheet() : parkSheets[walker.pet], column, getParkPetRect(walker, lift), walker.left);
+    var place = getParkPetRect(walker, lift);
+    if (action === "landed" && walker.timer > 15) place.x += Math.floor(ambient_frames / 3) % 2 ? 2 : -2;  // Shaking its fur.
+    drawSheetCell(human ? getMyAvatarSheet() : parkSheets[walker.pet], column, place, walker.left);
+    if (action === "eat" && walker.toy) drawCrumbs(FURNITURE_BY_ID[walker.toy]);
     var top = box.y - Math.round(lift);
     if (action === "lie") {
         // Little z's float up from a napping pet.
@@ -2990,7 +3248,8 @@ function drawParkPet(walker) {
             var rise = (ambient_frames + number * 40) % 80;
             drawText("z", 2 + number, [box.right() - 4 + Math.floor(rise / 8), top + 10 - Math.floor(rise / 2)], CREAM, INK);
         }
-    } else if (action === "patted" || walker.hop || (action === "play" && Math.floor(ambient_frames / 30) % 2)) {
+    } else if (action === "patted" || action === "proud" || walker.hop ||
+               ((action === "play" || action === "bounce") && Math.floor(ambient_frames / 30) % 2)) {
         var heart = getSprite("heart", 0, action === "play" ? 3 : park_scale);
         var bob = Math.floor(ambient_frames / 12) % 2 * 4;
         screen.drawImage(heart, snap(box.centerx()) - Math.floor(heart.width / 2), top - 4 - bob - heart.height);
@@ -3000,6 +3259,88 @@ function drawParkPet(walker) {
         var arrowBob = Math.floor(ambient_frames / 12) % 2 * 4;
         screen.drawImage(arrow, snap(box.centerx()) - Math.floor(arrow.width / 2), top - 30 - arrowBob - arrow.height);
     }
+}
+
+function drawCrumbs(item) {
+    // Little bits of food, or drops of water, popping up from the bowl.
+    var place = getFurniturePlace(item), color = SPRITE_COLORS[item.drink ? "S" : "t"];
+    for (var number = 0; number < 2; number++) {
+        var step = (ambient_frames + number * 15) % 30;
+        var x = snap(place[0] + (number * 2 - 1) * (6 + Math.floor(step / 2)), 2);
+        var y = snap(place[1] - 22 - Math.floor(step * (30 - step) / 18), 2);
+        fillRect(INK, x - 1, y - 1, 6, 6);
+        fillRect(color, x, y, 4, 4);
+    }
+}
+
+var scruffCache = {};
+function getScruff(pet, column, left) {
+    // The loose skin at the back of the neck: just behind and below the top of the head.
+    var key = pet + "," + column + "," + left;
+    if (scruffCache[key]) return scruffCache[key];
+    // The sheet is a picture, so one cell is copied onto a small canvas to read its pixels.
+    var cell = document.createElement("canvas");
+    cell.width = park_cell_width;
+    cell.height = park_cell_height;
+    var pen = cell.getContext("2d");
+    pen.drawImage(parkSheets[pet], column * park_cell_width, 0, park_cell_width, park_cell_height,
+                  0, 0, park_cell_width, park_cell_height);
+    var data = pen.getImageData(0, 0, park_cell_width, park_cell_height).data;
+    var top = 0, total = 0, count = 0;
+    function solid(x, y) { return data[(y * park_cell_width + x) * 4 + 3] > 0; }
+    for (var y = 0; y < park_cell_height; y++) {
+        var found = false;
+        for (var x = 0; x < park_cell_width; x++) found = found || solid(x, y);
+        if (found) { top = y; break; }
+    }
+    for (var row = top; row < top + 3; row++) {
+        for (var column2 = 0; column2 < park_cell_width; column2++) {
+            if (solid(column2, row)) { total += column2 + 0.5; count += 1; }
+        }
+    }
+    var middle = total / count;
+    if (left) middle = park_cell_width - middle;
+    scruffCache[key] = [middle * park_pet_scale + (left ? 8 : -8), top * park_pet_scale + 10];
+    return scruffCache[key];
+}
+
+function drawHeldPet(walker) {
+    // Hanging by the scruff: the body below the neck stretches down and swings under the pointer.
+    var column = ANIMAL_POSES.indexOf(getParkPose(walker)), box = getWalkerBox(walker.pet), scale = park_pet_scale;
+    var width = park_cell_width * scale, height = park_cell_height * scale;
+    var neckRow = box[1] + Math.floor(box[3] * 2 / 5), neck = neckRow * scale;
+    var stretched = snap((height - neck) * park_held_stretch, scale);
+    // Shadow on the floor right below, smaller the higher the pet is.
+    var floorY = Math.min(Math.max(walker.y, park_floor[2]), park_floor[3]);
+    var shadowWidth = Math.max(16, snap((box[2] * scale - 8) * (1 - Math.min(0.6, (floorY - walker.y) / 400))));
+    screen.fillStyle = css(INK, 40);
+    screen.fillRect(snap(walker.x - shadowWidth / 2), snap(floorY) - 6, shadowWidth, 8);
+    // Turn the picture round the pinch point, so it swings like a pendulum.
+    var grab = getScruff(walker.pet, column, walker.left), sheet = parkSheets[walker.pet];
+    screen.save();
+    screen.translate(walker.hold_at[0], walker.hold_at[1]);
+    screen.rotate(-walker.sway * Math.PI / 180);
+    screen.translate(-grab[0], -grab[1]);
+    if (walker.left) {
+        screen.translate(width, 0);
+        screen.scale(-1, 1);
+    }
+    var sourceX = column * park_cell_width;
+    screen.drawImage(sheet, sourceX, 0, park_cell_width, neckRow, 0, 0, width, neck);
+    screen.drawImage(sheet, sourceX, neckRow, park_cell_width, park_cell_height - neckRow, 0, neck, width, stretched);
+    screen.restore();
+    drawPinch(walker.hold_at);
+}
+
+function drawPinch(point) {
+    // Your person's hand, pinching the loose skin at the back of the neck.
+    var x = snap(point[0], 2), y = snap(point[1], 2), skin = SKIN_COLORS[avatar_look.skin];
+    fillRect(S.AVATAR_OUTLINE, x - 8, y - 30, 16, 22);  // The wrist, coming down from above.
+    fillRect(skin, x - 6, y - 30, 12, 20);
+    fillRect(S.AVATAR_OUTLINE, x - 10, y - 12, 20, 16);  // The fist.
+    fillRect(skin, x - 8, y - 10, 16, 12);
+    fillRect(S.AVATAR_OUTLINE, x - 4, y - 6, 2, 6);  // Gaps between the fingers.
+    fillRect(S.AVATAR_OUTLINE, x + 2, y - 6, 2, 6);
 }
 
 function drawParkPetSide(walker) {
@@ -3020,9 +3361,20 @@ function drawParkPetSide(walker) {
     drawWrappedText(hint, [park_side.centerx(), park_side.bottom() - 30 - (rows - 1) * 26], park_side.w - 20, FOREST, 2, 26);
 }
 
+function getShopPage() {
+    // The shop shows a few items at a time; the arrows at the bottom turn the page.
+    return FURNITURE.slice(park_shop_page * park_shop_per_page, (park_shop_page + 1) * park_shop_per_page);
+}
+
 function drawParkShop() {
     drawText(tr("shop"), 3, [park_side.centerx() - 20, park_side.y + 30]);  // Clear of the close button.
-    FURNITURE.forEach(function (item, index) {
+    [[park_choice_previous, "<"], [park_choice_next, ">"]].forEach(function (pair) {
+        drawPixelPanel(pair[0], pair[0].contains(mouseX, mouseY) ? SUN : CREAM, INK, 3);
+        drawText(pair[1], 2, pair[0].center());
+    });
+    var pages = Math.ceil(FURNITURE.length / park_shop_per_page);
+    drawText((park_shop_page + 1) + "/" + pages, 2, [park_side.centerx(), park_choice_next.centery()], FOREST);
+    getShopPage().forEach(function (item, index) {
         var row = getShopRow(index);
         var owned = owned_furniture[item.id];
         var hovered = row.contains(mouseX, mouseY);
@@ -3118,6 +3470,16 @@ function drawParkSide() {
     drawText("×", 2, park_close_button.center());
 }
 
+function getFurnitureFrame(item) {
+    // The ball turns while it rolls; the teaser's feather sways, fast while a cat bats at it.
+    if (item.id === "ball") return park_ball_roll !== null ? Math.floor(ambient_frames / 5) % 2 : 0;
+    if (item.id === "teaser") {
+        var batting = park_pets.some(function (walker) { return walker.toy === "teaser" && walker.action === "bat"; });
+        return Math.floor(ambient_frames / (batting ? 12 : 45)) % 2;
+    }
+    return 0;
+}
+
 function drawPark() {
     screen.drawImage(parkRoom, 0, 0, WIDTH, HEIGHT);
     if (owned_furniture.lamp) {
@@ -3129,13 +3491,17 @@ function drawPark() {
     getPlacedFurniture().forEach(function (item) {
         if (item.id === park_carrying) return;
         var rect = getFurnitureRect(item);
-        layers.push({depth: item.flat ? -1 : rect.bottom(), kind: 0, item: item, rect: rect});
+        layers.push({depth: item.flat ? -1 : rect.bottom(), kind: 0, sprite: item.id, frame: getFurnitureFrame(item), rect: rect});
+        // The front wall again, over a pet inside (pets inside are at bottom + 1).
+        if (item.front) layers.push({depth: rect.bottom() + 2, kind: 0, sprite: item.id + "_front", frame: 0, rect: rect});
     });
-    park_pets.forEach(function (walker) { layers.push({depth: getParkPetDepth(walker), kind: 1, walker: walker}); });
+    park_pets.forEach(function (walker) {
+        if (walker !== park_held) layers.push({depth: getParkPetDepth(walker), kind: 1, walker: walker});
+    });
     layers.sort(function (a, b) { return a.depth - b.depth || a.kind - b.kind; });
     layers.forEach(function (layer) {
         if (layer.kind === 1) drawParkPet(layer.walker);
-        else screen.drawImage(getSprite(layer.item.id, 0, park_scale), layer.rect.x, layer.rect.y);
+        else screen.drawImage(getSprite(layer.sprite, layer.frame, park_scale), layer.rect.x, layer.rect.y);
     });
     if (park_carrying !== null) {
         // Held furniture floats a little above its shadow.
@@ -3144,6 +3510,7 @@ function drawPark() {
         screen.fillRect(held.x, held.bottom() - 6, held.w, 8);
         screen.drawImage(getSprite(park_carrying, 0, park_scale), held.x, held.y - 12);
     }
+    if (park_held !== null) drawHeldPet(park_held);
     var ribbon = new Rect(236, 16, 328, 62);
     drawPixelPanel(ribbon, LEAF);
     drawFittedText(tr("park"), ribbon.center(), ribbon.w - 20, CREAM, 3);
@@ -3157,11 +3524,12 @@ function drawPark() {
     });
     drawCoinCounter();
     var line;
-    if (park_carrying !== null) line = tr("drag_hint");
+    if (park_held !== null) line = tr("pet_drag_hint");
+    else if (park_carrying !== null) line = tr("drag_hint");
     else if (park_message !== null) line = park_message[0];
     else if (!countKeys(owned_furniture)) line = tr("park_hint_empty");
     else line = tr("park_hint");
-    drawFittedText(line, [400, 98], 460, park_message || park_carrying !== null ? SUN : CREAM, 2, INK);
+    drawFittedText(line, [400, 98], 460, park_message || park_carrying !== null || park_held !== null ? SUN : CREAM, 2, INK);
     drawParkSide();
 }
 
@@ -3829,7 +4197,9 @@ function pointerMove(clientX, clientY) {
     mouseX = place[0];
     mouseY = place[1];
     // Only furniture being dragged needs every move; everything else just reads mouseX and mouseY.
-    if (park_open && park_carrying !== null) events.push({type: "move", x: place[0], y: place[1]});
+    if (park_open && (park_carrying !== null || park_held !== null || park_press !== null)) {
+        events.push({type: "move", x: place[0], y: place[1]});
+    }
 }
 
 function pointerUp(clientX, clientY) {
@@ -4022,7 +4392,8 @@ window.flightFriends = {
                        card: park_selected ? describeParkAction(park_selected) : null,
                        pets: park_pets.map(function (walker) {
                            function id(pet) { return pet === AVATAR ? "you" : PETS[pet].id; }
-                           return {id: id(walker.pet), action: walker.action, seat: walker.seat,
+                           return {id: id(walker.pet), action: walker.action, seat: walker.seat, toy: walker.toy,
+                                   held: walker === park_held, fall: walker.fall,
                                    partner: walker.partner ? id(walker.partner.pet) : null,
                                    x: Math.round(walker.x), y: Math.round(walker.y),
                                    hit: getParkPetHitRect(walker).center()};
