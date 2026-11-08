@@ -4181,7 +4181,8 @@ function drawCatchChoose() {
     page.forEach(function (pet, index) {
         var card = getCatchCard(index), hovered = card.contains(mouseX, mouseY), lift = hovered ? -3 : 0;
         drawPixelPanel(card.move(0, lift), hovered ? SUN : CREAM, INK, 4);
-        drawCatchPet(pet, "sit0", false, park_pet_scale, card.centerx(), card.bottom() - 34 + lift, true, false);
+        var pose = hovered ? "happy" + (Math.floor(ambient_frames / 18) % 2) : "sit0";
+        drawCatchPet(pet, pose, false, park_pet_scale, card.centerx(), card.bottom() - 34 + lift, true, false);
         drawFittedText(getPetName(pet), [card.centerx(), card.bottom() - 18 + lift], card.w - 10);
     });
     if (choices.length > catch_per_page) {
