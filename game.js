@@ -1922,6 +1922,27 @@ function drawNextFriendProgress(bar) {
     drawFittedText(left ? tr("friend_left", {n: left}) : tr("friend_here"), bar.center(), bar.w - 8);
 }
 
+var headTops = new Map();
+function getHeadTop(picture) {
+    // The first row with fur in the middle of the picture: the top of the head,
+    // even when ears stick up higher at the sides. Worked out once per picture.
+    if (headTops.has(picture)) return headTops.get(picture);
+    var row = 0;
+    try {
+        var copy = makeCanvas(W(picture), H(picture)), pen = copy.getContext("2d");
+        pen.drawImage(picture, 0, 0, W(picture), H(picture));  // At its size on screen.
+        var middle = Math.floor(W(picture) / 2);
+        var data = pen.getImageData(middle - 3, 0, 7, H(picture)).data;
+        search: for (var y = 0; y < H(picture); y++) {
+            for (var x = 0; x < 7; x++) {
+                if (data[(y * 7 + x) * 4 + 3] > 128) { row = y; break search; }
+            }
+        }
+    } catch (error) {}  // If the picture cannot be read, the crown simply sits at the top.
+    headTops.set(picture, row);
+    return row;
+}
+
 function drawCrown(centerX, top, cell) {
     cell = cell || 3;
     var pixels = S.CROWN_PIXELS;
@@ -2164,12 +2185,18 @@ function drawLinkPage() {
     var lightWindow = new Rect(150, 112, 500, 176);
     fillRect([255, 228, 150], lightWindow.x, lightWindow.y, lightWindow.w, lightWindow.h);
     drawSunRays(lightWindow);
-    var portrait = getFittedPortrait(pet, 150, 220);
+    // The owner's pet is a little smaller and lower, to leave room for the crown on its head.
+    var portrait = getFittedPortrait(pet, owner ? 136 : 150, 220);
     var hop = Math.abs(Math.round(Math.sin(ticks() / 180) * 8));
     var left = lightWindow.centerx() - Math.floor(W(portrait) / 2);
-    var top = lightWindow.centery() + 6 - hop - Math.floor(H(portrait) / 2);
+    var top = lightWindow.centery() + (owner ? 14 : 6) - hop - Math.floor(H(portrait) / 2);
     drawPicture(portrait, left, top);
-    if (owner) drawCrown(left + Math.floor(W(portrait) / 2), top + 2, 5);
+    if (owner) {
+        // The crown sits on top of the head, sinking one block into the fur.
+        var crownCell = 6;
+        var crownBottom = top + getHeadTop(portrait) + crownCell;
+        drawCrown(left + Math.floor(W(portrait) / 2), crownBottom - S.CROWN_PIXELS.length * crownCell, crownCell);
+    }
 
     drawPixelPanel(ribbon, owner ? SUN : LEAF);
     drawFittedText(owner ? tr("link_owner", {name: name}) : tr("link_new"), ribbon.center(), ribbon.w - 16,
