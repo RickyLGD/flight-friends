@@ -418,6 +418,7 @@ var album_card = character_cards[7];
 // the seventh shows the latest partner chosen from the album. The eighth opens the album.
 var partner_slot_pet = FOUNDER_PETS[6];
 var linked_pet = null;
+var linked_pets = [];  // Every pet from the link, in order; they take the first cards.
 var album_open = false, album_page = 0;
 var album_previous_button = new Rect(90, 396, 130, 44);
 var album_next_button = new Rect(580, 396, 130, 44);
@@ -434,6 +435,7 @@ var runs_this_visit = 0, run_started_at = 0;
 var welcome_pet = null;
 var welcomed_pets = {}, owned_pets = {};
 var link_page_pet = null, link_page_is_owner = false, link_page_bonus = [];
+var link_page_queue = [];  // More pages waiting, when one link brings several pets.
 var link_page_button = new Rect(210, 486, 380, 52);
 // Coins float in some openings. They are saved, so they can buy things later on.
 var coins = 0, coins_this_run = 0, coin_pops = [];
@@ -1086,23 +1088,48 @@ function getContributorNumber(pet) {
 }
 
 function applyPetLink(petId, isOwner) {
-    if (petId === null || !Object.prototype.hasOwnProperty.call(PET_INDEX_BY_ID, petId)) return false;
-    var pet = PET_INDEX_BY_ID[petId];
-    linked_pet = pet;
-    unlocked_pets[pet] = true;
-    setPilot(pet);
-    welcome_pet = pet;
-    var newOwner = !!isOwner && !owned_pets[pet];
-    // Opening the same link again goes straight to the game.
-    if (newOwner || !welcomed_pets[pet]) {
-        link_page_pet = pet;
-        link_page_is_owner = newOwner;
-        link_page_bonus = newOwner ? giveOwnerReward(pet) : [];
-        welcomed_pets[pet] = true;
-        track("pet_link_welcome", {pet: petId, owner: newOwner, bonus: link_page_bonus.length});
-    }
+    // One owner's link can bring several pets, with commas: ?pet=haishen,buding&owner=1
+    var pets = [];
+    (petId === null ? [] : String(petId).split(",")).forEach(function (one) {
+        one = one.trim();
+        if (!Object.prototype.hasOwnProperty.call(PET_INDEX_BY_ID, one)) return;
+        var pet = PET_INDEX_BY_ID[one];
+        if (pets.indexOf(pet) < 0) pets.push(pet);
+    });
+    if (!pets.length) return false;
+    linked_pet = pets[0];
+    linked_pets = pets;
+    // Unlocked first, so a bonus friend is never one of the pets this link already brings.
+    pets.forEach(function (pet) { unlocked_pets[pet] = true; });
+    var pages = [];
+    pets.forEach(function (pet) {
+        var newOwner = !!isOwner && !owned_pets[pet];
+        // Opening the same link again goes straight to the game.
+        if (newOwner || !welcomed_pets[pet]) {
+            var bonus = newOwner ? giveOwnerReward(pet) : [];
+            pages.push([pet, newOwner, bonus]);
+            welcomed_pets[pet] = true;
+            track("pet_link_welcome", {pet: PETS[pet].id, owner: newOwner, bonus: bonus.length});
+        }
+    });
+    setPilot(pets[0]);
+    welcome_pet = pets[0];
+    link_page_queue = pages;
+    showNextLinkPage();
     saveProgress();
     return true;
+}
+
+function showNextLinkPage() {
+    // Each pet from the link gets its own page, one after another.
+    var page = link_page_queue.shift();
+    if (page) {
+        link_page_pet = page[0];
+        link_page_is_owner = page[1];
+        link_page_bonus = page[2];
+    } else {
+        link_page_pet = null;
+    }
 }
 
 // -------------------------
@@ -1180,7 +1207,7 @@ function openUploadForm() {
 function getPetOrder() {
     // Unlocked pets come first, so four friends fill cards 1 to 4 and the locked
     // ones follow. Within each group: the linked pet, then founders, then the rest.
-    var base = linked_pet === null ? [] : [linked_pet];
+    var base = linked_pets.slice();
     FOUNDER_PETS.forEach(function (pet) { if (base.indexOf(pet) < 0) base.push(pet); });
     for (var pet = 0; pet < PETS.length; pet++) if (base.indexOf(pet) < 0) base.push(pet);
     return base.filter(function (pet) { return unlocked_pets[pet]; })
@@ -1296,7 +1323,7 @@ function handleLinkPage(event) {
     if (link_page_pet === null) return false;
     var closes = (event.type === "key" && (event.key === " " || event.key === "Enter")) ||
                  (event.type === "click" && link_page_button.contains(event.x, event.y));
-    if (closes) link_page_pet = null;
+    if (closes) showNextLinkPage();
     return true;
 }
 
