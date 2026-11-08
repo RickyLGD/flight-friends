@@ -947,6 +947,7 @@ function saveProgress() {
         owned: sortedIds(owned_pets),
         coins: coins,
         furniture: Object.keys(owned_furniture).sort(),
+        stored_furniture: Object.keys(stored_furniture).filter(function (id) { return owned_furniture[id]; }).sort(),
         furniture_places: furniture_places,
         language: language,
         park_pets: park_shown_chosen ? park_shown.map(function (pet) { return PETS[pet].id; }) : null,
@@ -988,6 +989,12 @@ function loadProgress() {
     if (Array.isArray(saved.furniture)) {
         saved.furniture.forEach(function (id) {
             if (typeof id === "string" && Object.prototype.hasOwnProperty.call(FURNITURE_BY_ID, id)) owned_furniture[id] = true;
+        });
+    }
+    stored_furniture = {};
+    if (Array.isArray(saved.stored_furniture)) {
+        saved.stored_furniture.forEach(function (id) {
+            if (typeof id === "string" && Object.prototype.hasOwnProperty.call(owned_furniture, id)) stored_furniture[id] = true;
         });
     }
     var places = saved.furniture_places && typeof saved.furniture_places === "object" ? saved.furniture_places : {};
@@ -1710,6 +1717,7 @@ function drawWeatherBehind() {
 }
 
 function drawRain(amount) {
+    if (amount <= 0) return;
     var blockWidth = S.RAIN_BLOCK[0], blockHeight = S.RAIN_BLOCK[1];
     screen.save();
     S.RAIN_LAYERS.forEach(function (layer, layerNumber) {
@@ -2350,6 +2358,8 @@ var HAIR_STYLE_IDS = HAIR_STYLES.map(function (style) { return style[0]; });
 var OUTFIT_IDS = OUTFITS.map(function (outfit) { return outfit.id; });
 var AVATAR = -1;  // The "pet" number used for the player's own little person.
 var owned_furniture = {};
+var stored_furniture = {};  // Still owned, but hidden until retrieved from the shop.
+var park_trashcan = new Rect(700, 128, 84, 80);
 var furniture_places = {};  // Furniture id -> [x, y], the middle of its bottom edge on screen.
 var park_open = false, park_pets = [], park_message = null;  // park_message: [text, frames left]
 var park_panel = null;  // What the side panel shows: null, "pet", "shop", "pets" or "look".
@@ -2554,7 +2564,7 @@ function getFurnitureRect(item) {
 
 function getPlacedFurniture() {
     // Owned furniture from the back of the room to the front; flat rugs lie under everything.
-    var placed = FURNITURE.filter(function (item) { return owned_furniture[item.id]; });
+    var placed = FURNITURE.filter(function (item) { return owned_furniture[item.id] && !stored_furniture[item.id]; });
     function depth(item) { return item.flat ? -1 : getFurniturePlace(item)[1]; }
     return placed.sort(function (a, b) { return depth(a) - depth(b); });
 }
@@ -2568,7 +2578,7 @@ function getParkSeats() {
     // Every spot on placed furniture where a pet could sit, as screen positions.
     var seats = [];
     FURNITURE.forEach(function (item) {
-        if (!owned_furniture[item.id] || item.id === park_carrying) return;
+        if (!owned_furniture[item.id] || stored_furniture[item.id] || item.id === park_carrying) return;
         var rect = getFurnitureRect(item);
         item.seats.forEach(function (seat, number) {
             seats.push({id: item.id + ":" + number, item: item.id, x: rect.x + seat[0] * park_scale,
@@ -2872,7 +2882,7 @@ function getFreeToys(walker) {
     park_pets.forEach(function (other) { if (other !== walker && other.toy) busy[other.toy] = true; });
     return FURNITURE.filter(function (item) {
         // A pet that has just eaten leaves the bowls alone for a while.
-        return ((item.bowl && walker.full <= 0) || item.toy) && owned_furniture[item.id] && item.id !== park_carrying &&
+        return ((item.bowl && walker.full <= 0) || item.toy) && owned_furniture[item.id] && !stored_furniture[item.id] && item.id !== park_carrying &&
                !busy[item.id] && canUse(item, kind);
     });
 }
@@ -2996,7 +3006,7 @@ function getSeatSpot(seatId) {
 function rollBall() {
     // The kicked ball rolls fast, then slows down before it stops.
     if (park_ball_roll === null) return;
-    if (!owned_furniture.ball || park_carrying === "ball") {
+    if (!owned_furniture.ball || stored_furniture.ball || park_carrying === "ball") {
         park_ball_roll = null;
         return;
     }
@@ -3146,6 +3156,7 @@ function pickUpFurniture(item, position) {
         park_grab = [place[0] - position[0], place[1] - position[1]];
         park_holding = true;
     }
+    delete stored_furniture[item.id];
     park_carrying = item.id;
     closeParkSide();
     park_pets.forEach(function (walker) {
@@ -3168,12 +3179,14 @@ function moveCarried(x, y) {
     furniture_places[item.id] = getCarriedPlace(item, x, y);
 }
 
-function dropFurniture() {
+function dropFurniture(position) {
     var item = FURNITURE_BY_ID[park_carrying];
+    var storing = position && park_trashcan.contains(position[0], position[1]);
+    if (storing) stored_furniture[item.id] = true;
     park_carrying = null;
     park_holding = false;
     saveProgress();
-    sayInPark("placed", {name: getItemName(item)});
+    sayInPark(storing ? "stored" : "placed", {name: getItemName(item)});
 }
 
 function getHang(pet) {
@@ -3415,7 +3428,7 @@ function handlePark(event) {
     if (event.type === "up") {
         // Letting go after pressing on furniture or a pet puts it down: that is a drag.
         if (park_held !== null) dropPet(event.x, event.y);
-        else if (park_carrying !== null && park_holding) dropFurniture();
+        else if (park_carrying !== null && park_holding) dropFurniture([event.x, event.y]);
         else if (park_press !== null) {
             // Let go without moving: that was a tap, so now the pet's card opens.
             park_panel = "pet";
@@ -3703,7 +3716,7 @@ function drawParkShop() {
         blitCentered(getFurnitureIcon(item.id), row.x + 30, row.centery());
         drawFittedText(getItemName(item), [row.x + 104, row.centery()], 100);
         if (owned) {
-            drawFittedText(tr("move"), [row.right() - 34, row.centery()], 56, FOREST);
+            drawFittedText(tr(stored_furniture[item.id] ? "retrieve" : "move"), [row.right() - 34, row.centery()], 56, FOREST);
         } else {
             blitCentered(getSprite("coin", 0, 2), row.right() - 56, row.centery());
             drawText(String(item.price), 2, [row.right() - 26, row.centery()], DARK_RED);
@@ -3805,7 +3818,7 @@ function getFurnitureFrame(item) {
 
 function drawPark() {
     screen.drawImage(parkRoom, 0, 0, WIDTH, HEIGHT);
-    if (owned_furniture.lamp) {
+    if (owned_furniture.lamp && !stored_furniture.lamp) {
         var shade = getFurnitureRect(FURNITURE_BY_ID.lamp);
         screen.drawImage(lampGlow, shade.centerx() - lampGlow.width / 2, shade.y + 12 - lampGlow.height / 2);
     }
@@ -3826,7 +3839,7 @@ function drawPark() {
         if (layer.kind === 1) drawParkPet(layer.walker);
         else screen.drawImage(getSprite(layer.sprite, layer.frame, park_scale), layer.rect.x, layer.rect.y);
     });
-    if (owned_furniture.teaser && park_carrying !== "teaser" && park_pets.some(function (walker) {
+    if (owned_furniture.teaser && !stored_furniture.teaser && park_carrying !== "teaser" && park_pets.some(function (walker) {
         return walker.toy === "teaser" && walker.action === "bat";
     })) {
         var teaser = FURNITURE_BY_ID.teaser, tipRect = getFurnitureRect(teaser);
@@ -3854,6 +3867,16 @@ function drawPark() {
         drawFittedText(row[1], shown.center(), button.w - 12);
     });
     drawCoinCounter();
+    if (park_carrying !== null) {
+        var hoveredBin = park_trashcan.contains(mouseX, mouseY);
+        drawPixelPanel(park_trashcan, hoveredBin ? SUN : CREAM, INK, 4);
+        var bx = park_trashcan.centerx(), by = park_trashcan.y + 10;
+        fillRect(FOREST, bx - 10, by, 20, 4);
+        fillRect(INK, bx - 22, by + 6, 44, 5);
+        fillRect(FOREST, bx - 18, by + 14, 36, 30);
+        [-8, 4].forEach(function (dx) { fillRect(CREAM, bx + dx, by + 19, 4, 20); });
+        drawFittedText(tr("storage_bin"), [bx, park_trashcan.bottom() - 14], 78, FOREST);
+    }
     var line;
     if (park_held !== null) line = tr("pet_drag_hint");
     else if (park_carrying !== null) line = tr("drag_hint");
