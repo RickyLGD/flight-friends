@@ -13,7 +13,7 @@
             }
         } catch (error) {}
     </script>
-    <link rel="icon" type="image/png" href="favicon.png?v=55ff93b6b265">
+    <link rel="icon" type="image/png" href="favicon.png?v=6c8fcd9c4a0f">
     <style>
         html, body { height: 100%; margin: 0; overflow: hidden; background: #6f9f8d; }
         body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -64,14 +64,15 @@
     </style>
 </head>
 <body data-theme="0">
-    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=55ff93b6b265)"></div>
-    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=55ff93b6b265)"></div>
-    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=55ff93b6b265)"></div>
+    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=6c8fcd9c4a0f)"></div>
+    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=6c8fcd9c4a0f)"></div>
+    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=6c8fcd9c4a0f)"></div>
     <div class="page-shade"></div><script>
 (function () {
     var KEY = "phc_nV6D9iCxsfsMbCe7FxLUqFneY9r5QrCSM6MUQZHs5gdU", HOST = "https://us.i.posthog.com";
     window.flightFriendsTrack = function () {};
     if (navigator.globalPrivacyControl || !window.fetch) return;
+    if (/[?&]dev=/.test(location.search)) return;  // The developer's own link is never counted.
     function makeId() {
         // Older browsers have no randomUUID, so build the same shape from random numbers.
         if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
@@ -153,7 +154,7 @@
 </script><div class="privacy-note"><span class="zh">本游戏匿名统计游玩数据，不含姓名、照片和联系方式</span><span class="en">This game counts plays anonymously: no names, photos or contact details</span></div>
     <canvas id="canvas" width="800" height="600" tabindex="0"></canvas>
     <div id="infobox"><span class="zh">正在准备起飞…</span><span class="en">Getting ready for takeoff…</span></div>
-    <script>window.GAME_VERSION = "55ff93b6b265";</script>
-    <script src="game.js?v=55ff93b6b265"></script>
+    <script>window.GAME_VERSION = "6c8fcd9c4a0f";</script>
+    <script src="game.js?v=6c8fcd9c4a0f"></script>
 </body>
 </html>
