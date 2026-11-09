@@ -1100,6 +1100,7 @@ function giveEverything() {
         owned_furniture[item.id] = true;
         if (!furniture_places[item.id]) furniture_places[item.id] = item.place.slice();
     });
+    garden_owned = true;
     coins = 99999;
 }
 
