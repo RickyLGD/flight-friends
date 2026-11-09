@@ -6,7 +6,7 @@
     <title>飞行搭档</title>
     <!-- On the home screen: its own icon and name, full screen like an app. -->
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="apple-touch-icon" href="app-icon-180.png?v=64627b99fdaf">
+    <link rel="apple-touch-icon" href="app-icon-180.png?v=5bd12d8ce36f">
     <meta name="theme-color" content="#6f9f8d">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,7 +21,7 @@
             }
         } catch (error) {}
     </script>
-    <link rel="icon" type="image/png" href="favicon.png?v=64627b99fdaf">
+    <link rel="icon" type="image/png" href="favicon.png?v=5bd12d8ce36f">
     <style>
         html, body { height: 100%; margin: 0; overflow: hidden; background: #6f9f8d; }
         body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -64,6 +64,9 @@
                 height: min(var(--down), calc(var(--across) * 3 / 4));
                 border-radius: 6px;
             }
+            /* A big blur that fades whenever the sky changes is heavy work for a phone and can make
+               the whole screen flash; there the game covers almost all of it anyway. */
+            .page-sky { filter: none; -webkit-transition: none; transition: none; }
             @supports (height: 100dvh) {
                 /* Safari's own bars come and go: "dvh" is the height actually left for the page. */
                 canvas#canvas { --down: calc(100dvh - 8px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); }
@@ -171,9 +174,9 @@
     </style>
 </head>
 <body data-theme="0">
-    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=64627b99fdaf)"></div>
-    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=64627b99fdaf)"></div>
-    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=64627b99fdaf)"></div>
+    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=5bd12d8ce36f)"></div>
+    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=5bd12d8ce36f)"></div>
+    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=5bd12d8ce36f)"></div>
     <div class="page-shade"></div><script>
 (function () {
     var KEY = "phc_nV6D9iCxsfsMbCe7FxLUqFneY9r5QrCSM6MUQZHs5gdU", HOST = "https://us.i.posthog.com";
@@ -269,7 +272,7 @@
         <span class="zh">把手机横过来，画面更大</span><span class="en">Turn your phone sideways for a bigger game</span>
     </div>
     <div class="app-card" id="app-card" hidden>
-        <img src="app-icon-192.png?v=64627b99fdaf" alt="">
+        <img src="app-icon-192.png?v=5bd12d8ce36f" alt="">
         <div class="app-card-words">
             <b><span class="zh">装到手机桌面</span><span class="en">Add to home screen</span></b>
             <small><span class="zh">像 App 一样全屏玩</span><span class="en">Play full screen, like an app</span></small>
@@ -320,8 +323,8 @@
     </div>
     <div class="app-toast" id="app-move-done" hidden><span class="zh">搬好了！</span><span class="en">All moved in!</span></div>
 
-    <script>window.GAME_VERSION = "64627b99fdaf";</script>
-    <script src="app.js?v=64627b99fdaf"></script>
-    <script src="game.js?v=64627b99fdaf"></script>
+    <script>window.GAME_VERSION = "5bd12d8ce36f";</script>
+    <script src="app.js?v=5bd12d8ce36f"></script>
+    <script src="game.js?v=5bd12d8ce36f"></script>
 </body>
 </html>

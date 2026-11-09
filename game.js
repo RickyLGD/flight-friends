@@ -4962,7 +4962,12 @@ function noteDrawTime(milliseconds) {
     if (draw_times.length < 30) return;
     var middle = draw_times.slice().sort(function (a, b) { return a - b; })[15];
     draw_times = [];
-    if (middle > SLOW_DRAW_MILLISECONDS && res_cap > 1) res_cap = Math.max(1, res_cap - 0.25);
+    if (middle <= SLOW_DRAW_MILLISECONDS || RES <= 1) return;
+    // One jump straight to the sharpness that should fit, from the sharpness in use now.
+    // Drawing costs about the square of the sharpness. Stepping down a quarter at a time
+    // remade the canvas and every photo several times in a row, which flashed on phones.
+    var fits = Math.floor(RES * Math.sqrt(SLOW_DRAW_MILLISECONDS / middle) * 4) / 4;
+    res_cap = Math.max(1, Math.min(RES - 0.25, fits));
 }
 
 function updateGameStep() {
@@ -5062,16 +5067,21 @@ function isCoveredScreen() {
     return link_page_pet !== null || (onCharacterScreen() && (park_open || quiz_open || catch_open));
 }
 
-function stretchEdges() {
-    // Beside a whole-picture screen, its outermost column of pixels runs on to the screen's edge.
+function shadeSides() {
+    // Beside a whole-picture screen (the park, a quiz, a pet's page) the flying world stays,
+    // dimmed, so the screen reads as a card on top of it. Copying the card's outermost
+    // column of pixels sideways used to smear its colors into long stripes on phones.
     var scale = canvas.height / HEIGHT, left = Math.round(SIDE * scale), right = Math.round((SIDE + WIDTH) * scale);
     screen.save();
     screen.setTransform(1, 0, 0, 1, 0, 0);
-    screen.drawImage(canvas, left, 0, 1, canvas.height, 0, 0, left, canvas.height);
-    screen.drawImage(canvas, right - 1, 0, 1, canvas.height, right, 0, canvas.width - right, canvas.height);
-    screen.fillStyle = "rgba(16,22,20,0.22)";
+    screen.fillStyle = "rgba(16,22,20,0.55)";
     screen.fillRect(0, 0, left, canvas.height);
     screen.fillRect(right, 0, canvas.width - right, canvas.height);
+    // A dark rim, so the card's edge is a clean line instead of a cut.
+    var rim = Math.max(1, Math.round(3 * scale));
+    screen.fillStyle = "rgb(16,22,20)";
+    screen.fillRect(left - rim, 0, rim, canvas.height);
+    screen.fillRect(right, 0, rim, canvas.height);
     screen.restore();
 }
 
@@ -5119,7 +5129,7 @@ function drawWholeFrame() {
     if (paused || (!started && (death_started_at === null || game_over))) drawMessagePanel();
     drawSoundButton();
     if (dev_mode) drawText("DEV", 2, [772, 14], SUN, INK);
-    if (SIDE && isCoveredScreen()) stretchEdges();
+    if (SIDE && isCoveredScreen()) shadeSides();
 }
 
 // -------------------------
