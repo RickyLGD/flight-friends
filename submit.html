@@ -8,7 +8,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- Pet submissions in English: the English game's "Add my pet!" opens this page.
          Chinese players use the 问卷星 questionnaire instead (the 中文 button, and ?lang=zh).
-         FormSubmit emails each submission, photo attached, to the developer. -->
+         Each submission goes into the game's own Supabase: the photo into the private pet-photos
+         folder, the answers into the pet_submissions table (see tools/pet_submissions.sql). -->
     <script>
         if (/[?&]lang=zh\b/.test(location.search)) location.replace("https://v.wjx.cn/vm/td6GJBG.aspx");
     </script>
@@ -98,12 +99,8 @@
         <h1>Put your pet in Flight Friends!</h1>
         <p class="intro">Once approved, your pet becomes a character in the game, and we will email you its own link. The photo and description are shown publicly in the game for every player to see. Your email is never shown; we only use it to send the link and to handle removal requests.</p>
 
-        <form id="form" action="https://formsubmit.co/yz11914@nyu.edu" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="_subject" id="subject" value="Flight Friends new pet (English)">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" id="next" value="https://rickylgd.github.io/flight-friends/submit.html?lang=en&amp;sent=1">
-            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <form id="form">
+            <input type="text" name="website" class="honey" tabindex="-1" autocomplete="off">
 
             <div class="question">
                 <div class="label"><span class="must">*</span>1. Your pet's photo (facing the camera, head filling the frame, ears and chin fully in, no people's faces)</div>
@@ -153,7 +150,8 @@
             </div>
 
             <button type="submit" class="send" id="send">Submit</button>
-            <p class="small">When you submit, your answers and photo are sent to the developer's email through FormSubmit. Nothing is stored in the game or shown publicly until it is approved.</p>
+            <div class="problem" id="send-problem"></div>
+            <p class="small">Your answers and photo go privately to the game's developer. Nothing is shown in the game until it is approved, and your email is never shown.</p>
         </form>
     </div>
 </div>
@@ -161,8 +159,14 @@
 <script>
 (function () {
     "use strict";
-    var LARGEST_FILE = 9 * 1024 * 1024;  // FormSubmit takes about 10 MB in all.
+    // The same Supabase project as the leaderboard. This key is public, made for web pages:
+    // with it the page can only add a submission, never read one back.
+    var SUPABASE = "https://jvpakstklehznnyvbuuh.supabase.co";
+    var KEY = "sb_publishable_uHN-NBLcbrDdMoEek2z03A_Nsaf5fKZ";
+    var LARGEST_FILE = 9 * 1024 * 1024;  // The photo folder takes up to 10 MB a file.
     var LONGEST_SIDE = 1600;  // Plenty for a game head; keeps phone photos small and quick to send.
+    var ENDINGS = {"image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif",
+                   "image/heic": "heic", "image/heif": "heic"};
 
     if (/[?&]sent=1\b/.test(location.search)) document.body.className = "sent";
 
@@ -197,7 +201,8 @@
         picture.onload = function () {
             URL.revokeObjectURL(address);
             var scale = Math.min(1, LONGEST_SIDE / Math.max(picture.naturalWidth, picture.naturalHeight));
-            if (scale === 1 && file.size < 1.5 * 1024 * 1024) return done(file);
+            // Small photos the folder already takes are sent as they are; the rest become a JPEG.
+            if (scale === 1 && file.size < 1.5 * 1024 * 1024 && ENDINGS[file.type]) return done(file);
             var canvas = document.createElement("canvas");
             canvas.width = Math.round(picture.naturalWidth * scale);
             canvas.height = Math.round(picture.naturalHeight * scale);
@@ -237,22 +242,69 @@
         });
     });
 
+    function randomName() {
+        if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+        var bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        bytes[6] = (bytes[6] & 15) | 64;
+        bytes[8] = (bytes[8] & 63) | 128;
+        var hex = Array.prototype.map.call(bytes, function (b) { return (b + 256).toString(16).slice(1); }).join("");
+        return [hex.slice(0, 8), hex.slice(8, 12), hex.slice(12, 16), hex.slice(16, 20), hex.slice(20)].join("-");
+    }
+
+    function check(response) {
+        if (!response.ok) throw new Error("Supabase answered " + response.status);
+        return response;
+    }
+
+    var sendProblem = document.getElementById("send-problem");
     form.addEventListener("submit", function (event) {
+        // The browser has already checked every field is filled in; the page sends it itself.
+        event.preventDefault();
         var file = photo.files && photo.files[0];
-        if (shrinking || (file && file.size > LARGEST_FILE)) {
-            event.preventDefault();
-            if (file && file.size > LARGEST_FILE) complain("That photo is too big (over 9 MB). Please pick another one or take a screenshot of it.");
+        if (shrinking || !file) return;
+        if (file.size > LARGEST_FILE) {
+            complain("That photo is too big (over 9 MB). Please pick another one or take a screenshot of it.");
             return;
         }
-        document.getElementById("subject").value = "Flight Friends new pet (English): " + document.getElementById("pet_name").value.trim();
+        if (form.website.value) return;  // Only robots fill in the hidden field.
+        var ending = ENDINGS[file.type];
+        if (!ending) {
+            complain("Please choose a JPEG, PNG or HEIC photo.");
+            return;
+        }
+        var name = randomName() + "." + ending;
+        sendProblem.style.display = "none";
         send.disabled = true;
         send.textContent = "Uploading, one moment…";
-    });
-
-    // Coming back with the browser's back button: let them send again if they want.
-    window.addEventListener("pageshow", function () {
-        send.disabled = false;
-        send.textContent = "Submit";
+        fetch(SUPABASE + "/storage/v1/object/pet-photos/" + name, {
+            method: "POST",
+            headers: {apikey: KEY, "Content-Type": file.type, "x-upsert": "false"},
+            body: file
+        }).then(check).then(function () {
+            return fetch(SUPABASE + "/rest/v1/pet_submissions", {
+                method: "POST",
+                headers: {apikey: KEY, "Content-Type": "application/json", Prefer: "return=minimal"},
+                body: JSON.stringify({
+                    pet_name: form.pet_name.value.trim(),
+                    personality: form.personality.value.trim(),
+                    breed: form.breed.value.trim(),
+                    email: form.email.value.trim(),
+                    consent: form.consent.checked,
+                    photo: name
+                })
+            });
+        }).then(check).then(function () {
+            document.body.className = "sent";
+            window.scrollTo(0, 0);
+            try { history.replaceState(null, "", location.pathname + "?lang=en&sent=1"); } catch (error) {}
+        })["catch"](function (error) {
+            if (window.console) console.error(error);
+            sendProblem.textContent = "Sorry, it did not go through. Please check your internet and try again.";
+            sendProblem.style.display = "block";
+            send.disabled = false;
+            send.textContent = "Submit";
+        });
     });
 })();
 </script>
