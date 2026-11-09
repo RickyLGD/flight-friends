@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>让你的宠物登上《飞行搭档》！</title>
+    <title>Put your pet in Flight Friends!</title>
     <meta name="theme-color" content="#6f9f8d">
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- Pet submissions. The game opens this page with ?lang=zh or ?lang=en, so it speaks the
-         game's language. FormSubmit emails each submission, photo attached, to the developer. -->
+    <!-- Pet submissions in English: the English game's "Add my pet!" opens this page.
+         Chinese players use the 问卷星 questionnaire instead (the 中文 button, and ?lang=zh).
+         FormSubmit emails each submission, photo attached, to the developer. -->
+    <script>
+        if (/[?&]lang=zh\b/.test(location.search)) location.replace("https://v.wjx.cn/vm/td6GJBG.aspx");
+    </script>
     <style>
         * { box-sizing: border-box; }
         html { background: #6f9f8d; }
         body {
             margin: 0; padding: 24px 16px 40px; min-height: 100vh;
-            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+            font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
             color: #342014; background: linear-gradient(#6f9f8d, #87b3a1);
         }
         .card {
@@ -22,17 +26,16 @@
             box-shadow: 0 0 0 3px #342014, 0 8px 0 3px #342014, 0 18px 40px rgba(8, 14, 12, 0.35);
         }
         .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
-        .top a { color: #2f6b4f; font-size: 15px; text-decoration: none; font-weight: 600; }
+        .top a.back-link { color: #2f6b4f; font-size: 15px; text-decoration: none; font-weight: 600; }
         .switch {
             border: 2px solid #342014; background: #fff; color: #342014; border-radius: 8px;
-            padding: 5px 12px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+            padding: 5px 12px; font-size: 14px; font-weight: 600; text-decoration: none;
         }
         h1 { font-size: 24px; line-height: 1.3; margin: 10px 0 10px; color: #2f6b4f; }
         p.intro { font-size: 15px; line-height: 1.6; margin: 0 0 18px; color: #5b4636; }
         .question { margin: 0 0 18px; }
         .question > label[for]:not(.photo-box), .question > .label { display: block; font-weight: 700; font-size: 16px; line-height: 1.45; margin-bottom: 8px; }
         .must { color: #b3261e; margin-right: 4px; }
-        .hint { font-weight: 400; color: #6d5a49; }
         input[type="text"], input[type="email"] {
             width: 100%; padding: 11px 12px; font: inherit; font-size: 16px; color: #342014;
             background: #fff; border: 2px solid #cdbfa3; border-radius: 9px; outline: none;
@@ -48,7 +51,7 @@
             display: flex; align-items: center; gap: 14px; padding: 12px;
             border: 2px dashed #cdbfa3; border-radius: 10px; background: #fff; cursor: pointer;
         }
-        .photo-box img { width: 84px; height: 84px; object-fit: cover; border-radius: 8px; display: none; }
+        .photo-box img { width: 84px; height: 84px; object-fit: cover; border-radius: 8px; display: none; flex: none; }
         .photo-box .pick {
             background: #2f6b4f; color: #fff; border-radius: 8px; padding: 9px 14px; font-weight: 700; white-space: nowrap;
         }
@@ -80,78 +83,77 @@
 <body>
 <div class="card">
     <div class="top">
-        <a href="./" data-text="back">← 回到游戏</a>
-        <button type="button" class="switch" id="switch">English</button>
+        <a class="back-link" href="./">← Back to the game</a>
+        <a class="switch" href="https://v.wjx.cn/vm/td6GJBG.aspx" lang="zh-CN">中文</a>
     </div>
 
     <div id="thanks">
         <div class="big">🐾</div>
-        <h1 data-text="thanks_title">收到啦！</h1>
-        <p class="intro" data-text="thanks_body">审核通过后，我们会把你的宠物加进游戏，并把专属链接发到你的邮箱。</p>
-        <a class="back" href="./" data-text="play">回去继续玩</a>
+        <h1>Got it, thank you!</h1>
+        <p class="intro">Once it is approved, we will add your pet to the game and email you its own link.</p>
+        <a class="back" href="./">Back to the game</a>
     </div>
 
     <div id="form-part">
-        <h1 data-text="title">让你的宠物登上《飞行搭档》！</h1>
-        <p class="intro" data-text="intro">审核通过后，你的宠物会成为游戏角色，我们会把专属链接发到你的邮箱。照片和介绍会公开显示在游戏里，任何玩家都能看到；你的邮箱不会公开，只用来发送链接和处理下架请求。</p>
+        <h1>Put your pet in Flight Friends!</h1>
+        <p class="intro">Once approved, your pet becomes a character in the game, and we will email you its own link. The photo and description are shown publicly in the game for every player to see. Your email is never shown; we only use it to send the link and to handle removal requests.</p>
 
         <form id="form" action="https://formsubmit.co/yz11914@nyu.edu" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="_subject" id="subject" value="飞行搭档新宠物投稿">
+            <input type="hidden" name="_subject" id="subject" value="Flight Friends new pet (English)">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" id="next" value="">
-            <input type="hidden" name="language" id="language" value="zh">
+            <input type="hidden" name="_next" id="next" value="https://rickylgd.github.io/flight-friends/submit.html?lang=en&amp;sent=1">
             <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
 
             <div class="question">
-                <div class="label"><span class="must">*</span>1. <span data-text="q_photo">宠物的照片（正脸，头部占满画面，耳朵和下巴完整，不要拍到人脸）</span></div>
+                <div class="label"><span class="must">*</span>1. Your pet's photo (facing the camera, head filling the frame, ears and chin fully in, no people's faces)</div>
                 <div class="sample">
                     <img src="submit-sample.jpg" alt="">
                     <div class="sample-words">
-                        <span class="good" data-text="sample_good">✓ 这样拍最好</span>
-                        <span class="bad" data-text="sample_far">✗ 离得太远</span>
-                        <span class="bad" data-text="sample_cut">✗ 头被裁掉</span>
+                        <span class="good">✓ Like this</span>
+                        <span class="bad">✗ Too far away</span>
+                        <span class="bad">✗ Head cut off</span>
                     </div>
                 </div>
                 <label class="photo-box" for="photo">
                     <img id="preview" alt="">
-                    <span class="pick" data-text="pick">选择照片</span>
-                    <span class="file-note" id="file-note" data-text="no_photo">还没有选照片</span>
+                    <span class="pick" id="pick">Choose photo</span>
+                    <span class="file-note" id="file-note">No photo chosen yet</span>
                 </label>
                 <input type="file" id="photo" name="photo" accept="image/*" required>
                 <div class="problem" id="photo-problem"></div>
             </div>
 
             <div class="question">
-                <label for="pet_name"><span class="must">*</span>2. <span data-text="q_name">宠物的名字（最多 4 个字，示例：豆豆）</span></label>
-                <input type="text" id="pet_name" name="pet_name" required autocomplete="off">
+                <label for="pet_name"><span class="must">*</span>2. Your pet's name (up to 10 letters, e.g. Coco)</label>
+                <input type="text" id="pet_name" name="pet_name" maxlength="10" required autocomplete="off">
             </div>
 
             <div class="question">
-                <label for="personality"><span class="must">*</span>3. <span data-text="q_like">它是怎么样的？（最多 4 个字，不用写“的”，示例：爱偷袜子、爱哼唧、毛茸茸）</span></label>
-                <input type="text" id="personality" name="personality" required autocomplete="off">
+                <label for="personality"><span class="must">*</span>3. What is it like? (one word, up to 10 letters, e.g. Cheeky, Fluffy, Snoring)</label>
+                <input type="text" id="personality" name="personality" maxlength="10" required autocomplete="off">
             </div>
 
             <div class="question">
-                <label for="breed"><span class="must">*</span>4. <span data-text="q_breed">品种（最多 4 个字，示例：柯基、拉布拉多、布偶猫）</span></label>
-                <input type="text" id="breed" name="breed" required autocomplete="off">
+                <label for="breed"><span class="must">*</span>4. Breed (up to 10 letters, e.g. Corgi, Labrador, Ragdoll)</label>
+                <input type="text" id="breed" name="breed" maxlength="10" required autocomplete="off">
             </div>
 
             <div class="question">
-                <label for="email"><span class="must">*</span>5. <span data-text="q_email">你的邮箱（用来接收专属链接）</span></label>
+                <label for="email"><span class="must">*</span>5. Your email (we will send your pet's own link here)</label>
                 <input type="email" id="email" name="email" required autocomplete="email">
             </div>
 
             <div class="question">
-                <div class="label"><span class="must">*</span>6. <span data-text="q_consent">同意公开</span></div>
+                <div class="label"><span class="must">*</span>6. Permission to show it publicly</div>
                 <label class="consent">
                     <input type="checkbox" name="consent" value="yes" required>
-                    <span data-text="consent">这是我的宠物或我已获得主人同意；我同意照片和介绍公开显示在游戏中，并可以随时要求下架。</span>
+                    <span>This is my pet, or its owner has agreed. I agree that its photo and description are shown publicly in the game, and I can ask for it to be removed at any time.</span>
                 </label>
             </div>
 
-            <button type="submit" class="send" id="send" data-text="send">提交</button>
-            <p class="small" data-text="note">提交后，你填写的内容和照片会通过 FormSubmit 发到开发者的邮箱，不会存进游戏或公开，直到审核通过。</p>
+            <button type="submit" class="send" id="send">Submit</button>
+            <p class="small">When you submit, your answers and photo are sent to the developer's email through FormSubmit. Nothing is stored in the game or shown publicly until it is approved.</p>
         </form>
     </div>
 </div>
@@ -159,61 +161,10 @@
 <script>
 (function () {
     "use strict";
-    var WORDS = {
-        zh: {
-            page_title: "让你的宠物登上《飞行搭档》！", switch_to: "English", back: "← 回到游戏",
-            title: "让你的宠物登上《飞行搭档》！",
-            intro: "审核通过后，你的宠物会成为游戏角色，我们会把专属链接发到你的邮箱。照片和介绍会公开显示在游戏里，任何玩家都能看到；你的邮箱不会公开，只用来发送链接和处理下架请求。",
-            q_photo: "宠物的照片（正脸，头部占满画面，耳朵和下巴完整，不要拍到人脸）",
-            sample_good: "✓ 这样拍最好", sample_far: "✗ 离得太远", sample_cut: "✗ 头被裁掉",
-            pick: "选择照片", no_photo: "还没有选照片", change: "换一张",
-            q_name: "宠物的名字（最多 4 个字，示例：豆豆）",
-            q_like: "它是怎么样的？（最多 4 个字，不用写“的”，示例：爱偷袜子、爱哼唧、毛茸茸）",
-            q_breed: "品种（最多 4 个字，示例：柯基、拉布拉多、布偶猫）",
-            q_email: "你的邮箱（用来接收专属链接）",
-            q_consent: "同意公开",
-            consent: "这是我的宠物或我已获得主人同意；我同意照片和介绍公开显示在游戏中，并可以随时要求下架。",
-            send: "提交", sending: "正在上传，请稍等…",
-            note: "提交后，你填写的内容和照片会通过 FormSubmit 发到开发者的邮箱，不会存进游戏或公开，直到审核通过。",
-            not_picture: "请选一张图片。", too_big: "照片太大了（超过 9MB），请换一张或先截图再传。",
-            subject: "飞行搭档新宠物投稿：",
-            thanks_title: "收到啦！", thanks_body: "审核通过后，我们会把你的宠物加进游戏，并把专属链接发到你的邮箱。",
-            play: "回去继续玩", limit: 4
-        },
-        en: {
-            page_title: "Put your pet in Flight Friends!", switch_to: "中文", back: "← Back to the game",
-            title: "Put your pet in Flight Friends!",
-            intro: "Once approved, your pet becomes a character in the game, and we will email you its own link. The photo and description are shown publicly in the game for every player to see. Your email is never shown; we only use it to send the link and to handle removal requests.",
-            q_photo: "Your pet's photo (facing the camera, head filling the frame, ears and chin fully in, no people's faces)",
-            sample_good: "✓ Like this", sample_far: "✗ Too far away", sample_cut: "✗ Head cut off",
-            pick: "Choose photo", no_photo: "No photo chosen yet", change: "Change",
-            q_name: "Your pet's name (up to 10 letters, e.g. Coco)",
-            q_like: "What is it like? (one word, up to 10 letters, e.g. Cheeky, Fluffy, Snoring)",
-            q_breed: "Breed (up to 10 letters, e.g. Corgi, Labrador, Ragdoll)",
-            q_email: "Your email (we will send your pet's own link here)",
-            q_consent: "Permission to show it publicly",
-            consent: "This is my pet, or its owner has agreed. I agree that its photo and description are shown publicly in the game, and I can ask for it to be removed at any time.",
-            send: "Submit", sending: "Uploading, one moment…",
-            note: "When you submit, your answers and photo are sent to the developer's email through FormSubmit. Nothing is stored in the game or shown publicly until it is approved.",
-            not_picture: "Please choose a picture.", too_big: "That photo is too big (over 9 MB). Please pick another one or take a screenshot of it.",
-            subject: "Flight Friends new pet (English): ",
-            thanks_title: "Got it, thank you!", thanks_body: "Once it is approved, we will add your pet to the game and email you its own link.",
-            play: "Back to the game", limit: 10
-        }
-    };
     var LARGEST_FILE = 9 * 1024 * 1024;  // FormSubmit takes about 10 MB in all.
     var LONGEST_SIDE = 1600;  // Plenty for a game head; keeps phone photos small and quick to send.
 
-    var query = new URLSearchParams(location.search);
-    var language = query.get("lang");
-    if (language !== "zh" && language !== "en") {
-        language = "zh";
-        try {
-            if (JSON.parse(localStorage.getItem("flight_friends_pets") || "{}").language === "en") language = "en";
-        } catch (error) {}
-        if (!/^zh/i.test(navigator.language || "") && language === "zh" && !query.has("lang")) language = "en";
-    }
-    if (query.get("sent") === "1") document.body.className = "sent";
+    if (/[?&]sent=1\b/.test(location.search)) document.body.className = "sent";
 
     var form = document.getElementById("form");
     var photo = document.getElementById("photo");
@@ -222,33 +173,13 @@
     var problem = document.getElementById("photo-problem");
     var send = document.getElementById("send");
 
-    function show(newLanguage) {
-        language = newLanguage;
-        var words = WORDS[language];
-        document.documentElement.lang = language === "en" ? "en" : "zh-CN";
-        document.title = words.page_title;
-        document.getElementById("switch").textContent = words.switch_to;
-        Array.prototype.forEach.call(document.querySelectorAll("[data-text]"), function (element) {
-            var key = element.getAttribute("data-text");
-            if (key === "no_photo" && photo.files && photo.files.length) return;
-            element.textContent = words[key];
-        });
-        if (photo.files && photo.files.length) document.querySelector("[data-text=pick]").textContent = words.change;
-        ["pet_name", "personality", "breed"].forEach(function (id) {
-            document.getElementById(id).maxLength = words.limit;
-        });
-        document.getElementById("language").value = language;
-        // After sending, FormSubmit comes back to this page, in the same language.
-        document.getElementById("next").value = location.origin + location.pathname + "?lang=" + language + "&sent=1";
-        try { history.replaceState(null, "", location.pathname + "?lang=" + language + (query.get("sent") === "1" ? "&sent=1" : "")); } catch (error) {}
+    function complain(words) {
+        problem.textContent = words;
+        problem.style.display = "block";
     }
 
-    document.getElementById("switch").addEventListener("click", function () {
-        show(language === "en" ? "zh" : "en");
-    });
-
     function useFile(file) {
-        // Puts the (possibly smaller) photo back into the form, where the browser allows it.
+        // Puts the smaller photo back into the form, where the browser allows it.
         try {
             var holder = new DataTransfer();
             holder.items.add(file);
@@ -290,8 +221,7 @@
         problem.style.display = "none";
         if (!file) return;
         if (file.type && file.type.indexOf("image/") !== 0) {
-            problem.textContent = WORDS[language].not_picture;
-            problem.style.display = "block";
+            complain("Please choose a picture.");
             photo.value = "";
             return;
         }
@@ -300,13 +230,10 @@
             shrinking = false;
             if (smaller !== file && !useFile(smaller)) smaller = file;
             note.textContent = smaller.name + " · " + Math.max(1, Math.round(smaller.size / 1024)) + " KB";
-            document.querySelector("[data-text=pick]").textContent = WORDS[language].change;
+            document.getElementById("pick").textContent = "Change";
             preview.src = URL.createObjectURL(smaller);
             preview.style.display = "block";
-            if (smaller.size > LARGEST_FILE) {
-                problem.textContent = WORDS[language].too_big;
-                problem.style.display = "block";
-            }
+            if (smaller.size > LARGEST_FILE) complain("That photo is too big (over 9 MB). Please pick another one or take a screenshot of it.");
         });
     });
 
@@ -314,24 +241,19 @@
         var file = photo.files && photo.files[0];
         if (shrinking || (file && file.size > LARGEST_FILE)) {
             event.preventDefault();
-            if (file && file.size > LARGEST_FILE) {
-                problem.textContent = WORDS[language].too_big;
-                problem.style.display = "block";
-            }
+            if (file && file.size > LARGEST_FILE) complain("That photo is too big (over 9 MB). Please pick another one or take a screenshot of it.");
             return;
         }
-        document.getElementById("subject").value = WORDS[language].subject + document.getElementById("pet_name").value.trim();
+        document.getElementById("subject").value = "Flight Friends new pet (English): " + document.getElementById("pet_name").value.trim();
         send.disabled = true;
-        send.textContent = WORDS[language].sending;
+        send.textContent = "Uploading, one moment…";
     });
 
     // Coming back with the browser's back button: let them send again if they want.
     window.addEventListener("pageshow", function () {
         send.disabled = false;
-        send.textContent = WORDS[language].send;
+        send.textContent = "Submit";
     });
-
-    show(language);
 })();
 </script>
 </body>
