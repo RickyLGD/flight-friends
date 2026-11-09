@@ -1,0 +1,38 @@
+{
+ "name": "飞行搭档",
+ "short_name": "飞行搭档",
+ "lang": "zh-CN",
+ "id": "./",
+ "scope": "./",
+ "description": "和你的宠物搭档一起飞！",
+ "display": "fullscreen",
+ "orientation": "landscape",
+ "background_color": "#6f9f8d",
+ "theme_color": "#6f9f8d",
+ "icons": [
+  {
+   "src": "app-icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "app-icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "app-icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "app-icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
