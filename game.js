@@ -113,8 +113,12 @@ var RES = 1;
 var SIDE = 0;
 var MAXIMUM_SIDE = 320;
 var wideScreen = window.matchMedia ? window.matchMedia("(pointer: coarse) and (max-height: 540px) and (orientation: landscape)") : null;
+// A phone held upright: the page (index.html) draws everything turned a quarter clockwise, so the
+// game fills the screen and the player turns the phone. WeChat keeps pages upright even when the
+// phone is turned, so this is the only way most phone players get the big game.
+var turnedScreen = window.matchMedia ? window.matchMedia("(pointer: coarse) and (max-width: 540px) and (orientation: portrait)") : null;
 var MAXIMUM_RES = 2.5;  // Higher costs old computers speed and hardly looks sharper.
-// Lowered a quarter at a time on a device too slow to draw every frame at full sharpness.
+// Lowered on a device too slow to draw every frame at full sharpness.
 var res_cap = MAXIMUM_RES;
 var draw_times = [];
 var SLOW_DRAW_MILLISECONDS = 9;  // A 60 Hz frame lasts 16.7 ms; drawing must leave room for the rest.
@@ -5026,9 +5030,16 @@ function getFullWidth() {
     return WIDTH + 2 * SIDE;
 }
 
+function isTurned() {
+    return !!(turnedScreen && turnedScreen.matches);
+}
+
 function updateResolution() {
-    var box = canvas.getBoundingClientRect();
-    var side = wideScreen && wideScreen.matches ? getSideFor(box.width, box.height) : 0;
+    // The canvas's own size on the page, before any turning: a turned page swaps the
+    // width and height of the box the browser measures around it.
+    var box = {width: canvas.clientWidth, height: canvas.clientHeight};
+    var wide = (wideScreen && wideScreen.matches) || isTurned();
+    var side = wide ? getSideFor(box.width, box.height) : 0;
     // Wider than the widest world: keep the shape, with a thin strip at both ends.
     canvas.style.maxWidth = side === MAXIMUM_SIDE ? Math.floor(box.height * (WIDTH + 2 * side) / HEIGHT) + "px" : "";
     var wanted = box.width ? box.width / (WIDTH + 2 * side) * (window.devicePixelRatio || 1) : 1;
@@ -5408,7 +5419,7 @@ boardForm.addEventListener("submit", function (event) {
 
 function showBoardForm() {
     // Puts the form over the box drawn in the board panel, at the canvas's current size.
-    var box = canvas.getBoundingClientRect(), scale = box.width / getFullWidth();
+    var box = getCanvasPlace(), scale = box.width / getFullWidth();
     boardForm.style.left = (box.left + (SIDE + 646) * scale) + "px";
     boardForm.style.top = (box.top + 382 * scale) + "px";
     boardForm.style.width = (136 * scale) + "px";
@@ -5506,9 +5517,26 @@ window.addEventListener("keydown", function (event) {
 });
 
 function toGamePosition(clientX, clientY) {
+    var box = canvas.getBoundingClientRect(), across, down;
+    if (isTurned()) {
+        // Turned a quarter clockwise: the game's top is at the screen's right edge, and its
+        // left is at the top of the screen.
+        across = (clientY - box.top) / box.height;
+        down = (box.right - clientX) / box.width;
+    } else {
+        across = (clientX - box.left) / box.width;
+        down = (clientY - box.top) / box.height;
+    }
+    return [Math.floor(across * getFullWidth()) - SIDE, Math.floor(down * HEIGHT)];
+}
+
+function getCanvasPlace() {
+    // Where the canvas sits on the page, in the page's own (unturned) left, top and width,
+    // which is what the nickname box laid over it is placed in.
     var box = canvas.getBoundingClientRect();
-    return [Math.floor((clientX - box.left) * getFullWidth() / box.width) - SIDE,
-            Math.floor((clientY - box.top) * HEIGHT / box.height)];
+    if (!isTurned()) return {left: box.left, top: box.top, width: box.width};
+    var page = document.body.getBoundingClientRect();
+    return {left: box.top - page.top, top: page.right - box.right, width: canvas.clientWidth};
 }
 
 function wakeAudio(place) {
