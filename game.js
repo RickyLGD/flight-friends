@@ -1709,8 +1709,7 @@ function drawWeatherBehind() {
         multiplyScreen(255, 255 - Math.round(14 * weather_amount), 255 - Math.round(26 * weather_amount));
         blitWrapped(autumnLayer, 0, 0.25, Math.round(255 * weather_amount));
     } else if (weather === "osmanthus") {
-        multiplyScreen(255, 255 - Math.round(5 * weather_amount), 255 - Math.round(16 * weather_amount));
-        blitWrapped(osmanthusLayer, 0, 0.45, Math.round(255 * weather_amount));
+        blitWrapped(osmanthusLayer, 0, 0.25, Math.round(255 * weather_amount));
     } else if (weather === "petals") {
         // A faint pink wash, and blossom branches drifting past overhead.
         var fade = 22 * weather_amount;
@@ -1865,7 +1864,7 @@ function drawWeatherInFront() {
     else if (weather === "leaves") drawLeaves(Math.round(24 * weather_amount));
     else if (weather === "snow") drawSnow(Math.round(42 * weather_amount));
     else if (weather === "dandelions") drawDandelions(Math.round(32 * weather_amount));
-    else if (weather === "osmanthus") drawOsmanthus(Math.round(40 * weather_amount));
+    else if (weather === "osmanthus") drawOsmanthus(Math.round(30 * weather_amount));
     else if (weather === "petals") drawPetals(Math.round(42 * weather_amount));
 }
 
