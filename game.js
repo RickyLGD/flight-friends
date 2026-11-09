@@ -108,6 +108,11 @@ function makeCanvas(width, height) {
 // The game is planned on an 800 x 600 grid, but drawn with as many real screen pixels as
 // it is shown with. On a sharp laptop screen that is 2 or more per game pixel, so photos stay clear.
 var RES = 1;
+// A phone turned sideways is much wider than the 4:3 game. The play area stays 800 x 600 in the
+// middle, and the world carries on for SIDE more game pixels on the left and on the right.
+var SIDE = 0;
+var MAXIMUM_SIDE = 320;
+var wideScreen = window.matchMedia ? window.matchMedia("(pointer: coarse) and (max-height: 540px) and (orientation: landscape)") : null;
 var MAXIMUM_RES = 2.5;  // Higher costs old computers speed and hardly looks sharper.
 
 // Sharp pictures remember their size in game pixels; everything else uses its real size.
@@ -520,6 +525,7 @@ var pipe_width = S.pipe_width;
 var pipe_scroll_remainder = 0.0;
 var pipe_spacing = S.pipe_spacing;
 var pipes = [];
+var leaving_pipes = [];  // Already passed and scored, still sliding through the world on the left.
 var score = 0, started = false, game_over = false;
 
 var points_per_theme = S.points_per_theme;
@@ -710,7 +716,7 @@ function getCreatureHideAmount(rect) {
 }
 
 function drawCreatures() {
-    pipes.forEach(function (pair) {
+    getShownPipes().forEach(function (pair) {
         var top = pair[0], bottom = pair[1], sprite, visible;
         if (bottom.creature !== null) {
             sprite = getSprite(bottom.creature, getBlinkFrame(bottom.h));
@@ -730,7 +736,7 @@ function drawCreatures() {
 }
 
 function drawWaitingDogs() {
-    pipes.forEach(function (pair) {
+    getShownPipes().forEach(function (pair) {
         var bottom = pair[1];
         if (bottom.dog === null) return;
         // Unlike the wild animals, a new friend stays in sight and waits to be picked up.
@@ -760,10 +766,21 @@ function movePipes(currentScore) {
     pipe_scroll_remainder += speed;
     var movement = Math.floor(pipe_scroll_remainder);
     pipe_scroll_remainder -= movement;
-    pipes.forEach(function (pair) {
+    pipes.concat(leaving_pipes).forEach(function (pair) {
         pair[0].x -= movement;
         pair[1].x -= movement;
     });
+    leaving_pipes = leaving_pipes.filter(function (pair) { return pair[0].right() >= -SIDE; });
+}
+
+function getShownPipes() {
+    // Nothing waits beside the menus; in flight the passed pillars stay in sight on the left.
+    return onCharacterScreen() ? [] : leaving_pipes.concat(pipes);
+}
+
+function getPipeStartX() {
+    // On a wide phone a new pillar starts beyond the world on the right, not in plain sight.
+    return WIDTH + (started ? SIDE : 0);
 }
 
 function Obstacle(x, y, w, h) {
@@ -807,8 +824,9 @@ function createPipe(currentScore, previousGapY) {
     var gapY = randint(lowest, highest);
     var gapTop = gapY - Math.floor(pipeGap / 2);
     var gapBottom = gapTop + pipeGap;
-    return [new Obstacle(WIDTH, 0, pipe_width, gapTop),
-            new Obstacle(WIDTH, gapBottom, pipe_width, HEIGHT - gapBottom)];
+    var x = getPipeStartX();
+    return [new Obstacle(x, 0, pipe_width, gapTop),
+            new Obstacle(x, gapBottom, pipe_width, HEIGHT - gapBottom)];
 }
 
 function chooseNextAnimalDelay() {
@@ -858,7 +876,7 @@ function collectCoins() {
 }
 
 function drawCoins() {
-    pipes.forEach(function (pair) {
+    getShownPipes().forEach(function (pair) {
         var bottom = pair[1];
         if (bottom.coin === null) return;
         // Each coin spins at its own moment, so a row of them never turns together.
@@ -1187,6 +1205,7 @@ function resetGame() {
     resetBird();
     newly_found_dogs.length = 0;
     pipes = [createPipe()];
+    leaving_pipes = [];
     score = 0;
     pipe_scroll_remainder = 0.0;
     started = false;
@@ -1551,13 +1570,13 @@ function shakeScreen() {
         pen.clearRect(0, 0, shakeCopy.width, shakeCopy.height);
         pen.drawImage(canvas, 0, 0);
         // The unmoved picture stays underneath, so no gap shows at the edges.
-        screen.drawImage(shakeCopy, offset[0], offset[1], WIDTH, HEIGHT);
+        screen.drawImage(shakeCopy, offset[0] - SIDE, offset[1], getFullWidth(), HEIGHT);
     }
     if (elapsed < 0.08) {  // A brief hot flash.
         screen.save();
         screen.globalCompositeOperation = "lighter";
         screen.fillStyle = "rgb(90,40,30)";
-        screen.fillRect(0, 0, WIDTH, HEIGHT);
+        fillWhole();
         screen.restore();
     }
 }
@@ -1646,8 +1665,8 @@ function blitWrapped(layer, y, speedFactor, alpha) {
     if (alpha <= 0) return;
     var offset = pmod(Math.floor(world_scroll * speedFactor), WIDTH);
     screen.globalAlpha = alpha / 255;
-    screen.drawImage(layer, -offset, y);
-    screen.drawImage(layer, WIDTH - offset, y);
+    // Two copies cover the play area; a wide phone needs one more on each side.
+    for (var copy = SIDE ? -1 : 0; copy <= (SIDE ? 2 : 1); copy++) screen.drawImage(layer, copy * WIDTH - offset, y);
     screen.globalAlpha = 1;
 }
 
@@ -1668,6 +1687,10 @@ function drawBackground() {
     layers.forEach(function (layer) {
         screen.globalAlpha = layer[1] / 255;
         screen.drawImage(layer[0].sky, 0, 0);
+        if (SIDE) {
+            screen.drawImage(layer[0].sky, -WIDTH, 0);
+            screen.drawImage(layer[0].sky, WIDTH, 0);
+        }
     });
     screen.globalAlpha = 1;
     getSunAndMoonLayers().forEach(function (layer) {
@@ -1691,7 +1714,7 @@ function multiplyScreen(red, green, blue) {
     screen.save();
     screen.globalCompositeOperation = "multiply";
     screen.fillStyle = "rgb(" + red + "," + green + "," + blue + ")";
-    screen.fillRect(0, 0, WIDTH, HEIGHT);
+    fillWhole();
     screen.restore();
 }
 
@@ -1752,16 +1775,19 @@ function drawSplash(x, y, age) {
     shape.forEach(function (place) { fillRect(S.SPLASH_COLOR, x + place[0] - 1, y + place[1] - 1, 2, 2); });
 }
 
-function drawSplashes(amount) {
+function drawMeadowSplashes(amount) {
     // Splashes on the meadow: each spot splashes, rests, then moves somewhere new.
     var count = Math.round(10 * amount);
     for (var number = 0; number < count; number++) {
         var time = ambient_frames + number * 11, age = time % 36;
         if (age < S.splash_frames) drawSplash((number * 173 + Math.floor(time / 36) * 311) % WIDTH, HEIGHT - 10, age);
     }
+}
+
+function drawBlockSplashes(amount) {
     // And on the grass on top of the ground blocks.
     if (amount < 0.5) return;
-    pipes.forEach(function (pair) {
+    getShownPipes().forEach(function (pair) {
         var bottom = pair[1];
         for (var spot = 0; spot < 2; spot++) {
             var blockTime = ambient_frames + bottom.h * 5 + spot * 17, blockAge = blockTime % 30;
@@ -1868,14 +1894,17 @@ function drawWeatherInFront() {
     if (!weatherAllowed(weather, current_theme)) return;
     // Thin and sparse on purpose: it must never hide an obstacle's edge.
     if (weather === "rain" || weather === "storm") {
-        drawRain(weather_amount);
-        drawSplashes(weather_amount);
+        drawAcross(function () {
+            drawRain(weather_amount);
+            drawMeadowSplashes(weather_amount);
+        });
+        drawBlockSplashes(weather_amount);
     }
-    else if (weather === "leaves") drawLeaves(Math.round(24 * weather_amount));
-    else if (weather === "snow") drawSnow(Math.round(42 * weather_amount));
-    else if (weather === "dandelions") drawDandelions(Math.round(32 * weather_amount));
-    else if (weather === "osmanthus") drawOsmanthus(Math.round(30 * weather_amount));
-    else if (weather === "petals") drawPetals(Math.round(42 * weather_amount));
+    else if (weather === "leaves") drawAcross(function () { drawLeaves(Math.round(24 * weather_amount)); });
+    else if (weather === "snow") drawAcross(function () { drawSnow(Math.round(42 * weather_amount)); });
+    else if (weather === "dandelions") drawAcross(function () { drawDandelions(Math.round(32 * weather_amount)); });
+    else if (weather === "osmanthus") drawAcross(function () { drawOsmanthus(Math.round(30 * weather_amount)); });
+    else if (weather === "petals") drawAcross(function () { drawPetals(Math.round(42 * weather_amount)); });
 }
 
 
@@ -1884,9 +1913,16 @@ var meteorLayers;
 function drawMeteors(frame, amount) {
     if (amount <= 0) return;
     // Paint at game resolution so the pixel edges match the Python version.
-    var layers = meteorLayers || (meteorLayers = [makeCanvas(800, 600), makeCanvas(800, 600)]);
+    if (!meteorLayers || meteorLayers[0].width !== getFullWidth()) {
+        meteorLayers = [makeCanvas(getFullWidth(), 600), makeCanvas(getFullWidth(), 600)];
+    }
+    var layers = meteorLayers;
     var glow = layers[0].getContext("2d"), light = layers[1].getContext("2d");
-    glow.clearRect(0, 0, 800, 600); light.clearRect(0, 0, 800, 600);
+    [glow, light].forEach(function (pen) {
+        pen.setTransform(1, 0, 0, 1, 0, 0);
+        pen.clearRect(0, 0, getFullWidth(), 600);
+        pen.setTransform(1, 0, 0, 1, SIDE, 0);
+    });
     function color(ctx, rgb, alpha) {
         ctx.strokeStyle = ctx.fillStyle = "rgba(" + rgb + "," + Math.round(alpha) / 255 + ")";
     }
@@ -1931,7 +1967,7 @@ function drawMeteors(frame, amount) {
             light.fillRect(sx, sy, 2, 2);
         }
     }
-    layers.forEach(function (layer) { screen.drawImage(layer, 0, 0); });
+    layers.forEach(function (layer) { screen.drawImage(layer, -SIDE, 0); });
 }
 
 function drawLightning(amount) {
@@ -1939,7 +1975,7 @@ function drawLightning(amount) {
     if (pulse <= 0) return;
     screen.save();
     screen.globalAlpha = Math.round(18 * pulse) / 255;
-    screen.fillStyle = "rgb(224,236,255)"; screen.fillRect(0, 0, WIDTH, HEIGHT);
+    screen.fillStyle = "rgb(224,236,255)"; fillWhole();
     screen.globalAlpha = Math.round(210 * pulse) / 255;
     screen.fillStyle = "rgb(236,244,255)";
     screen.beginPath();
@@ -1966,7 +2002,7 @@ function drawFireflies() {
     // Each firefly follows its own wave and glows on and off as time passes.
     var time = ambient_frames / 60;
     for (var index = 0; index < 14; index++) {
-        var x = pmod(index * 61 - world_scroll * 0.3 + 18 * Math.sin(time + index), WIDTH);
+        var x = pmod(index * 61 - world_scroll * 0.3 + 18 * Math.sin(time + index), getFullWidth()) - SIDE;
         var y = 400 + index * 13 % 150 + 12 * Math.sin(time * 1.4 + index * 2);
         if (Math.sin(time * 2 + index * 1.7) > -0.2) {
             fillRect([150, 170, 70], Math.floor(x) - 2, Math.floor(y) - 2, 8, 8);
@@ -1978,14 +2014,14 @@ function drawFireflies() {
 function drawDaytimeAnimals() {
     // A small flock crosses the sky, then loops around to the other side.
     [[0, 0], [46, -18], [92, 10]].forEach(function (offset, index) {
-        var x = WIDTH + 120 - pmod(ambient_frames * 1.5 + offset[0], WIDTH + 320);
+        var x = WIDTH + 120 + SIDE - pmod(ambient_frames * 1.5 + offset[0], WIDTH + 320 + 2 * SIDE);
         var y = 76 + offset[1] + 10 * Math.sin(ambient_frames / 40 + index);
         var wingFrame = (Math.floor(ambient_frames / 10) + index) % 2;
         screen.drawImage(getSprite("bird", wingFrame, 2), Math.floor(x), Math.floor(y));
     });
     // Butterflies flap quickly while drifting in loose waves over the meadow.
     for (var index = 0; index < 2; index++) {
-        var x = pmod(index * 397 + 40 - world_scroll * 0.6 + 30 * Math.sin(ambient_frames / 45 + index), WIDTH);
+        var x = pmod(index * 397 + 40 - world_scroll * 0.6 + 30 * Math.sin(ambient_frames / 45 + index), getFullWidth()) - SIDE;
         var y = 455 + index * 19 % 70 + 14 * Math.sin(ambient_frames / 28 + index * 2);
         var wingFrame = (Math.floor(ambient_frames / 7) + index) % 2;
         screen.drawImage(getSprite("butterfly", wingFrame, 2), Math.floor(x), Math.floor(y));
@@ -1994,11 +2030,11 @@ function drawDaytimeAnimals() {
 
 function drawGroundAnimals(tint) {
     // A fox trots slower than the world scrolls, and a rabbit hops along behind it.
-    var span = WIDTH + 240;
-    var foxX = pmod(ambient_frames * 1.1 - world_scroll * 0.55 + 330, span) - 120;
+    var span = WIDTH + 240 + 2 * SIDE;
+    var foxX = pmod(ambient_frames * 1.1 - world_scroll * 0.55 + 330, span) - 120 - SIDE;
     var frame = Math.floor(ambient_frames / 8) % 2;
     screen.drawImage(getSprite("running_fox", frame, 3, tint), Math.floor(foxX), HEIGHT - 58);
-    var rabbitX = pmod(ambient_frames * 0.7 - world_scroll * 0.55 + 40, span) - 120;
+    var rabbitX = pmod(ambient_frames * 0.7 - world_scroll * 0.55 + 40, span) - 120 - SIDE;
     var hop = Math.abs(Math.sin(ambient_frames / 14)) * 16;
     screen.drawImage(getSprite("rabbit", getBlinkFrame(2), 2, tint), Math.floor(rabbitX), Math.floor(HEIGHT - 60 - hop));
 }
@@ -2335,7 +2371,7 @@ function drawBackToFriends(centerY) {
 
 function drawOverlay(alpha) {
     screen.fillStyle = css(INK, alpha);
-    screen.fillRect(0, 0, WIDTH, HEIGHT);
+    fillWhole();
 }
 
 function drawLinkPage() {
@@ -4870,13 +4906,14 @@ function updateGameStep() {
     if (started && !paused) {
         updateBird();
         movePipes(score);
-        if (pipes[pipes.length - 1][0].x < WIDTH - pipe_spacing) {
+        if (pipes[pipes.length - 1][0].x < getPipeStartX() - pipe_spacing) {
             var newPair = createPipe(score, getGapCenter(pipes[pipes.length - 1]));
             if (!assignDog(newPair)) assignCreature(newPair);
             assignCoin(newPair);
             pipes.push(newPair);
         }
         if (pipes[0][0].right() < 0) {
+            if (SIDE) leaving_pipes.push(pipes[0]);
             pipes.shift();
             score += 1;
             score_pop_frames = 12;
@@ -4911,22 +4948,76 @@ function rebuildPhotos() {
     silhouettes = {};
 }
 
+function getSideFor(width, height) {
+    // How much world fits beside the 4:3 play area in a box of this shape.
+    if (!width || !height) return 0;
+    return Math.max(0, Math.min(MAXIMUM_SIDE, Math.round((width / height * HEIGHT - WIDTH) / 2)));
+}
+
+function getFullWidth() {
+    return WIDTH + 2 * SIDE;
+}
+
 function updateResolution() {
     var box = canvas.getBoundingClientRect();
-    var wanted = box.width ? box.width / WIDTH * (window.devicePixelRatio || 1) : 1;
+    var side = wideScreen && wideScreen.matches ? getSideFor(box.width, box.height) : 0;
+    // Wider than the widest world: keep the shape, with a thin strip at both ends.
+    canvas.style.maxWidth = side === MAXIMUM_SIDE ? Math.floor(box.height * (WIDTH + 2 * side) / HEIGHT) + "px" : "";
+    var wanted = box.width ? box.width / (WIDTH + 2 * side) * (window.devicePixelRatio || 1) : 1;
     // Quarter steps, so a slowly resized window does not redo the photos every frame.
     wanted = Math.max(1, Math.min(MAXIMUM_RES, Math.ceil(wanted * 4 - 0.05) / 4));
-    if (wanted === RES && canvas.width === Math.round(WIDTH * RES)) return;
+    if (wanted === RES && side === SIDE && canvas.width === Math.round((WIDTH + 2 * side) * RES)) return;
+    var newRes = wanted !== RES;
     RES = wanted;
-    canvas.width = Math.round(WIDTH * RES);
+    SIDE = side;
+    canvas.width = Math.round(getFullWidth() * RES);
     canvas.height = Math.round(HEIGHT * RES);
-    rebuildPhotos();
+    if (newRes) rebuildPhotos();
+}
+
+function fillWhole() {
+    // Covers the whole picture, the world beside the play area included.
+    screen.fillRect(-SIDE, 0, getFullWidth(), HEIGHT);
+}
+
+function drawAcross(draw) {
+    // Falling weather repeats every screen width, so copies to the left and right fill the sides.
+    if (!SIDE) {
+        draw();
+        return;
+    }
+    [-WIDTH, 0, WIDTH].forEach(function (shift) {
+        screen.save();
+        screen.translate(shift, 0);
+        draw();
+        screen.restore();
+    });
+}
+
+function isCoveredScreen() {
+    // These screens are whole pictures of their own, not the flying world.
+    return link_page_pet !== null || (onCharacterScreen() && (park_open || quiz_open || catch_open));
+}
+
+function stretchEdges() {
+    // Beside a whole-picture screen, its outermost column of pixels runs on to the screen's edge.
+    var scale = canvas.height / HEIGHT, left = Math.round(SIDE * scale), right = Math.round((SIDE + WIDTH) * scale);
+    screen.save();
+    screen.setTransform(1, 0, 0, 1, 0, 0);
+    screen.drawImage(canvas, left, 0, 1, canvas.height, 0, 0, left, canvas.height);
+    screen.drawImage(canvas, right - 1, 0, 1, canvas.height, right, 0, canvas.width - right, canvas.height);
+    screen.fillStyle = "rgba(16,22,20,0.22)";
+    screen.fillRect(0, 0, left, canvas.height);
+    screen.fillRect(right, 0, canvas.width - right, canvas.height);
+    screen.restore();
 }
 
 function drawFrame() {
     updateResolution();
-    // Everything below draws on the 800 x 600 game grid; this scales it to the real pixels.
-    screen.setTransform(canvas.width / WIDTH, 0, 0, canvas.height / HEIGHT, 0, 0);
+    // Everything below draws on the 800 x 600 game grid; this scales it to the real pixels
+    // and moves it past the world on the left.
+    var scale = canvas.height / HEIGHT;
+    screen.setTransform(scale, 0, 0, scale, Math.round(SIDE * scale), 0);
     screen.imageSmoothingEnabled = false;  // Pixel art and pixel letters keep hard edges.
     screen.globalAlpha = 1;
     screen.globalCompositeOperation = "source-over";
@@ -4935,7 +5026,7 @@ function drawFrame() {
     // Animals first, so ducking moves them behind their soil blocks.
     drawCreatures();
     drawWaitingDogs();
-    pipes.forEach(function (pair) {
+    getShownPipes().forEach(function (pair) {
         screen.drawImage(getObstacleImage(pair[0].w, pair[0].h, true), pair[0].x, pair[0].y);
         screen.drawImage(getObstacleImage(pair[1].w, pair[1].h, false), pair[1].x, pair[1].y);
     });
@@ -4953,6 +5044,7 @@ function drawFrame() {
     if (paused || (!started && (death_started_at === null || game_over))) drawMessagePanel();
     drawSoundButton();
     if (dev_mode) drawText("DEV", 2, [772, 14], SUN, INK);
+    if (SIDE && isCoveredScreen()) stretchEdges();
 }
 
 // -------------------------
@@ -5231,8 +5323,8 @@ boardForm.addEventListener("submit", function (event) {
 
 function showBoardForm() {
     // Puts the form over the box drawn in the board panel, at the canvas's current size.
-    var box = canvas.getBoundingClientRect(), scale = box.width / WIDTH;
-    boardForm.style.left = (box.left + 646 * scale) + "px";
+    var box = canvas.getBoundingClientRect(), scale = box.width / getFullWidth();
+    boardForm.style.left = (box.left + (SIDE + 646) * scale) + "px";
     boardForm.style.top = (box.top + 382 * scale) + "px";
     boardForm.style.width = (136 * scale) + "px";
     boardForm.style.fontSize = Math.max(12, Math.round(15 * scale)) + "px";
@@ -5330,7 +5422,8 @@ window.addEventListener("keydown", function (event) {
 
 function toGamePosition(clientX, clientY) {
     var box = canvas.getBoundingClientRect();
-    return [Math.floor((clientX - box.left) * WIDTH / box.width), Math.floor((clientY - box.top) * HEIGHT / box.height)];
+    return [Math.floor((clientX - box.left) * getFullWidth() / box.width) - SIDE,
+            Math.floor((clientY - box.top) * HEIGHT / box.height)];
 }
 
 function wakeAudio(place) {
