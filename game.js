@@ -261,6 +261,9 @@ var TEXTS = S.TEXTS, LANGUAGES = S.LANGUAGES;
 var language = readSavedLanguage();
 
 function readSavedLanguage() {
+    // A shared language link takes priority over this browser's previous choice.
+    var linked = getQueryValue("lang");
+    if (LANGUAGES.indexOf(linked) >= 0) return linked;
     // Read before anything else loads, so even the loading words use the language chosen last time.
     try {
         var saved = JSON.parse(window.localStorage.getItem(S.WEB_PROGRESS_KEY) || "{}");
@@ -1047,7 +1050,7 @@ function loadProgress() {
         });
         furniture_places[id] = good ? place : FURNITURE_BY_ID[id].place.slice();
     });
-    if (LANGUAGES.indexOf(saved.language) >= 0) language = saved.language;
+    language = readSavedLanguage();
     if (Array.isArray(saved.park_pets)) {
         park_shown = saved.park_pets.filter(function (id) {
             return Object.prototype.hasOwnProperty.call(PET_INDEX_BY_ID, id);
@@ -1186,6 +1189,7 @@ function applyPetLink(petId, isOwner) {
 }
 
 function useLinkLanguage(pet, pages) {
+    if (LANGUAGES.indexOf(getQueryValue("lang")) >= 0) return;
     // A pet sent in through the English form has its links open in English, e.g. Magnum.
     // Every other pet came from the Chinese 问卷星 form, so its links open in Chinese.
     // Only when its page is about to show, so a player who switched back keeps their choice.
