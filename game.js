@@ -1178,10 +1178,21 @@ function applyPetLink(petId, isOwner) {
     });
     setPilot(pets[0]);
     welcome_pet = pets[0];
+    useLinkLanguage(pets[0], pages);
     link_page_queue = pages;
     showNextLinkPage();
     saveProgress();
     return true;
+}
+
+function useLinkLanguage(pet, pages) {
+    // A pet sent in through the English form has its links open in English, e.g. Magnum.
+    // Only when its page is about to show, so a player who switched back keeps their choice.
+    var wanted = PETS[pet].link_language;
+    if (pages.length && LANGUAGES.indexOf(wanted) >= 0 && wanted !== language) {
+        language = wanted;
+        showPageLanguage();
+    }
 }
 
 function showNextLinkPage() {
