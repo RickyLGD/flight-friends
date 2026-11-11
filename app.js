@@ -25,6 +25,12 @@
         return /MicroMessenger/i.test(navigator.userAgent);
     }
 
+    function isTurnedView() {
+        // The same rule as the page and game.js: an upright phone, drawn turned on its side.
+        var media = window.matchMedia && window.matchMedia("(pointer: coarse) and (max-width: 540px) and (orientation: portrait)");
+        return !!(media && media.matches);
+    }
+
     function track(event, details) {
         try {
             if (window.flightFriendsTrack) window.flightFriendsTrack(event, JSON.stringify(details || {}));
@@ -82,6 +88,17 @@
 
     function hasProgress() {
         return !!(readStorage("flight_friends_pets") || readStorage("flight_friends_best_score"));
+    }
+
+    function hasPlayed() {
+        // The same signs game.js reads: a flight was started, or there is a best score or a coin.
+        if (Number(readStorage("flight_friends_best_score")) > 0) return true;
+        try {
+            var saved = JSON.parse(readStorage("flight_friends_pets") || "{}");
+            return !!saved && (saved.played === true || saved.coins > 0);
+        } catch (error) {
+            return false;
+        }
     }
 
     function copyText(text) {
@@ -156,9 +173,28 @@
         var installed = isInstalled();
         document.documentElement.setAttribute("data-app", installed ? "installed" : "page");
         if (installed && isApple() && startedEmpty && !readStorage(MOVE_ASKED_KEY)) show("app-move");
-        var later = false;
-        try { later = window.sessionStorage.getItem(LATER_KEY) === "1"; } catch (error) {}
-        if (!installed && isPhone() && !later) show("app-card");
+        // Asking a visitor to install before they have even played sent people away, so the
+        // card waits: it shows after the first finished flight (game.js calls afterRun), and
+        // from the start only for someone who has played before.
+        function offerInstall() {
+            var later = false;
+            try { later = window.sessionStorage.getItem(LATER_KEY) === "1"; } catch (error) {}
+            if (!installed && isPhone() && !later) show("app-card");
+        }
+        window.flightFriendsApp.afterRun = offerInstall;
+        if (hasPlayed()) offerInstall();
+
+        // A phone held upright draws the game turned on its side. A first-time visitor gets an
+        // upright welcome first, so the turned page is not the first thing they see. The page's
+        // own rules only show it on an upright phone; turning the phone hides it by itself.
+        if (!installed && !hasPlayed()) {
+            show("app-welcome");
+            if (isTurnedView()) track("welcome_shown", {});
+        }
+        onTap("app-welcome-go", function () {
+            hide("app-welcome");
+            track("welcome_start", {});
+        });
 
         onTap("app-install", startInstall);
         onTap("app-later", function () {

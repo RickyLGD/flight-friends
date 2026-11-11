@@ -6,7 +6,7 @@
     <title>飞行搭档</title>
     <!-- On the home screen: its own icon and name, full screen like an app. -->
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="apple-touch-icon" href="app-icon-180.png?v=4649a0309f95">
+    <link rel="apple-touch-icon" href="app-icon-180.png?v=28f510f2cac3">
     <meta name="theme-color" content="#6f9f8d">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,12 +20,23 @@
                 pageLanguage = JSON.parse(localStorage.getItem("flight_friends_pets") || "{}").language;
             }
         } catch (error) {}
+        if (pageLanguage !== "en" && pageLanguage !== "zh") {
+            // A first visit: WeChat and browsers that list Chinese open in Chinese, every other
+            // browser in English. game.js makes the same choice (getBrowserLanguage).
+            var wantedLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+            var knownLanguage = false, chineseLanguage = /MicroMessenger/i.test(navigator.userAgent);
+            for (var i = 0; i < wantedLanguages.length; i++) {
+                if (wantedLanguages[i]) knownLanguage = true;
+                if (/^zh/i.test(String(wantedLanguages[i]))) chineseLanguage = true;
+            }
+            pageLanguage = chineseLanguage || !knownLanguage ? "zh" : "en";
+        }
         if (pageLanguage === "en") {
             document.documentElement.lang = "en";
             document.title = "Flight Friends";
         }
     </script>
-    <link rel="icon" type="image/png" href="favicon.png?v=4649a0309f95">
+    <link rel="icon" type="image/png" href="favicon.png?v=28f510f2cac3">
     <style>
         html, body { height: 100%; margin: 0; overflow: hidden; background: #6f9f8d; }
         body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -109,6 +120,28 @@
             box-shadow: 0 10px 30px rgba(8, 14, 12, 0.35);
         }
         .app-card[hidden], .app-panel[hidden], .app-toast[hidden], .app-box [hidden] { display: none; }
+        /* The upright welcome for a first-time visitor on an upright phone (shown further down). */
+        .app-welcome { display: none; }
+        .app-welcome-icon { width: 76px; height: 76px; border-radius: 18px; image-rendering: pixelated;
+                            box-shadow: 0 6px 18px rgba(8, 14, 12, 0.3); }
+        .app-welcome h1 { margin: 0; font-size: 34px; letter-spacing: 2px; }
+        .app-welcome p { margin: 0; font-size: 17px; line-height: 1.4; }
+        .app-welcome-pets { display: flex; gap: 10px; justify-content: center; }
+        .app-welcome-pets span {
+            width: 66px; height: 66px;
+            background: center / contain no-repeat;
+            -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat;
+        }
+        .app-welcome-turn { display: flex; align-items: center; justify-content: center; gap: 12px; height: 70px; }
+        .app-welcome-phone {
+            width: 30px; height: 54px; box-sizing: border-box; border: 3px solid #342014; border-radius: 8px;
+            background: #fff4dc;
+            -webkit-animation: app-turn 2.4s ease-in-out infinite; animation: app-turn 2.4s ease-in-out infinite;
+        }
+        @-webkit-keyframes app-turn { 0%, 20% { -webkit-transform: rotate(0deg); } 60%, 100% { -webkit-transform: rotate(-90deg); } }
+        @keyframes app-turn { 0%, 20% { transform: rotate(0deg); } 60%, 100% { transform: rotate(-90deg); } }
+        .app-welcome .app-button { font-size: 22px; padding: 14px 52px; border-radius: 14px;
+                                   box-shadow: 0 6px 0 #2f5f2c; }
         .app-card img { width: 44px; height: 44px; border-radius: 10px; image-rendering: pixelated; }
         .app-card-words { flex: 1; min-width: 0; line-height: 1.3; }
         .app-card-words b { display: block; font-size: 15px; }
@@ -198,6 +231,19 @@
                 canvas#canvas { --across: calc(100dvh - 8px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); }
             }
             .app-rotate { display: none; }
+            /* The welcome is turned back, so it stands upright and covers the turned page:
+               its point (u, v) lands on the body's point (v, 100vw - u), the screen's (u, v). */
+            .app-welcome:not([hidden]) {
+                display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+                position: absolute; left: 0; top: 0; z-index: 20; box-sizing: border-box;
+                width: 100vw; height: 100vh; padding: 24px 20px;
+                -webkit-transform-origin: 0 0; transform-origin: 0 0;
+                -webkit-transform: translateY(100vw) rotate(-90deg); transform: translateY(100vw) rotate(-90deg);
+                background: #a9dccb; background: linear-gradient(#8fd0c4 0%, #c3e8d2 55%, #a5d58c 100%);
+                text-align: center; color: #342014;
+                font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            }
+            @supports (height: 100dvh) { .app-welcome:not([hidden]) { height: 100dvh; } }
             /* As on a phone held sideways: the install card waits in the space beside the game. */
             .app-card {
                 left: calc(env(safe-area-inset-top) + 6px); bottom: auto; top: 50%;
@@ -214,9 +260,9 @@
     </style>
 </head>
 <body data-theme="0">
-    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=4649a0309f95)"></div>
-    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=4649a0309f95)"></div>
-    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=4649a0309f95)"></div>
+    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=28f510f2cac3)"></div>
+    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=28f510f2cac3)"></div>
+    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=28f510f2cac3)"></div>
     <div class="page-shade"></div><script>
 (function () {
     var KEY = "phc_nV6D9iCxsfsMbCe7FxLUqFneY9r5QrCSM6MUQZHs5gdU", HOST = "https://us.i.posthog.com";
@@ -254,6 +300,8 @@
             turned_view: !!(window.matchMedia && matchMedia("(pointer: coarse) and (max-width: 540px) and (orientation: portrait)").matches),
             installed_app: !!((window.matchMedia && matchMedia("(display-mode: standalone), (display-mode: fullscreen)").matches)
                               || navigator.standalone === true),
+            // The language the page shows right now: "en" or "zh".
+            page_language: document.documentElement.lang === "en" ? "en" : "zh",
             $process_person_profile: false
         };
         for (var name in details) properties[name] = details[name];
@@ -283,9 +331,10 @@
         });
         return stage;
     }
-    var gameReady = false, leftEarly = false;
+    var gameReady = false, leftEarly = false, flown = false, leftUnplayed = false;
     window.flightFriendsTrack = function (event, details) {
         if (event === "game_ready") gameReady = true;
+        if (event === "game_start") flown = true;
         send(event, JSON.parse(details));
     };
     send("page_open", {new_visitor: isNew});
@@ -295,9 +344,18 @@
         }, seconds * 1000);
     });
     function reportLeaving() {
-        if (gameReady || leftEarly) return;
-        leftEarly = true;
-        send("load_left", {stage: loadStage()});
+        if (!gameReady) {
+            if (leftEarly) return;
+            leftEarly = true;
+            send("load_left", {stage: loadStage()});
+            return;
+        }
+        // The game was ready, but the visitor leaves without one flight in this visit.
+        // seconds_since_open then tells how long they looked before leaving.
+        if (flown || leftUnplayed) return;
+        leftUnplayed = true;
+        var welcome = document.getElementById("app-welcome");
+        send("left_unplayed", {welcome_showing: !!(welcome && !welcome.hidden && welcome.offsetWidth > 0)});
     }
     // WeChat may only hide the page when it closes, so both signals count as leaving.
     window.addEventListener("pagehide", reportLeaving);
@@ -313,8 +371,24 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="#342014" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M8 3.5a8 8 0 0 1 9 1.5l1 1M18 2.5v3.5h-3.5"/></svg>
         <span class="zh">把手机横过来，画面更大</span><span class="en">Turn your phone sideways for a bigger game</span>
     </div>
+    <div class="app-welcome" id="app-welcome" hidden>
+        <img class="app-welcome-icon" src="app-icon-192.png?v=28f510f2cac3" alt="">
+        <h1><span class="zh">飞行搭档</span><span class="en">Flight Friends</span></h1>
+        <p><span class="zh">和真实的宠物一起飞，<br>把新伙伴一只只接回家</span><span class="en">Fly with real pets<br>and bring new friends home</span></p>
+        <div class="app-welcome-pets" aria-hidden="true">
+            <span style="background-image: url(pets/erbao.jpg?v=28f510f2cac3); -webkit-mask-image: url(pets/erbao.mask.png?v=28f510f2cac3); mask-image: url(pets/erbao.mask.png?v=28f510f2cac3)"></span>
+            <span style="background-image: url(pets/sherry.jpg?v=28f510f2cac3); -webkit-mask-image: url(pets/sherry.mask.png?v=28f510f2cac3); mask-image: url(pets/sherry.mask.png?v=28f510f2cac3)"></span>
+            <span style="background-image: url(pets/xunshan.jpg?v=28f510f2cac3); -webkit-mask-image: url(pets/xunshan.mask.png?v=28f510f2cac3); mask-image: url(pets/xunshan.mask.png?v=28f510f2cac3)"></span>
+            <span style="background-image: url(pets/celina.jpg?v=28f510f2cac3); -webkit-mask-image: url(pets/celina.mask.png?v=28f510f2cac3); mask-image: url(pets/celina.mask.png?v=28f510f2cac3)"></span>
+        </div>
+        <div class="app-welcome-turn">
+            <div class="app-welcome-phone" aria-hidden="true"></div>
+            <p><span class="zh">把手机横过来玩</span><span class="en">Turn your phone sideways</span></p>
+        </div>
+        <button class="app-button" id="app-welcome-go"><span class="zh">开始 ▶</span><span class="en">Start ▶</span></button>
+    </div>
     <div class="app-card" id="app-card" hidden>
-        <img src="app-icon-192.png?v=4649a0309f95" alt="">
+        <img src="app-icon-192.png?v=28f510f2cac3" alt="">
         <div class="app-card-words">
             <b><span class="zh">装到手机桌面</span><span class="en">Add to home screen</span></b>
             <small><span class="zh">像 App 一样全屏玩</span><span class="en">Play full screen, like an app</span></small>
@@ -365,8 +439,8 @@
     </div>
     <div class="app-toast" id="app-move-done" hidden><span class="zh">搬好了！</span><span class="en">All moved in!</span></div>
 
-    <script>window.GAME_VERSION = "4649a0309f95";</script>
-    <script src="app.js?v=4649a0309f95"></script>
-    <script src="game.js?v=4649a0309f95"></script>
+    <script>window.GAME_VERSION = "28f510f2cac3";</script>
+    <script src="app.js?v=28f510f2cac3"></script>
+    <script src="game.js?v=28f510f2cac3"></script>
 </body>
 </html>
