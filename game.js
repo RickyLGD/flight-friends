@@ -300,11 +300,38 @@ function tr(key, values) {
     });
 }
 
+// English that is too wide shrinks only as much as it must, and may stand a little taller.
+// It keeps a tenth of the room free, so the letters never touch the edges of their button.
+var FITTED_TALLER = 1.25, FITTED_ROOM = 0.9;
+
 function drawFittedText(text, center, width, color, scale, outline) {
     // English words are often longer than the Chinese, so text that would not fit gets smaller.
     scale = scale || 2;
-    while (scale > 1 && renderGameText(String(text), scale, color || INK, outline || null).width > width) scale -= 1;
-    drawText(text, scale, center, color, outline);
+    text = String(text);
+    color = color || INK;
+    outline = outline || null;
+    // English keeps a tenth of the room free; Chinese may use all of it.
+    var chinese = /[㐀-鿿]/.test(text);
+    var fits = renderGameText(text, scale, color, outline).width <= (chinese ? width : width * FITTED_ROOM);
+    if (fits || chinese) {
+        // Chinese keeps whole sizes: its small characters break up when stretched by part of a pixel.
+        while (scale > 1 && renderGameText(text, scale, color, outline).width > width) scale -= 1;
+        return drawText(text, scale, center, color, outline);
+    }
+    // English used to drop a whole size here: from 2 straight to 1, half as big as its neighbours.
+    drawStretchedText(text, center, width * FITTED_ROOM, color, scale, outline);
+}
+
+function drawStretchedText(text, center, width, color, scale, outline) {
+    // Exactly `width` wide (never smaller than size 1), and at most `scale` tall.
+    var small = renderGameText(text, 1, color, outline);
+    var size = Math.max(1, width / small.width);
+    if (size <= 1) return drawText(text, 1, center, color, outline);
+    var wide = small.width * size, high = small.height * Math.min(scale, size * FITTED_TALLER);
+    var left = Math.round((center[0] - wide / 2) * RES) / RES;
+    var top = Math.round((center[1] - high / 2) * RES) / RES;
+    screen.imageSmoothingEnabled = false;
+    screen.drawImage(small, left, top, wide, high);
 }
 
 function splitTextLines(text, scale, width) {
@@ -316,7 +343,9 @@ function splitTextLines(text, scale, width) {
         var last = lines[lines.length - 1];
         var longer = last ? last + joiner + piece : piece;
         // Punctuation never starts a line; it stays with the word before it.
-        if (!last || "，。、！？：；".indexOf(piece) >= 0 || measureText(longer, isBold() && scale === 1) * scale <= width) lines[lines.length - 1] = longer;
+        // Measured the way renderGameText draws it: English letters get bold spacing at every size.
+        var spaced = isBold() && !/[㐀-鿿]/.test(longer);
+        if (!last || "，。、！？：；".indexOf(piece) >= 0 || measureText(longer, spaced) * scale <= width) lines[lines.length - 1] = longer;
         else lines.push(piece);
     });
     return lines;
@@ -2364,7 +2393,8 @@ function drawPetCard(card, pet, number, selected) {
     drawPixelPanel(badge, selected ? LEAF : SAND, INK, 0);
     drawText(String(number), 2, badge.center(), selected ? CREAM : INK);
     var textX = card.x + 133;
-    drawFittedText(getPetName(pet), [textX, card.y + 32], 112);
+    // 98 wide: from just right of the photo to 6 pixels before the card's right edge.
+    drawFittedText(getPetName(pet), [textX, card.y + 32], 98);
     getPetIntro(pet).forEach(function (line, lineNumber) {
         drawFittedText(line, [textX, card.y + 68 + lineNumber * 26], 108, selected ? INK : FOREST);
     });
@@ -2479,16 +2509,19 @@ function drawPickTile(rect, pet, now) {
     drawPicture(face, box.centerx() - W(face) / 2, box.y + 12 - hop);
     var label = new Rect(box.x + 6, box.bottom() - 40, box.w - 12, 32);
     if (selected) fillRect(FOREST, label.x, label.y, label.w, label.h);
-    drawPetName(getPetName(pet), label.center(), label.w - 12, selected ? CREAM : INK);
+    drawPetName(getPetName(pet), label.center(), label.w - 8, selected ? CREAM : INK);
 }
 
 // English letters are much smaller than Chinese characters at the same size, and most names are
 // too long for whole-number size 2, so they used to drop all the way to size 1. A name in English
 // letters now grows to the biggest size that still fits the card, up to the height of the Chinese.
 // A long name such as "September" may stand up to half again as tall as it is wide.
-var PET_NAME_MOST = 2.5, PET_NAME_TALLER = 1.5;
-function drawPetName(name, center, width, color) {
-    if (/[㐀-鿿]/.test(name)) return drawFittedText(name, center, width, color, 2);
+var PET_NAME_MOST = 2.5, PET_NAME_TALLER = 1.5, PET_NAME_MARGIN = 4;
+function drawPetName(name, center, width, color, most) {
+    most = most || PET_NAME_MOST;
+    // Three Chinese characters (小布丁) need all of the width to stay at size 2.
+    if (/[㐀-鿿]/.test(name)) return drawFittedText(name, center, width, color, Math.min(2, Math.floor(most)));
+    width -= PET_NAME_MARGIN;  // Stretched English letters keep a little room from the card edges.
     var key = "name|" + name + "|" + color, small = textCache[key];
     if (!small) {
         small = makeCanvas(measureText(name, false), D.font.height);
@@ -2497,9 +2530,9 @@ function drawPetName(name, center, width, color) {
         textCacheSize += 1;
     }
     // Heavy strokes: the letters are drawn twice, the second copy half a letter pixel to the right.
-    var size = Math.min(PET_NAME_MOST, (width - 1) / small.width), bold = Math.max(1 / RES, size / 2);
+    var size = Math.min(most, (width - 1) / small.width), bold = Math.max(1 / RES, size / 2);
     size = Math.min(size, (width - bold) / small.width);
-    var wide = small.width * size, high = small.height * Math.min(PET_NAME_MOST, size * PET_NAME_TALLER);
+    var wide = small.width * size, high = small.height * Math.min(most, size * PET_NAME_TALLER);
     var left = Math.round((center[0] - (wide + bold) / 2) * RES) / RES;
     var top = Math.round((center[1] - high / 2) * RES) / RES;
     screen.imageSmoothingEnabled = false;
@@ -2637,7 +2670,7 @@ function drawOneOfManyNewDogs(cell, pet, large) {
     if (large) {
         drawFittedText(getPetName(pet), [cell.centerx(), cell.y + 70], cell.w - 4);
     } else {
-        drawText(getPetName(pet), 1, [cell.centerx(), cell.bottom() - 8]);
+        drawPetName(getPetName(pet), [cell.centerx(), cell.bottom() - 8], cell.w - 4, INK, 1.4);
     }
 }
 
@@ -2728,9 +2761,13 @@ function drawCrashButtons() {
     fillRect(colors[2], again.x+8, again.bottom()-7, again.w-16, 3);
     var label = renderGameText(tr(CRASH_WORDS.again), 2, colors[3], null);
     var iconWidth = CRASH_ICONS.again[0].length * crash_icon_scale;
-    var left = again.centerx()-Math.floor((iconWidth+8+label.width)/2);
+    // "Fly again" is wider than "再飞一次": it shrinks a little to stay inside the button.
+    var room = again.w - 24 - iconWidth - 8, labelWidth = Math.min(label.width, room);
+    var left = again.centerx()-Math.floor((iconWidth+8+labelWidth)/2);
     drawCrashIcon("again",left,again.centery());
-    screen.drawImage(label,left+iconWidth+8,again.centery()-Math.floor(label.height/2));
+    var labelCenter = [left + iconWidth + 8 + labelWidth / 2, again.centery()];
+    if (label.width <= room) drawText(tr(CRASH_WORDS.again), 2, labelCenter, colors[3]);
+    else drawStretchedText(tr(CRASH_WORDS.again), labelCenter, room, colors[3], 2);
     if (!isTouchScreen) drawKeyCap("again",again);
     var home = hovered === "friends" ? buttons.friends.move(0,-2) : buttons.friends;
     drawPixelPanel(home, CREAM, INK, 4);
@@ -4424,7 +4461,8 @@ function drawParkShop() {
         var fill = hovered ? SUN : (owned || coins >= item.price ? CREAM : [226, 210, 180]);
         drawPixelPanel(row, fill, INK, 0);
         blitCentered(getFurnitureIcon(item.id), row.x + 30, row.centery());
-        drawFittedText(getItemName(item), [row.x + 104, row.centery()], 100);
+        // Between the picture (up to x + 54) and "Move" or the price (from x + 152).
+        drawPetName(getItemName(item), [row.x + 100, row.centery()], 88, INK, 2);
         if (owned) {
             drawFittedText(tr(stored_furniture[item.id] ? "retrieve" : "move"), [row.right() - 34, row.centery()], 56, FOREST);
         } else {
@@ -4447,7 +4485,7 @@ function drawParkChoices() {
         var chosen = shown.indexOf(pet) >= 0;
         drawPixelPanel(card, chosen ? SUN : (card.contains(mouseX, mouseY) ? SAND : CREAM), INK, 0);
         blitCentered(getFittedPortrait(pet, 48, 60), card.centerx(), card.y + 30);
-        drawFittedText(getPetName(pet), [card.centerx(), card.bottom() - 16], card.w - 8);
+        drawPetName(getPetName(pet), [card.centerx(), card.bottom() - 16], card.w - 8, INK, 2);
         if (elsewhere.indexOf(pet) >= 0) {
             drawFittedText(tr(park_room === 0 ? "tag_garden" : "tag_living"), [card.x + 30, card.y + 10], 56, FOREST, 1);
         }
@@ -5880,13 +5918,15 @@ function drawSoundButton() {
     screen.moveTo(x + 5, y - 4); screen.lineTo(x + 12, y - 10); screen.lineTo(x + 12, y + 10); screen.lineTo(x + 5, y + 4);
     screen.closePath();
     screen.fill();
-    screen.lineWidth = sound_on ? 2 : 3;
+    screen.lineWidth = sound_on ? 2.5 : 3;
     if (sound_on) {
         // One sound wave for each step of loudness: one is quiet, three is loud.
+        // Even the first wave sits clear of the cone; a smaller one hid inside it and the
+        // quiet default looked like no sound at all.
         screen.strokeStyle = css(INK);
-        [3, 7, 11].slice(0, volume_level).forEach(function (radius) {
+        [6, 10, 14].slice(0, volume_level).forEach(function (radius) {
             screen.beginPath();
-            screen.arc(x + 12, y, radius, -1.1, 1.1);
+            screen.arc(x + 10, y, radius, -1.1, 1.1);
             screen.stroke();
         });
     } else {
@@ -6138,8 +6178,9 @@ function drawBoard() {
             drawFittedText(tr(note), [row.x + 88, row.centery()], 100, BOARD_FADED);
             continue;
         }
-        drawFittedText(player.name + (mine ? tr("board_you") : ""), [row.x + 88, row.y + 18], 100);
-        drawFittedText(tr("board_points", {n: player.score}), [row.x + 88, row.y + 43], 100, DARK_RED);
+        // 88 wide: the words keep a few pixels away from the row's right edge.
+        drawFittedText(player.name + (mine ? tr("board_you") : ""), [row.x + 86, row.y + 18], 88);
+        drawFittedText(tr("board_points", {n: player.score}), [row.x + 86, row.y + 43], 88, DARK_RED);
     }
     if (board_entry_open) {
         drawFittedText(tr("board_made"), [panel.centerx(), 368], panel.w - 12, RED);
