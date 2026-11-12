@@ -308,6 +308,9 @@
                               || navigator.standalone === true),
             // The language the page shows right now: "en" or "zh".
             page_language: document.documentElement.lang === "en" ? "en" : "zh",
+            // Which published build this visitor is running, so two versions can be compared.
+            // The build writes it in here, because this runs before the page sets GAME_VERSION.
+            game_version: "21f937be895b",
             $process_person_profile: false
         };
         for (var name in details) properties[name] = details[name];
@@ -344,6 +347,37 @@
         send(event, JSON.parse(details));
     };
     send("page_open", {new_visitor: isNew});
+
+    // Errors on a player's phone. Only the error itself is sent: addresses are cut down to the
+    // file name, and each different error is sent once per visit, five at most.
+    var errorsSent = {}, errorCount = 0;
+    function shortName(address) {
+        return String(address || "").split("?")[0].split("#")[0].split("/").pop().slice(0, 80);
+    }
+    function reportError(message, file, line, column) {
+        message = String(message || "unknown").replace(/https?:\/\/[^\s)"']+/g, shortName).slice(0, 300);
+        file = shortName(file) || "unknown";
+        var key = message + "|" + file + "|" + line;
+        if (errorsSent[key] || errorCount >= 5) return;
+        errorsSent[key] = true;
+        errorCount += 1;
+        send("js_error", {message: message, file: file, line: line || 0, column: column || 0,
+                          game_ready: gameReady});
+    }
+    window.addEventListener("error", function (event) {
+        var target = event.target;
+        // A script that could not download, like game.js on a broken connection.
+        if (target && target !== window && target.tagName === "SCRIPT") {
+            reportError("script did not download", target.src, 0, 0);
+            return;
+        }
+        if (target && target !== window) return;  // Pictures retry on their own.
+        reportError(event.message, event.filename, event.lineno, event.colno);
+    }, true);
+    window.addEventListener("unhandledrejection", function (event) {
+        var reason = event.reason;
+        reportError(reason && reason.message ? reason.message : reason, "promise", 0, 0);
+    });
     [15, 45].forEach(function (seconds) {
         setTimeout(function () {
             if (!gameReady) send("load_waiting", {stage: loadStage(), waited: seconds,
@@ -446,13 +480,13 @@
     </div>
     <div class="app-toast" id="app-move-done" hidden><span class="zh">搬好了！</span><span class="en">All moved in!</span></div>
 
-    <script>window.GAME_VERSION = "79b630602a9f";</script>
+    <script>window.GAME_VERSION = "21f937be895b";</script>
     <script>
     try {
         window.flightFriendsStartedEmpty = !(localStorage.getItem("flight_friends_pets") || localStorage.getItem("flight_friends_best_score"));
     } catch (error) { window.flightFriendsStartedEmpty = true; }
     </script>
-    <script async src="app.js?v=c3e23c3035"></script>
+    <script async src="app.js?v=23bf9a5669"></script>
     <script>
     function gameScriptFailed(slow) {
         var box = document.getElementById("infobox");
@@ -473,6 +507,6 @@
         if (!window.flightFriends) gameScriptFailed(true);
     }, 15000);
     </script>
-    <script src="game.js?v=4d41333938" onerror="gameScriptFailed()"></script>
+    <script src="game.js?v=79b93e1067" onerror="gameScriptFailed()"></script>
 </body>
 </html>

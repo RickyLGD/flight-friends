@@ -192,6 +192,7 @@
             if (isTurnedView()) track("welcome_shown", {});
         }
         onTap("app-welcome-go", function () {
+            if (window.flightFriendsUnlockAudio) window.flightFriendsUnlockAudio();
             hide("app-welcome");
             track("welcome_start", {});
         });
