@@ -6976,7 +6976,9 @@ function loadStartupImages(names, quiet) {
                 else worker();
             }, function (error) { failed = true; reject(error); });
         }
-        for (var i = 0; i < Math.min(6, names.length); i++) worker();
+        // 16 at once: far-away servers (China to GitHub) answer slowly, so waiting for one small
+        // group after another would add seconds. Still few enough that each picture finishes in time.
+        for (var i = 0; i < Math.min(16, names.length); i++) worker();
     });
 }
 
