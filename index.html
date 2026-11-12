@@ -6,7 +6,7 @@
     <title>飞行搭档</title>
     <!-- On the home screen: its own icon and name, full screen like an app. -->
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="apple-touch-icon" href="app-icon-180.png?v=8a8af2f0814d">
+    <link rel="apple-touch-icon" href="app-icon-180.png?v=c3a0478096">
     <meta name="theme-color" content="#6f9f8d">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,7 +36,7 @@
             document.title = "Flight Friends";
         }
     </script>
-    <link rel="icon" type="image/png" href="favicon.png?v=8a8af2f0814d">
+    <link rel="icon" type="image/png" href="favicon.png?v=9668a00899">
     <style>
         html, body { height: 100%; margin: 0; overflow: hidden; background: #6f9f8d; }
         body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -258,7 +258,7 @@
             }
         }
         /* The page's own words use the game's pixel font (only the letters the game needs). */
-        @font-face {font-family: FlightFriendsPixel; src: url("fonts/pixel.woff?v=8a8af2f0814d") format("woff"); font-display: swap;}
+        @font-face {font-family: FlightFriendsPixel; src: url("fonts/pixel.woff?v=81dbf078f4") format("woff"); font-display: swap;}
         body, button, input, textarea, select, .app-welcome, .app-card, .app-help {
             font-family: FlightFriendsPixel, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif !important;
             font-weight: 400; -webkit-font-smoothing: none; text-shadow: none;
@@ -266,9 +266,9 @@
     </style>
 </head>
 <body data-theme="0">
-    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=8a8af2f0814d)"></div>
-    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=8a8af2f0814d)"></div>
-    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=8a8af2f0814d)"></div>
+    <div class="page-sky" id="page-sky-0" style="background-image: url(page_sky_0.png?v=763bf2e432)"></div>
+    <div class="page-sky" id="page-sky-1" style="background-image: url(page_sky_1.png?v=64b02bd0d3)"></div>
+    <div class="page-sky" id="page-sky-2" style="background-image: url(page_sky_2.png?v=ddde5b3551)"></div>
     <div class="page-shade"></div><script>
 (function () {
     var KEY = "phc_nV6D9iCxsfsMbCe7FxLUqFneY9r5QrCSM6MUQZHs5gdU", HOST = "https://us.i.posthog.com";
@@ -346,14 +346,15 @@
     send("page_open", {new_visitor: isNew});
     [15, 45].forEach(function (seconds) {
         setTimeout(function () {
-            if (!gameReady) send("load_waiting", {stage: loadStage(), waited: seconds});
+            if (!gameReady) send("load_waiting", {stage: loadStage(), waited: seconds,
+                                                   loaded: window.flightFriendsLoaded || "none"});
         }, seconds * 1000);
     });
     function reportLeaving() {
         if (!gameReady) {
             if (leftEarly) return;
             leftEarly = true;
-            send("load_left", {stage: loadStage()});
+            send("load_left", {stage: loadStage(), loaded: window.flightFriendsLoaded || "none"});
             return;
         }
         // The game was ready, but the visitor leaves without one flight in this visit.
@@ -378,14 +379,14 @@
         <span class="zh">把手机横过来，画面更大</span><span class="en">Turn your phone sideways for a bigger game</span>
     </div>
     <div class="app-welcome" id="app-welcome" hidden>
-        <img class="app-welcome-icon" src="app-icon-192.png?v=8a8af2f0814d" alt="">
+        <img class="app-welcome-icon" src="app-icon-192.png?v=8301624e16" alt="">
         <h1><span class="zh">飞行搭档</span><span class="en">Flight Friends</span></h1>
         <p><span class="zh">和真实的宠物一起飞，<br>把新伙伴一只只接回家</span><span class="en">Fly with real pets<br>and bring new friends home</span></p>
         <div class="app-welcome-pets" aria-hidden="true">
-            <span style="background-image: url(pets/erbao.jpg?v=8a8af2f0814d); -webkit-mask-image: url(pets/erbao.mask.png?v=8a8af2f0814d); mask-image: url(pets/erbao.mask.png?v=8a8af2f0814d)"></span>
-            <span style="background-image: url(pets/sherry.jpg?v=8a8af2f0814d); -webkit-mask-image: url(pets/sherry.mask.png?v=8a8af2f0814d); mask-image: url(pets/sherry.mask.png?v=8a8af2f0814d)"></span>
-            <span style="background-image: url(pets/xunshan.jpg?v=8a8af2f0814d); -webkit-mask-image: url(pets/xunshan.mask.png?v=8a8af2f0814d); mask-image: url(pets/xunshan.mask.png?v=8a8af2f0814d)"></span>
-            <span style="background-image: url(pets/celina.jpg?v=8a8af2f0814d); -webkit-mask-image: url(pets/celina.mask.png?v=8a8af2f0814d); mask-image: url(pets/celina.mask.png?v=8a8af2f0814d)"></span>
+            <span style="background-image: url(pets/erbao.jpg?v=58333dc8ae); -webkit-mask-image: url(pets/erbao.mask.png?v=af91a0e3cc); mask-image: url(pets/erbao.mask.png?v=af91a0e3cc)"></span>
+            <span style="background-image: url(pets/sherry.jpg?v=401366c35d); -webkit-mask-image: url(pets/sherry.mask.png?v=e78ffffa37); mask-image: url(pets/sherry.mask.png?v=e78ffffa37)"></span>
+            <span style="background-image: url(pets/xunshan.jpg?v=5bf901ead9); -webkit-mask-image: url(pets/xunshan.mask.png?v=2c3aa834b6); mask-image: url(pets/xunshan.mask.png?v=2c3aa834b6)"></span>
+            <span style="background-image: url(pets/celina.jpg?v=9559074159); -webkit-mask-image: url(pets/celina.mask.png?v=fc0f9c208e); mask-image: url(pets/celina.mask.png?v=fc0f9c208e)"></span>
         </div>
         <div class="app-welcome-turn">
             <div class="app-welcome-phone" aria-hidden="true"></div>
@@ -394,7 +395,7 @@
         <button class="app-button" id="app-welcome-go"><span class="zh">开始 ▶</span><span class="en">Start ▶</span></button>
     </div>
     <div class="app-card" id="app-card" hidden>
-        <img src="app-icon-192.png?v=8a8af2f0814d" alt="">
+        <img src="app-icon-192.png?v=8301624e16" alt="">
         <div class="app-card-words">
             <b><span class="zh">装到手机桌面</span><span class="en">Add to home screen</span></b>
             <small><span class="zh">像 App 一样全屏玩</span><span class="en">Play full screen, like an app</span></small>
@@ -445,8 +446,33 @@
     </div>
     <div class="app-toast" id="app-move-done" hidden><span class="zh">搬好了！</span><span class="en">All moved in!</span></div>
 
-    <script>window.GAME_VERSION = "8a8af2f0814d";</script>
-    <script src="app.js?v=8a8af2f0814d"></script>
-    <script src="game.js?v=8a8af2f0814d"></script>
+    <script>window.GAME_VERSION = "f7a873b4d14c";</script>
+    <script>
+    try {
+        window.flightFriendsStartedEmpty = !(localStorage.getItem("flight_friends_pets") || localStorage.getItem("flight_friends_best_score"));
+    } catch (error) { window.flightFriendsStartedEmpty = true; }
+    </script>
+    <script async src="app.js?v=c3e23c3035"></script>
+    <script>
+    function gameScriptFailed(slow) {
+        var box = document.getElementById("infobox");
+        if (!box) return;
+        var zh = document.documentElement.lang.indexOf("zh") === 0;
+        // After 15 seconds the game may still be on its way, so that message only offers a retry.
+        if (slow) box.textContent = zh ? "网络有点慢，还在下载游戏…" : "The connection is slow. Still downloading the game…";
+        else box.textContent = zh ? "游戏文件未能下载，请重试。" : "The game could not download. Please retry.";
+        var button = document.createElement("button");
+        button.textContent = "重新加载 / Retry";
+        button.style.cssText = "display:block;margin:16px auto;padding:10px 24px;font-size:18px";
+        button.onclick = function () { location.reload(); };
+        box.appendChild(button);
+    }
+    </script>
+    <script>
+    setTimeout(function () {
+        if (!window.flightFriends) gameScriptFailed(true);
+    }, 15000);
+    </script>
+    <script src="game.js?v=8be8da916b" onerror="gameScriptFailed()"></script>
 </body>
 </html>

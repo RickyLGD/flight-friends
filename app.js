@@ -241,7 +241,7 @@
     }
 
     // Checked now, before game.js runs: the game may save as soon as it starts.
-    var startedEmpty = !hasProgress();
+    var startedEmpty = typeof window.flightFriendsStartedEmpty === "boolean" ? window.flightFriendsStartedEmpty : !hasProgress();
 
     // Shared with the checks in tests/app_browser_checks.cjs.
     window.flightFriendsApp = {makeMoveCode: makeMoveCode, readMoveCode: readMoveCode, readSave: readSave};

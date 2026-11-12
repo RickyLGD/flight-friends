@@ -23,7 +23,7 @@ function useKeptCopyFirst(request, url) {
     return caches.open(CACHE).then(function (cache) {
         return cache.match(request).then(function (kept) {
             if (kept) return kept;
-            return fetch(request).then(function (response) {
+            return fetchWithDeadline(request).then(function (response) {
                 if (response.ok) {
                     cache.put(request, response.clone());
                     forgetOldVersions(cache, url);
@@ -44,17 +44,31 @@ function forgetOldVersions(cache, url) {
     });
 }
 
+function fetchWithDeadline(request) {
+    return new Promise(function (resolve, reject) {
+        var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+        var timer = setTimeout(function () {
+            if (controller) controller.abort();
+            reject(new Error("Network timeout"));
+        }, 12000);
+        fetch(request, controller ? {signal: controller.signal} : {}).then(function (response) {
+            clearTimeout(timer); resolve(response);
+        }, function (error) { clearTimeout(timer); reject(error); });
+    });
+}
 function useInternetFirst(request) {
-    return fetch(request).then(function (response) {
-        if (response.ok) {
+    return caches.match(request, {ignoreSearch: true}).then(function (kept) {
+        var network = fetchWithDeadline(request).then(function (response) {
+            if (!response.ok) return kept || response;
             var copy = response.clone();
-            caches.open(CACHE).then(function (cache) { cache.put(request, copy); });
-        }
-        return response;
-    }).catch(function () {
-        // No internet: the page kept from last time, whichever pet link it was opened with.
-        return caches.match(request, {ignoreSearch: true}).then(function (kept) {
-            return kept || Response.error();
+            caches.open(CACHE).then(function (cache) { cache.put(request, copy); }).catch(function () {});
+            return response;
+        }).catch(function () { return kept || Response.error(); });
+        if (!kept) return network;
+        // A returning player can use the saved page while the network is slow.
+        return new Promise(function (resolve) {
+            var timer = setTimeout(function () { resolve(kept); }, 2500);
+            network.then(function (response) { clearTimeout(timer); resolve(response); });
         });
     });
 }
