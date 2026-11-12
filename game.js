@@ -6303,6 +6303,9 @@ var MINI_GAMES = [
 // FlightFriends Garden shell game, adapted from assignment07-yz11914/main.py.
 var box_open = false, box_round = null;
 var BOX_SLOTS = [160, 400, 640], BOX_COUNT = 18;
+// Dogs visit in pairs while the boxes move. At most four at a time (five with the hidden pet),
+// walking at an easy pace, so the screen never gets crowded.
+var BOX_MOST_VISITORS = 4, BOX_VISITOR_SPEED = [85, 95];
 var box_button = new Rect(284, 544, 232, 48);
 var boxBackButton = new Rect(18, 18, 96, 44);
 var boxGardenImage = new Image();
@@ -6342,7 +6345,7 @@ function updateBoxGame() {
             r.done++; boxEnter(r.done === BOX_COUNT ? "choose" : "pause");
         }
     } else if (r.stage === "pause" && age >= 80) boxBeginSwap();
-    if ((r.stage === "shuffle" || r.stage === "pause") && now >= r.nextVisitor && r.visitors.length <= 4) {
+    if ((r.stage === "shuffle" || r.stage === "pause") && now >= r.nextVisitor && r.visitors.length + 2 <= BOX_MOST_VISITORS) {
         spawnBoxVisitorPair();
         r.nextVisitor = now + 1600 + Math.random()*500;
     }
@@ -6388,7 +6391,7 @@ function spawnBoxVisitorPair() {
         center:260+(wave%3)*140,ground:layer==="back"?476:574,layer:layer,members:[]};
     for(var i=0;i<2;i++) {
         var v={pet:choices[i],x:i===0?-64:864,y:pair.ground,dir:i===0?1:-1,
-            speed:140+Math.random()*15,pair:pair,side:i};
+            speed:BOX_VISITOR_SPEED[0]+Math.random()*(BOX_VISITOR_SPEED[1]-BOX_VISITOR_SPEED[0]),pair:pair,side:i};
         pair.members.push(v);r.visitors.push(v);
     }
     r.visitorPairs.push(pair);
@@ -6719,7 +6722,8 @@ function drawMiniGameCover(game, rect) {
     if (picture.complete && picture.naturalWidth) {
         screen.save();
         screen.imageSmoothingEnabled = false;
-        if (game.id === "snack_catch") screen.drawImage(picture,190,360,420,240,x,y,w,h);
+        // A real frame of the snack game (tools/make_game_covers.py): Erbao and the falling snacks.
+        if (game.id === "snack_catch") screen.drawImage(picture,140,300,520,285,x,y,w,h);
         else screen.drawImage(picture,28,170,744,408,x,y,w,h);
         screen.restore();
     }
