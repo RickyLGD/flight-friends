@@ -6607,14 +6607,19 @@ function drawTitleWithShadow(text, center, scale, face) {
     drawText(text, scale, center, face, INK);
 }
 
+var LOGO_DROP = 16;  // Pixels the home logo sits lower than the very top.
+
 function drawHomeLogo() {
     var names = getLogoNames(), scale = 6;
     // The biggest size that still leaves room for the buttons in the top corners.
     while (scale > 3 && renderGameText(names[0], scale, CREAM, INK).width > 304) scale -= 1;
-    drawTitleWithShadow(names[0], [400, 70], scale, CREAM);
-    var subtitle = drawLogoSubtitle(names[1], 400, 132, INK);
-    fillRect(INK, 400 - subtitle / 2 - 42, 131, 28, 2);
-    fillRect(INK, 400 + subtitle / 2 + 14, 131, 28, 2);
+    // LOGO_DROP moves the whole logo down from the top edge, so it sits between the corner
+    // buttons and the speech bubble instead of crowding the top.
+    var top = LOGO_DROP;
+    drawTitleWithShadow(names[0], [400, 70 + top], scale, CREAM);
+    var subtitle = drawLogoSubtitle(names[1], 400, 132 + top, INK);
+    fillRect(INK, 400 - subtitle / 2 - 42, 131 + top, 28, 2);
+    fillRect(INK, 400 + subtitle / 2 + 14, 131 + top, 28, 2);
 }
 
 function drawPreviewHome(withUI, transitionTime) {
