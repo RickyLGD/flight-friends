@@ -258,7 +258,7 @@
             }
         }
         /* The page's own words use the game's pixel font (only the letters the game needs). */
-        @font-face {font-family: FlightFriendsPixel; src: url("fonts/pixel.woff?v=81dbf078f4") format("woff"); font-display: swap;}
+        @font-face {font-family: FlightFriendsPixel; src: url("fonts/pixel.woff?v=4f6d00443a") format("woff"); font-display: swap;}
         body, button, input, textarea, select, .app-welcome, .app-card, .app-help {
             font-family: FlightFriendsPixel, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif !important;
             font-weight: 400; -webkit-font-smoothing: none; text-shadow: none;
@@ -310,7 +310,7 @@
             page_language: document.documentElement.lang === "en" ? "en" : "zh",
             // Which published build this visitor is running, so two versions can be compared.
             // The build writes it in here, because this runs before the page sets GAME_VERSION.
-            game_version: "21f937be895b",
+            game_version: "5dd00161926e",
             $process_person_profile: false
         };
         for (var name in details) properties[name] = details[name];
@@ -480,7 +480,7 @@
     </div>
     <div class="app-toast" id="app-move-done" hidden><span class="zh">搬好了！</span><span class="en">All moved in!</span></div>
 
-    <script>window.GAME_VERSION = "21f937be895b";</script>
+    <script>window.GAME_VERSION = "5dd00161926e";</script>
     <script>
     try {
         window.flightFriendsStartedEmpty = !(localStorage.getItem("flight_friends_pets") || localStorage.getItem("flight_friends_best_score"));
@@ -507,6 +507,6 @@
         if (!window.flightFriends) gameScriptFailed(true);
     }, 15000);
     </script>
-    <script src="game.js?v=79b93e1067" onerror="gameScriptFailed()"></script>
+    <script src="game.js?v=d126a0f342" onerror="gameScriptFailed()"></script>
 </body>
 </html>
