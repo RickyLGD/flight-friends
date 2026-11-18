@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluffy Pilots 飞行搭档</title>
+<script>
+    // The game moved from /flight-friends/ to /fluffy-pilots/. Keep the rest of the link
+    // (a pet's own ?pet=..., submit.html), so links sent to pet owners still work.
+    // The save stays: both addresses are on rickylgd.github.io, and the save belongs to that.
+    var rest = location.pathname.replace(/^\/flight-friends\/?/, "");
+    location.replace("/fluffy-pilots/" + rest + location.search + location.hash);
+</script>
+<meta http-equiv="refresh" content="0; url=/fluffy-pilots/">
+</head>
+<body style="font-family: sans-serif; background: #f6efe0; color: #3b2f22; text-align: center; padding: 40px 16px;">
+    <p>飞行搭档搬家了 · The game moved</p>
+    <p><a href="/fluffy-pilots/">rickylgd.github.io/fluffy-pilots</a></p>
+</body>
+</html>
